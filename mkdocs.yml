@@ -1,0 +1,13 @@
+site_name: EIP Peltomappi
+site_url: https://github.com/GispoCoding/eip-peltomappi
+copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
+nav:  
+  - Koti: index.md
+  - Esittely: 1_esittely.md
+
+use_directory_urls: false
+theme:
+  name: readthedocs
+
+markdown_extensions:
+  - footnotes
