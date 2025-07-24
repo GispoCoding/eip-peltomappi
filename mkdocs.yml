@@ -4,6 +4,7 @@ copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
 nav:  
   - Koti: index.md
   - Esittely: 1_esittely.md
+  - Projektin lataaminen: 2_projektin_lataaminen.md
 
 use_directory_urls: false
 theme:
