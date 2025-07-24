@@ -8,11 +8,11 @@ Tämän jälkeen avaa sovellus.
 
 Klikkaa oikean yläkulman ikonia:
 
-![](img/aloitusnakyma.jpg){width="299"}
+![](img/aloitusnakyma.jpg)
 
 Kirjaudu tämän jälkeen tunnuksillasi sisään:
 
-![](img/kirjautuminen.jpg){width="286"}
+![](img/kirjautuminen.jpg)
 
 Klikkaa tämän jälkeen alareunan "Projektit"- kohtaa ja lataa eip-peltomappi- projekti
 
