@@ -1,1 +1,1 @@
-# EIP Peltomappi
+# Peltomappi

@@ -1,4 +1,4 @@
-site_name: EIP Peltomappi
+site_name: Peltomappi
 site_url: https://github.com/GispoCoding/eip-peltomappi
 copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
 nav:  
@@ -7,8 +7,10 @@ nav:
   - Projektin lataaminen: 2_projektin_lataaminen.md
 
 use_directory_urls: false
-theme:
-  name: readthedocs
 
 markdown_extensions:
   - footnotes
+
+theme:
+  name: readthedocs
+  custom_dir: theme
