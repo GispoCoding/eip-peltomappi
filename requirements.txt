@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements.in
 #
+babel==2.17.0
+    # via mkdocs
 click==8.2.1
     # via mkdocs
 ghp-import==2.1.0
@@ -20,7 +22,7 @@ mergedeep==1.3.4
     # via
     #   mkdocs
     #   mkdocs-get-deps
-mkdocs==1.6.1
+mkdocs[i18n]==1.6.1
     # via -r requirements.in
 mkdocs-get-deps==0.2.0
     # via mkdocs
