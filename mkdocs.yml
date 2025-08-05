@@ -14,3 +14,4 @@ markdown_extensions:
 theme:
   name: readthedocs
   custom_dir: theme
+  locale: fi
