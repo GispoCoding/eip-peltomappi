@@ -6,7 +6,7 @@ nav:
   - Esittely: 1_esittely.md
   - Projektin lataaminen: 2_projektin_lataaminen.md
   - Kohteen lisääminen: 3_kohteen_lisääminen.md
-  - Reitin nauhoitus: 4__reitin_nauhoitus.md
+  - Reitin nauhoitus: 4_reitin_nauhoitus.md
 use_directory_urls: false
 
 markdown_extensions:
