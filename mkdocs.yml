@@ -6,8 +6,10 @@ nav:
   - Esittely: 1_esittely.md
   - Projektin lataaminen: 2_projektin_lataaminen.md
   - Kohteen lisääminen: 3_kohteen_lisääminen.md
-  - Reitin nauhoitus: 4_reitin_nauhoitus.md
-  - Penetrometri: 5_penetrometri.md
+  - Alueen lisääminen: 4_alueen_lisääminen.md
+  - Reitin nauhoitus: 5_reitin_nauhoitus.md
+  - Penetrometri: 6_penetrometri.md
+  - Penetrometri: 7_mittaus.md
 use_directory_urls: false
 
 markdown_extensions:
