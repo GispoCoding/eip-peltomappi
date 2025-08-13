@@ -9,7 +9,7 @@ nav:
   - Alueen lisääminen: 4_alueen_lisääminen.md
   - Reitin nauhoitus: 5_reitin_nauhoitus.md
   - Penetrometri: 6_penetrometri.md
-  - Penetrometri: 7_mittaus.md
+  - Mittaus: 7_mittaus.md
 use_directory_urls: false
 
 markdown_extensions:
