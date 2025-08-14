@@ -16,8 +16,10 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
     -   Kivi
     -   Muu
     :::
-- Valokuva
-- Lisätieto
+
+-   Valokuva
+
+-   Lisätieto
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 
