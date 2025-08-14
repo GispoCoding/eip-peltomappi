@@ -13,13 +13,20 @@
 </iframe>
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
-- Nimi:
-  <div style="margin-left: 20px;">
-  - Multava<br/>  
-  - Kalkitus<br/>  
-  - Lannoitus<br/>  
-  - Muu<br/>
-  </div>
+
+\- Nimi:<br/>
+
+<div style="margin-left: 20px;">
+
+-   Multava<br/>\
+
+-   Kalkitus<br/>\
+
+-   Lannoitus<br/>\
+
+-   Muu<br/>
+
+    </div>
 
 -   Valokuva
 
