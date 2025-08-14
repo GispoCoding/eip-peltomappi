@@ -10,7 +10,7 @@ nav:
   - Reitin nauhoitus: 5_reitin_nauhoitus.md
   - Penetrometri: 6_penetrometri.md
   - Mittaus: 7_mittaus.md
-  - Säädata: 8_säädata.md
+  - Säädata: 8_saadata.md
 use_directory_urls: false
 
 markdown_extensions:
