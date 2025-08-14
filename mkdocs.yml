@@ -10,7 +10,7 @@ nav:
   - Reitin nauhoitus: reitin_nauhoitus.md
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
-  - Säädata: 8_saadata.md
+  - Säädata: saadata.md
 use_directory_urls: false
 
 markdown_extensions:
@@ -20,3 +20,8 @@ theme:
   name: readthedocs
   custom_dir: theme
   locale: fi
+
+plugins:
+  - redirects:
+      redirect_maps:
+        '8_saadata.md': 'saadata.md'
