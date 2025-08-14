@@ -3,13 +3,13 @@ site_url: https://github.com/GispoCoding/eip-peltomappi
 copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
 nav:  
   - Koti: index.md
-  - Esittely: 1_esittely.md
-  - Projektin lataaminen: 2_projektin_lataaminen.md
-  - Kohteen lisääminen: 3_kohteen_lisääminen.md
-  - Alueen lisääminen: 4_alueen_lisääminen.md
-  - Reitin nauhoitus: 5_reitin_nauhoitus.md
-  - Penetrometri: 6_penetrometri.md
-  - Mittaus: 7_mittaus.md
+  - Esittely: esittely.md
+  - Projektin lataaminen: projektin_lataaminen.md
+  - Kohteen lisääminen: kohteen_lisääminen.md
+  - Alueen lisääminen: alueen_lisääminen.md
+  - Reitin nauhoitus: reitin_nauhoitus.md
+  - Penetrometri: penetrometri.md
+  - Mittaus: mittaus.md
   - Säädata: 8_saadata.md
 use_directory_urls: false
 
