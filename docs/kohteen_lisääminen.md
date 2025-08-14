@@ -6,20 +6,16 @@
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
--   Kohde:
+- Kohde:
+  <div style="margin-left: 20px;">
+  - Hukkakaura  
+  - Laskuaukko  
+  - Kaivo  
+  - Rumpu  
+  - Kivi  
+  - Muu
+  </div>
 
-    ::: {style="margin-left: 20px;"}
-    -   Hukkakaura
-    -   Laskuaukko
-    -   Kaivo
-    -   Rumpu
-    -   Kivi
-    -   Muu
-    :::
-
--   Valokuva
-
--   Lisätieto
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 
