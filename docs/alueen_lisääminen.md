@@ -1,12 +1,12 @@
 # Alueen lisääminen
 
-<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" width="100%" height="900"></iframe>
+<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 <br>
 
 # Alueen lisääminen nauhoitustilalla
 
-<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" width="100%" height="900"></iframe>
+<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 Tällä hetkellä voit lisätä seuraavia maaperäalueita:
 
