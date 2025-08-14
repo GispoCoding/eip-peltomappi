@@ -34,6 +34,12 @@ Päivitä projektiympäristö (asentaa tarvittavat riippuvuudet):
 uv sync
 ```
 
+Asenna pre-commit hook:
+
+```shell
+pre-commit install
+```
+
 ## Ohjeistuksen kehittäminen
 
 Ennen ohjeistuksen kehittämistä toista ensin [aiemmat komennot](#kehittäminen).
