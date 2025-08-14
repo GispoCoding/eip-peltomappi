@@ -10,4 +10,12 @@ Voit tallentaa penetrometrillä saatuja arvoja seuraavan ohjevideon mukaisesti:
 
 Anna palautetta ominaisuudesta alla olevan lomakkeen avulla: 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
+<iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Kohteen+lis%C3%A4%C3%A4mist%C3%A4&embedded=true" 
+    width="100%" 
+    height="800" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0">
+Ladataan…
+</iframe>
