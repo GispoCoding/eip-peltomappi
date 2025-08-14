@@ -16,7 +16,7 @@ Voit tallentaa penetrometrillä saatuja arvoja seuraavan ohjevideon mukaisesti:
 
 Anna palautetta ominaisuudesta alla olevan lomakkeen avulla: 
 <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Penetrometri&embedded=true" 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&embedded=true" 
     width="100%" 
     height="800" 
     frameborder="0" 

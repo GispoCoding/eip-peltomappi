@@ -21,7 +21,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&amp;entry.76641795=Kohteen+lis%C3%A4%C3%A4mist%C3%A4&amp;embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url4&amp;embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
 
 Ladataan...
 
