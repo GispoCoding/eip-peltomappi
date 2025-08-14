@@ -3,6 +3,7 @@ name = "eip_peltomappi"
 requires-python = ">=3.12"
 version = "1.0.0"
 dependencies = [
+    "click>=8.2.1",
     "gdal==3.8.4",
     "mkdocs-redirects>=1.2.2",
     "mkdocs[i18n]>=1.6.1",
