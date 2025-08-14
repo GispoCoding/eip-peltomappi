@@ -8,12 +8,12 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 - Kohde:
   <div style="margin-left: 20px;">
-  - Hukkakaura  
-  - Laskuaukko  
-  - Kaivo  
-  - Rumpu  
-  - Kivi  
-  - Muu
+  - Hukkakaura<br/>  
+  - Laskuaukko<br/>  
+  - Kaivo<br/>  
+  - Rumpu<br/>  
+  - Kivi<br/>  
+  - Muu<br/>
   </div>
 
 
