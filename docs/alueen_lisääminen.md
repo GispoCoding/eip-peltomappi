@@ -18,11 +18,11 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 <div style="margin-left: 20px;">
 
--   Multava<br/>\
+-   Multava<br/>
 
--   Kalkitus<br/>\
+-   Kalkitus<br/>
 
--   Lannoitus<br/>\
+-   Lannoitus<br/>
 
 -   Muu<br/>
 
