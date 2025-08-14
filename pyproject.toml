@@ -1,0 +1,9 @@
+[project]
+name = "eip_peltomappi"
+requires-python = ">=3.11"
+version = "1.0.0"
+dependencies = [
+    "gdal==3.8.4",
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs[i18n]>=1.6.1",
+]

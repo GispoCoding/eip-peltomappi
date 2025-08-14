@@ -1,10 +1,6 @@
 # eip-peltomappi
 
-## Ohjeistuksen kehittäminen
-
-Ohjeistusta voi kehittää lokaalisti seuraavasti.
-
-### MkDocs virtuaaliympäristön kanssa
+## Kehittäminen
 
 1. Luo Python-virtuaaliympäristö:
 
@@ -26,22 +22,23 @@ Linux/macOS:
 source ./.venv/bin/activate
 ```
 
-3. Asenna MkDocs virtuaaliympäristöön:
+Asenna [uv-työkalu](https://docs.astral.sh/uv/) projektin hallinnointiin:
 
 ```shell
-pip install -r requirements.txt
+pip install uv
 ```
 
-Kun virtuaaliympäristö on luotu ja asennus tehty, seuraavan kerran kun aloitat
-kehityksen ainoastaan kohta 2 täytyy toistaa (virtuaaliympäristön aktivointi).
-
-### MkDocs ilman virtuaaliympäristöä
-
-Asenna MkDocs:
+Päivitä projektiympäristö (asentaa tarvittavat riippuvuudet):
 
 ```shell
-pip install mkdocs
+uv sync
 ```
+
+## Ohjeistuksen kehittäminen
+
+Ennen ohjeistuksen kehittämistä toista ensin [aiemmat komennot](#kehittäminen).
+Kun olet toistanut vaiheet kerran, ohjeistusta voi kehittää. Varmista kuitenkin,
+että virtuaaliympäristö on aktivoitu.
 
 ### MkDocs
 
