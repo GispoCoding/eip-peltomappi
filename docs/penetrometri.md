@@ -2,7 +2,7 @@
 
 Voit tallentaa penetrometrillä saatuja arvoja seuraavan ohjevideon mukaisesti:
 
-<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="100%" height="900"></iframe>
+<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 - Maan tiiveys:
   <div style="margin-left: 20px;">
