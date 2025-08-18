@@ -7,6 +7,7 @@ dependencies = [
     "gdal==3.8.4",
     "mkdocs-redirects>=1.2.2",
     "mkdocs[i18n]>=1.6.1",
+    "tqdm==4.67.1",
 ]
 
 [dependency-groups]
@@ -26,6 +27,12 @@ lint = [
 [tool.ruff]
 target-version = "py312"
 line-length = 120
+
+[tool.flake8]
+spellcheck-targets = "names"
+extend-ignore = [
+    "E501",
+]
 
 [tool.mypy]
 python_version = "3.12"
