@@ -11,6 +11,8 @@ nav:
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
   - Säädata: saadata.md
+  - Palaute: palaute.md
+  
 use_directory_urls: false
 
 markdown_extensions:
