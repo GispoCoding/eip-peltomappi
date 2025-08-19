@@ -11,8 +11,12 @@ nav:
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
   - Säädata: saadata.md
+<<<<<<< HEAD
   - Palaute: palaute.md
   
+=======
+  - MARA-kuoppa: mara_kuoppa.md
+>>>>>>> 6e4c0906282432e9a6d94fe2f50185ed38bcf33d
 use_directory_urls: false
 
 markdown_extensions:
