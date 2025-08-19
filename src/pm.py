@@ -2,11 +2,14 @@
 
 import logging
 import pathlib
+from typing import Callable
 
 import click
 
-from peltomappi.downloader import Downloader
+from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
+from peltomappi.prefix import PrefixType
+from peltomappi.utils import clean_string_to_filename
 
 
 @click.group(help="CLI tool to run Peltomappi processes")
@@ -26,19 +29,39 @@ def project():
     pass
 
 
-def convert_download_data(_, __, value) -> Downloader.Type:
-    return Downloader.Type[value]
+def str_to_path(_, __, argument) -> pathlib.Path:
+    return pathlib.Path(argument)
 
 
-def convert_output_directory(_, __, value) -> pathlib.Path:
-    return pathlib.Path(value)
+def validate_remove_field(_, __, argument) -> tuple[str] | None:
+    if len(set(argument)) != len(argument):
+        raise click.BadParameter(argument)
+
+    return argument
 
 
-@click.command(help="Downloads data used in a Peltomappi project")
+def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
+    if argument is None:
+        return None
+
+    # PrefixType should store functions in a 1-long tuple,
+    # retrieve the function by accessing the enum by the user-given
+    # string and getting the actual function from the first index
+    # of the matching enum value
+    return PrefixType[argument].value[0]
+
+
+@click.command(help="Divides input data into smaller areas, according to a configuration GeoPackage")
 @click.argument(
-    "data",
-    type=Downloader.Type.to_choice(),
-    callback=convert_download_data,
+    "input",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
 )
 @click.argument(
     "output_directory",
@@ -50,11 +73,43 @@ def convert_output_directory(_, __, value) -> pathlib.Path:
         writable=True,
         resolve_path=True,
     ),
-    callback=convert_output_directory,
+    callback=str_to_path,
 )
-def download(data, output_directory):
-    downloader = Downloader(data, output_directory)
-    downloader.run()
+@click.argument(
+    "config_gpkg",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "file_prefix",
+    type=click.STRING,
+    callback=lambda _, __, x: clean_string_to_filename(x),
+)
+@click.option(
+    "-n",
+    "--layer_name_generator",
+    type=PrefixType.to_choice(),
+    callback=prefixtype_to_callback,
+    help="Choose a layer name generator from a list of options",
+)
+def divide(
+    input,
+    output_directory,
+    config_gpkg,
+    file_prefix,
+    layer_name_generator,
+):
+    divider = Divider(input, output_directory, config_gpkg)
+    divider.divide(
+        filename_prefix=file_prefix,
+        new_layer_name_callback=layer_name_generator,
+    )
 
 
 @project.command(help="Creates a new Peltomappi project")
@@ -63,7 +118,7 @@ def create():
 
 
 if __name__ == "__main__":
-    cli.add_command(download)
+    cli.add_command(divide)
     cli.add_command(project)
 
     cli()

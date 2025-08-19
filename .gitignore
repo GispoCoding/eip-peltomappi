@@ -3,3 +3,8 @@ site
 uv.lock
 __pycache__
 out.gpkg
+peltolohkot.gpkg
+*.gpkg-shm
+*.gpkg-wal
+out
+output
