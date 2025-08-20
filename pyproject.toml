@@ -3,14 +3,16 @@ name = "eip_peltomappi"
 requires-python = ">=3.12"
 version = "1.0.0"
 dependencies = [
+    "tqdm==4.67.1",
     "click>=8.2.1",
     "gdal==3.8.4",
-    "mkdocs-redirects>=1.2.2",
-    "mkdocs[i18n]>=1.6.1",
-    "tqdm==4.67.1",
 ]
 
 [dependency-groups]
+mkdocs = [
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs[i18n]>=1.6.1",
+]
 
 dev = [
     "pre-commit>=4.2.0",
