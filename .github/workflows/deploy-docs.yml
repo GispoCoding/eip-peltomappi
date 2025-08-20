@@ -13,6 +13,10 @@ jobs:
           python-version: 3.x
       - name: Deploy docs
         run: |
-          python -m pip install uv
-          python -m uv sync --only-group docs
+          # TODO: this is a workaround, ideally the pyproject dependency groups would be
+          # used but there is a strange issue where trying to install only the docs
+          # group does not succeed because gdal is required, even though it is in a
+          # different group and installing gdal is completely superfluous to this workflow
+          python -m pip install 'mkdocs[i18n]'
+          python -m pip install mkdocs-redirects
           mkdocs gh-deploy --force --clean --verbose
