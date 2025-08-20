@@ -1,20 +1,20 @@
 site_name: Peltomappi
 site_url: https://github.com/GispoCoding/eip-peltomappi
 copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
-nav:  
+nav:
   - Koti: index.md
   - Esittely: esittely.md
   - Projektin lataaminen: projektin_lataaminen.md
   - Kohteen lisääminen: kohteen_lisääminen.md
   - Alueen lisääminen: alueen_lisääminen.md
-  - Alueen jakaminen: alueen_jakaminen.md 
+  - Alueen jakaminen: alueen_jakaminen.md
   - Reitin nauhoitus: reitin_nauhoitus.md
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
   - Säädata: saadata.md
   - MARA-kuoppa: mara_kuoppa.md
   - Palaute: palaute.md
-  
+
 use_directory_urls: false
 
 markdown_extensions:
