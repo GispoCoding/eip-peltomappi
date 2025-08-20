@@ -137,6 +137,10 @@ class Divider:
         Returns:
             Dictionary with the descriptions as keys and filter geometries as
             values.
+
+        Raises:
+            DividerConfigError: indirectly if validate_config_layer() raises
+            error
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
             self.config_gpkg,
@@ -164,6 +168,7 @@ class Divider:
 
         Raises:
             DividerError: if input dataset could not be opened.
+            DividerConfigError: indirectly, if configuration is invalid
         """
         config = self.__extract_config()
 
