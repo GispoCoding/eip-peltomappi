@@ -20,7 +20,7 @@ def test_divider(
         output_dir=temp_dir_path,
         config_gpkg=field_parcel_config,
         filename_prefix="peltolohkot",
-        new_layer_name_callback=field_parcel,
+        layer_name_callback=field_parcel,
     )
 
     divider.divide()

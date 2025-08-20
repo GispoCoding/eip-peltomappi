@@ -110,7 +110,7 @@ def divide(
         output_dir=output_directory,
         config_gpkg=config_gpkg,
         filename_prefix=file_prefix,
-        new_layer_name_callback=layer_name_generator,
+        layer_name_callback=layer_name_generator,
     )
     divider.divide()
 

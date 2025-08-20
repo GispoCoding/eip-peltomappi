@@ -25,7 +25,7 @@ class Divider:
     config_gpkg: Path
     filename_prefix: str
     layer_filter: tuple[str] | None
-    new_layer_name_callback: Callable[[str], str] | None
+    layer_name_callback: Callable[[str], str] | None
 
     def __init__(
         self,
@@ -35,14 +35,26 @@ class Divider:
         config_gpkg: Path,
         filename_prefix: str,
         layer_filter: tuple[str] | None = None,
-        new_layer_name_callback: Callable[[str], str] | None = None,
+        layer_name_callback: Callable[[str], str] | None = None,
     ) -> None:
+        """
+        Sets state for divider.
+
+        Args:
+            input_dataset: GDAL-compatible URI to the input dataset
+            output_dir: output directory for divided GeoPackages
+            config_gpkg: path to a configuration GeoPackage
+            filename_prefix: prefix for divided GeoPackages' filenames
+            layer_filter: optional layer filter
+            layer_name_callback: optional callable to modify output layer names
+        """
+
         self.input_dataset = input_dataset
         self.output_directory = output_dir
         self.config_gpkg = config_gpkg
         self.filename_prefix = filename_prefix
         self.layer_filter = layer_filter
-        self.new_layer_name_callback = new_layer_name_callback
+        self.layer_name_callback = layer_name_callback
 
     @staticmethod
     def validate_config_layer(layer: ogr.Layer | None) -> None:
@@ -135,25 +147,8 @@ class Divider:
         """
         Performs the division based on the set state.
 
-        The input dataset is divided according to the configuration GeoPackage
-        and new GeoPackages are saved for each area found in the config GPKG.
-        The config is validated and must be in a specific format. The newly
-        saved GeoPackages are named according to the set filename prefix and the
-        description found in the config.
-
-        The new GeoPackages are saved to the output directory. By default, all
-        layers in the input dataset are processed and saved to the divided
-        Geopackages, however it is possible to filter layers by name.
-
-        By default, layers in the divided GeoPackages retain the original name
-        from the input dataset, however it is possible to set a callback
-        function or lambda, which takes in the original layer name as a string
-        and returns a modified string. If this is done, the modified string will
-        be the new layer name. It should be noted that the callback should
-        produce a unique name for each layer.
-
         Raises:
-            DividerError if input dataset could not be opened.
+            DividerError: if input dataset could not be opened.
         """
         config = self.__extract_config()
 
@@ -185,8 +180,8 @@ class Divider:
 
                 out_layer_name = (
                     in_layer.GetName()
-                    if self.new_layer_name_callback is None
-                    else self.new_layer_name_callback(in_layer.GetName())
+                    if self.layer_name_callback is None
+                    else self.layer_name_callback(in_layer.GetName())
                 )
 
                 LOGGER.info(f"Processing layer: {in_layer_name}")
