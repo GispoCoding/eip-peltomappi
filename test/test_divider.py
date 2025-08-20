@@ -22,7 +22,6 @@ def test_divider(
         filename_prefix="peltolohkot",
         layer_name_callback=field_parcel,
     )
-
     divider.divide()
 
     output_1 = temp_dir_path / "peltolohkot_area1.gpkg"

@@ -60,6 +60,15 @@ class Divider:
     def validate_config_layer(layer: ogr.Layer | None) -> None:
         """
         Performs a series of validation checks of a configuration layer.
+        The configuration layer must fulfill these requirements:
+            - geometry type is polygon or multipolygon
+            - CRS is EPSG:3067
+            - has exactly 1 field
+            - the field must be called "description"
+            - the field must be of type "string"
+            - the layer cannot be empty
+            - no feature can have a null description
+            - description must be unique to each feature
 
         Raises:
             DividerConfigError: If any check fails.
@@ -104,6 +113,22 @@ class Divider:
             msg = "config layer has no features"
             raise DividerConfigError(msg)
 
+        descriptions = set()
+
+        feature: ogr.Feature
+        for feature in layer:
+            description: str = feature.GetFieldAsString(0)
+
+            if not description:
+                msg = "null description found!"
+                raise DividerConfigError(msg)
+
+            descriptions.add(description)
+
+        if len(descriptions) != layer.GetFeatureCount():
+            msg = "duplicate description found!"
+            raise DividerConfigError(msg)
+
     def __extract_config(self) -> dict[str, ogr.Geometry]:
         """
         Reads configuration from GeoPackage and returns a dictionary based on
@@ -112,9 +137,6 @@ class Divider:
         Returns:
             Dictionary with the descriptions as keys and filter geometries as
             values.
-
-        Raises:
-            DividerConfigError: If duplicate or null descriptions are found.
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
             self.config_gpkg,
@@ -130,13 +152,6 @@ class Divider:
         feature: ogr.Feature
         for feature in config_layer:
             description: str = feature.GetFieldAsString(0)
-            if description in result:
-                msg = "duplicate description found!"
-                raise DividerConfigError(msg)
-
-            if not description:
-                msg = "null description found!"
-                raise DividerConfigError(msg)
 
             geom: ogr.Geometry = feature.GetGeometryRef()
             result[description] = geom.Clone()
