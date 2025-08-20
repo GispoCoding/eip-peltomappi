@@ -1,4 +1,10 @@
-# eip-peltomappi
+# EIP-Peltomappi
+
+[![tests](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/tests.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/tests.yml)
+[![Deploy docs](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/deploy-docs.yml)
+[![Code style](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/code-style.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/code-style.yml)
+
+<img src="https://maaseutu.kuvat.fi/kuvat/Tuensaajalle/FI%20Euroopan%20unionin%20osarahoittama_.png?img=full" alt="drawing" width="200"/>
 
 ## Kehittäminen
 
