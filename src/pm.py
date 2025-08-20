@@ -105,11 +105,14 @@ def divide(
     file_prefix,
     layer_name_generator,
 ):
-    divider = Divider(input, output_directory, config_gpkg)
-    divider.divide(
+    divider = Divider(
+        input_dataset=input,
+        output_dir=output_directory,
+        config_gpkg=config_gpkg,
         filename_prefix=file_prefix,
         new_layer_name_callback=layer_name_generator,
     )
+    divider.divide()
 
 
 @project.command(help="Creates a new Peltomappi project")

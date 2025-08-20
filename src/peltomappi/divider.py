@@ -23,23 +23,34 @@ class Divider:
     input_dataset: Path
     output_directory: Path
     config_gpkg: Path
+    filename_prefix: str
+    layer_filter: tuple[str] | None
+    new_layer_name_callback: Callable[[str], str] | None
 
     def __init__(
         self,
+        *,
         input_dataset: Path,
         output_dir: Path,
         config_gpkg: Path,
+        filename_prefix: str,
+        layer_filter: tuple[str] | None = None,
+        new_layer_name_callback: Callable[[str], str] | None = None,
     ) -> None:
         self.input_dataset = input_dataset
         self.output_directory = output_dir
         self.config_gpkg = config_gpkg
+        self.filename_prefix = filename_prefix
+        self.layer_filter = layer_filter
+        self.new_layer_name_callback = new_layer_name_callback
 
     @staticmethod
     def validate_config_layer(layer: ogr.Layer | None) -> None:
         """
-        Confirms that the given configuration GeoPackage can actually be used.
+        Performs a series of validation checks of a configuration layer.
 
-        Raises a DividerConfigError otherwise.
+        Raises:
+            DividerConfigError: If any check fails.
         """
 
         if layer is None:
@@ -83,8 +94,15 @@ class Divider:
 
     def __extract_config(self) -> dict[str, ogr.Geometry]:
         """
-        Returns config from GeoPackage as a dictionary including the description
-        and the correspoding filter geometry.
+        Reads configuration from GeoPackage and returns a dictionary based on
+        it.
+
+        Returns:
+            Dictionary with the descriptions as keys and filter geometries as
+            values.
+
+        Raises:
+            DividerConfigError: If duplicate or null descriptions are found.
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
             self.config_gpkg,
@@ -113,13 +131,30 @@ class Divider:
 
         return result
 
-    def divide(
-        self,
-        *,
-        filename_prefix: str,
-        layers: tuple[str] | None = None,
-        new_layer_name_callback: Callable[[str], str] | None = None,
-    ) -> None:
+    def divide(self) -> None:
+        """
+        Performs the division based on the set state.
+
+        The input dataset is divided according to the configuration GeoPackage
+        and new GeoPackages are saved for each area found in the config GPKG.
+        The config is validated and must be in a specific format. The newly
+        saved GeoPackages are named according to the set filename prefix and the
+        description found in the config.
+
+        The new GeoPackages are saved to the output directory. By default, all
+        layers in the input dataset are processed and saved to the divided
+        Geopackages, however it is possible to filter layers by name.
+
+        By default, layers in the divided GeoPackages retain the original name
+        from the input dataset, however it is possible to set a callback
+        function or lambda, which takes in the original layer name as a string
+        and returns a modified string. If this is done, the modified string will
+        be the new layer name. It should be noted that the callback should
+        produce a unique name for each layer.
+
+        Raises:
+            DividerError if input dataset could not be opened.
+        """
         config = self.__extract_config()
 
         input_dataset: gdal.Dataset = gdal.OpenEx(
@@ -133,7 +168,7 @@ class Divider:
 
         for description, filter_geom in config.items():
             output_gpkg: Path = (
-                self.output_directory / f"{filename_prefix}_{clean_string_to_filename(description).lower()}.gpkg"
+                self.output_directory / f"{self.filename_prefix}_{clean_string_to_filename(description).lower()}.gpkg"
             )
 
             out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
@@ -145,13 +180,13 @@ class Divider:
                 in_layer = input_dataset.GetLayerByIndex(i)
                 in_layer_name = in_layer.GetName()
 
-                if layers is not None and in_layer_name not in layers:
+                if self.layer_filter is not None and in_layer_name not in self.layer_filter:
                     continue
 
                 out_layer_name = (
                     in_layer.GetName()
-                    if new_layer_name_callback is None
-                    else new_layer_name_callback(in_layer.GetName())
+                    if self.new_layer_name_callback is None
+                    else self.new_layer_name_callback(in_layer.GetName())
                 )
 
                 LOGGER.info(f"Processing layer: {in_layer_name}")

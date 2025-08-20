@@ -16,15 +16,14 @@ def test_divider(
     temp_dir_path = Path(temp_dir.name)
 
     divider = Divider(
-        field_parcel_mock_uri,
-        temp_dir_path,
-        field_parcel_config,
-    )
-
-    divider.divide(
+        input_dataset=field_parcel_mock_uri,
+        output_dir=temp_dir_path,
+        config_gpkg=field_parcel_config,
         filename_prefix="peltolohkot",
         new_layer_name_callback=field_parcel,
     )
+
+    divider.divide()
 
     output_1 = temp_dir_path / "peltolohkot_area1.gpkg"
     output_2 = temp_dir_path / "peltolohkot_area2.gpkg"
