@@ -98,12 +98,20 @@ def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
     callback=prefixtype_to_callback,
     help="Choose a layer name generator from a list of options",
 )
+@click.option(
+    "-d",
+    "--delete",
+    is_flag=True,
+    type=click.BOOL,
+    help="Delete any empty output GeoPackages and layers",
+)
 def divide(
     input,
     output_directory,
     config_gpkg,
     file_prefix,
     layer_name_generator,
+    delete,
 ):
     divider = Divider(
         input_dataset=input,
@@ -111,6 +119,7 @@ def divide(
         config_gpkg=config_gpkg,
         filename_prefix=file_prefix,
         layer_name_callback=layer_name_generator,
+        delete_empty=delete,
     )
     divider.divide()
 

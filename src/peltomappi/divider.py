@@ -31,6 +31,7 @@ class Divider:
     filename_prefix: str
     layer_filter: tuple[str] | None
     layer_name_callback: Callable[[str], str] | None
+    delete_empty: bool
 
     def __init__(
         self,
@@ -41,6 +42,7 @@ class Divider:
         filename_prefix: str,
         layer_filter: tuple[str] | None = None,
         layer_name_callback: Callable[[str], str] | None = None,
+        delete_empty: bool = False,
     ) -> None:
         """
         Sets state for divider.
@@ -52,6 +54,7 @@ class Divider:
             filename_prefix: prefix for divided GeoPackages' filenames
             layer_filter: optional layer filter
             layer_name_callback: optional callable to modify output layer names
+            delete_empty: skip empty layers and delete empty divisions?
         """
 
         self.input_dataset = input_dataset
@@ -60,6 +63,7 @@ class Divider:
         self.filename_prefix = filename_prefix
         self.layer_filter = layer_filter
         self.layer_name_callback = layer_name_callback
+        self.delete_empty = delete_empty
 
     @staticmethod
     def validate_config_layer(layer: ogr.Layer | None) -> None:
@@ -210,7 +214,7 @@ class Divider:
 
                 in_layer_total_features = in_layer.GetFeatureCount(1)
 
-                if in_layer_total_features == 0:
+                if self.delete_empty and in_layer_total_features == 0:
                     LOGGER.info(f"Layer {in_layer_name} has zero features in {description}, skipping layer...")
                     continue
 
@@ -266,7 +270,8 @@ class Divider:
                     f"Layer saved to {output_gpkg}|layername={out_layer_name}",
                 )
 
-            total_output_layers = output_dataset.GetLayerCount()
-            if total_output_layers == 0:
-                LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers, deleting...")
-                out_driver.DeleteDataSource(output_gpkg)
+            if self.delete_empty:
+                total_output_layers = output_dataset.GetLayerCount()
+                if total_output_layers == 0:
+                    LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers, deleting...")
+                    out_driver.DeleteDataSource(output_gpkg)
