@@ -31,7 +31,7 @@ pip install uv
 Päivitä projektiympäristö (asentaa tarvittavat riippuvuudet):
 
 ```shell
-uv sync
+uv sync --all-groups
 ```
 
 Asenna pre-commit hook:
