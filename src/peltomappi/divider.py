@@ -20,6 +20,11 @@ class DividerConfigError(Exception):
 
 
 class Divider:
+    """
+    Class for executing division of spatial data i.e. reading in a larger
+    dataset and dividing it to smaller parts using a spatial filter.
+    """
+
     input_dataset: Path
     output_directory: Path
     config_gpkg: Path
@@ -41,7 +46,7 @@ class Divider:
         Sets state for divider.
 
         Args:
-            input_dataset: GDAL-compatible URI to the input dataset
+            input_dataset: path to the input dataset
             output_dir: output directory for divided GeoPackages
             config_gpkg: path to a configuration GeoPackage
             filename_prefix: prefix for divided GeoPackages' filenames
@@ -192,10 +197,21 @@ class Divider:
             LOGGER.info(f"Dividing {description}.")
 
             for i in range(0, input_dataset.GetLayerCount()):
-                in_layer = input_dataset.GetLayerByIndex(i)
-                in_layer_name = in_layer.GetName()
+                in_layer: ogr.Layer = input_dataset.GetLayerByIndex(i)
+                in_layer_name: str = in_layer.GetName()
 
                 if self.layer_filter is not None and in_layer_name not in self.layer_filter:
+                    continue
+
+                LOGGER.info(f"Processing layer: {in_layer_name}")
+
+                in_layer.SetSpatialFilter(filter_geom)
+                in_layer_defn: ogr.FeatureDefn = in_layer.GetLayerDefn()
+
+                in_layer_total_features = in_layer.GetFeatureCount(1)
+
+                if in_layer_total_features == 0:
+                    LOGGER.info(f"Layer {in_layer_name} has zero features in {description}, skipping layer...")
                     continue
 
                 out_layer_name = (
@@ -203,11 +219,6 @@ class Divider:
                     if self.layer_name_callback is None
                     else self.layer_name_callback(in_layer.GetName())
                 )
-
-                LOGGER.info(f"Processing layer: {in_layer_name}")
-
-                in_layer.SetSpatialFilter(filter_geom)
-                in_layer_defn: ogr.FeatureDefn = in_layer.GetLayerDefn()
 
                 crs: osr.SpatialReference = osr.SpatialReference()
                 crs.ImportFromEPSG(3067)
@@ -226,17 +237,13 @@ class Divider:
 
                     out_layer.CreateField(in_field_defn)
 
-                progress_total = 0
                 show_progress = LOGGER.level < logging.WARNING
-
-                if show_progress:
-                    progress_total = in_layer.GetFeatureCount()
 
                 out_layer_defn: ogr.FeatureDefn = out_layer.GetLayerDefn()
                 in_feature: ogr.Feature
                 for in_feature in tqdm(
                     in_layer,
-                    total=progress_total,
+                    total=in_layer_total_features,
                     leave=False,
                     disable=not show_progress,
                 ):
@@ -259,5 +266,7 @@ class Divider:
                     f"Layer saved to {output_gpkg}|layername={out_layer_name}",
                 )
 
-                in_layer = None
-                del out_layer
+            total_output_layers = output_dataset.GetLayerCount()
+            if total_output_layers == 0:
+                LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers, deleting...")
+                out_driver.DeleteDataSource(output_gpkg)
