@@ -7,11 +7,14 @@ nav:
   - Projektin lataaminen: projektin_lataaminen.md
   - Kohteen lisääminen: kohteen_lisääminen.md
   - Alueen lisääminen: alueen_lisääminen.md
+  - Alueen jakaminen: alueen_jakaminen.md 
   - Reitin nauhoitus: reitin_nauhoitus.md
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
   - Säädata: saadata.md
   - MARA-kuoppa: mara_kuoppa.md
+  - Palaute: palaute.md
+  
 use_directory_urls: false
 
 markdown_extensions:
