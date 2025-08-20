@@ -12,5 +12,5 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install uv
-      - run: uv sync --only-group mkdocs
+      - run: uv sync --only-group docs
       - run: mkdocs gh-deploy --force --clean --verbose
