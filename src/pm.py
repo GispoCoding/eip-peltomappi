@@ -100,7 +100,7 @@ def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
 )
 @click.option(
     "-d",
-    "--delete",
+    "--delete-empty",
     is_flag=True,
     type=click.BOOL,
     help="Delete any empty output GeoPackages and layers",
