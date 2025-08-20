@@ -159,8 +159,12 @@ class Divider:
                 in_layer.SetSpatialFilter(filter_geom)
                 in_layer_defn: ogr.FeatureDefn = in_layer.GetLayerDefn()
 
+                crs: osr.SpatialReference = osr.SpatialReference()
+                crs.ImportFromEPSG(3067)
+
                 out_layer: ogr.Layer = output_dataset.CreateLayer(
                     out_layer_name,
+                    crs,
                     geom_type=in_layer_defn.GetGeomType(),
                 )
 
