@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - docs
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,5 +13,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force --clean --verbose
+      - name: Deploy docs
+        run: |
+          # TODO: this is a workaround, ideally the pyproject dependency groups would be
+          # used but there is a strange issue where trying to install only the docs
+          # group does not succeed because gdal is required, even though it is in a
+          # different group and installing gdal is completely superfluous to this workflow
+          python -m pip install 'mkdocs[i18n]'
+          python -m pip install mkdocs-redirects
+          mkdocs gh-deploy --force --clean --verbose

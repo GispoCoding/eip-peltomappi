@@ -1,0 +1,57 @@
+[project]
+name = "eip_peltomappi"
+requires-python = ">=3.12"
+version = "1.0.0"
+
+[dependency-groups]
+pm = [
+    "tqdm==4.67.1",
+    "click>=8.2.1",
+    "gdal==3.8.4",
+]
+
+docs = [
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs[i18n]>=1.6.1",
+]
+
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "types-tqdm>=4.67.0.20250809",
+]
+
+lint = [
+    "flake8>=7.3.0",
+    "flake8-pyproject>=1.2.3",
+    "flake8-spellcheck>=0.28.0",
+    "mypy>=1.16.1",
+    "ruff>=0.12.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.flake8]
+spellcheck-targets = "names"
+extend-ignore = [
+    "E501",
+]
+
+[tool.mypy]
+python_version = "3.12"
+follow_imports = "normal"
+show_column_numbers = true
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = ["osgeo.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["test"]
+pythonpath = [
+    "src",
+]

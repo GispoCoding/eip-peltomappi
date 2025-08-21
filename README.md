@@ -1,10 +1,12 @@
-# eip-peltomappi
+# EIP-Peltomappi
 
-## Ohjeistuksen kehittäminen
+[![tests](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/tests.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/tests.yml)
+[![Deploy docs](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/deploy-docs.yml)
+[![Code style](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/code-style.yml/badge.svg)](https://github.com/GispoCoding/eip-peltomappi/actions/workflows/code-style.yml)
 
-Ohjeistusta voi kehittää lokaalisti seuraavasti.
+<img src="https://maaseutu.kuvat.fi/kuvat/Tuensaajalle/FI%20Euroopan%20unionin%20osarahoittama_.png?img=full" alt="drawing" width="200"/>
 
-### MkDocs virtuaaliympäristön kanssa
+## Kehittäminen
 
 1. Luo Python-virtuaaliympäristö:
 
@@ -26,22 +28,29 @@ Linux/macOS:
 source ./.venv/bin/activate
 ```
 
-3. Asenna MkDocs virtuaaliympäristöön:
+Asenna [uv-työkalu](https://docs.astral.sh/uv/) projektin hallinnointiin:
 
 ```shell
-pip install -r requirements.txt
+pip install uv
 ```
 
-Kun virtuaaliympäristö on luotu ja asennus tehty, seuraavan kerran kun aloitat
-kehityksen ainoastaan kohta 2 täytyy toistaa (virtuaaliympäristön aktivointi).
-
-### MkDocs ilman virtuaaliympäristöä
-
-Asenna MkDocs:
+Päivitä projektiympäristö (asentaa tarvittavat riippuvuudet):
 
 ```shell
-pip install mkdocs
+uv sync --all-groups
 ```
+
+Asenna pre-commit hook:
+
+```shell
+pre-commit install
+```
+
+## Ohjeistuksen kehittäminen
+
+Ennen ohjeistuksen kehittämistä toista ensin [aiemmat komennot](#kehittäminen).
+Kun olet toistanut vaiheet kerran, ohjeistusta voi kehittää. Varmista kuitenkin,
+että virtuaaliympäristö on aktivoitu.
 
 ### MkDocs
 
