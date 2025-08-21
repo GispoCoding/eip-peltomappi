@@ -16,3 +16,4 @@ wkb
 crs
 prefixtype
 testdata
+subprojects
