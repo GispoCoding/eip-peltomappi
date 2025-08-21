@@ -6,7 +6,7 @@ from peltomappi.config import Config
 from peltomappi.project import Project
 
 
-def test_divider(
+def test_project(
     dummy_project: Path,
     field_parcel_config: Path,
 ):
