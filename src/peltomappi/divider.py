@@ -22,13 +22,13 @@ class Divider:
     dataset and dividing it to smaller parts using a spatial filter.
     """
 
-    input_dataset: Path
-    output_directory: Path
-    config: Config
-    filename_prefix: str
-    layer_filter: tuple[str] | None
-    layer_name_callback: Callable[[str], str] | None
-    delete_empty: bool
+    __input_dataset: Path
+    __output_directory: Path
+    __config: Config
+    __filename_prefix: str
+    __layer_filter: tuple[str] | None
+    __layer_name_callback: Callable[[str], str] | None
+    __delete_empty: bool
 
     def __init__(
         self,
@@ -54,13 +54,13 @@ class Divider:
             delete_empty: whether to include empty layers and output GPKGs
         """
 
-        self.input_dataset = input_dataset
-        self.output_directory = output_dir
-        self.config = config
-        self.filename_prefix = filename_prefix
-        self.layer_filter = layer_filter
-        self.layer_name_callback = layer_name_callback
-        self.delete_empty = delete_empty
+        self.__input_dataset = input_dataset
+        self.__output_directory = output_dir
+        self.__config = config
+        self.__filename_prefix = filename_prefix
+        self.__layer_filter = layer_filter
+        self.__layer_name_callback = layer_name_callback
+        self.__delete_empty = delete_empty
 
     def divide(self) -> None:
         """
@@ -70,20 +70,21 @@ class Divider:
             DividerError: if input dataset could not be opened.
             DividerConfigError: indirectly, if configuration is invalid
         """
-        config = self.config.to_dict()
+        config = self.__config.to_dict()
 
         input_dataset: gdal.Dataset = gdal.OpenEx(
-            self.input_dataset,
+            self.__input_dataset,
             gdal.OF_VECTOR | gdal.OF_READONLY,
         )
 
         if not input_dataset:
-            msg = f"Could not open dataset from {self.input_dataset}"
+            msg = f"Could not open dataset from {self.__input_dataset}"
             raise DividerError(msg)
 
         for description, filter_geom in config.items():
             output_gpkg: Path = (
-                self.output_directory / f"{self.filename_prefix}_{clean_string_to_filename(description).lower()}.gpkg"
+                self.__output_directory
+                / f"{self.__filename_prefix}_{clean_string_to_filename(description).lower()}.gpkg"
             )
 
             out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
@@ -95,7 +96,7 @@ class Divider:
                 in_layer: ogr.Layer = input_dataset.GetLayerByIndex(i)
                 in_layer_name: str = in_layer.GetName()
 
-                if self.layer_filter is not None and in_layer_name not in self.layer_filter:
+                if self.__layer_filter is not None and in_layer_name not in self.__layer_filter:
                     continue
 
                 LOGGER.info(f"Processing layer: {in_layer_name}")
@@ -105,14 +106,14 @@ class Divider:
 
                 in_layer_total_features = in_layer.GetFeatureCount(1)
 
-                if self.delete_empty and in_layer_total_features == 0:
+                if self.__delete_empty and in_layer_total_features == 0:
                     LOGGER.info(f"Layer {in_layer_name} has zero features in {description}, skipping layer...")
                     continue
 
                 out_layer_name = (
                     in_layer.GetName()
-                    if self.layer_name_callback is None
-                    else self.layer_name_callback(in_layer.GetName())
+                    if self.__layer_name_callback is None
+                    else self.__layer_name_callback(in_layer.GetName())
                 )
 
                 crs: osr.SpatialReference = osr.SpatialReference()
@@ -161,7 +162,7 @@ class Divider:
                     f"Layer saved to {output_gpkg}|layername={out_layer_name}",
                 )
 
-            if self.delete_empty:
+            if self.__delete_empty:
                 total_output_layers = output_dataset.GetLayerCount()
                 if total_output_layers == 0:
                     LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers, deleting...")
