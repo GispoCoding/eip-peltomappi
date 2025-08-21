@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from typing import Callable
+from typing import Callable, NamedTuple
 
 from osgeo import gdal, ogr, osr
 from tqdm import tqdm
@@ -10,6 +10,11 @@ from peltomappi.logger import LOGGER
 from peltomappi.utils import clean_string_to_filename
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
+
+
+class DivisionResult(NamedTuple):
+    folders: tuple[Path, ...]
+    files: tuple[Path, ...]
 
 
 class DividerError(Exception):
@@ -28,7 +33,6 @@ class Divider:
     __filename: str
     __layer_filter: tuple[str] | None
     __layer_name_callback: Callable[[str], str] | None
-    __delete_empty: bool
 
     def __init__(
         self,
@@ -39,7 +43,6 @@ class Divider:
         filename: str,
         layer_filter: tuple[str] | None = None,
         layer_name_callback: Callable[[str], str] | None = None,
-        delete_empty: bool = False,
     ) -> None:
         """
         Sets state for Divider.
@@ -60,9 +63,8 @@ class Divider:
         self.__filename = filename
         self.__layer_filter = layer_filter
         self.__layer_name_callback = layer_name_callback
-        self.__delete_empty = delete_empty
 
-    def divide(self) -> None:
+    def divide(self) -> DivisionResult:
         """
         Performs the division based on the set state.
 
@@ -76,6 +78,9 @@ class Divider:
             gdal.OF_VECTOR | gdal.OF_READONLY,
         )
 
+        files = []
+        folders = []
+
         if not input_dataset:
             msg = f"Could not open dataset from {self.__input_dataset}"
             raise DividerError(msg)
@@ -84,7 +89,11 @@ class Divider:
             area_directory = Path(self.__output_directory / clean_string_to_filename(description).lower())
             area_directory.mkdir(exist_ok=True)
 
+            folders.append(area_directory)
+
             output_gpkg: Path = area_directory / f"{self.__filename}.gpkg"
+
+            files.append(output_gpkg)
 
             out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
             output_dataset: ogr.DataSource = out_driver.CreateDataSource(output_gpkg)
@@ -105,9 +114,8 @@ class Divider:
 
                 in_layer_total_features = in_layer.GetFeatureCount(1)
 
-                if self.__delete_empty and in_layer_total_features == 0:
-                    LOGGER.info(f"Layer {in_layer_name} has zero features in {description}, skipping layer...")
-                    continue
+                if in_layer_total_features == 0:
+                    LOGGER.info(f"Layer {in_layer_name} has zero features in {description}!")
 
                 out_layer_name = (
                     in_layer.GetName()
@@ -161,8 +169,11 @@ class Divider:
                     f"Layer saved to {output_gpkg}|layername={out_layer_name}",
                 )
 
-            if self.__delete_empty:
-                total_output_layers = output_dataset.GetLayerCount()
-                if total_output_layers == 0:
-                    LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers, deleting...")
-                    out_driver.DeleteDataSource(output_gpkg)
+            total_output_layers = output_dataset.GetLayerCount()
+            if total_output_layers == 0:
+                LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers!")
+
+        return DivisionResult(
+            folders=tuple(folders),
+            files=tuple(files),
+        )

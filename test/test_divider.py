@@ -25,13 +25,22 @@ def test_divider(
         filename="peltolohkot",
         layer_name_callback=field_parcel,
     )
-    divider.divide()
+    res = divider.divide()
 
     output_1 = temp_dir_path / "area1" / "peltolohkot.gpkg"
     output_2 = temp_dir_path / "area2" / "peltolohkot.gpkg"
 
     assert output_1.exists()
     assert output_2.exists()
+
+    assert len(res.files) == 2
+    assert len(res.folders) == 2
+
+    assert res.files[0] == output_1
+    assert res.files[1] == output_2
+
+    assert res.folders[0] == temp_dir_path / "area1"
+    assert res.folders[1] == temp_dir_path / "area2"
 
     def test_dataset(
         dataset: gdal.Dataset,

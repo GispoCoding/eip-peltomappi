@@ -132,3 +132,6 @@ class Config:
             result[description] = geom.Clone()
 
         return result
+
+    def descriptions(self) -> tuple[str, ...]:
+        return tuple(self.to_dict().keys())

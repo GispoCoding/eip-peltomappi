@@ -10,6 +10,7 @@ from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
 from peltomappi.prefix import PrefixType
+from peltomappi.project import Project
 from peltomappi.utils import clean_string_to_filename
 
 
@@ -99,20 +100,12 @@ def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
     callback=prefixtype_to_callback,
     help="Choose a layer name generator from a list of options",
 )
-@click.option(
-    "-d",
-    "--delete-empty",
-    is_flag=True,
-    type=click.BOOL,
-    help="Delete any empty output GeoPackages and layers",
-)
 def divide(
     input,
     output_directory,
     config_gpkg,
     file_prefix,
     layer_name_generator,
-    delete_empty,
 ):
     config = Config(config_gpkg)
 
@@ -120,9 +113,8 @@ def divide(
         input_dataset=input,
         output_dir=output_directory,
         config=config,
-        filename_prefix=file_prefix,
+        filename=file_prefix,
         layer_name_callback=layer_name_generator,
-        delete_empty=delete_empty,
     )
     divider.divide()
 
@@ -167,9 +159,14 @@ def create(
     output_directory,
     config_gpkg,
 ):
-    print(input_directory)
-    print(output_directory)
-    print(config_gpkg)
+    config = Config(config_gpkg)
+
+    project = Project(
+        input_directory,
+        output_directory,
+        config,
+    )
+    project.create_subprojects()
 
 
 if __name__ == "__main__":
