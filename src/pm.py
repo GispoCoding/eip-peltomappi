@@ -95,10 +95,17 @@ def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
 )
 @click.option(
     "-n",
-    "--layer_name_generator",
+    "--layer-name-generator",
     type=PrefixType.to_choice(),
     callback=prefixtype_to_callback,
     help="Choose a layer name generator from a list of options",
+)
+@click.option(
+    "-o",
+    "--overwrite",
+    type=click.BOOL,
+    is_flag=True,
+    help="Allow command to overwrite files",
 )
 def divide(
     input,
@@ -106,6 +113,7 @@ def divide(
     config_gpkg,
     file_prefix,
     layer_name_generator,
+    overwrite,
 ):
     config = Config(config_gpkg)
 
@@ -115,6 +123,7 @@ def divide(
         config=config,
         filename=file_prefix,
         layer_name_callback=layer_name_generator,
+        overwrite=overwrite,
     )
     divider.divide()
 

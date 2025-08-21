@@ -33,6 +33,7 @@ class Divider:
     __filename: str
     __layer_filter: tuple[str] | None
     __layer_name_callback: Callable[[str], str] | None
+    __overwrite: bool
 
     def __init__(
         self,
@@ -43,6 +44,7 @@ class Divider:
         filename: str,
         layer_filter: tuple[str] | None = None,
         layer_name_callback: Callable[[str], str] | None = None,
+        overwrite: bool = False,
     ) -> None:
         """
         Sets state for Divider.
@@ -54,7 +56,7 @@ class Divider:
             filename: filename of divided GPKG
             layer_filter: optional layer filter
             layer_name_callback: optional callable to modify output layer names
-            delete_empty: whether to include empty layers and output GPKGs
+            overwrite: whether divider is allowed to overwrite files
         """
 
         self.__input_dataset = input_dataset
@@ -63,6 +65,7 @@ class Divider:
         self.__filename = filename
         self.__layer_filter = layer_filter
         self.__layer_name_callback = layer_name_callback
+        self.__overwrite = overwrite
 
     def divide(self) -> DivisionResult:
         """
@@ -92,6 +95,12 @@ class Divider:
             folders.append(area_directory)
 
             output_gpkg: Path = area_directory / f"{self.__filename}.gpkg"
+
+            if not self.__overwrite and output_gpkg.exists():
+                msg = (
+                    f"attempting to write file {output_gpkg} but it already exists and overwrite has not been permitted"
+                )
+                raise DividerError(msg)
 
             files.append(output_gpkg)
 
