@@ -17,3 +17,5 @@ crs
 prefixtype
 testdata
 subprojects
+iterdir
+subproject

@@ -1,11 +1,14 @@
-import tempfile
-
 from pathlib import Path
+import shutil
 
 from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
 from peltomappi.utils import clean_string_to_filename
+
+
+class ProjectError(Exception):
+    pass
 
 
 class Project:
@@ -36,14 +39,11 @@ class Project:
         self.__config = config
 
     def create_subprojects(self):
-        temp_dir = tempfile.TemporaryDirectory()
-        temp_dir_path = Path(temp_dir.name)
-
         for file in self.__input_project.glob("*.gpkg"):
             LOGGER.info(f"DIVIDING {file.stem}")
             divider = Divider(
                 input_dataset=file,
-                output_dir=temp_dir_path,
+                output_dir=self.__output_directory,
                 config=self.__config,
                 filename=file.stem,
             )
@@ -51,4 +51,23 @@ class Project:
 
         for description in self.__config.descriptions():
             description = clean_string_to_filename(description)
-            print(type(description), description)
+
+            # divider should've created this, raise error if for some reason it
+            # didn't
+            subproject_dir = self.__output_directory / description
+
+            if not subproject_dir.exists():
+                msg = f"subproject directory {subproject_dir} was not created!"
+                raise ProjectError(msg)
+
+            for file in self.__input_project.iterdir():
+                if (
+                    file.name.endswith(".gpkg")
+                    or file.name.endswith(".gpkg-wal")
+                    or file.name.endswith(".gpkg-shm")
+                    or file.stem == ".mergin"
+                    or file.stem == "proj"
+                ):
+                    continue
+
+                shutil.copy(file, subproject_dir)
