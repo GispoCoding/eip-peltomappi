@@ -8,7 +8,7 @@ Asenna QGIS seuraamalla asennusohjeita.
 
 ## MerginMaps-lisäosan asentaminen QGIS:iin
 
-Avaa QGIS.
+Avaa QGIS
 
 Valitse ylävalikosta Lisäosat → Manage and Install Plugins... (Lisäosat → Hallinnoi ja asenna lisäosia).
 
