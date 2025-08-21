@@ -6,6 +6,7 @@ from typing import Callable
 
 import click
 
+from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
 from peltomappi.prefix import PrefixType
@@ -111,22 +112,64 @@ def divide(
     config_gpkg,
     file_prefix,
     layer_name_generator,
-    delete,
+    delete_empty,
 ):
+    config = Config(config_gpkg)
+
     divider = Divider(
         input_dataset=input,
         output_dir=output_directory,
-        config_gpkg=config_gpkg,
+        config=config,
         filename_prefix=file_prefix,
         layer_name_callback=layer_name_generator,
-        delete_empty=delete,
+        delete_empty=delete_empty,
     )
     divider.divide()
 
 
 @project.command(help="Creates a new Peltomappi project")
-def create():
-    LOGGER.error("unimplemented command")
+@click.argument(
+    "input_directory",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "output_directory",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=False,
+        readable=True,
+        writable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "config_gpkg",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+def create(
+    input_directory,
+    output_directory,
+    config_gpkg,
+):
+    print(input_directory)
+    print(output_directory)
+    print(config_gpkg)
 
 
 if __name__ == "__main__":

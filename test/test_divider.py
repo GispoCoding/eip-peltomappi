@@ -4,6 +4,7 @@ import tempfile
 
 from osgeo import gdal, ogr
 
+from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.prefix import field_parcel
 
@@ -15,10 +16,12 @@ def test_divider(
     temp_dir = tempfile.TemporaryDirectory()
     temp_dir_path = Path(temp_dir.name)
 
+    config = Config(field_parcel_config)
+
     divider = Divider(
         input_dataset=field_parcel_mock_uri,
         output_dir=temp_dir_path,
-        config_gpkg=field_parcel_config,
+        config=config,
         filename_prefix="peltolohkot",
         layer_name_callback=field_parcel,
     )
