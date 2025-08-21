@@ -22,13 +22,13 @@ def test_divider(
         input_dataset=field_parcel_mock_uri,
         output_dir=temp_dir_path,
         config=config,
-        filename_prefix="peltolohkot",
+        filename="peltolohkot",
         layer_name_callback=field_parcel,
     )
     divider.divide()
 
-    output_1 = temp_dir_path / "peltolohkot_area1.gpkg"
-    output_2 = temp_dir_path / "peltolohkot_area2.gpkg"
+    output_1 = temp_dir_path / "area1" / "peltolohkot.gpkg"
+    output_2 = temp_dir_path / "area2" / "peltolohkot.gpkg"
 
     assert output_1.exists()
     assert output_2.exists()

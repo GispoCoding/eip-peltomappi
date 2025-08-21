@@ -25,7 +25,7 @@ class Divider:
     __input_dataset: Path
     __output_directory: Path
     __config: Config
-    __filename_prefix: str
+    __filename: str
     __layer_filter: tuple[str] | None
     __layer_name_callback: Callable[[str], str] | None
     __delete_empty: bool
@@ -36,7 +36,7 @@ class Divider:
         input_dataset: Path,
         output_dir: Path,
         config: Config,
-        filename_prefix: str,
+        filename: str,
         layer_filter: tuple[str] | None = None,
         layer_name_callback: Callable[[str], str] | None = None,
         delete_empty: bool = False,
@@ -48,7 +48,7 @@ class Divider:
             input_dataset: path to the input dataset
             output_dir: output directory for divided GeoPackages
             config: configuration object
-            filename_prefix: prefix for divided GPKG's filenames
+            filename: filename of divided GPKG
             layer_filter: optional layer filter
             layer_name_callback: optional callable to modify output layer names
             delete_empty: whether to include empty layers and output GPKGs
@@ -57,7 +57,7 @@ class Divider:
         self.__input_dataset = input_dataset
         self.__output_directory = output_dir
         self.__config = config
-        self.__filename_prefix = filename_prefix
+        self.__filename = filename
         self.__layer_filter = layer_filter
         self.__layer_name_callback = layer_name_callback
         self.__delete_empty = delete_empty
@@ -68,7 +68,6 @@ class Divider:
 
         Raises:
             DividerError: if input dataset could not be opened.
-            DividerConfigError: indirectly, if configuration is invalid
         """
         config = self.__config.to_dict()
 
@@ -82,10 +81,10 @@ class Divider:
             raise DividerError(msg)
 
         for description, filter_geom in config.items():
-            output_gpkg: Path = (
-                self.__output_directory
-                / f"{self.__filename_prefix}_{clean_string_to_filename(description).lower()}.gpkg"
-            )
+            area_directory = Path(self.__output_directory / clean_string_to_filename(description).lower())
+            area_directory.mkdir(exist_ok=True)
+
+            output_gpkg: Path = area_directory / f"{self.__filename}.gpkg"
 
             out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
             output_dataset: ogr.DataSource = out_driver.CreateDataSource(output_gpkg)
