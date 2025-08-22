@@ -4,6 +4,7 @@ import tempfile
 
 from osgeo import gdal, ogr
 
+from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.prefix import field_parcel
 
@@ -15,20 +16,31 @@ def test_divider(
     temp_dir = tempfile.TemporaryDirectory()
     temp_dir_path = Path(temp_dir.name)
 
+    config = Config(field_parcel_config)
+
     divider = Divider(
         input_dataset=field_parcel_mock_uri,
         output_dir=temp_dir_path,
-        config_gpkg=field_parcel_config,
-        filename_prefix="peltolohkot",
+        config=config,
+        filename="peltolohkot",
         layer_name_callback=field_parcel,
     )
-    divider.divide()
+    res = divider.divide()
 
-    output_1 = temp_dir_path / "peltolohkot_area1.gpkg"
-    output_2 = temp_dir_path / "peltolohkot_area2.gpkg"
+    output_1 = temp_dir_path / "area1" / "peltolohkot.gpkg"
+    output_2 = temp_dir_path / "area2" / "peltolohkot.gpkg"
 
     assert output_1.exists()
     assert output_2.exists()
+
+    assert len(res.files) == 2
+    assert len(res.folders) == 2
+
+    assert res.files[0] == output_1
+    assert res.files[1] == output_2
+
+    assert res.folders[0] == temp_dir_path / "area1"
+    assert res.folders[1] == temp_dir_path / "area2"
 
     def test_dataset(
         dataset: gdal.Dataset,

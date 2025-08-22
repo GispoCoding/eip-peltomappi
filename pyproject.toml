@@ -6,8 +6,9 @@ version = "1.0.0"
 [dependency-groups]
 pm = [
     "tqdm==4.67.1",
-    "click>=8.2.1",
+    "click>=8.1.3",
     "gdal==3.8.4",
+    "mergin-client==0.10.4",
 ]
 
 docs = [

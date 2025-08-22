@@ -6,9 +6,11 @@ from typing import Callable
 
 import click
 
+from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
 from peltomappi.prefix import PrefixType
+from peltomappi.project import Project
 from peltomappi.utils import clean_string_to_filename
 
 
@@ -93,17 +95,17 @@ def prefixtype_to_callback(_, __, argument) -> Callable[[str], str] | None:
 )
 @click.option(
     "-n",
-    "--layer_name_generator",
+    "--layer-name-generator",
     type=PrefixType.to_choice(),
     callback=prefixtype_to_callback,
     help="Choose a layer name generator from a list of options",
 )
 @click.option(
-    "-d",
-    "--delete-empty",
-    is_flag=True,
+    "-o",
+    "--overwrite",
     type=click.BOOL,
-    help="Delete any empty output GeoPackages and layers",
+    is_flag=True,
+    help="Allow command to overwrite files",
 )
 def divide(
     input,
@@ -111,22 +113,69 @@ def divide(
     config_gpkg,
     file_prefix,
     layer_name_generator,
-    delete,
+    overwrite,
 ):
+    config = Config(config_gpkg)
+
     divider = Divider(
         input_dataset=input,
         output_dir=output_directory,
-        config_gpkg=config_gpkg,
-        filename_prefix=file_prefix,
+        config=config,
+        filename=file_prefix,
         layer_name_callback=layer_name_generator,
-        delete_empty=delete,
+        overwrite=overwrite,
     )
     divider.divide()
 
 
 @project.command(help="Creates a new Peltomappi project")
-def create():
-    LOGGER.error("unimplemented command")
+@click.argument(
+    "input_directory",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "output_directory",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=False,
+        readable=True,
+        writable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "config_gpkg",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+def create(
+    input_directory,
+    output_directory,
+    config_gpkg,
+):
+    config = Config(config_gpkg)
+
+    project = Project(
+        input_directory,
+        output_directory,
+        config,
+    )
+    project.create_subprojects()
 
 
 if __name__ == "__main__":
