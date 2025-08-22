@@ -2,7 +2,11 @@
 
 Mene QGIS:n viralliselle sivulle: <https://qgis.org/>
 
-Valitse Download Now ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux).
+Valitse Download Now ja lataa versio:
+
+![](img/projektin_lataaminen_qgisiin/img1.png){width="261"}
+
+käyttöjärjestelmällesi (Windows, Mac, Linux).
 
 Asenna QGIS seuraamalla asennusohjeita.
 
@@ -16,26 +20,38 @@ Kirjoita hakukenttään Mergin.
 
 Valitse Mergin Maps ja klikkaa Asenna lisäosa.
 
-Kun asennus on valmis, lisäosa löytyy QGIS:n työkalupalkista ikkunasta, jonka otsikko on Mergin Maps.
+![](img/projektin_lataaminen_qgisiin/img2.png)
 
-3.  Kirjautuminen MerginMaps-lisäosaan
+Kun asennus on valmis, lisäosa löytyy QGIS:n selain ikkunasta, jonka otsikko on Mergin Maps.
 
-Avaa lisäosa valikosta: Plugins → Mergin Maps → Login tai työkalupalkista Mergin Maps -ikonista.
+**Kirjautuminen MerginMaps-lisäosaan**
+
+Avaa lisäosa valikosta: Plugins → Mergin Maps → Configure MerginMaps plugin -ikonista.
+
+![](img/projektin_lataaminen_qgisiin/img3.png)
+
+Tämän jälkeen ohjelma pyytää asettanaab uuden päätodennussalasanan. Anna siihen haluamasi salasana
+
+![](img/projektin_lataaminen_qgisiin/img4.png)
 
 Kirjaudu sisään Mergin-tililläsi.
 
+![](img/projektin_lataaminen_qgisiin/img5.png)
+
 Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi listattuna.
 
-4.  Projektin lataaminen QGIS:iin MerginMaps-lisäosalla
+**Projektin lataaminen QGIS:iin MerginMaps-lisäosalla**
 
-Avaa Mergin Maps -paneeli QGIS:ssä (Plugins → Mergin Maps → Show Panel).
+1.  Avaa Mergin Maps -paneeli QGIS:ssä vasemman laidan selainosiosta.
 
-Paneelissa näet kaikki projektisi.
+2.  Paneelissa näet kaikki projektisi.
 
-Valitse projekti, jonka haluat ladata.
+3.  Valitse projekti, jonka haluat ladata.
 
-Klikkaa Download project (Lataa projekti) tai vastaavaa painiketta.
+4.  Klikkaa Download project (Lataa projekti).
 
-Valitse kansio, johon projekti tallennetaan.
+5.  Valitse kansio, johon projekti tallennetaan.
 
-QGIS avaa projektin ja siihen liittyvät aineistot (layerit) automaattisesti.
+6.  QGIS avaa projektin ja siihen liittyvät aineistot (layerit) automaattisesti.
+
+![](img/projektin_lataaminen_qgisiin/mergin_maps_projektin_lataus.gif)
