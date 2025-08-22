@@ -30,7 +30,7 @@ Klikkaa karttanäkymän oikean laidan "Lisää" --\> "Asetukset"
 
 Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
-![](img/interval_threshold_mergin_maps.png){width="459"}
+![](img/interval_threshold_mergin_maps.png)
 
 Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
@@ -40,7 +40,7 @@ Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
 3.  Paina näkymän jalanjälkien kuvaa:
 
-    ![](img/footsteps_mergin_maps.png){width="102"}
+    ![](img/footsteps_mergin_maps.png)
 
 4.  Valitse avautuvasta ikkunasta "Aloita nauhoitus"
 
