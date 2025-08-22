@@ -22,12 +22,12 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
     <div>
 
-    -   Hukkakaura<br/>\
-    -   Laskuaukko<br/>\
-    -   Kaivo<br/>\
-    -   Rumpu<br/>\
-    -   Kivi<br/>\
-    -   Muu<br/>
+    -   Hukkakaura<br>
+    -   Laskuaukko<br>
+    -   Kaivo<br>
+    -   Rumpu<br>
+    -   Kivi<br>
+    -   Muu<br>
 
     </div>
 
