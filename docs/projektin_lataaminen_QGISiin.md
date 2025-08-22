@@ -30,7 +30,7 @@ Avaa lisäosa valikosta: Plugins → Mergin Maps → Configure MerginMaps plugin
 
 ![](img/projektin_lataaminen_qgisiin/img3.png)
 
-Tämän jälkeen ohjelma pyytää asettanaab uuden päätodennussalasanan. Anna siihen haluamasi salasana
+Tämän jälkeen ohjelma pyytää asettamaan uuden päätodennussalasanan. Anna siihen haluamasi salasana
 
 ![](img/projektin_lataaminen_qgisiin/img4.png)
 

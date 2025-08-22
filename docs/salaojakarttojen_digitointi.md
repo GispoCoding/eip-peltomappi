@@ -14,9 +14,9 @@ Kun avaat Georeferencer-lisäosan, se avaa erillisen ikkunan, jossa georeferoint
 
 ![Kuva 3. Georeferoitava rasteri avataan Georeferencer-ikkunaan Avaa rasteri -painikkeesta](img/harjoitus_3/image27.png)
 
-Valitse rasteriksi kurssihakemistosta löytyvä **Tampereen_kaupunki_ilmakuva_Keskusta-1999.png**. Kun haluttu kuva on valittu tiedostojärjestelmästä ja valinta vahvistettu Open-painikkeesta, avautuu käyttäjälle valittu rasteri näkyviin pienen latauksen jälkeen.
+Valitse rasteriksi aikaisemmin kuvatiedostoksi muunnettu salaojakartta.. Kun haluttu kuva on valittu tiedostojärjestelmästä ja valinta vahvistettu Open-painikkeesta, avautuu käyttäjälle valittu rasteri näkyviin pienen latauksen jälkeen.
 
-Vanhemmissa versioissa tässä kohtaa avautuu käyttäjälle Coordinate Reference System Selector -ikkuna. Tähän ikkunaan syötetään tieto siitä koordinaattijärjestelmästä, johon georeferoitava rasterikuva halutaan saattaa. Tässä esimerkissä käytettäväksi koordinaattijärjestelmäksi valitaan **ETRS89-TM35FIN (EPSG:3067)**, mutta yhtä hyvin koordinaattijärjestelmäksi voidaan valita mikä tahansa QGIS:n tukema koordinaattijärjestelmä.
+Vanhemmissa versioissa tässä kohtaa avautuu käyttäjälle Coordinate Reference System Selector -ikkuna. Tähän ikkunaan syötetään tieto siitä koordinaattijärjestelmästä, johon georeferoitava rasterikuva halutaan saattaa. Tässä esimerkissä käytettäväksi koordinaattijärjestelmäksi valitaan **ETRS89-TM35FIN (EPSG:3067)**, mutta yhtä hyvin koordinaattijärjestelmäksi voidaan valita mikä tahansa QGISin tukema koordinaattijärjestelmä.
 
 Tämän vaiheen jälkeen määritellään georeferoinnissa käytettävät asetukset. Tämä tapahtuu avaamalla **Asetukset**-valikosta **Muunnoksen asetukset** -ikkuna (kuva 4). Saman ikkunan saa avattua myös työkaluriviltä keltaisesta ratassymbolista.
 
@@ -24,7 +24,7 @@ Tämän vaiheen jälkeen määritellään georeferoinnissa käytettävät asetuk
 
 **Muunnoksen asetukset** -ikkunassa määritellään muunnoksessa käytettävät asetukset (kuva 5). Toteutettavan muunnoksen osalta (Kohta **Muunnosparametrit**) valittavissa on muunnoksen tyyppi, interpoloinnissa käytettävä menetelmä ja koordinaattijärjestelmä. Muunnoksessa syntyvän tiedoston osalta ikkunassa voidaan määritellä syntyvän tiedoston nimi, tallennussijainti sekä pakkausmenetelmä.
 
-Tarkista, että muunnoksen tyyppi on **Lineaarinen**, menetelmä **Nearest Neighbour** ja aseta koordinaattijärjestelmäksi **EPSG:3067**.
+Tarkista, että muunnoksen tyyppi on **Helmert**, menetelmä **Nearest Neighbour** ja aseta koordinaattijärjestelmäksi **EPSG:3067**.
 
 Ikkunassa on täpättävät kohdat (Output Settings -kohta) myös vastinpisteiden (GCP-pisteet) tallentamiseksi, ns. ESRI World -tiedoston luomiseksi varsinaisen georeferoinnin toteuttamisen sijaan ja nolla-arvojen määrittämiseksi läpinäkyviksi. Lisäksi valittavissa on kohta oman vapaavalintaisen spatiaalisen resoluution asettamiseksi muunnoksen yhteydessä luotavalle kuvalle.
 
@@ -32,9 +32,21 @@ Muunnoksesta on mahdollista saada ulos myös kartta ja raportti (Reports-kohta).
 
 ![Kuva 5. Muunnoksen asetukset -ikkuna halutuilla asetuksilla (Transformation Settings)](img/harjoitus_3/image29.png)
 
+Kun muunnoksen asetukset on onnistuneesti määritelty, paina asetusikkunasta "OK".
+
 ## Panosta vastinpisteisiin
 
-Kun muunnoksen asetukset on onnistuneesti määritelty, paina asetusikkunasta "OK". Nyt voidaan siirtyä määrittelemään vastinpisteitä. Homma lähtee liikkeelle valitsemalla työkaluriviltä löytyvä Add Point -työkalu (kuva 6). Ko. painikkeen vierestä oikealta löytyvät tarvittaessa painikkeet jo määriteltyjen vastinpisteiden poistamiseen ja muokkaamiseen. Lisää piste -painikkeen painaminen aktivoi työkalun, jolla osoitetaan georeferoitavalta kuvalta piste.
+Tässä vaiheessa kannattaa laittaa tarttuminen kohteisiin päälle, jotta vastinpisteiden kohdistaminen on helpompaa. Siirry ylävälilehdeltä --\> Projekti --\> Tarttumisen valinnat
+
+![](img/harjoitus_3/image1.png){width="181"}
+
+Klikkaa tämän jälkeen avautuvasta ikkunasta magneetti-ikonia niin tarttynubeb on päällä kaikille tasoille.
+
+![](img/harjoitus_3/image2.png)
+
+Tämän jälkeen voit sulkea ikkunan ruksista.
+
+Nyt voidaan siirtyä määrittelemään vastinpisteitä. Homma lähtee liikkeelle valitsemalla työkaluriviltä löytyvä Add Point -työkalu (kuva 6). Ko. painikkeen vierestä oikealta löytyvät tarvittaessa painikkeet jo määriteltyjen vastinpisteiden poistamiseen ja muokkaamiseen. Lisää piste -painikkeen painaminen aktivoi työkalun, jolla osoitetaan georeferoitavalta kuvalta piste.
 
 ![Kuva 6: Georeferointi aloitetaan lisäämällä rasterukuvalle oikaisupisteitä](img/harjoitus_3/image30.png)
 
@@ -53,6 +65,8 @@ Tarkkuus korostuu etenkin silloin, kun vastinpisteitä osoitetaan ainoastaan muu
 Kun vastinpisteen tiedot ovat Kirjoita karttakoordinaatit -ikkunassa ja oikea koordinaattijärjestelmä valittu, voidaan vastinpiste tallentaa painamalla OK-painiketta. Tällöin vastinpiste tallentuu ns. vastinpistetauluun (GCP-taulu) ja ikkuna sulkeutuu. Uuden pisteet saa lisättyä Lisää piste -painikkeesta.
 
 ![Kuva 8: Oikaisupisteen tiedot syötetty](img/harjoitus_3/image32.png)
+
+![](img/harjoitus_3/georeferointi_vastinpisteet.gif)
 
 ![Kuva 9: Jos haluat poistaa jonkun vastinpisteen, voit sen tehdä Poista piste -työkalulla. Aktivoi työkalu ja klikkaa sillä georeferointi-ikkunassa näkyvää pientä punaista pistettä (vastinpiste).](img/harjoitus_3/image33.png)
 
@@ -78,6 +92,14 @@ Kun tarvittava määrä vastinpisteitä on määritelty ja ne on todettu hyviksi
 
 Mikäli Muunnoksen asetukset (Transformation Settings) -ikkunassa on laitettu täppä kohtaan "Load in QGIS when done", avautuu georeferoitu kuva automaattisesti QGISiin georeferoinnin jälkeen. Mikäli täppää ei ole laitettu, voi kuvan lisätä myös manuaalisesti Open Data Source Manager -toiminnon kautta.
 
+## Vaihda valkoinen väri läpinäkyväksi
+
+Avaa juuri luodun georeferoidun tason ominaisuudet klikkaamalla tasoa hiiren oikealla --\> Ominaisuudet --\> Läpinäkyvyys
+
+Aseta valkoinen väri (RGB 255,255,255) läpinäkyväksi ja klikkaa lopuksi "OK"
+
+![](img/harjoitus_3/image3.png)
+
 ## Lataa QGIS-lisäosa MapSwipe Tool
 
 Kätevä työkalu kahden tason vertaamiseen on QGISin lisäosa MapSwipe Tool. Tällä lisäosalla voit verrata kahden tason näkymää olipa tason formaatti mikä tahansa.
@@ -86,10 +108,6 @@ Asentamisen jälkeen ylätyökalu-palkkiin pitäisi ilmestyä seuraava ikoni ![]
 
 Klikkaa ikonia ja sen jälkeen voit joko vaakatasossa tai pystytasossa "swaippailla". Suunta määräytyy sen mukaan mikä on hiiren suunta.
 
-![](img/harjoitus_3/image38.gif)
+![](img/harjoitus_3/mapswipe_tool.gif)Kun olet tyytyväinen lopputulokseen niin synkronoi nämä muutokset projektiisi ä
 
-Kun olet valmis, tallenna projektitiedosto kurssihakemistoon pikanäppäimellä **CTRL + T** (englanninkielisessä QGISissä **CTRL + S**) tai päävalikosta **Projekti \> Tallenna**.
-
-::: hint-box
-Psst! Muista tukipalvelu! Koulutuksen jälkeen saat henkilökohtaista tukea Gispon tukipalvelun kautta lähettämällä yksinkertaisesti koulutustuki\@gispo.fi-sähköpostiosoitteeseen kysymyksen tai kommentin jostakin sinua mietityttävästä asiasta. Gispon tiimi auttaa sinua toimiesi äärellä. Kysymykset käsitellään henkilökohtaisesti.
-:::
+![](img/harjoitus_3/image4.png)
