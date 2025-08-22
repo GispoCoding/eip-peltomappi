@@ -50,7 +50,7 @@ Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi list
 
 4.  Klikkaa Download project (Lataa projekti).
 
-5.  Valitse kansio, johon projekti tallennetaan.
+5.  Valitse kansio, johon projekti tallennetaan. Laita mieleen tämä sijainti. Tähän samaan sijaintiin tallennetaan myöhemmin georeferoidut kuvat.
 
 6.  QGIS avaa projektin ja siihen liittyvät aineistot (layerit) automaattisesti.
 

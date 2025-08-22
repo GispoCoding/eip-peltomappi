@@ -26,6 +26,8 @@ Tämän vaiheen jälkeen määritellään georeferoinnissa käytettävät asetuk
 
 Tarkista, että muunnoksen tyyppi on **Helmert**, menetelmä **Nearest Neighbour** ja aseta koordinaattijärjestelmäksi **EPSG:3067**.
 
+Valitse tulostiedosto kohtaan MerginMapsin-projekti kansio ja sen sisältä kansio `_rasters` näin saat helpoiten synkronoitua rasteritiedoston suoraan mobiilisovellukseen.
+
 Ikkunassa on täpättävät kohdat (Output Settings -kohta) myös vastinpisteiden (GCP-pisteet) tallentamiseksi, ns. ESRI World -tiedoston luomiseksi varsinaisen georeferoinnin toteuttamisen sijaan ja nolla-arvojen määrittämiseksi läpinäkyviksi. Lisäksi valittavissa on kohta oman vapaavalintaisen spatiaalisen resoluution asettamiseksi muunnoksen yhteydessä luotavalle kuvalle.
 
 Muunnoksesta on mahdollista saada ulos myös kartta ja raportti (Reports-kohta). Näiden tallennuspaikat määritellään tarvittaessa. Varmista myös, että ikkunan alareunasta löytyvä "Avaa tulosrasteri QGISissä kun valmis" -täppä on aktiivisena. Näin saat suoraan valmiin georeferoidun rasterin auki QGISin karttaikkunaan georeferoinnin jälkeen.
@@ -108,6 +110,8 @@ Asentamisen jälkeen ylätyökalu-palkkiin pitäisi ilmestyä seuraava ikoni ![]
 
 Klikkaa ikonia ja sen jälkeen voit joko vaakatasossa tai pystytasossa "swaippailla". Suunta määräytyy sen mukaan mikä on hiiren suunta.
 
-![](img/harjoitus_3/mapswipe_tool.gif)Kun olet tyytyväinen lopputulokseen niin synkronoi nämä muutokset projektiisi ä
+![](img/harjoitus_3/mapswipe_tool.gif)Kun olet tyytyväinen lopputulokseen niin synkronoi nämä muutokset projektiisi painamalla MerginMaps-lisäosan "Synchronize Mergin Maps project"
 
 ![](img/harjoitus_3/image4.png)
+
+Tämän jälkeen salaojarkarttaa näkyy MerginMaps-mobiilisovelluksessa: <iframe src="https://drive.google.com/file/d/1UHyWmI-Mw776rHhh-eEaKhVrLwPajZBe/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
