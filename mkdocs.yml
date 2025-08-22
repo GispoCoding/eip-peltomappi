@@ -5,6 +5,7 @@ nav:
   - Koti: index.md
   - Esittely: esittely.md
   - Projektin lataaminen: projektin_lataaminen.md
+  - Projektin lataaminen QGISiin: projektin_lataaminen_QGISiin.md
   - Kohteen lisääminen: kohteen_lisääminen.md
   - Alueen lisääminen: alueen_lisääminen.md
   - Alueen jakaminen: alueen_jakaminen.md
@@ -13,6 +14,8 @@ nav:
   - Mittaus: mittaus.md
   - Säädata: saadata.md
   - MARA-kuoppa: mara_kuoppa.md
+  - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
+  - Luonnostelu: luonnostelu.md
   - Palaute: palaute.md
 
 use_directory_urls: false
