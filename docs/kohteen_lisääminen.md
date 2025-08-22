@@ -2,7 +2,7 @@
 
 1.  Paina alavalikon "Lisää" painikekeesta
 
-2.   Tarkista että ylhäällä lukee "Kohteet"- taso. Jos ei lue niin vaihda tasoksi "Kohteet"
+2.  Tarkista että ylhäällä lukee "Kohteet"- taso. Jos ei lue niin vaihda tasoksi "Kohteet"
 
 3.  Siirry kartalla haluamaasi sijaintiin
 
@@ -20,14 +20,16 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 -   Kohde:
 
-    ::: {style="margin-left: 20px;"}
+    <div>
+
     -   Hukkakaura<br/>\
     -   Laskuaukko<br/>\
     -   Kaivo<br/>\
     -   Rumpu<br/>\
     -   Kivi<br/>\
     -   Muu<br/>
-    :::
+
+    </div>
 
 -   Valokuva
 
