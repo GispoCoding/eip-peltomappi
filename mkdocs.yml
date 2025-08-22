@@ -14,7 +14,7 @@ nav:
   - Mittaus: mittaus.md
   - Säädata: saadata.md
   - MARA-kuoppa: mara_kuoppa.md
-  - Salaojakarttojen digitointi: salaojakarttojen_digitointi.md
+  - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
   - Palaute: palaute.md
 
 use_directory_urls: false
