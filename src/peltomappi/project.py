@@ -38,7 +38,13 @@ class Project:
         self.__output_directory = output_directory
         self.__config = config
 
-    def create_subprojects(self):
+    def divide_to_subprojects(self):
+        """
+        Splits project to subprojects based on set config.
+
+        Raises:
+            ProjectError: if directory for a subproject was not correctly created.
+        """
         for file in self.__input_project.glob("*.gpkg"):
             LOGGER.info(f"DIVIDING {file.stem}")
             divider = Divider(

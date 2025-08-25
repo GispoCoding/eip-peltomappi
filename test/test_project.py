@@ -20,7 +20,7 @@ def test_project(
         config=config,
     )
 
-    project.create_subprojects()
+    project.divide_to_subprojects()
 
     subproject_1_folder = temp_dir_path / "area1"
     subproject_2_folder = temp_dir_path / "area2"
