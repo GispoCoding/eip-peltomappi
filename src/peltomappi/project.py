@@ -4,7 +4,7 @@ import shutil
 from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.logger import LOGGER
-from peltomappi.utils import clean_string_to_filename
+from peltomappi.utils import config_description_to_path
 
 
 class ProjectError(Exception):
@@ -56,12 +56,9 @@ class Project:
             divider.divide()
 
         for description in self.__config.descriptions():
-            description = clean_string_to_filename(description)
-
             # divider should've created this, raise error if for some reason it
             # didn't
-            subproject_dir = self.__output_directory / description
-
+            subproject_dir = config_description_to_path(description, self.__output_directory)
             if not subproject_dir.exists():
                 msg = f"subproject directory {subproject_dir} was not created!"
                 raise ProjectError(msg)

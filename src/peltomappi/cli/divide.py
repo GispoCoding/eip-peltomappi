@@ -1,7 +1,8 @@
 import click
 from peltomappi.config import Config
 from peltomappi.divider import Divider
-from peltomappi.cli.utils import str_to_path, clean_string_to_filename, prefixtype_to_callback, PrefixType
+from peltomappi.utils import clean_string_to_filename
+from peltomappi.cli.utils import str_to_path, prefixtype_to_callback, PrefixType
 
 
 @click.command(help="Divides input data into smaller areas, according to a configuration GeoPackage")

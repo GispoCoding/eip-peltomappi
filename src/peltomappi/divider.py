@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 from peltomappi.config import Config
 from peltomappi.logger import LOGGER
-from peltomappi.utils import clean_string_to_filename
+from peltomappi.utils import config_description_to_path
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 
@@ -89,7 +89,7 @@ class Divider:
             raise DividerError(msg)
 
         for description, filter_geom in config.items():
-            area_directory = Path(self.__output_directory / clean_string_to_filename(description).lower())
+            area_directory = config_description_to_path(description, self.__output_directory)
             area_directory.mkdir(exist_ok=True)
 
             folders.append(area_directory)
