@@ -24,46 +24,9 @@ markdown_extensions:
   - footnotes
 
 theme:
-theme:
-  name: readthedocs
+  name: material
   custom_dir: theme
-  palette:
-    - scheme: default
-      primary: "#73D19C"      # Grass (vihreä)
-      accent: "#004C45"       # Forest — vaihtoehtoinen painikkeiden tai linkkien väri
-      toggle:
-        icon: octicons/moon-24
-        name: Siirry tummaan tilaan
-    - scheme: slate
-      primary: "#F4CB46"      # Sun (keltainen)
-      accent: "#FFB673"       # Sunset — esim. hover-efekteihin
-      toggle:
-        icon: octicons/sun-24
-        name: Siirry vaaleaan tilaan
-locale: fi
-
-extra_css:
-  - styles/brand.css         # Jos haluat lisätä brändikohtaisia tyylimuutoksia
-
-extra:
-  brand_colors:
-    Grass: "#73D19C"
-    Forest: "#004C45"
-    Night: "#12181F"
-    Polar: "#FFFFFF"
-    Sand: "#FFF4E2"
-    Sunset: "#FFB673"
-    Sun: "#F4CB46"
-    Earth: "#4D2A24"
-    Rose: "#FFBABC"
-    Sky: "#A6CBF4"
-    Grape: "#5A2740"
-    DeepOcean: "#1C324A"
-    Pearl: "#CCBDF5"
-    Field: "#9BD1A9"
-  font: "Inter"              # Käyttää Mergin Maps -tyylistä fonttia
-
-
+  locale: fi
 
 plugins:
   - redirects:
