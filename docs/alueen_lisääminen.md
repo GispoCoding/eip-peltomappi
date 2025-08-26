@@ -1,4 +1,6 @@
-# Alueen lisääminen
+# Alueen jakaminen ja lisääminen
+
+## Alueen lisääminen
 
 1.  Paina alavalikon "Lisää" painikekeesta
 
@@ -22,7 +24,7 @@
 
 <br>
 
-# Alueen lisääminen nauhoitustilalla
+## Alueen lisääminen nauhoitustilalla
 
 Tarkista ensin että asetukset ovat kunnossa.
 
@@ -83,3 +85,7 @@ Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelis
 Ladataan...
 
 </iframe>
+
+## Alueen jakaminen
+
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
