@@ -15,6 +15,11 @@ class WeatherError(Exception):
 
 
 class AbstractWeatherBackend(ABC):
+    """
+    Represents an abstract weather service backend which the Weather class will
+    call to include data in subprojects.
+    """
+
     @abstractmethod
     def write_data(
         self,
@@ -24,6 +29,11 @@ class AbstractWeatherBackend(ABC):
         begin: datetime,
         end: datetime,
     ):
+        """
+        Abstract method for writing out data. The data should be only from the
+        area of the requested geometry and time period, but it is up to each
+        implemented backend to determine how that is achieved.
+        """
         pass
 
 
@@ -45,9 +55,22 @@ class TestBackend(AbstractWeatherBackend):
         shutil.copy(self.__input_gpkg, output_path)
 
 
+class FMIBackend(AbstractWeatherBackend):
+    def write_data(
+        self,
+        *,
+        request_geometry: ogr.Geometry,
+        output_path: Path,
+        begin: datetime,
+        end: datetime,
+    ):
+        pass
+
+
 class Weather:
     """
-    Reads weather data and writes it to project(s).
+    Requests weather data from given backend and writes it to subprojects
+    according to a configuration.
     """
 
     __config: Config
