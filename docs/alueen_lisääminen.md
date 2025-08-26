@@ -88,19 +88,19 @@ Toimintaohjeet:
 
 1.  Napauta kartalla haluamaasi aluekohdetta.
 
-2.  Napauta Muokkaa-painiketta avataksesi ominaisuudet.
+2.  Napauta "Muokkaa" -painiketta avataksesi ominaisuudet.
 
-3.  Napauta Muokkaa geometrian painiketta. Kohteen kulmapisteet korostuvat kartalle
+3.  Napauta "Muokkaa geometriaa" -painiketta. Kohteen kulmapisteet korostuvat kartalle
 
 4.  Napauta Lisää vaihtoehtoja -painiketta (kolme pistettä).
 
-5.  Valitse Jaa geometria.
+5.  Valitse "Jaa geometria".
 
 6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava geometrian ulkopuolella
 
     Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
 
-7.  Kun jakolinja on valmis, napauta Valmis.
+7.  Kun jakolinja on "Valmis"", napauta Valmis.
 
     Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
 
