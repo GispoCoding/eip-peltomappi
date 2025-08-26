@@ -49,7 +49,7 @@ editor_options:
 
 </iframe>
 
-### 💡 Huomioitavaa
+💡 Huomioitavaa
 
 -    Mitatut arvot eivät tallennu automaattisesti. Jos haluat tallentaa
     mittaustulokset, sinun tulee lisätä ne erikseen kohteen
