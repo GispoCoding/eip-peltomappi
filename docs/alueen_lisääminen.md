@@ -82,7 +82,7 @@ Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelis
 
 ## Alueen jakaminen
 
-Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet.
+Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet. Tämän toiminnon jälkeen voit lisätä peltolohkoille useita kasveja samalle lohkolle,
 
 Toimintaohjeet:
 
