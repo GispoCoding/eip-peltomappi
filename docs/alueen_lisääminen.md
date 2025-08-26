@@ -86,7 +86,7 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
 Toimintaohjeet:
 
-1.  Napauta kartalla tai kerroksessa haluamaasi aluekohdetta.
+1.  Napauta kartalla haluamaasi aluekohdetta.
 
 2.  Napauta Muokkaa-painiketta avataksesi ominaisuudet.
 
@@ -96,7 +96,7 @@ Toimintaohjeet:
 
 5.  Valitse Jaa geometria.
 
-6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste.
+6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava geometrian ulkopuolella
 
     Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
 
