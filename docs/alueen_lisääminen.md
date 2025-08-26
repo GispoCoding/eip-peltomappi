@@ -22,7 +22,6 @@
 
 </iframe>
 
-<br>
 
 ## Alueen lisääminen nauhoitustilalla
 
