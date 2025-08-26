@@ -30,7 +30,7 @@ Klikkaa karttanäkymän oikean laidan "Lisää" --\> "Asetukset"
 
 Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
-\<img style='width: 30%;' alt="kuvan nimi" src="img/interval_threshold_mergin_maps.png"/\>
+<img style='width: 30%;' alt="kuvan nimi" src="img/interval_threshold_mergin_maps.png"/>
 
 
 Kun asetukset ovaat kunnossa, toimi seuraavasti:
