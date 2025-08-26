@@ -22,7 +22,6 @@
 
 </iframe>
 
-
 ## Alueen lisääminen nauhoitustilalla
 
 Tarkista ensin että asetukset ovat kunnossa.
@@ -79,12 +78,32 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelistausta, anna palautetta alla olevan lomakkeen avulla:
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&amp;embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-
-Ladataan...
-
-</iframe>
+[Palautelomake: Alueen lisääminen](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Alueen+lis%C3%A4%C3%A4mist%C3%A4)
 
 ## Alueen jakaminen
 
-<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
+Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet.
+
+Toimintaohjeet:
+
+1.  Napauta kartalla tai kerroksessa haluamaasi aluekohdetta.
+
+2.  Napauta Muokkaa-painiketta avataksesi ominaisuudet.
+
+3.  Napauta Muokkaa geometrian painiketta. Kohteen kulmapisteet korostuvat kartalle
+
+4.  Napauta Lisää vaihtoehtoja -painiketta (kolme pistettä).
+
+5.  Valitse Jaa geometria.
+
+6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste.
+
+    Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
+
+7.  Kun jakolinja on valmis, napauta Valmis.
+
+    Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
+
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+
+</iframe>
