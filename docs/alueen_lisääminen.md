@@ -1,4 +1,6 @@
-# Alueen lisääminen
+# Alueen jakaminen ja lisääminen
+
+## Alueen lisääminen
 
 1.  Paina alavalikon "Lisää" painikekeesta
 
@@ -20,9 +22,7 @@
 
 </iframe>
 
-<br>
-
-# Alueen lisääminen nauhoitustilalla
+## Alueen lisääminen nauhoitustilalla
 
 Tarkista ensin että asetukset ovat kunnossa.
 
@@ -30,7 +30,7 @@ Klikkaa karttanäkymän oikean laidan "Lisää" --\> "Asetukset"
 
 Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
-![](img/interval_threshold_mergin_maps.png)
+<img src="img/interval_threshold_mergin_maps.png" alt="" width="55%"/>
 
 Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
@@ -40,7 +40,7 @@ Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
 3.  Paina näkymän jalanjälkien kuvaa:
 
-    ![](img/footsteps_mergin_maps.png)
+<img src="img/footsteps_mergin_maps.png" alt="" width="12%"/>
 
 4.  Valitse avautuvasta ikkunasta "Aloita nauhoitus"
 
@@ -78,8 +78,32 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelistausta, anna palautetta alla olevan lomakkeen avulla:
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&amp;embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+[Palautelomake: Alueen lisääminen](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Alueen+lis%C3%A4%C3%A4mist%C3%A4)
 
-Ladataan...
+## Alueen jakaminen
+
+Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet. Tämän toiminnon jälkeen voit lisätä peltolohkoille useita kasveja samalle lohkolle,
+
+Toimintaohjeet:
+
+1.  Napauta kartalla haluamaasi aluekohdetta.
+
+2.  Napauta "Muokkaa" -painiketta avataksesi ominaisuudet.
+
+3.  Napauta "Muokkaa geometriaa" -painiketta. Kohteen kulmapisteet korostuvat kartalle
+
+4.  Napauta Lisää vaihtoehtoja -painiketta (kolme pistettä).
+
+5.  Valitse "Jaa geometria".
+
+6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava geometrian ulkopuolella
+
+    Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
+
+7.  Kun jakolinja on "Valmis"", napauta Valmis.
+
+    Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
+
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>

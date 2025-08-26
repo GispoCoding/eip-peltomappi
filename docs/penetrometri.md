@@ -1,26 +1,31 @@
 # Penetrometri
 
-Voit tallentaa penetrometrillä saatuja arvoja seuraavan ohjevideon mukaisesti:
+1.  Paina alavalikon "Lisää" painikekeesta
 
-<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
+2.  Tarkista että ylhäällä lukee "Penetrometri"- taso. Jos ei lue niin vaihda tasoksi "Penetrometri"
 
-- Maan tiiveys:
-  <div style="margin-left: 20px;">
-  - hyvät kasvuolosuhteet<br/>  
-  - kohtuulliset kasvuolosuhteet<br/>  
-  - heikot kasvuolosuhteet<br/>  
-  </div>
+3.  Siirry kartalla haluamaasi sijaintiin
 
-- Päivämäärä ja aika
-- Muistiinpanot
+4.  Klikkaa alhaalta "Tallenna"
 
-Anna palautetta ominaisuudesta alla olevan lomakkeen avulla: 
-<iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&embedded=true" 
-    width="100%" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-Ladataan…
-</iframe>
+5.  Syötä tarvittavat ominaisuustiedot
+
+6.  Valitse lopuksi oikean yläkulman vihreä ✅
+
+Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
+
+-   Maan tiiveys:
+
+    ::: {style="margin-left: 20px;"}
+    -   hyvät kasvuolosuhteet<br/>\
+    -   kohtuulliset kasvuolosuhteet<br/>\
+    -   heikot kasvuolosuhteet<br/>\
+    :::
+
+-   Päivämäärä ja aika
+
+-   Muistiinpanot
+
+Anna palautetta ominaisuudesta alla olevan lomakkeen avulla:
+
+[Palautelomake penetrometri](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Penetrometri)

@@ -17,6 +17,6 @@ jobs:
           # used but there is a strange issue where trying to install only the docs
           # group does not succeed because gdal is required, even though it is in a
           # different group and installing gdal is completely superfluous to this workflow
-          python -m pip install 'mkdocs[i18n]'
+          python -m pip install mkdocs-material
           python -m pip install mkdocs-redirects
           mkdocs gh-deploy --force --clean --verbose

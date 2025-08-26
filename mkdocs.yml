@@ -1,14 +1,12 @@
 site_name: Peltomappi
-site_url: https://github.com/GispoCoding/eip-peltomappi
+site_url: https://gispocoding.github.io/eip-peltomappi/
 copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
 nav:
   - Koti: index.md
   - Esittely: esittely.md
   - Projektin lataaminen: projektin_lataaminen.md
-  - Projektin lataaminen QGISiin: projektin_lataaminen_QGISiin.md
   - Kohteen lisääminen: kohteen_lisääminen.md
-  - Alueen lisääminen: alueen_lisääminen.md
-  - Alueen jakaminen: alueen_jakaminen.md
+  - Alueen lisääminen ja jakaminen: alueen_lisääminen.md
   - Reitin nauhoitus: reitin_nauhoitus.md
   - Penetrometri: penetrometri.md
   - Mittaus: mittaus.md
@@ -16,7 +14,9 @@ nav:
   - MARA-kuoppa: mara_kuoppa.md
   - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
   - Luonnostelu: luonnostelu.md
+  - Yleiset asetukset: yleiset_asetukset.md
   - Palaute: palaute.md
+
 
 use_directory_urls: false
 
@@ -24,11 +24,24 @@ markdown_extensions:
   - footnotes
 
 theme:
-  name: readthedocs
-  custom_dir: theme
-  locale: fi
+  name: material
+  language: fi
+  custom_dir: docs/overrides
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - search.suggest
+    - search.highlight
+    - header.autohide
+  palette:
+    scheme: peltomappi
 
 plugins:
   - redirects:
       redirect_maps:
         '8_saadata.md': 'saadata.md'
+  - search
+
+extra_css:
+  - stylesheets/extra.css
