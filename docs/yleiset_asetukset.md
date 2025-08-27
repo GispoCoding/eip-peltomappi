@@ -12,9 +12,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 -   Tallenna muutokset napauttamalla
 
-<iframe src="https://drive.google.com/file/d/1Imp0jJsL0mIW81oeoLPFExm07jGQ2z_j/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/1Imp0jJsL0mIW81oeoLPFExm07jGQ2z_j/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 ### Geometrian uudelleenpiirtäminen
 
@@ -26,15 +24,15 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 -   ja valitse **Piirrä geometria uudelleen**, tee uusi piirto ja tallenna
 
-<iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 ### Useiden kohteiden muokkaus
 
 -   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen **Select more**-toiminto.
 
--   Valitse muut muokattavat kohteet ja avaa attribuuttikaavake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla [[merginmaps.com]{.underline}](https://merginmaps.com/docs/field/mobile-features/){alt="https://merginmaps.com/docs/field/mobile-features/"}.
+-   Valitse muut muokattavat kohteet ja avaa attribuuttikaavake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla [merginmaps](https://merginmaps.com/docs/field/mobile-features/).
 
-<iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 ### Kohteiden poistaminen
 

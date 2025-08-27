@@ -12,9 +12,7 @@
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1kPA5kSyEu1p16B7XwNVBxHOx28aaijkx/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/1kPA5kSyEu1p16B7XwNVBxHOx28aaijkx/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 

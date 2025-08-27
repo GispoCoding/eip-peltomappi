@@ -15,12 +15,9 @@
 Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
 
 -   Maan tiiveys:
-
-    ::: {style="margin-left: 20px;"}
-    -   hyvät kasvuolosuhteet<br/>\
-    -   kohtuulliset kasvuolosuhteet<br/>\
-    -   heikot kasvuolosuhteet<br/>\
-    :::
+    -   hyvät kasvuolosuhteet
+    -   kohtuulliset kasvuolosuhteet
+    -   heikot kasvuolosuhteet
 
 -   Päivämäärä ja aika
 

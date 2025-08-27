@@ -18,9 +18,7 @@
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 ## Alueen lisääminen nauhoitustilalla
 
@@ -52,9 +50,7 @@ Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
@@ -104,6 +100,4 @@ Toimintaohjeet:
 
     Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
 
-<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>

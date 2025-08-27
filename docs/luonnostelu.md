@@ -47,4 +47,4 @@ luoda varsinaisia kohteita tietokantaan.
 
 6.  Sulje piirrosnäkymä esimerkiksi vihreällä X-painikkeella.
 
-<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
