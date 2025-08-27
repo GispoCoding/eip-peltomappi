@@ -238,6 +238,6 @@ synkronoi nämä muutokset projektiisi painamalla MerginMaps-lisäosan
 
 ![](img/harjoitus_3/image4.png)
 
-Tämän jälkeen salaojarkartta näkyy MerginMaps-mobiilisovelluksessa: <iframe
-    src="https://drive.google.com/file/d/1UHyWmI-Mw776rHhh-eEaKhVrLwPajZBe/preview"
-    width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
+Tämän jälkeen salaojarkartta näkyy MerginMaps-mobiilisovelluksessa:
+
+<iframe src="https://drive.google.com/file/d/1UHyWmI-Mw776rHhh-eEaKhVrLwPajZBe/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>

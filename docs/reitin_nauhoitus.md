@@ -28,6 +28,4 @@ Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös mui
 
 -   Synkronointi: Muista synkronoida projekti säännöllisesti varmistaaksesi, että tiedot tallentuvat pilveen.
 
-<iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
