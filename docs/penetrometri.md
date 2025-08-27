@@ -1,12 +1,12 @@
 # Penetrometri
 
-1.  Paina alavalikon "Lisää" painikekeesta
+1.  Paina alavalikon ***Lisää*** painikekeesta
 
-2.  Tarkista että ylhäällä lukee "Penetrometri"- taso. Jos ei lue niin vaihda tasoksi "Penetrometri"
+2.  Tarkista että ylhäällä lukee ***Penetrometri***- taso. Jos ei lue niin vaihda tasoksi ***Penetrometri***
 
 3.  Siirry kartalla haluamaasi sijaintiin
 
-4.  Klikkaa alhaalta "Tallenna"
+4.  Klikkaa alhaalta ***Tallenna***
 
 5.  Syötä tarvittavat ominaisuustiedot
 

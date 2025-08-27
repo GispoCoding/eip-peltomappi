@@ -4,11 +4,11 @@ Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös mui
 
 **Käynnistä seuranta:**
 
-1.  Napauta *Lisää* -painiketta.
+1.  Napauta ***Lisää*** -painiketta.
 
-2.  Valitse *Sijainnin nauhoitus*
+2.  Valitse ***Sijainnin nauhoitus***
 
-3.  Napauta *Aloita sijainnin nauhoitus*.
+3.  Napauta ***Aloita sijainnin nauhoitus***.
 
 4.  Sovellus alkaa tallentaa sijaintiasi taustalla.
 
@@ -18,9 +18,9 @@ Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös mui
 
     ![](img/mobile-app-stop-tracking.DN3LYoE-.jpg)
 
-2.  Napauta *lopeta nauhoitus*
+2.  Napauta ***lopeta nauhoitus***
 
-3.  Tallennetut reitit löytyvät *tracking_layer*-tasosta projektissasi.
+3.  Tallennetut reitit löytyvät ***tracking_layer***-tasosta projektissasi.
 
 Huomioitavaa
 

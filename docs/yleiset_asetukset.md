@@ -124,7 +124,7 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 ### Mistä näet GPS-tarkkuuden?
 
--   **Tarkkuusnäyttö** näkyy kartan **vasemmassa alakulmassa**.
+-   Tarkkuusnäyttö näkyy kartan vasemmassa alakulmassa.
 
     <img src="img/GPS_mergin_maps.png" width="31%"/>
 
