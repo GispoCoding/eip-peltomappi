@@ -6,7 +6,6 @@ from osgeo import gdal, ogr
 
 from peltomappi.config import Config
 from peltomappi.divider import Divider
-from peltomappi.prefix import field_parcel
 
 
 def test_divider(
@@ -23,7 +22,6 @@ def test_divider(
         output_dir=temp_dir_path,
         config=config,
         filename="peltolohkot",
-        layer_name_callback=field_parcel,
     )
     res = divider.divide()
 
@@ -56,11 +54,11 @@ def test_divider(
         layer_4: ogr.Layer = dataset.GetLayerByIndex(3)
         layer_5: ogr.Layer = dataset.GetLayerByIndex(4)
 
-        assert layer_1.GetName() == "peltolohko_2024"
-        assert layer_2.GetName() == "peltolohko_2023"
-        assert layer_3.GetName() == "peltolohko_2022"
-        assert layer_4.GetName() == "peltolohko_2021"
-        assert layer_5.GetName() == "peltolohko_2020"
+        assert layer_1.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2024"
+        assert layer_2.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2023"
+        assert layer_3.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2022"
+        assert layer_4.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2021"
+        assert layer_5.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2020"
 
         assert layer_1.GetFeatureCount() == 1
         assert layer_2.GetFeatureCount() == 1

@@ -40,29 +40,22 @@ class Project:
 
     def divide_to_subprojects(self):
         """
-        Splits project to subprojects based on set config.
+        Splits project to subprojects based on set config. Project files are
+        not changed and are copied as is, but any background data is divided
+        according to the config.
 
         Raises:
             ProjectError: if directory for a subproject was not correctly created.
         """
-        for file in self.__input_project.glob("*.gpkg"):
-            LOGGER.info(f"DIVIDING {file.stem}")
-            divider = Divider(
-                input_dataset=file,
-                output_dir=self.__output_directory,
-                config=self.__config,
-                filename=file.stem,
-            )
-            divider.divide()
-
-        for description in self.__config.descriptions():
-            # divider should've created this, raise error if for some reason it
-            # didn't
+        for description, filter_geom in self.__config.to_dict().items():
             subproject_dir = config_description_to_path(description, self.__output_directory)
+            subproject_dir.mkdir(exist_ok=True)
+
             if not subproject_dir.exists():
                 msg = f"subproject directory {subproject_dir} was not created!"
                 raise ProjectError(msg)
 
+            LOGGER.info("Copying project files...")
             for file in self.__input_project.iterdir():
                 if (
                     file.name.endswith(".gpkg")
@@ -73,4 +66,21 @@ class Project:
                 ):
                     continue
 
-                shutil.copy(file, subproject_dir)
+                if file.is_dir():
+                    shutil.copytree(file, subproject_dir / file.stem)
+                else:
+                    shutil.copy(file, subproject_dir)
+
+            LOGGER.info("Dividing project data...")
+            for file in self.__input_project.glob("*.gpkg"):
+                if file.resolve() == self.__config.path().resolve():
+                    continue
+
+                LOGGER.info(f"Dividing {file.stem}...")
+                Divider.divide_into_area(
+                    input_path=file,
+                    output_path=subproject_dir / f"{file.stem}.gpkg",
+                    area=filter_geom,
+                )
+
+            LOGGER.info(f"Subproject created at {subproject_dir}")

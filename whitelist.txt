@@ -19,3 +19,4 @@ testdata
 subprojects
 iterdir
 subproject
+copytree

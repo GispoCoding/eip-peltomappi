@@ -2,7 +2,7 @@ import click
 from peltomappi.config import Config
 from peltomappi.divider import Divider
 from peltomappi.utils import clean_string_to_filename
-from peltomappi.cli.utils import str_to_path, prefixtype_to_callback, PrefixType
+from peltomappi.cli.utils import str_to_path
 
 
 @click.command(help="Divides input data into smaller areas, according to a configuration GeoPackage")
@@ -46,13 +46,6 @@ from peltomappi.cli.utils import str_to_path, prefixtype_to_callback, PrefixType
     callback=lambda _, __, x: clean_string_to_filename(x),
 )
 @click.option(
-    "-n",
-    "--layer-name-generator",
-    type=PrefixType.to_choice(),
-    callback=prefixtype_to_callback,
-    help="Choose a layer name generator from a list of options",
-)
-@click.option(
     "-o",
     "--overwrite",
     type=click.BOOL,
@@ -64,7 +57,6 @@ def divide(
     output_directory,
     config_gpkg,
     file_prefix,
-    layer_name_generator,
     overwrite,
 ):
     config = Config(config_gpkg)
@@ -74,7 +66,6 @@ def divide(
         output_dir=output_directory,
         config=config,
         filename=file_prefix,
-        layer_name_callback=layer_name_generator,
         overwrite=overwrite,
     )
     divider.divide()

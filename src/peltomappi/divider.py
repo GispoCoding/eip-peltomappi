@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from typing import Callable, NamedTuple
+from typing import NamedTuple
 
 from osgeo import gdal, ogr, osr
 from tqdm import tqdm
@@ -32,7 +32,6 @@ class Divider:
     __config: Config
     __filename: str
     __layer_filter: tuple[str] | None
-    __layer_name_callback: Callable[[str], str] | None
     __overwrite: bool
 
     def __init__(
@@ -43,7 +42,6 @@ class Divider:
         config: Config,
         filename: str,
         layer_filter: tuple[str] | None = None,
-        layer_name_callback: Callable[[str], str] | None = None,
         overwrite: bool = False,
     ) -> None:
         """
@@ -64,123 +62,127 @@ class Divider:
         self.__config = config
         self.__filename = filename
         self.__layer_filter = layer_filter
-        self.__layer_name_callback = layer_name_callback
         self.__overwrite = overwrite
+
+    @staticmethod
+    def divide_layer(
+        *,
+        in_layer: ogr.Layer,
+        area: ogr.Geometry,
+        output_dataset: ogr.DataSource,
+    ):
+        in_layer.SetSpatialFilter(area)
+        in_layer_defn: ogr.FeatureDefn = in_layer.GetLayerDefn()
+
+        in_layer_total_features = in_layer.GetFeatureCount(1)
+
+        if in_layer_total_features == 0:
+            LOGGER.info(f"Layer {in_layer.GetName()} has zero features in this area!")
+
+        out_layer_name = in_layer.GetName()
+
+        crs: osr.SpatialReference = osr.SpatialReference()
+        crs.ImportFromEPSG(3067)
+
+        out_layer: ogr.Layer = output_dataset.CreateLayer(
+            out_layer_name,
+            crs,
+            geom_type=in_layer_defn.GetGeomType(),
+        )
+
+        for j in range(0, in_layer_defn.GetFieldCount()):
+            in_field_defn: ogr.FieldDefn = in_layer_defn.GetFieldDefn(j)
+            field_name: str = in_field_defn.GetNameRef()
+
+            in_field_defn.SetName(field_name.lower())
+
+            out_layer.CreateField(in_field_defn)
+
+        show_progress = LOGGER.level < logging.WARNING
+
+        out_layer_defn: ogr.FeatureDefn = out_layer.GetLayerDefn()
+        in_feature: ogr.Feature
+        for in_feature in tqdm(
+            in_layer,
+            total=in_layer_total_features,
+            leave=False,
+            disable=not show_progress,
+        ):
+            out_feature = ogr.Feature(out_layer_defn)
+
+            for k in range(0, out_layer_defn.GetFieldCount()):
+                field_defn: ogr.FieldDefn = out_layer_defn.GetFieldDefn(k)
+                field_name = field_defn.GetName()
+
+                out_feature.SetField(
+                    out_layer_defn.GetFieldDefn(k).GetNameRef(),
+                    in_feature.GetField(k),
+                )
+
+            geom: ogr.Geometry = in_feature.GetGeometryRef()
+            out_feature.SetGeometry(geom.Clone())
+            out_layer.CreateFeature(out_feature)
+
+    @staticmethod
+    def divide_into_area(
+        *,
+        input_path: Path,
+        output_path: Path,
+        area: ogr.Geometry,
+        overwrite: bool = False,
+    ):
+        if not overwrite and output_path.exists():
+            msg = f"attempting to write file {output_path} but it already exists and overwrite has not been permitted"
+            raise DividerError(msg)
+
+        input_dataset: gdal.Dataset = gdal.OpenEx(
+            input_path,
+            gdal.OF_VECTOR | gdal.OF_READONLY,
+        )
+
+        if not input_dataset:
+            msg = f"Could not open dataset from {input_dataset}"
+            raise DividerError(msg)
+
+        out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
+        output_dataset: ogr.DataSource = out_driver.CreateDataSource(output_path)
+
+        for i in range(0, input_dataset.GetLayerCount()):
+            in_layer: ogr.Layer = input_dataset.GetLayerByIndex(i)
+
+            Divider.divide_layer(in_layer=in_layer, area=area, output_dataset=output_dataset)
+
+            LOGGER.info(
+                f"Layer saved to {output_path}|layername={in_layer.GetName()}",
+            )
 
     def divide(self) -> DivisionResult:
         """
         Performs the division based on the set state.
 
         Raises:
-            DividerError: if input dataset could not be opened.
+            DividerError: indirectly, if input dataset could not be opened.
         """
-        config = self.__config.to_dict()
-
-        input_dataset: gdal.Dataset = gdal.OpenEx(
-            self.__input_dataset,
-            gdal.OF_VECTOR | gdal.OF_READONLY,
-        )
-
+        # TODO: get rid of this function and make divider purely a container of static functions
+        # and write docstrings for the new functions
         files = []
         folders = []
 
-        if not input_dataset:
-            msg = f"Could not open dataset from {self.__input_dataset}"
-            raise DividerError(msg)
-
-        for description, filter_geom in config.items():
+        for description, filter_geom in self.__config.to_dict().items():
             area_directory = config_description_to_path(description, self.__output_directory)
             area_directory.mkdir(exist_ok=True)
 
             folders.append(area_directory)
 
             output_gpkg: Path = area_directory / f"{self.__filename}.gpkg"
-
-            if not self.__overwrite and output_gpkg.exists():
-                msg = (
-                    f"attempting to write file {output_gpkg} but it already exists and overwrite has not been permitted"
-                )
-                raise DividerError(msg)
-
             files.append(output_gpkg)
 
-            out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
-            output_dataset: ogr.DataSource = out_driver.CreateDataSource(output_gpkg)
-
-            LOGGER.info(f"Dividing {description}.")
-
-            for i in range(0, input_dataset.GetLayerCount()):
-                in_layer: ogr.Layer = input_dataset.GetLayerByIndex(i)
-                in_layer_name: str = in_layer.GetName()
-
-                if self.__layer_filter is not None and in_layer_name not in self.__layer_filter:
-                    continue
-
-                LOGGER.info(f"Processing layer: {in_layer_name}")
-
-                in_layer.SetSpatialFilter(filter_geom)
-                in_layer_defn: ogr.FeatureDefn = in_layer.GetLayerDefn()
-
-                in_layer_total_features = in_layer.GetFeatureCount(1)
-
-                if in_layer_total_features == 0:
-                    LOGGER.info(f"Layer {in_layer_name} has zero features in {description}!")
-
-                out_layer_name = (
-                    in_layer.GetName()
-                    if self.__layer_name_callback is None
-                    else self.__layer_name_callback(in_layer.GetName())
-                )
-
-                crs: osr.SpatialReference = osr.SpatialReference()
-                crs.ImportFromEPSG(3067)
-
-                out_layer: ogr.Layer = output_dataset.CreateLayer(
-                    out_layer_name,
-                    crs,
-                    geom_type=in_layer_defn.GetGeomType(),
-                )
-
-                for j in range(0, in_layer_defn.GetFieldCount()):
-                    in_field_defn: ogr.FieldDefn = in_layer_defn.GetFieldDefn(j)
-                    field_name: str = in_field_defn.GetNameRef()
-
-                    in_field_defn.SetName(field_name.lower())
-
-                    out_layer.CreateField(in_field_defn)
-
-                show_progress = LOGGER.level < logging.WARNING
-
-                out_layer_defn: ogr.FeatureDefn = out_layer.GetLayerDefn()
-                in_feature: ogr.Feature
-                for in_feature in tqdm(
-                    in_layer,
-                    total=in_layer_total_features,
-                    leave=False,
-                    disable=not show_progress,
-                ):
-                    out_feature = ogr.Feature(out_layer_defn)
-
-                    for k in range(0, out_layer_defn.GetFieldCount()):
-                        field_defn: ogr.FieldDefn = out_layer_defn.GetFieldDefn(k)
-                        field_name = field_defn.GetName()
-
-                        out_feature.SetField(
-                            out_layer_defn.GetFieldDefn(k).GetNameRef(),
-                            in_feature.GetField(k),
-                        )
-
-                    geom: ogr.Geometry = in_feature.GetGeometryRef()
-                    out_feature.SetGeometry(geom.Clone())
-                    out_layer.CreateFeature(out_feature)
-
-                LOGGER.info(
-                    f"Layer saved to {output_gpkg}|layername={out_layer_name}",
-                )
-
-            total_output_layers = output_dataset.GetLayerCount()
-            if total_output_layers == 0:
-                LOGGER.info(f"Output GeoPackage {output_gpkg} has zero layers!")
+            Divider.divide_into_area(
+                input_path=self.__input_dataset,
+                output_path=output_gpkg,
+                area=filter_geom,
+                overwrite=self.__overwrite,
+            )
 
         return DivisionResult(
             folders=tuple(folders),

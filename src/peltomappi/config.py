@@ -13,7 +13,7 @@ class Config:
     Class for dealing with project/division configuration.
     """
 
-    gpkg_path: Path
+    __gpkg_path: Path
 
     def __init__(self, gpkg_path: Path):
         """
@@ -25,8 +25,15 @@ class Config:
         Raises:
             ConfigError: if config GPKG is invalid
         """
-        self.gpkg_path = gpkg_path
+        self.__gpkg_path = gpkg_path
         self.__validate_config_layer()
+
+    def path(self) -> Path:
+        """
+        Returns:
+            Path: of configuration GeoPackage
+        """
+        return self.__gpkg_path
 
     def __validate_config_layer(self) -> None:
         """
@@ -45,7 +52,7 @@ class Config:
             ConfigError: If any check fails.
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
-            self.gpkg_path,
+            self.__gpkg_path,
             gdal.OF_VECTOR | gdal.OF_READONLY,
         )
 
@@ -116,7 +123,7 @@ class Config:
             values.
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
-            self.gpkg_path,
+            self.__gpkg_path,
             gdal.OF_VECTOR | gdal.OF_READONLY,
         )
 
