@@ -1,6 +1,6 @@
 # Yleiset asetukset
 
-## Kohteiden lisääminen, muokkaaminen ja poistaminen Mergin Maps -mobiilisovelluksessa
+## Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa
 
 Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **poistaa kohteita**,
 
