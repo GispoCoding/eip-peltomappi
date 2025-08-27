@@ -16,7 +16,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 </iframe>
 
-### Geometrian uudelleenpiirtäminen (Redraw)
+### Geometrian uudelleenpiirtäminen
 
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse **Muokkaa** -painike muokataksesi ja **Muokkaa geometriaa** -painike.
 
@@ -28,7 +28,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 <iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
-### Useiden kohteiden muokkaus (Multi-feature editing)
+### Useiden kohteiden muokkaus
 
 -   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen **Select more**-toiminto.
 
