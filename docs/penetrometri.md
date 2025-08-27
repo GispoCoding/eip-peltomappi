@@ -24,6 +24,8 @@ Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
     -   kohtuulliset kasvuolosuhteet
     -   heikot kasvuolosuhteet
 
+-   Syvyys
+
 -   Päivämäärä ja aika
 
 -   Muistiinpanot
