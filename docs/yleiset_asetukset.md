@@ -6,11 +6,11 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 ### Kohteiden muokkaaminen
 
--   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse **Muokkaa** -painike ja **Muokkaa geometriaa** -painike siirtääksesi pisteitä
+-   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä
 
--   Kun valitset **Muokkaa geometriaa** kohteen solmupisteet korostuvat: niitä voi siirtää, poistaa tai muuttaa.
+-   Kun valitset ***Muokkaa geometriaa*** kohteen solmupisteet korostuvat: niitä voi siirtää, poistaa tai muuttaa.
 
--   Tallenna muutokset napauttamalla
+-   Tallenna muutokset
 
 <iframe src="https://drive.google.com/file/d/1Imp0jJsL0mIW81oeoLPFExm07jGQ2z_j/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -18,13 +18,13 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 ### Geometrian uudelleenpiirtäminen
 
--   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse **Muokkaa** -painike muokataksesi ja **Muokkaa geometriaa** -painike.
+-   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike muokataksesi ja ***Muokkaa geometriaa*** -painike.
 
--   Napauta **Lisäasetukset**-painiketta
+-   Napauta ***Lisäasetukset***-painiketta:
 
     <img src="img/more_mergin_maps.png" width="34%"/>
 
--   ja valitse **Piirrä geometria uudelleen**, tee uusi piirto ja tallenna
+-   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna
 
 <iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -32,9 +32,9 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 ### Useiden kohteiden muokkaus
 
--   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen **Select more**-toiminto.
+-   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen ***Valitse lisää***-toiminto.
 
--   Valitse muut muokattavat kohteet ja avaa attribuuttikaavake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla [merginmaps](https://merginmaps.com/docs/field/mobile-features/).
+-   Valitse muut muokattavat kohteet ja avaa attribuuttilomake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla.
 
 <iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -42,7 +42,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 ### Kohteiden poistaminen
 
--   Valitse kohde kartalta tai listasta, avaa **muokkaa**-lomake ja napauta **Poista**-painiketta. Vahvista poisto, niin kohde poistuu
+-   Valitse kohde kartalta tai listasta, avaa ***muokkaa***-lomake ja napauta ***Poista***-painiketta. Vahvista poisto, niin kohde poistuu
 
 ## Viimeksi syötettyjen arvojen uudelleenkäyttö
 
@@ -50,17 +50,17 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 ### Miten otat ominaisuuden käyttöön:
 
-3.  **Avaa valikko** napauttamalla kolmea pistettä (⋯) ja siirry kohtaan **Asetukset**
+3.  Avaa valikko napauttamalla kolmea pistettä (⋯) ja siirry kohtaan ***Asetukset***
 
-4.  **Ota käyttöön** valinta **"Viimeksi syötetyn arvon uudelleenkäyttö"**
+4.  Ota käyttöön valinta **"*Viimeksi syötetyn arvon uudelleenkäyttö*"**
 
 ### Miten se toimii käytännössä:
 
--   Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, atribuuttien lomakkeessa näkyy **valintaruudut jokaisen kentän vieressä**.
+-   Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, atribuuttienlomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
 
 -   Valitse ne attribuutit (esim. laji tms.), joiden arvon haluat kopioida viimeksi tallennetusta kohteesta.
 
--   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu **edellinen arvo** automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
+-   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
 
 ## Pisteelle navigointi/merkintä kenttätyössä
 
@@ -68,9 +68,9 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 ### Navigointi mobiilisovelluksessa
 
-1.  Avaa karttanäkymä ja **valitse haluamasi piste**.
+1.  Avaa karttanäkymä ja valitse haluamasi piste.
 
-2.  Avaa ominaisuuslomake ja napauta **Merkintä**-painiketta.
+2.  Avaa ominaisuuslomake ja napauta ***Merkintä***-painiketta.
 
 3.  Näet näkymän, jossa esitetään:
 
@@ -78,11 +78,13 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
     -   Viiva, joka yhdistää nykyisen sijaintisi ja pisteen.
 
-    Tämä on **pitkän matkan navigointitila**
+    Tämä on pitkän matkan navigointitila
 
 4.  Kun olet alle 1 metrin päässä pisteestä, näkymä vaihtuu automaattisesti **lyhyen matkan navigointitilaan**.
 
 5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu **vihreällä**, mikä auttaa tunnistamaan, että olet aivan kohdassa.
+
+<iframe src="https://drive.google.com/file/d/1SuLu6QMYuvm63MYcvBJFzaA3UKYsxNk-/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
 **Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
 
