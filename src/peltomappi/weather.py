@@ -31,7 +31,7 @@ class AbstractWeatherBackend(ABC):
     ):
         """
         Abstract method for writing out data. The data should be only from the
-        area of the requested geometry and time period, but it is up to each
+        area of the requested geometry and time period, and it is up to each
         implemented backend to determine how that is achieved.
         """
         pass
@@ -56,6 +56,8 @@ class TestBackend(AbstractWeatherBackend):
 
 
 class FMIBackend(AbstractWeatherBackend):
+    BASE_URL = "https://opendata.fmi.fi/wfs"
+
     def write_data(
         self,
         *,
@@ -64,7 +66,19 @@ class FMIBackend(AbstractWeatherBackend):
         begin: datetime,
         end: datetime,
     ):
-        pass
+        variables = {
+            "version": "2.0.0",
+            "request": "getFeature",
+            "storedquery_id": "fmi::forecast::harmonie::surface::point::multipointcoverage",
+            "place": "helsinki",
+            # "crs": "EPSG::3067",
+            # see the format of the bbox here (and other parameters): https://en.ilmatieteenlaitos.fi/open-data-manual-wfs-examples-and-guidelines
+            # (lon, lat, lon, lat) first two are the bottom left corner
+            # "bbox": "22,64,24,68,EPSG:4326",
+        }
+
+        query = f"{self.BASE_URL}?service=WFS&{'&'.join([f'{key}={value}' for key, value in variables.items()])}"
+        print(query)
 
 
 class Weather:

@@ -1,10 +1,8 @@
-from pathlib import Path
-
 import click
 
 from peltomappi.cli.utils import str_to_path
 from peltomappi.config import Config
-from peltomappi.weather import TestBackend, Weather
+from peltomappi.weather import FMIBackend, Weather
 
 
 @click.group(help="Commands to manage weather data")
@@ -54,7 +52,7 @@ def write(
         config=config,
         output_dir=output_directory,
         # FIXME: replace, obviously
-        backend=TestBackend(Path("./test/testdata/field_parcel_config.gpkg")),
+        backend=FMIBackend(),
         overwrite=overwrite,
     )
     weather.write()
