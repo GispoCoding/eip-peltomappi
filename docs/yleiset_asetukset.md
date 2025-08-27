@@ -80,7 +80,7 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu **vihreällä**, mikä auttaa tunnistamaan, että olet aivan kohdassa.
 
-**Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [**ulkoista GPS-vastaanotinta**](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
+**Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
 
 ## Mergin Mapsin synkronointi mobiilisovelluksessa
 
@@ -111,3 +111,35 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 -   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "Synkronoitu onnistuneesti".
 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
+
+## GPS-tarkkuus Mergin Maps -mobiilisovelluksessa
+
+Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa suoraan kenttätyön paikkatietojen laatuun. Tarkkuus näkyy kartan alareunassa ja siihen liittyy värikoodattu ympyrä, joka havainnollistaa sijainnin arvioitua virhemarginaalia.
+
+### Mistä näet GPS-tarkkuuden?
+
+-   **Tarkkuusnäyttö** näkyy kartan **vasemmassa alakulmassa**.
+
+    <img src="img/GPS_mergin_maps.png" width="31%"/>
+
+-   **Väri** kertoo, onko tarkkuus asetetun raja-arvon sisällä (vihreä) vai ulkopuolella (oranssi).
+
+-   **Värikoodin raja-arvo** määritetään sovelluksen GPS-asetuksissa (Oikea alakulman Lisää --\> Asetukset). Oletus on 10 metriä.
+
+-   **Napauta tarkkuusnäyttöä** saadaksesi lisätietoja, kuten:
+
+    -   Horisontaalinen ja vertikaalinen tarkkuus (HDOP, VDOP)
+
+    -   Käytettävissä olevien satelliittien määrä
+
+    -   GPS-antennin korkeus (jos määritetty)
+
+    -   Viimeisin sijaintitieto
+
+    ### Miten parannan GPS-tarkkuutta?
+
+-   **Odota vakaata signaalia**: Jos tarkkuus on heikko, odota hetki, että laite saa paremman signaalin.
+
+-   **Käytä ulkoista GPS-laitetta**: Liitä laitteesi Bluetoothin kautta ulkoiseen GPS-vastaanottimeen saadaksesi tarkempia mittauksia.
+
+-   **Varmista esteetön taivasnäkyvyys**: GPS-signaali heikkenee esteiden, kuten rakennusten tai tiheän puuston, takia.
