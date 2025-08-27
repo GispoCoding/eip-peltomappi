@@ -80,9 +80,9 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
     Tämä on pitkän matkan navigointitila
 
-4.  Kun olet alle 1 metrin päässä pisteestä, näkymä vaihtuu automaattisesti **lyhyen matkan navigointitilaan**.
+4.  Kun olet alle 1 metrin päässä pisteestä, näkymä vaihtuu automaattisesti lyhyen matkan navigointitilaan.
 
-5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu **vihreällä**, mikä auttaa tunnistamaan, että olet aivan kohdassa.
+5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu vihreällä, mikä auttaa tunnistamaan, että olet aivan kohdassa.
 
 <iframe src="https://drive.google.com/file/d/1SuLu6QMYuvm63MYcvBJFzaA3UKYsxNk-/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -94,27 +94,27 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 ### Perusedellytykset synkronointiin
 
--   Sinun täytyy olla **kirjautunut Mergin Maps-tilillesi**.
+-   Sinun täytyy olla kirjautunut Mergin Maps-tilillesi.
 
--   Laite tarvitsee **verkkoyhteyden** synkronointia varten.
+-   Laite tarvitsee verkkoyhteyden synkronointia varten.
 
--   Sinulla tulee olla projektiin **kirjoitusoikeudet**.
+-   Sinulla tulee olla projektiin kirjoitusoikeudet.
 
 ### 1. Manuaalinen synkronointi
 
--   Napauta karttanäkymässä olevaa **Sync-painiketta**.
+-   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
 
--   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: **Synkronoitu onnistuneesti**
+-   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***
 
--   Voit halutessasi tarkastella odottavia muutoksia napauttamalla **Lisää → Paikalliset muutokset** <img src="img/sync_mergin_maps.gif" width="34%"/>
+-   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset*** <img src="img/sync_mergin_maps.gif" width="34%"/>
 
 ### 2. Automaattinen synkronointi
 
 -   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<img src="img/auto_sync_mergin_maps.png" width="34%"/>
 
--   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) **automaattisesti**, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
+-   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
 
--   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "Synkronoitu onnistuneesti".
+-   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
 
