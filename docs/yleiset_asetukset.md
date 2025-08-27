@@ -80,7 +80,7 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu **vihreällä**, mikä auttaa tunnistamaan, että olet aivan kohdassa.
 
-**Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää **ulkoista GPS-vastaanotinta**, joka hyödyntää GPS-korjauksia.
+**Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [**ulkoista GPS-vastaanotinta**](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
 
 ## Mergin Mapsin synkronointi mobiilisovelluksessa
 
