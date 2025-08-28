@@ -1,26 +1,30 @@
 # Penetrometri
 
-1.  Paina alavalikon "Lisää" painikekeesta
+1.  Paina alavalikon ***Lisää*** painikekeesta
 
-2.  Tarkista että ylhäällä lukee "Penetrometri"- taso. Jos ei lue niin vaihda tasoksi "Penetrometri"
+2.  Tarkista että ylhäällä lukee ***Penetrometri***- taso. Jos ei lue niin vaihda tasoksi ***Penetrometri***
 
 3.  Siirry kartalla haluamaasi sijaintiin
 
-4.  Klikkaa alhaalta "Tallenna"
+4.  Klikkaa alhaalta ***Tallenna***
 
 5.  Syötä tarvittavat ominaisuustiedot
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
+<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+
+</iframe>
+
 Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
 
 -   Maan tiiveys:
 
-    ::: {style="margin-left: 20px;"}
-    -   hyvät kasvuolosuhteet<br/>\
-    -   kohtuulliset kasvuolosuhteet<br/>\
-    -   heikot kasvuolosuhteet<br/>\
-    :::
+    -   hyvät kasvuolosuhteet
+    -   kohtuulliset kasvuolosuhteet
+    -   heikot kasvuolosuhteet
+
+-   Syvyys
 
 -   Päivämäärä ja aika
 

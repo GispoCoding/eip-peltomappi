@@ -4,11 +4,11 @@ Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös mui
 
 **Käynnistä seuranta:**
 
-1.  Napauta Lisää -painiketta.
+1.  Napauta ***Lisää*** -painiketta.
 
-2.  Valitse Sijainnin nauhoitus
+2.  Valitse ***Sijainnin nauhoitus***
 
-3.  Napauta Aloita sijainnin nauhoitus.
+3.  Napauta ***Aloita sijainnin nauhoitus***.
 
 4.  Sovellus alkaa tallentaa sijaintiasi taustalla.
 
@@ -18,16 +18,16 @@ Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös mui
 
     ![](img/mobile-app-stop-tracking.DN3LYoE-.jpg)
 
-2.  Napauta lopeta nauhoitus
+2.  Napauta ***lopeta nauhoitus***
 
-3.  Tallennetut reitit löytyvät tracking_layer-kerroksesta QGIS-projektissasi.
+3.  Tallennetut reitit löytyvät ***tracking_layer***-tasosta projektissasi.
 
-⚙️ Huomioitavaa
+Huomioitavaa
 
 -   Tallennus: Paikannusseurannan tiedot tallennetaan automaattisesti projektiin.
 
 -   Synkronointi: Muista synkronoida projekti säännöllisesti varmistaaksesi, että tiedot tallentuvat pilveen.
 
-<iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>

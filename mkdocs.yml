@@ -31,6 +31,7 @@ theme:
     - navigation.footer
     - navigation.instant
     - navigation.instant.progress
+    - toc.integrate
     - search.suggest
     - search.highlight
     - header.autohide
