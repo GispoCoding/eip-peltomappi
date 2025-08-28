@@ -24,6 +24,6 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään ja paikkatietojen tarkaste
     -   Zoomaa projektiin: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
     -   Karttateemat: luettelo karttateemoista
     -   Sijainnin seuranta: aloittaaksesi jälkien seurannan maastotutkimuksen aikana
-    -   Mittaa: mittaa pituus tai alue kartalla
+    -   [Mittaa](https://gispocoding.github.io/eip-peltomappi/mittaus.html): mittaa pituus tai alue kartalla
     -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista
     -   Asetukset: GPS-asetukset, nauhoitustila ja tallennusasetukset sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
