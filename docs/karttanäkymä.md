@@ -1,6 +1,8 @@
 # Karttanäkymä
 
-Tutustutaan aluksi Mergin Mapsin käyttöliittymään ja paikkatietojen tarkasteluun sillä. <img src="img/karttanäkymä.png" width="39%"/>
+Tutustutaan aluksi Mergin Mapsin käyttöliittymään ja paikkatietojen tarkasteluun sillä.
+
+<img src="img/karttanäkymä.png" width="39%"/>
 
 -   **GPS-indikaattori:** Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat tiedot
 
