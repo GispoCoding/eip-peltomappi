@@ -8,7 +8,7 @@ Lataa Mergin Maps -mobiilisovellus Android-laitteellesi, iPhonelle tai iPadille.
 
 ![](img/mergin_maps_play-store.png) *Mergin Maps Google Play kaupassa*
 
-## Tuetut käyttöjärjestelmäversiot
+## **Tuetut käyttöjärjestelmäversiot**
 
 Mobiilisovelluksen vähimmäiskäyttöjärjestelmäversiot ovat Android 9 ja iOS 16.
 
