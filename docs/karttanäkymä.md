@@ -4,7 +4,7 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään ja paikkatietojen tarkaste
 
 <img src="img/karttanäkymä.png" width="39%"/>
 
--   **GPS-indikaattori:** Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat tiedot
+-   **GPS-indikaattori:** Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat tiedot. Lisätietoja [täältä](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mista-naet-gps-tarkkuuden).
 
 -   **Sijaintipainike:** Näytön oikeassa alakulmassa olevan sijaintipainikkeen napauttaminen keskittää kartan nykyiseen sijaintiisi ja pitää sen keskitettynä liikkuessasi. Jos siirrät karttaa manuaalisesti, automaattinen keskitystila poistuu käytöstä automaattisesti.
 
