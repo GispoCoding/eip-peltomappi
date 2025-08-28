@@ -5,7 +5,6 @@ import click
 
 from peltomappi.logger import LOGGER
 
-import peltomappi.cli.divide
 import peltomappi.cli.project
 import peltomappi.cli.weather
 
@@ -23,7 +22,6 @@ def cli(quiet):
 
 
 if __name__ == "__main__":
-    cli.add_command(peltomappi.cli.divide.divide)
     cli.add_command(peltomappi.cli.project.project)
     cli.add_command(peltomappi.cli.weather.weather)
 

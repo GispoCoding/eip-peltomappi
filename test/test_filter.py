@@ -5,10 +5,10 @@ import tempfile
 from osgeo import gdal, ogr
 
 from peltomappi.config import Config
-from peltomappi.divider import Divider
+from peltomappi.filter import filter_dataset
 
 
-def test_divider(
+def test_filter_dataset(
     field_parcel_mock_uri: Path,
     field_parcel_config: Path,
 ):
@@ -17,28 +17,22 @@ def test_divider(
 
     config = Config(field_parcel_config)
 
-    divider = Divider(
-        input_dataset=field_parcel_mock_uri,
-        output_dir=temp_dir_path,
-        config=config,
-        filename="peltolohkot",
-    )
-    res = divider.divide()
+    output_1 = temp_dir_path / "peltolohkot1.gpkg"
+    output_2 = temp_dir_path / "peltolohkot2.gpkg"
 
-    output_1 = temp_dir_path / "area1" / "peltolohkot.gpkg"
-    output_2 = temp_dir_path / "area2" / "peltolohkot.gpkg"
+    filter_dataset(
+        input_path=field_parcel_mock_uri,
+        output_path=output_1,
+        area=config.to_dict()["area1"],
+    )
+    filter_dataset(
+        input_path=field_parcel_mock_uri,
+        output_path=output_2,
+        area=config.to_dict()["area2"],
+    )
 
     assert output_1.exists()
     assert output_2.exists()
-
-    assert len(res.files) == 2
-    assert len(res.folders) == 2
-
-    assert res.files[0] == output_1
-    assert res.files[1] == output_2
-
-    assert res.folders[0] == temp_dir_path / "area1"
-    assert res.folders[1] == temp_dir_path / "area2"
 
     def test_dataset(
         dataset: gdal.Dataset,

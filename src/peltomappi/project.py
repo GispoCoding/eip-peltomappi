@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 
 from peltomappi.config import Config
-from peltomappi.divider import Divider
+from peltomappi.filter import filter_dataset
 from peltomappi.logger import LOGGER
 from peltomappi.utils import config_description_to_path
 
@@ -77,7 +77,7 @@ class Project:
                     continue
 
                 LOGGER.info(f"Dividing {file.stem}...")
-                Divider.divide_into_area(
+                filter_dataset(
                     input_path=file,
                     output_path=subproject_dir / f"{file.stem}.gpkg",
                     area=filter_geom,
