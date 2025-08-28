@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 
 from peltomappi.config import Config
-from peltomappi.project import Project
+from peltomappi.project import split_to_subprojects
 
 
 def test_project(
@@ -14,20 +14,20 @@ def test_project(
     temp_dir_path = Path(temp_dir.name)
 
     config = Config(field_parcel_config)
-    project = Project(
-        dummy_project,
+
+    split_to_subprojects(
+        template_project_directory=dummy_project,
         output_directory=temp_dir_path,
         config=config,
     )
-
-    project.create_subprojects()
 
     subproject_1_folder = temp_dir_path / "area1"
     subproject_2_folder = temp_dir_path / "area2"
 
     def test_subproject(folder: Path):
         assert folder.exists()
-        assert (folder / "dummy").exists()
+        assert (folder / "peltomappi.qgs").exists()
+        assert (folder / "mergin-config.json").exists()
         assert (folder / "field_parcel_mock_ds.gpkg").exists()
         assert not (folder / "field_parcel_mock_ds.gpkg-shm").exists()
         assert not (folder / "field_parcel_mock_ds.gpkg-wal").exists()

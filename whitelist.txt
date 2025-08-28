@@ -19,3 +19,6 @@ testdata
 subprojects
 iterdir
 subproject
+copytree
+qgis
+mergin

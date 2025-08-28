@@ -5,11 +5,10 @@ import tempfile
 from osgeo import gdal, ogr
 
 from peltomappi.config import Config
-from peltomappi.divider import Divider
-from peltomappi.prefix import field_parcel
+from peltomappi.filter import filter_dataset
 
 
-def test_divider(
+def test_filter_dataset(
     field_parcel_mock_uri: Path,
     field_parcel_config: Path,
 ):
@@ -18,29 +17,22 @@ def test_divider(
 
     config = Config(field_parcel_config)
 
-    divider = Divider(
-        input_dataset=field_parcel_mock_uri,
-        output_dir=temp_dir_path,
-        config=config,
-        filename="peltolohkot",
-        layer_name_callback=field_parcel,
-    )
-    res = divider.divide()
+    output_1 = temp_dir_path / "peltolohkot1.gpkg"
+    output_2 = temp_dir_path / "peltolohkot2.gpkg"
 
-    output_1 = temp_dir_path / "area1" / "peltolohkot.gpkg"
-    output_2 = temp_dir_path / "area2" / "peltolohkot.gpkg"
+    filter_dataset(
+        input_path=field_parcel_mock_uri,
+        output_path=output_1,
+        area=config.to_dict()["area1"],
+    )
+    filter_dataset(
+        input_path=field_parcel_mock_uri,
+        output_path=output_2,
+        area=config.to_dict()["area2"],
+    )
 
     assert output_1.exists()
     assert output_2.exists()
-
-    assert len(res.files) == 2
-    assert len(res.folders) == 2
-
-    assert res.files[0] == output_1
-    assert res.files[1] == output_2
-
-    assert res.folders[0] == temp_dir_path / "area1"
-    assert res.folders[1] == temp_dir_path / "area2"
 
     def test_dataset(
         dataset: gdal.Dataset,
@@ -56,11 +48,11 @@ def test_divider(
         layer_4: ogr.Layer = dataset.GetLayerByIndex(3)
         layer_5: ogr.Layer = dataset.GetLayerByIndex(4)
 
-        assert layer_1.GetName() == "peltolohko_2024"
-        assert layer_2.GetName() == "peltolohko_2023"
-        assert layer_3.GetName() == "peltolohko_2022"
-        assert layer_4.GetName() == "peltolohko_2021"
-        assert layer_5.GetName() == "peltolohko_2020"
+        assert layer_1.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2024"
+        assert layer_2.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2023"
+        assert layer_3.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2022"
+        assert layer_4.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2021"
+        assert layer_5.GetName() == "LandUse.ExistingLandUse.GSAAAgriculturalParcel.2020"
 
         assert layer_1.GetFeatureCount() == 1
         assert layer_2.GetFeatureCount() == 1
