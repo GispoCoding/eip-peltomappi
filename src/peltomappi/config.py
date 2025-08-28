@@ -49,7 +49,7 @@ class Config:
             - description must be unique to each feature
 
         Raises:
-            ConfigError: If any check fails.
+            ConfigError: if any check fails
         """
         config_dataset: ogr.DataSource = gdal.OpenEx(
             self.__gpkg_path,

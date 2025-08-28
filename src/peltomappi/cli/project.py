@@ -2,7 +2,7 @@ import click
 
 from peltomappi.config import Config
 from peltomappi.cli.utils import str_to_path
-from peltomappi.project import split_to_subprojects, upload_project
+from peltomappi.project import split_to_subprojects
 
 
 @click.group(help="Commands to manage Peltomappi projects")
@@ -56,24 +56,4 @@ def split(
         template_project_directory=template_project_directory,
         output_directory=output_directory,
         config=config,
-    )
-
-
-@project.command(help="Uploads a project to a MerginMaps Server")
-@click.argument(
-    "project_directory",
-    type=click.Path(
-        exists=True,
-        dir_okay=True,
-        file_okay=False,
-        readable=True,
-        resolve_path=True,
-    ),
-    callback=str_to_path,
-)
-def upload(
-    project_directory,
-):
-    upload_project(
-        project_directory,
     )

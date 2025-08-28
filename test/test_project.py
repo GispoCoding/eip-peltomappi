@@ -26,7 +26,8 @@ def test_project(
 
     def test_subproject(folder: Path):
         assert folder.exists()
-        assert (folder / "dummy").exists()
+        assert (folder / "peltomappi.qgs").exists()
+        assert (folder / "mergin-config.json").exists()
         assert (folder / "field_parcel_mock_ds.gpkg").exists()
         assert not (folder / "field_parcel_mock_ds.gpkg-shm").exists()
         assert not (folder / "field_parcel_mock_ds.gpkg-wal").exists()
