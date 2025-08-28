@@ -25,7 +25,8 @@ jobs:
           sudo apt update
           sudo apt install -y gdal-bin libgdal-dev
           python -m pip install uv
-          python -m uv sync --group pm --group dev
+          python -m uv sync
+          python -m uv sync --group dev
 
       - name: Run tests
         run: |
