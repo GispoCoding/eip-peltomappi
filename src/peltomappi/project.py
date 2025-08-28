@@ -21,7 +21,6 @@ def validate_template_project(template_project_directory: Path):
 
     Raises:
         ProjectError: if any check fails
-
     """
 
     if not template_project_directory.exists():
@@ -44,8 +43,8 @@ def split_to_subprojects(
     config: Config,
 ):
     """
-    Splits project to subprojects based on set config. Project files are
-    not changed and are copied as is, but any background data is split
+    Splits project to subprojects based on set config. Project files are not
+    changed and are copied as is, but any data in GeoPackages is split
     according to the config.
 
     Raises:
