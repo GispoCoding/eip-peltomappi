@@ -30,6 +30,20 @@ function _check_argument() {
   fi
 }
 
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+          _show_usage;
+          exit 0;
+          ;;
+        --*) echo "ERROR: Unknown option passed: $1";
+          _show_usage;
+          exit 1;
+          ;;
+    esac
+    shift
+done
+
 # you could check that these exist, but the Python CLI does that anyway, so probably no point
 template_project_dir=$1
 full_data_dir=$2
@@ -45,19 +59,6 @@ _check_argument "CONFIG_GPKG" "$config_gpkg"
 _check_argument "WORKSPACE" "$workspace"
 _check_argument "PROJECT_NAME_PREFIX" "$project_name_prefix"
 
-while [[ "$#" -gt 0 ]]; do
-    case $1 in
-        -h|--help)
-          _show_usage;
-          exit 0;
-          ;;
-        --*) echo "ERROR: Unknown option passed: $1";
-          _show_usage;
-          exit 1;
-          ;;
-    esac
-    shift
-done
 
 if [[ ! -n "$MERGIN_USERNAME" ]]; then
   echo "ERROR: MERGIN_USERNAME environment variable must be set"
