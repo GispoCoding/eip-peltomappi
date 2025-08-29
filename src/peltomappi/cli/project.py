@@ -23,9 +23,20 @@ def project():
     callback=str_to_path,
 )
 @click.argument(
-    "output_directory",
+    "full_data_directory",
     type=click.Path(
         exists=True,
+        dir_okay=True,
+        file_okay=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "output_directory",
+    type=click.Path(
+        exists=False,
         dir_okay=True,
         file_okay=False,
         readable=True,
@@ -47,6 +58,7 @@ def project():
 )
 def split(
     template_project_directory,
+    full_data_directory,
     output_directory,
     config_gpkg,
 ):
@@ -54,6 +66,7 @@ def split(
 
     split_to_subprojects(
         template_project_directory=template_project_directory,
+        full_data_directory=full_data_directory,
         output_directory=output_directory,
         config=config,
     )
