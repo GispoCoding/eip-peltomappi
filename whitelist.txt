@@ -22,3 +22,5 @@ subproject
 copytree
 qgis
 mergin
+gpkg
+gpkgs

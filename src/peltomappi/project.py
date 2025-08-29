@@ -39,6 +39,7 @@ def validate_template_project(template_project_directory: Path):
 def split_to_subprojects(
     *,
     template_project_directory: Path,
+    full_data_directory: Path,
     output_directory: Path,
     config: Config,
 ):
@@ -48,17 +49,17 @@ def split_to_subprojects(
     according to the config.
 
     Raises:
-        ProjectError: if directory for a subproject was not correctly created.
+        ProjectError: indirectly, if template project was deemed invalid
     """
     validate_template_project(template_project_directory)
 
+    output_directory.mkdir(parents=True, exist_ok=False)
+
+    full_data_gpkgs: tuple[str, ...] = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
+
     for description, filter_geom in config.to_dict().items():
         subproject_dir = config_description_to_path(description, output_directory)
-        subproject_dir.mkdir(exist_ok=True)
-
-        if not subproject_dir.exists():
-            msg = f"subproject directory {subproject_dir} was not created!"
-            raise ProjectError(msg)
+        subproject_dir.mkdir(exist_ok=False)
 
         LOGGER.info("Copying project files...")
         for file in template_project_directory.iterdir():
@@ -77,7 +78,19 @@ def split_to_subprojects(
                 shutil.copy(file, subproject_dir)
 
         LOGGER.info("Dividing project data...")
+
         for file in template_project_directory.glob("*.gpkg"):
+            if file.name in full_data_gpkgs:
+                continue
+
+            LOGGER.info(f"Dividing {file.stem}...")
+            filter_dataset(
+                input_path=file,
+                output_path=subproject_dir / f"{file.stem}.gpkg",
+                area=filter_geom,
+            )
+
+        for file in full_data_directory.glob("*.gpkg"):
             LOGGER.info(f"Dividing {file.stem}...")
             filter_dataset(
                 input_path=file,
