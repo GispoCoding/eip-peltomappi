@@ -25,3 +25,8 @@ def field_parcel_config() -> Path:
 @pytest.fixture
 def dummy_project() -> Path:
     return _testdata_path() / "dummy_project"
+
+
+@pytest.fixture
+def dummy_project_full_data() -> Path:
+    return _testdata_path() / "dummy_project_full_data"
