@@ -4,17 +4,23 @@
 
 Kun olet ladannut puhelimeesi Mergin Maps sovelluksen.
 
-Tee tunnukset palveluun osoitteessa: <https://app.merginmaps.com/register>
+1.  Tämän jälkeen avaa sovellus. Klikkaa oikean yläkulman ikonia:
 
-Tämän jälkeen avaa sovellus.
+    <img src="img/aloitusnakyma.jpg" width="34%"/>
 
-Klikkaa oikean yläkulman ikonia:
+2.  Rekisteröi itsellesi tunnukset klikkaamalla ***Rekisteröidy***
 
-![](img/aloitusnakyma.jpg)
+    <img src="img/register_mergin_maps.png" width="34%"/>
 
-Kirjaudu tämän jälkeen tunnuksillasi sisään:
+3.  Täytä lomake ja napauta Rekisteröidy luodaksesi tilisi.
 
-![](img/kirjautuminen.jpg)
+    Saat vahvistussähköpostin, jossa on linkki sähköpostiosoitteesi vahvistamiseksi.
+
+    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi viiden minuutin kuluessa. <img src="img/rekisteröityminen_mergin_maps.jpg" width="34%"/>
+
+4.  Kirjaudu tämän jälkeen tunnuksillasi sisään:
+
+<img src="img/kirjautuminen.jpg" width="34%"/>
 
 Klikkaa tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
@@ -74,7 +80,7 @@ Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi list
 
 3.  Valitse projekti, jonka haluat ladata.
 
-4.  Klikkaa ***Download*** ***projec****t* (Lataa projekti).
+4.  Klikkaa ***Download*** ***projec**t* (Lataa projekti).
 
 5.  Valitse kansio, johon projekti tallennetaan. Laita mieleen tämä sijainti. Tähän samaan sijaintiin tallennetaan myöhemmin [georeferoidut kuvat](https://gispocoding.github.io/eip-peltomappi/salaojakarttojen_georeferointi.html).
 
