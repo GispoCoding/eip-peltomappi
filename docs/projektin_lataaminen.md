@@ -2,9 +2,9 @@
 
 ## Projektin lataaminen mobiilisovellukseen
 
-Kun olet ladannut puhelimeesi Mergin Maps sovelluksen.
+Kun puhelimessasi on asennettuna [Mergin Maps sovelluksen](https://gispocoding.github.io/eip-peltomappi/esittely.html), toimi seuraavasti:
 
-1.  Tämän jälkeen avaa sovellus. Klikkaa oikean yläkulman ikonia:
+1.  Avaa sovellus ja näpäytä oikean yläkulman ikonia:
 
     <img src="img/aloitusnakyma.jpg" width="34%"/>
 
@@ -12,11 +12,11 @@ Kun olet ladannut puhelimeesi Mergin Maps sovelluksen.
 
     <img src="img/register_mergin_maps.png" width="34%"/>
 
-3.  Täytä lomake ja napauta Rekisteröidy luodaksesi tilisi.
+3.  Täytä lomake ja napauta ***Rekisteröidy*** luodaksesi tilisi.
 
     Saat vahvistussähköpostin, jossa on linkki sähköpostiosoitteesi vahvistamiseksi.
 
-    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi viiden minuutin kuluessa. <img src="img/rekisteröityminen_mergin_maps.jpg" width="34%"/>
+    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi viiden minuutin kuluessa.
 
 4.  Kirjaudu tämän jälkeen tunnuksillasi sisään:
 
@@ -29,6 +29,8 @@ Klikkaa tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomap
 </iframe>
 
 ## Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen
+
+Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella toimi seuraavasti:
 
 ### QGIS:n lataaminen ja asentaminen
 
@@ -62,11 +64,13 @@ Avaa lisäosa valikosta: ***Lisäosat → Mergin Maps → Configure MerginMaps p
 
 ![](img/projektin_lataaminen_qgisiin/img3.png)
 
-Tämän jälkeen ohjelma pyytää asettamaan uuden päätodennussalasanan. Anna siihen haluamasi salasana
+Tämän jälkeen ohjelma pyytää asettamaan uuden päätodennussalasanan QGISiin. Anna siihen haluamasi salasana ja laita se talteen.
 
 ![](img/projektin_lataaminen_qgisiin/img4.png)
 
 Kirjaudu sisään Mergin-tililläsi.
+
+Valitse **Save credentials***,* jos haluat että ohjelma muistaa tunnuksesi seuraavilla kerroilla.
 
 ![](img/projektin_lataaminen_qgisiin/img5.png)
 
