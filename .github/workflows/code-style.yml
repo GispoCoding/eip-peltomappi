@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - '.github/workflows/code-style.yml'
 
 jobs:
   pre-commit:

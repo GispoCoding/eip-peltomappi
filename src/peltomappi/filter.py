@@ -111,7 +111,7 @@ def filter_dataset(
     )
 
     if not input_dataset:
-        msg = f"Could not open dataset from {input_dataset}"
+        msg = f"Could not open dataset from {input_path}"
         raise FilterError(msg)
 
     out_driver: ogr.Driver = ogr.GetDriverByName("GPKG")
