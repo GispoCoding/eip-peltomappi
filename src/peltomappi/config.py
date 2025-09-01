@@ -1,11 +1,112 @@
 from pathlib import Path
+from typing import Any
 from osgeo import gdal, ogr, osr
 
+from geopandas import gpd
+
+import json
+
+
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
+FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
+IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS = 1000
 
 
 class ConfigError(Exception):
     pass
+
+
+def __validate_json_config(data: Any) -> dict[str, list[str]]:
+    """
+    Checks that data read from a JSON file is in the correct format.
+
+    Raises:
+        ConfigError: if any check fails
+
+    Returns:
+        the data unchanged, correctly typed
+    """
+    if not isinstance(data, dict):
+        msg = "read json is not a dictionary"
+        raise ConfigError(msg)
+
+    for _list in data.values():
+        if not isinstance(_list, list):
+            msg = f"{_list} should be a list of strings"
+            raise ConfigError(msg)
+
+        for value in _list:
+            if not isinstance(value, str):
+                msg = f"value {value} in list should be a string"
+                raise ConfigError(msg)
+
+    return data
+
+
+def convert_config_json_to_gpkg(
+    input: Path,
+    output: Path,
+    data_gpkg: Path,
+    *,
+    overwrite: bool = False,
+) -> None:
+    """
+    Converts a json to a valid peltomappi config.
+
+    Args:
+        input: path to the json file
+        output: path of the output GeoPackage
+        data_gpkg: path of a GeoPackage which contains field parcels
+
+    Raises:
+        ConfigError: if not all IDs exist in the data_gpkg, indirectly if input
+            JSON is invalid
+    """
+
+    if not overwrite and output.exists():
+        msg = f"file {output} exists and overwrite has not been permitted"
+        raise ConfigError(msg)
+
+    data = __validate_json_config(json.loads(input.read_text()))
+
+    _ids: list[str] = []
+    for _, items in data.items():
+        _ids.extend(items)
+
+    ids: set[str] = set(_ids)
+
+    where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({', '.join(ids)})"
+
+    in_gdf: gpd.GeoDataFrame = gpd.read_file(
+        data_gpkg,
+        columns=[FIELD_PARCEL_IDENTIFIER_COLUMN],
+        engine="pyogrio",
+        where=where_clause,
+    )
+
+    if len(ids) != len(in_gdf.index):
+        msg = "Number of given IDs does not match number of found IDs"
+        raise ConfigError(msg)
+
+    out_geometries = []
+    out_descriptions = []
+    for person, field_parcel_ids in data.items():
+        parcel: gpd.GeoSeries = in_gdf.loc[in_gdf[FIELD_PARCEL_IDENTIFIER_COLUMN].isin(field_parcel_ids)]
+
+        multi_geom = parcel.geometry.union_all().buffer(IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS)
+
+        out_descriptions.append(person)
+        out_geometries.append(multi_geom)
+
+    out_gdf = gpd.GeoDataFrame(
+        {
+            "description": out_descriptions,
+        },
+        geometry=out_geometries,
+        crs=in_gdf.crs,
+    )
+
+    out_gdf.to_file(output, layer="__peltomappi_config")
 
 
 class Config:

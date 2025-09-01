@@ -9,6 +9,7 @@ dependencies = [
     "mergin-client==0.10.4",
     "mkdocs-redirects>=1.2.2",
     "mkdocs-material>=9.6.18",
+    "geopandas>=1.1.1",
 ]
 
 [dependency-groups]

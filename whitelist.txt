@@ -24,3 +24,8 @@ qgis
 mergin
 gpkg
 gpkgs
+geopandas
+gpd
+gdf
+loc
+isin
