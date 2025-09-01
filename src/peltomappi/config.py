@@ -9,7 +9,7 @@ import json
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
-IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS = 1000
+DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS = 1000
 
 
 class ConfigError(Exception):
@@ -49,6 +49,7 @@ def convert_config_json_to_gpkg(
     data_gpkg: Path,
     *,
     overwrite: bool = False,
+    buffer_distance: float = DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS,
 ) -> None:
     """
     Converts a json to a valid peltomappi config.
@@ -93,7 +94,7 @@ def convert_config_json_to_gpkg(
     for person, field_parcel_ids in data.items():
         parcel: gpd.GeoSeries = in_gdf.loc[in_gdf[FIELD_PARCEL_IDENTIFIER_COLUMN].isin(field_parcel_ids)]
 
-        multi_geom = parcel.geometry.union_all().buffer(IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS)
+        multi_geom = parcel.geometry.union_all().buffer(buffer_distance)
 
         out_descriptions.append(person)
         out_geometries.append(multi_geom)

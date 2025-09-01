@@ -29,3 +29,5 @@ gpd
 gdf
 loc
 isin
+geodataframe
+fulldata
