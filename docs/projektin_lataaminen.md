@@ -4,11 +4,11 @@
 
 Kun puhelimessasi on asennettuna [Mergin Maps sovelluksen](https://gispocoding.github.io/eip-peltomappi/esittely.html), toimi seuraavasti:
 
-1.  Avaa sovellus ja näpäytä oikean yläkulman ikonia:
+1.  Avaa sovellus ja napauta oikean yläkulman ikonia:
 
     <img src="img/aloitusnakyma.jpg" width="34%"/>
 
-2.  Rekisteröi itsellesi tunnukset klikkaamalla ***Rekisteröidy***
+2.  Rekisteröi itsellesi tunnukset napauttamalla ***Rekisteröidy***
 
     <img src="img/register_mergin_maps.png" width="34%"/>
 
@@ -22,7 +22,7 @@ Kun puhelimessasi on asennettuna [Mergin Maps sovelluksen](https://gispocoding.g
 
 <img src="img/kirjautuminen.jpg" width="34%"/>
 
-Klikkaa tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
+Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
 <iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
