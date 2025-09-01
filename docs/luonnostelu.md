@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# Karttapiirrokset/luonnostelu
+# **Karttapiirrokset/luonnostelu**
 
 Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla
 käyttäjä voi piirtää vapaalla kädellä kartan päälle
@@ -14,7 +14,7 @@ QGIS-projektiin. Ominaisuus sopii esimerkiksi kenttämuistiinpanojen,
 reittien tai huomioiden merkitsemiseen nopeasti ilman, että tarvitsee
 luoda varsinaisia kohteita tietokantaan.
 
-## Työkalun käyttöönotto
+## **Työkalun käyttöönotto**
 
 1.  Avaa projekti QGIS-ohjelmassa.
 
@@ -31,7 +31,7 @@ luoda varsinaisia kohteita tietokantaan.
 
 6.  Synkronoi projekti Mergin Maps -palveluun.
 
-## Karttapiirrosominaisuuden käyttäminen mobiilisovelluksessa
+## **Karttapiirrosominaisuuden käyttäminen mobiilisovelluksessa**
 
 1.  Napsauta karttapiirroskuvaketta ***(kynä)*** vasemmassa alakulmassa.
 

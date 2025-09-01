@@ -1,4 +1,4 @@
-# Karttanäkymä
+# **Karttanäkymä**
 
 Tutustutaan aluksi Mergin Mapsin käyttöliittymään ja paikkatietojen tarkasteluun sillä.
 

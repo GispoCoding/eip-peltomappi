@@ -1,4 +1,4 @@
-# Kohteen lisääminen
+# **Kohteen lisääminen**
 
 1.  Paina alavalikon ***Lisää*** painikekeesta
 
