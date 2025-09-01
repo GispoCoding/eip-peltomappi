@@ -1,6 +1,6 @@
 # **Penetrometri**
 
-1.  Paina alavalikon ***Lisää*** painikekeesta
+1.  Paina alavalikon ***Lisää*** painikkeesta
 
 2.  Tarkista että ylhäällä lukee ***Penetrometri***- taso. Jos ei lue niin vaihda tasoksi ***Penetrometri***
 
