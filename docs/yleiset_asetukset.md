@@ -1,10 +1,10 @@
-# Yleiset asetukset
+# **Yleiset asetukset**
 
-## Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa
+## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
 
 Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **poistaa kohteita**,
 
-### Kohteiden muokkaaminen
+### **Kohteiden muokkaaminen**
 
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä
 
@@ -16,7 +16,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 </iframe>
 
-### Geometrian uudelleenpiirtäminen
+### **Geometrian uudelleenpiirtäminen**
 
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike muokataksesi ja ***Muokkaa geometriaa*** -painike.
 
@@ -30,7 +30,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 </iframe>
 
-### Useiden kohteiden muokkaus
+### **Useiden kohteiden muokkaus**
 
 -   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen ***Valitse lisää***-toiminto.
 
@@ -40,21 +40,21 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 </iframe>
 
-### Kohteiden poistaminen
+### **Kohteiden poistaminen**
 
 -   Valitse kohde kartalta tai listasta, avaa ***muokkaa***-lomake ja napauta ***Poista***-painiketta. Vahvista poisto, niin kohde poistuu
 
-## Viimeksi syötettyjen arvojen uudelleenkäyttö
+## **Viimeksi syötettyjen arvojen uudelleenkäyttö**
 
 Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamalla käyttöön viimeksi käyttämiäsi attribuuttiarvoja -- nämä kopioituvat automaattisesti seuraavaan kohteeseen.
 
-### Miten otat ominaisuuden käyttöön:
+### **Miten otat ominaisuuden käyttöön:**
 
 3.  Avaa valikko napauttamalla kolmea pistettä (⋯) ja siirry kohtaan ***Asetukset***
 
 4.  Ota käyttöön valinta **"*Viimeksi syötetyn arvon uudelleenkäyttö*"**
 
-### Miten se toimii käytännössä:
+### **Miten se toimii käytännössä:**
 
 -   Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, atribuuttienlomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
 
@@ -62,11 +62,11 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 -   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
 
-## Pisteelle navigointi/merkintä kenttätyössä
+## **Pisteelle navigointi/merkintä kenttätyössä**
 
 Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä suuntaan että etäisyyteen pisteestä -- mikä auttaa tarkassa kenttätyöskentelyssä.
 
-### Navigointi mobiilisovelluksessa
+### **Navigointi mobiilisovelluksessa**
 
 1.  Avaa karttanäkymä ja valitse haluamasi piste.
 
@@ -90,11 +90,11 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 **Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
 
-## Mergin Mapsin synkronointi mobiilisovelluksessa
+## **Mergin Mapsin synkronointi mobiilisovelluksess**a
 
 Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset synkronoituvat projektisi pilveen -- joko **manuaalisesti** tai **automaattisesti**.
 
-### Perusedellytykset synkronointiin
+### **Perusedellytykset synkronointiin**
 
 -   Sinun täytyy olla kirjautunut Mergin Maps-tilillesi.
 
@@ -102,7 +102,7 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Sinulla tulee olla projektiin kirjoitusoikeudet.
 
-### 1. Manuaalinen synkronointi
+### **1. Manuaalinen synkronointi**
 
 -   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
 
@@ -110,7 +110,7 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset*** <img src="img/sync_mergin_maps.gif" width="34%"/>
 
-### 2. Automaattinen synkronointi
+### **2. Automaattinen synkronointi**
 
 -   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<img src="img/auto_sync_mergin_maps.png" width="34%"/>
 
@@ -120,11 +120,11 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
 
-## GPS-tarkkuus Mergin Maps -mobiilisovelluksessa
+## **GPS-tarkkuus Mergin Maps -mobiilisovelluksessa**
 
 Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa suoraan kenttätyön paikkatietojen laatuun. Tarkkuus näkyy kartan alareunassa ja siihen liittyy värikoodattu ympyrä, joka havainnollistaa sijainnin arvioitua virhemarginaalia.
 
-### Mistä näet GPS-tarkkuuden?
+### **Mistä näet GPS-tarkkuuden?**
 
 -   Tarkkuusnäyttö näkyy kartan vasemmassa alakulmassa.
 
@@ -144,7 +144,7 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
     -   Viimeisin sijaintitieto
 
-    ### Miten parannan GPS-tarkkuutta?
+    ### **Miten parannan GPS-tarkkuutta?**
 
 -   **Odota vakaata signaalia**: Jos tarkkuus on heikko, odota hetki, että laite saa paremman signaalin.
 

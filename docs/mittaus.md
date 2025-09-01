@@ -4,9 +4,9 @@ editor_options:
     wrap: 72
 ---
 
-# Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa
+# **Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa**
 
-## Viivan pituuden mittaus
+## **Viivan pituuden mittaus**
 
 1.  Napauta näytön alareunassa olevaa ***Lisää***-painiketta.
 
@@ -30,7 +30,7 @@ editor_options:
 
 </iframe>
 
-## Pinta-alan mittaus
+## **Pinta-alan mittaus**
 
 1.  Napauta ***Lisää piste*** -painiketta lisätäksesi pisteitä haluamasi
     alueen kulmiin.

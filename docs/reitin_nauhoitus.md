@@ -1,6 +1,6 @@
-# Reitin nauhoitus
+# **Reitin nauhoitus**
 
-Reitin nauhoituksen aikana voit lisätä muita kohteita tai käyttää myös muita sovelluksia. Nauhoitus pyörii siis taustalla niin kauan kunnes sen sammuttaa.
+Reitin nauhoituksen avulla voit tallentaa esimerkiksi ajoreittisi. Tallennuksen aikana voit lisätä muita kohteita tai käyttää myös muita sovelluksia. Nauhoitus pyörii siis taustalla niin kauan kunnes sen sammuttaa.
 
 **Käynnistä seuranta:**
 
