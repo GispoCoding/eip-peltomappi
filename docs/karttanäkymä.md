@@ -23,7 +23,11 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
     -   Projektit: oikotie mobiilisovelluksen pääsivulle
     -   Zoomaa projektiin: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
     -   Karttateemat: luettelo karttateemoista
-    -   Sijainnin seuranta: aloittaaksesi jälkien seurannan maastotutkimuksen aikana
+    -   Sijainnin nauhoitus: aloittaaksesi jälkien seurannan maastotutkimuksen aikana
     -   [Mittaa](https://gispocoding.github.io/eip-peltomappi/mittaus.html): mittaa pituus tai alue kartalla
     -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista
-    -   Asetukset: GPS-asetukset, nauhoitustila ja tallennusasetukset sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
+    -   Asetukset: sisältää seuraavat lisäasetukset:
+        -   GPS-asetukset: GPS tarkkuuden raja-arvot, Hallinnoi GPS vastaanottimia, GPS antennin korkeus
+        -   nauhoitustila: Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
+        -   tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse autommaatinen sijainti, kosketuspalaute
+        -   sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
