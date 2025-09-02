@@ -154,9 +154,7 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 ## **Karttapiirrokset/luonnostelu**
 
-!!! 💡 HUOM! Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon.\
-Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa:\
-[Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
+!!! 💡 HUOM! Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon.Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: Projektin lataaminen tietokoneelle
 
 
 Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi piirtää vapaalla kädellä kartan päälle mobiilisovelluksessa. Piirroksia voi tehdä eri väreillä ja ne tallentuvat erilliseen kerrokseen, joka synkronoituu takaisin QGIS-projektiin. Ominaisuus sopii esimerkiksi kenttämuistiinpanojen, reittien tai huomioiden merkitsemiseen nopeasti ilman, että tarvitsee luoda varsinaisia kohteita tietokantaan.
