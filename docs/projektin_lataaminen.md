@@ -34,13 +34,11 @@ Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla
 
 ### **QGIS:n lataaminen ja asentaminen**
 
-Mene QGIS:n viralliselle sivulle: <https://qgis.org/>
+Mene QGISinn viralliselle sivulle: <https://qgis.org/>
 
-Valitse ***Download Now*** ja lataa versio:
+Valitse ***Download Now*** ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux):
 
-![](img/projektin_lataaminen_qgisiin/img1.png){width="261"}
-
-käyttöjärjestelmällesi (Windows, Mac, Linux).
+<img src="img/projektin_lataaminen_qgisiin/img1.png" width="79%"/>
 
 Asenna QGIS seuraamalla asennusohjeita.
 
