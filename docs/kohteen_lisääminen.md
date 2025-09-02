@@ -35,6 +35,8 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 -   Lisätieto
 
+-   Navigointi (voit navigoida kohteelle esimerkiksi Google Mapsin avulla klikkaamalla linkkiö)
+
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 
 [Palautelomake: kohteen lisääminen](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Kohteen+lis%C3%A4%C3%A4mist%C3%A4)

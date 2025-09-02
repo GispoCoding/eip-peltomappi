@@ -1,4 +1,4 @@
-# **Yleiset asetukset**
+# **Muut ominaisuudet**
 
 ## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
 

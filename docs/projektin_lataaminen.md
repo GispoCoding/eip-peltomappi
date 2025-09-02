@@ -2,7 +2,7 @@
 
 ## **Projektin lataaminen mobiilisovellukseen**
 
-Kun puhelimessasi on asennettuna [Mergin Maps sovelluksen](https://gispocoding.github.io/eip-peltomappi/esittely.html), toimi seuraavasti:
+Kun puhelimessasi on asennettuna [Mergin Maps sovellu](https://gispocoding.github.io/eip-peltomappi/esittely.html)s, toimi seuraavasti:
 
 1.  Avaa sovellus ja napauta oikean yläkulman ikonia:
 
