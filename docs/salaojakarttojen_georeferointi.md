@@ -15,11 +15,13 @@ löytyvän **Hallitse ja asenna lisäosia/Manage and Install Plugins**
 -toiminnon avulla. Tässä ohjeistuksessa oletetaan, että lisäosa on
 aktivoitu onnistuneesti.
 
-![](img/harjoitus_3/image26_uusi_versio.png) *Kuva 1. Uudemmissa
-QGIS-versioissa Georeferoija löytyy tasot-valikosta*
+![](img/harjoitus_3/image26_uusi_versio.png)
 
-![](img/harjoitus_3/image26_vanha_versio.png) *Kuva 2. Vanhemmissa
-versioissa se löytyy Rasterit-valikosta.*
+*Kuva 1. Uudemmissa QGIS-versioissa Georeferoija löytyy tasot-valikosta*
+
+![](img/harjoitus_3/image26_vanha_versio.png)
+
+*Kuva 2. Vanhemmissa versioissa se löytyy Rasterit-valikosta.*
 
 ## **Georeferoija-lisäosan toiminta**
 
@@ -36,8 +38,10 @@ valita koneen tiedostojärjestelmästä. Tuettuina on useita kymmeniä eri
 rasteriformaatteja aina perinteisistä JPEG- ja PNG-formaateista
 tehokkaisiin JPEG2000- ja ECW-formaatteihin.
 
-![](img/harjoitus_3/image27.png) *Kuva 3. Georeferoitava rasteri avataan
-Georeferencer-ikkunaan Avaa rasteri -painikkeesta*
+![](img/harjoitus_3/image27.png)
+
+*Kuva 3. Georeferoitava rasteri avataan Georeferencer-ikkunaan Avaa
+rasteri -painikkeesta*
 
 Valitse rasteriksi aikaisemmin kuvatiedostoksi muunnettu salaojakartta..
 Kun haluttu kuva on valittu tiedostojärjestelmästä ja valinta
@@ -57,9 +61,10 @@ asetukset. Tämä tapahtuu avaamalla **Asetukset**-valikosta **Muunnoksen
 asetukset** -ikkuna (kuva 4). Saman ikkunan saa avattua myös
 työkaluriviltä keltaisesta ratassymbolista.
 
-![](img/harjoitus_3/image28.png) *Kuva 4. Georeferoinnin asetukset
-määritellään Asetukset-valikosta löytyvän Muunnoksen asetukset
--painikkeen takaa*
+![](img/harjoitus_3/image28.png)
+
+*Kuva 4. Georeferoinnin asetukset määritellään Asetukset-valikosta
+löytyvän Muunnoksen asetukset -painikkeen takaa*
 
 **Muunnoksen asetukset** -ikkunassa määritellään muunnoksessa
 käytettävät asetukset (kuva 5). Toteutettavan muunnoksen osalta (Kohta
@@ -89,8 +94,10 @@ QGISissä kun valmis" -täppä on aktiivisena. Näin saat suoraan valmiin
 georeferoidun rasterin auki QGISin karttaikkunaan georeferoinnin
 jälkeen.
 
-![](img/harjoitus_3/image29.png) *Kuva 5. Muunnoksen asetukset -ikkuna
-halutuilla asetuksilla (Transformation Settings)*
+![](img/harjoitus_3/image29.png)
+
+*Kuva 5. Muunnoksen asetukset -ikkuna halutuilla asetuksilla
+(Transformation Settings)*
 
 Kun muunnoksen asetukset on onnistuneesti määritelty, paina
 asetusikkunasta "OK".
@@ -117,8 +124,10 @@ määriteltyjen vastinpisteiden poistamiseen ja muokkaamiseen. Lisää piste
 -painikkeen painaminen aktivoi työkalun, jolla osoitetaan
 georeferoitavalta kuvalta piste.
 
-![](img/harjoitus_3/image30.png) *Kuva 6: Georeferointi aloitetaan
-lisäämällä rasterukuvalle oikaisupisteitä*
+![](img/harjoitus_3/image30.png)
+
+*Kuva 6: Georeferointi aloitetaan lisäämällä rasterukuvalle
+oikaisupisteitä*
 
 Kun Lisää piste -työkalulla on osoitettu piste georeferoitavalta
 kuvalta, avautuu Kirjoita karttakoordinaatit (Enter Map Coordinates)
@@ -134,8 +143,10 @@ voidaan elämää helpottaa täppäämällä "Piilota goereferoinnin ikkuna
 automaattisesti" -kohta. Tällöin Georeferencer sukeltaa automaattisesti
 piiloon Karttaikkunasta -painiketta painettaessa.
 
-![](img/harjoitus_3/image31.png) *Kuva 7: Oikaisupisteen tiedot annetaan
-Kirjoita karttakoordinaatit-ikkunassa*
+![](img/harjoitus_3/image31.png)
+
+*Kuva 7: Oikaisupisteen tiedot annetaan Kirjoita
+karttakoordinaatit-ikkunassa*
 
 Kun pisteelle on koordinaatit (joko QGIS-pääikkunasta osoittaen tai
 käsin syöttämällä), nähdään kentissä X / Itä ja Y / Pohjoinen
@@ -168,14 +179,16 @@ lisättyä Lisää piste -painikkeesta.
 
 ![](img/harjoitus_3/georeferointi_vastinpisteet.gif)
 
-![](img/harjoitus_3/image33.png) *Kuva 9: Jos haluat poistaa jonkun
-vastinpisteen, voit sen tehdä Poista piste -työkalulla. Aktivoi työkalu
-ja klikkaa sillä georeferointi-ikkunassa näkyvää pientä punaista
-pistettä (vastinpiste).*
+![](img/harjoitus_3/image33.png)
 
-![](img/harjoitus_3/image34.png) *Kuva 10: Poistaminen voidaan tehdä
-myös muunnospistetaulussa klikkaamalla haluttua riviä hiiren oikealla ja
-valitsemalla "Poista".*
+*Kuva 9: Jos haluat poistaa jonkun vastinpisteen, voit sen tehdä Poista
+piste -työkalulla. Aktivoi työkalu ja klikkaa sillä
+georeferointi-ikkunassa näkyvää pientä punaista pistettä (vastinpiste).*
+
+![](img/harjoitus_3/image34.png)
+
+*Kuva 10: Poistaminen voidaan tehdä myös muunnospistetaulussa
+klikkaamalla haluttua riviä hiiren oikealla ja valitsemalla "Poista".*
 
 ## **Vastinpisteiden tarkastelu ja varsinainen georeferointi**
 
@@ -185,8 +198,10 @@ vastinpistetaulu ei näy automaattisesti Georeferencer-ikkunassa ns.
 paneelina, voidaan se avata Näytä-valikosta löytyvän Paneelit-valikon
 alta (kuva 11).
 
-![](img/harjoitus_3/image35.png) *Kuva 11: Syötettyjä oikaisupisteitä ja
-niiden vastinpisteitä voi tarkastella CGP-taulusta*
+![](img/harjoitus_3/image35.png)
+
+*Kuva 11: Syötettyjä oikaisupisteitä ja niiden vastinpisteitä voi
+tarkastella CGP-taulusta*
 
 Vastinpistetaulussa on nähtävillä kaikki osoitetut vastinpisteet (kuva
 10). Tässä esimerkissä on määritelty kymmenen vastinpistettä. Jokaisella
@@ -206,16 +221,19 @@ näyttäisivät olevan hyvin linjassa toistensa kanssa eikä selkeitä
 poikkeamia esiinny. Voidaan siis edetä hyvillä mielin viimeiseen
 vaiheeseen, jossa itse georeferointi toteutetaan.
 
-![](img/harjoitus_3/image36.png) *Kuva 12: GCP-taulussa nähdään kaikki
-syötetyt vastinpisteet.*
+![](img/harjoitus_3/image36.png)
+
+*Kuva 12: GCP-taulussa nähdään kaikki syötetyt vastinpisteet.*
 
 Kun tarvittava määrä vastinpisteitä on määritelty ja ne on todettu
 hyviksi vastinpistetaulua tarkastelemalla, voidaan käynnistää
 varsinainen georeferointi. Tämä tapahtuu Georeferencer-ikkunan **Start
 Georeferencing** -painikkeesta (kuva 13).
 
-![](img/harjoitus_3/image37.png) *Kuva 13: Georeferointi käynnistetään
-Start Georeferencing-painikkeesta.*
+![](img/harjoitus_3/image37.png)
+
+*Kuva 13: Georeferointi käynnistetään Start
+Georeferencing-painikkeesta.*
 
 Mikäli Muunnoksen asetukset (Transformation Settings) -ikkunassa on
 laitettu täppä kohtaan "Load in QGIS when done", avautuu georeferoitu
