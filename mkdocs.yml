@@ -22,6 +22,9 @@ use_directory_urls: false
 
 markdown_extensions:
   - footnotes
+  - admonition
+  - pymdownx.details   # (valinnainen, jos haluat avattavia/kaadettavia laatikoita)
+  - pymdownx.superfences  # (yleensä hyvä ottaa myös mukaan)
 
 theme:
   name: material
