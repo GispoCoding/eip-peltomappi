@@ -53,7 +53,7 @@ def split_to_subprojects(
     """
     validate_template_project(template_project_directory)
 
-    output_directory.mkdir(parents=True, exist_ok=False)
+    output_directory.mkdir(parents=True, exist_ok=True)
 
     full_data_gpkgs: tuple[str, ...] = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
 
