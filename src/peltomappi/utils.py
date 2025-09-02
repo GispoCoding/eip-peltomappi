@@ -14,7 +14,7 @@ def clean_string_to_filename(string: str) -> str:
     return re.sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", string)
 
 
-def config_description_to_path(description: str, directory: Path | None = None) -> Path:
+def config_name_to_path(description: str, directory: Path | None = None) -> Path:
     """
     Converts a config description to a valid path.
 

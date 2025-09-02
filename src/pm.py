@@ -5,9 +5,8 @@ import click
 
 from peltomappi.logger import LOGGER
 
-import peltomappi.cli.project
 import peltomappi.cli.weather
-import peltomappi.cli.config
+import peltomappi.cli.composition
 
 
 @click.group(help="CLI tool to run Peltomappi processes")
@@ -23,8 +22,7 @@ def cli(quiet):
 
 
 if __name__ == "__main__":
-    cli.add_command(peltomappi.cli.project.project)
-    cli.add_command(peltomappi.cli.weather.weather)
-    cli.add_command(peltomappi.cli.config.config)
+    # cli.add_command(peltomappi.cli.weather.weather)
+    cli.add_command(peltomappi.cli.composition.composition)
 
     cli()

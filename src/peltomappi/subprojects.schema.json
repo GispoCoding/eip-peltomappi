@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "parcelSpecifications": {
+      "type": "array",
+      "description": "list of parcel specifications",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name for the project this parcel specification will create"
+          },
+          "fieldParcelIds": {
+            "type": "array",
+            "description": "list of field parcels belonging to this unit",
+            "minItems": 1,
+            "items": {
+              "minLength": 10,
+              "maxLength": 10,
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "name",
+          "fieldParcelIds"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "parcelSpecifications"
+  ]
+}
