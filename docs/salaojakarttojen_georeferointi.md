@@ -80,15 +80,8 @@ Valitse tulostiedosto kohtaan MerginMapsin-projekti kansio ja sen
 sisältä kansio `_rasters` näin saat helpoiten synkronoitua
 rasteritiedoston suoraan mobiilisovellukseen.
 
-Ikkunassa on täpättävät kohdat (Output Settings -kohta) myös
-vastinpisteiden (GCP-pisteet) tallentamiseksi, ns. ESRI World -tiedoston
-luomiseksi varsinaisen georeferoinnin toteuttamisen sijaan ja
-nolla-arvojen määrittämiseksi läpinäkyviksi. Lisäksi valittavissa on
-kohta oman vapaavalintaisen spatiaalisen resoluution asettamiseksi
-muunnoksen yhteydessä luotavalle kuvalle.
-
 Muunnoksesta on mahdollista saada ulos myös kartta ja raportti
-(Reports-kohta). Näiden tallennuspaikat määritellään tarvittaessa.
+(Raportit-kohta). Näiden tallennuspaikat määritellään tarvittaessa.
 Varmista myös, että ikkunan alareunasta löytyvä "Avaa tulosrasteri
 QGISissä kun valmis" -täppä on aktiivisena. Näin saat suoraan valmiin
 georeferoidun rasterin auki QGISin karttaikkunaan georeferoinnin
