@@ -1,24 +1,12 @@
-import json
-import shutil
-from datetime import datetime
 from pathlib import Path
-from typing import Any
-from uuid import uuid4
-
-from jsonschema import validate
-
-from peltomappi.filter import filter_dataset_by_field_parcel_ids, get_spatial_filter_from_field_parcel_ids
-from peltomappi.logger import LOGGER
-from peltomappi.utils import config_name_to_path
+from uuid import UUID, uuid4
 
 
-class CompositionError(Exception):
-    pass
-
+from peltomappi.subproject import Subproject
+from peltomappi.utils import clean_string_to_filename
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
-SCHEMA_SUBPROJECTS = Path(__file__).parent / "subprojects.schema.json"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
 TEMPLATE_QGIS_PROJECT_NAME = "peltomappi"
 TEMPLATE_QGIS_PROJECT_EXTENSION = "qgs"
@@ -47,149 +35,120 @@ def validate_template_project(template_project_directory: Path):
         raise CompositionError(msg)
 
 
-def __create_subprojects(
-    subprojects_json: Path,
-    template_project_directory: Path,
-    full_data_directory: Path,
-    output_directory: Path,
-    filter_dataset: Path,
-    composition_name: str,
-    workspace: str,
-    server: str,
-) -> dict[str, Any]:
-    """ """
-    validate_template_project(template_project_directory)
+class CompositionError(Exception):
+    pass
 
-    schema = json.loads(SCHEMA_SUBPROJECTS.read_text())
-    data = json.loads(subprojects_json.read_text())
 
-    validate(data, schema=schema)
+class Composition:
+    __id: UUID
+    __name: str
+    __mergin_workspace: str
+    __mergin_server: str
+    __template_project_path: Path
+    __subprojects: list[Subproject]
 
-    parcel_specs = data["parcelSpecifications"]
-
-    output_directory.mkdir(parents=True, exist_ok=True)
-    full_data_gpkgs: tuple[str, ...] = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
-
-    def __create_subproject(
-        full_data_directory: Path,
-        output_directory: Path,
-        field_parcel_ids: set[str],
+    def __init__(
+        self,
+        id: UUID,
         name: str,
-    ) -> dict[str, Any]:
-        LOGGER.info("Copying project files...")
-        subproject_id = str(uuid4())
-        for file in template_project_directory.iterdir():
-            if (
-                file.name.endswith(".gpkg")
-                or file.name.endswith(".gpkg-wal")
-                or file.name.endswith(".gpkg-shm")
-                or file.stem == ".mergin"
-                or file.stem == "proj"
-            ):
-                continue
+        mergin_workspace: str,
+        mergin_server: str,
+        template_project_path: Path,
+        subprojects: list[Subproject],
+    ) -> None:
+        self.__id = id
+        self.__name = name
+        self.__mergin_workspace = mergin_workspace
+        self.__mergin_server = mergin_server
+        self.__template_project_path = template_project_path
+        self.__subprojects = subprojects
 
-            if file.stem == TEMPLATE_QGIS_PROJECT_NAME:
-                shutil.copy(
-                    file,
-                    output_directory
-                    / f"{TEMPLATE_QGIS_PROJECT_NAME}_{subproject_id}.{TEMPLATE_QGIS_PROJECT_EXTENSION}",
-                )
-                continue
+    def set_id(self, id: UUID) -> None:
+        self.__id = id
 
-            if file.is_dir():
-                shutil.copytree(file, output_directory / file.stem)
-            else:
-                shutil.copy(file, output_directory)
+    def set_mergin_workspace(self, mergin_workspace: str) -> None:
+        self.__mergin_workspace = mergin_workspace
 
-        LOGGER.info("Dividing project data...")
+    def set_mergin_server(self, mergin_server: str) -> None:
+        self.__mergin_server = mergin_server
 
-        spatial_filter = get_spatial_filter_from_field_parcel_ids(
-            filter_dataset,
-            field_parcel_ids,
+    def set_name(self, name: str) -> None:
+        self.__name = name
+
+    def set_template_project_path(self, template_project_path: Path) -> None:
+        self.__template_project_path = template_project_path
+
+    def id(self) -> UUID:
+        return self.__id
+
+    def name(self) -> str:
+        return self.__name
+
+    def mergin_workspace(self) -> str:
+        return self.__mergin_workspace
+
+    def mergin_server(self) -> str:
+        return self.__mergin_server
+
+    def template_project_path(self) -> Path:
+        return self.__template_project_path
+
+    def subprojects(self) -> list[Subproject]:
+        return self.__subprojects
+
+    # def to_json_dict(self) -> dict[str, Any]:
+    #     return {
+    #         "compositionId": str(self.__id),
+    #         "compositionName": self.__name,
+    #         "merginWorkspace": self.__mergin_workspace,
+    #         "merginServer": self.__mergin_server,
+    #         "templateProjectPath": str(self.__template_project_path),
+    #         "subprojects": self.__subprojects, # FIXME: turn subprojects to json dicts too
+    #     }
+
+    # @classmethod
+    # def from_json(cls, json_config: Path) -> Self:
+    #     schema = json.loads(SCHEMA_COMPOSITION.read_text())
+    #     data = json.loads(json_config.read_text())
+    #     jsonschema.validate(data, schema=schema)
+    #
+    #     return cls(
+    #         UUID(data["compositionId"]),
+    #         data["compositionName"],
+    #         data["merginWorkspace"],
+    #         data["merginServer"],
+    #         data["templateProjectPath"],
+    #         [], # FIXME: load subprojects
+    #     )
+
+    @classmethod
+    def from_empty_subprojects(
+        cls,
+        subproject_jsons: list[Path],
+        template_project_directory: Path,
+        full_data_path: Path,
+        subproject_output_directory: Path,
+        workspace: str,
+        composition_name: str,
+        server: str,
+    ):
+        subproject_output_directory.mkdir()
+        id = uuid4()
+        subprojects = [Subproject.from_json(json_file) for json_file in subproject_jsons]
+
+        for subproject in subprojects:
+            subproject_dir = subproject_output_directory / clean_string_to_filename(subproject.name())
+            subproject.create(
+                template_project_directory,
+                subproject_dir,
+                full_data_path,
+                id,
+            )
+        return cls(
+            id,
+            composition_name,
+            workspace,
+            server,
+            template_project_directory,
+            subprojects,
         )
-
-        for file in template_project_directory.glob("*.gpkg"):
-            if file.name in full_data_gpkgs:
-                continue
-
-            LOGGER.info(f"Dividing {file.stem}...")
-            filter_dataset_by_field_parcel_ids(
-                file,
-                output_directory / f"{file.stem}.gpkg",
-                spatial_filter,
-            )
-
-        for file in full_data_directory.glob("*.gpkg"):
-            LOGGER.info(f"Dividing {file.stem}...")
-            filter_dataset_by_field_parcel_ids(
-                file,
-                output_directory / f"{file.stem}.gpkg",
-                spatial_filter,
-            )
-
-        LOGGER.info(f"Subproject created at {output_directory}")
-
-        output = {
-            "id": subproject_id,
-            "name": name,
-            "path": str(output_directory),
-            "fieldParcelIds": [*field_parcel_ids],
-            "created": datetime.now().isoformat(),
-        }
-
-        return output
-
-    subprojects = []
-    for parcel_spec in parcel_specs:
-        name = parcel_spec["name"]
-        ids = set(parcel_spec["fieldParcelIds"])
-        subproject_dir = config_name_to_path(name, output_directory)
-        subproject_dir.mkdir(exist_ok=False)
-
-        subproject = __create_subproject(full_data_directory, subproject_dir, ids, name)
-
-        subprojects.append(subproject)
-
-    return {
-        "compositionId": str(uuid4()),
-        "compositionName": composition_name,
-        "merginWorkspace": workspace,
-        "merginServer": server,
-        "templateProjectPath": str(template_project_directory),
-        "subprojects": subprojects,
-    }
-
-
-def create_from_subprojects_json(
-    subprojects_json: Path,
-    output: Path,
-    template_project_directory: Path,
-    full_data_path: Path,
-    subproject_output_directory: Path,
-    workspace: str,
-    composition_name: str,
-    server: str,
-    *,
-    overwrite: bool = False,
-):
-    if not overwrite and output.exists():
-        msg = f"attempting to write file {output} but it already exists and overwrite has not been permitted"
-        raise CompositionError(msg)
-
-    filter_dataset = full_data_path / "peltolohkot_2024.gpkg"
-    composition = __create_subprojects(
-        subprojects_json,
-        template_project_directory,
-        full_data_path,
-        subproject_output_directory,
-        filter_dataset,
-        composition_name,
-        workspace,
-        server,
-    )
-
-    schema = json.loads(SCHEMA_COMPOSITION.read_text())
-    validate(composition, schema=schema)
-
-    with open(output, "w") as file:
-        json.dump(composition, file, indent=4)

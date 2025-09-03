@@ -31,3 +31,6 @@ loc
 isin
 geodataframe
 fulldata
+jsons
+tempdir
+iloc

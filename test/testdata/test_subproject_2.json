@@ -1,0 +1,11 @@
+{
+  "id": "30bf748e-6dab-4dcd-95ea-9903c6524150",
+  "name": "test_subproject_2",
+  "path": "/somewhere",
+  "fieldParcelIds": [
+    "1111111111",
+    "2222222222"
+  ],
+  "created": "1970-01-01T00:00:00+00:00",
+  "compositionId": "234634d0-7b02-4634-b520-1dc0331dd2bc"
+}

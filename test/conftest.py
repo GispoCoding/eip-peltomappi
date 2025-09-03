@@ -12,40 +12,41 @@ def _testdata_path() -> Path:
     return Path(__file__).resolve().parent / "testdata"
 
 
-def _expected_path() -> Path:
-    return _testdata_path() / "expected"
+@pytest.fixture
+def test_template_project() -> Path:
+    return _testdata_path() / "test_template_project"
 
 
 @pytest.fixture
-def field_parcel_mock_uri() -> Path:
-    return _testdata_path() / "field_parcel_mock_ds.gpkg"
+def test_full_data() -> Path:
+    return _testdata_path() / "test_full_data"
 
 
 @pytest.fixture
-def fulldata() -> Path:
-    return _testdata_path() / "fulldata.gpkg"
+def subproject_json_1() -> Path:
+    return _testdata_path() / "test_subproject_1.json"
 
 
 @pytest.fixture
-def field_parcel_config() -> Path:
-    return _testdata_path() / "field_parcel_config.gpkg"
+def subproject_json_2() -> Path:
+    return _testdata_path() / "test_subproject_2.json"
 
 
 @pytest.fixture
-def dummy_project() -> Path:
-    return _testdata_path() / "dummy_project"
+def subproject_json_3() -> Path:
+    return _testdata_path() / "test_subproject_3.json"
 
 
 @pytest.fixture
-def dummy_project_full_data() -> Path:
-    return _testdata_path() / "dummy_project_full_data"
+def composition_subproject_json_1() -> Path:
+    return _testdata_path() / "test_composition_subproject_1.json"
 
 
 @pytest.fixture
-def config_json() -> Path:
-    return _testdata_path() / "config.json"
+def composition_subproject_json_2() -> Path:
+    return _testdata_path() / "test_composition_subproject_2.json"
 
 
 @pytest.fixture
-def config_gpkg() -> Path:
-    return _expected_path() / "config_gpkg.gpkg"
+def composition_subproject_json_3() -> Path:
+    return _testdata_path() / "test_composition_subproject_3.json"
