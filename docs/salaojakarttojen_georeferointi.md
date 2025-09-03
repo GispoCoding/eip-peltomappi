@@ -6,6 +6,9 @@ editor_options:
 
 ## **Aineistojen valmistelu: Georeferoija lisäosan aktivointi**
 
+!!! example "💡 HUOM!"
+    Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
+
 Georefereroija-lisäosa voi vaatia aktivoinnin. Uusimmissa
 QGIS-versioissa (alkaen versiosta 3.28.) lisäosa pitäisi olla
 aktivoituna valmiiksi, mutta jos käytät vanhempaa versiota (3.22), niin
