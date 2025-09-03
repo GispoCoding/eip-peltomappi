@@ -43,7 +43,6 @@
 .md-typeset .admonition,
 .md-typeset details {
   border: 1px solid #ccc;      /* vaalea harmaa reunus */
-  background: #f9f9f9;         /* harmaa tausta */
   border-radius: 4px;          /* pyöristetyt kulmat */
   box-shadow: none;            /* ei varjoja */
 }
