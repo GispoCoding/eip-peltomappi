@@ -193,4 +193,29 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
   
   !!! note "Vinkki"
       …sisältö…
+      
+      
+!!! example "💡 HUOM!"
+    …sisältö…
+    
+    
+Tekstiä tähän.
+
+!!! example "💡 HUOM!"
+    …sisältö…
+
+
+Tekstiä tähän.
+
+!!! example "💡 HUOM!"
+    …sisältö… '''
+    
+    
+Tekstiä tähän.
+
+!!! example "💡 HUOM!"
+    …sisältö…```
+
+
+
 
