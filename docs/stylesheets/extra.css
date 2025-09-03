@@ -21,14 +21,14 @@
     --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
 }
 
-/* --- Admonition-tyylien ylikirjoitus harmaaksi --- */
+/* --- Admonition-tyylien ylikirjoitus --- */
 
 /* Otsikon tyyli samaksi kuin body-teksti */
 .md-typeset .admonition-title,
 .md-typeset summary {
-  font-size: 1em;
-  font-weight: normal;
-  font-family: inherit;
+  font-size: 1em;          /* sama koko kuin tavallinen teksti */
+  font-weight: normal;     /* ei lihavointia */
+  font-family: inherit;    /* sama fontti kuin muussa tekstissä */
 }
 
 /* Admonitionin sisältö samalla fontilla ja koolla kuin perusteksti */
@@ -37,19 +37,4 @@
 .md-typeset .admonition li {
   font-size: 1em;
   font-family: inherit;
-}
-
-/* Yleinen admonition-tyyli: harmaa laatikko */
-.md-typeset .admonition,
-.md-typeset details {
-  border: 1px solid #ccc;      /* vaalea harmaa reunus */
-  border-radius: 4px;          /* pyöristetyt kulmat */
-  box-shadow: none;            /* ei varjoja */
-}
-
-/* Otsikon tausta myös harmaaksi */
-.md-typeset .admonition-title,
-.md-typeset summary {
-  background: #f0f0f0;         /* hieman tummempi harmaa otsikko */
-  border-bottom: 1px solid #ccc;
 }
