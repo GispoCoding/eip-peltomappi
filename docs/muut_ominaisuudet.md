@@ -154,8 +154,8 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 ## **Karttapiirrokset/luonnostelu**
 
-
-!!! example "HUOM!" Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
+!!! example "💡 HUOM!"
+    Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
 
 Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi piirtää vapaalla kädellä kartan päälle mobiilisovelluksessa. Piirroksia voi tehdä eri väreillä ja ne tallentuvat erilliseen kerrokseen, joka synkronoituu takaisin QGIS-projektiin. Ominaisuus sopii esimerkiksi kenttämuistiinpanojen, reittien tai huomioiden merkitsemiseen nopeasti ilman, että tarvitsee luoda varsinaisia kohteita tietokantaan.
 
@@ -188,34 +188,4 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 <iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
-
-- Kohta
-  
-  !!! note "Vinkki"
-      …sisältö…
-      
-      
-!!! example "💡 HUOM!"
-    …sisältö…
-    
-    
-Tekstiä tähän.
-
-!!! example "💡 HUOM!"
-    …sisältö…
-
-
-Tekstiä tähän.
-
-!!! example "💡 HUOM!"
-    …sisältö… '''
-    
-    
-Tekstiä tähän.
-
-!!! example "💡 HUOM!"
-    …sisältö…```
-
-
-
 
