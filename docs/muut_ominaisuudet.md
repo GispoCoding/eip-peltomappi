@@ -90,36 +90,6 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 **Vinkki:** Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
 
-## **Mergin Mapsin synkronointi mobiilisovelluksess**a
-
-Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset synkronoituvat projektisi pilveen -- joko **manuaalisesti** tai **automaattisesti**.
-
-### **Perusedellytykset synkronointiin**
-
--   Sinun täytyy olla kirjautunut Mergin Maps-tilillesi.
-
--   Laite tarvitsee verkkoyhteyden synkronointia varten.
-
--   Sinulla tulee olla projektiin kirjoitusoikeudet.
-
-### **1. Manuaalinen synkronointi**
-
--   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
-
--   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***
-
--   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset*** <img src="img/sync_mergin_maps.gif" width="34%"/>
-
-### **2. Automaattinen synkronointi**
-
--   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<img src="img/auto_sync_mergin_maps.png" width="34%"/>
-
--   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
-
--   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
-
--   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
-
 ## **GPS-tarkkuus Mergin Maps -mobiilisovelluksessa**
 
 Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa suoraan kenttätyön paikkatietojen laatuun. Tarkkuus näkyy kartan alareunassa ja siihen liittyy värikoodattu ympyrä, joka havainnollistaa sijainnin arvioitua virhemarginaalia.
@@ -237,5 +207,37 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 !!! example "💡 HUOM!"
     Mitatut arvot eivät tallennu
+
+
+## **Mergin Mapsin synkronointi mobiilisovelluksess**a
+
+Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset synkronoituvat projektisi pilveen -- joko **manuaalisesti** tai **automaattisesti**.
+
+### **Perusedellytykset synkronointiin**
+
+-   Sinun täytyy olla kirjautunut Mergin Maps-tilillesi.
+
+-   Laite tarvitsee verkkoyhteyden synkronointia varten.
+
+-   Sinulla tulee olla projektiin kirjoitusoikeudet.
+
+### **1. Manuaalinen synkronointi**
+
+-   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
+
+-   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***
+
+-   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset*** <img src="img/sync_mergin_maps.gif" width="34%"/>
+
+### **2. Automaattinen synkronointi**
+
+-   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<img src="img/auto_sync_mergin_maps.png" width="34%"/>
+
+-   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
+
+-   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
+
+-   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
+
 
 
