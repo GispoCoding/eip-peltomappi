@@ -12,14 +12,33 @@ class FilterError(Exception):
     pass
 
 
-def filter_dataset_by_field_parcel_ids(
-    input_path: Path,
-    output_path: Path,
+def get_spatial_filter_from_field_parcel_ids(
     field_parcel_dataset: Path,
     field_parcel_ids: set[str],
     *,
-    overwrite: bool = False,
     buffer_distance: float = DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS,
+) -> Polygon:
+    where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({', '.join(field_parcel_ids)})"
+    field_parcel_gdf: gpd.GeoDataFrame = gpd.read_file(
+        field_parcel_dataset,
+        columns=[FIELD_PARCEL_IDENTIFIER_COLUMN],
+        engine="pyogrio",
+        where=where_clause,
+    )
+
+    if len(field_parcel_ids) != len(field_parcel_gdf.index):
+        msg = "Number of given IDs does not match number of found IDs"
+        raise FilterError(msg)
+
+    return field_parcel_gdf.geometry.union_all().buffer(buffer_distance)
+
+
+def filter_dataset_by_field_parcel_ids(
+    input_path: Path,
+    output_path: Path,
+    spatial_filter: Polygon,
+    *,
+    overwrite: bool = False,
 ):
     """ """
     if not overwrite and output_path.exists():
@@ -43,24 +62,10 @@ def filter_dataset_by_field_parcel_ids(
         shutil.copy(input_path, output_path)
         return
 
-    where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({', '.join(field_parcel_ids)})"
-    field_parcel_gdf: gpd.GeoDataFrame = gpd.read_file(
-        field_parcel_dataset,
-        columns=[FIELD_PARCEL_IDENTIFIER_COLUMN],
-        engine="pyogrio",
-        where=where_clause,
-    )
-
-    if len(field_parcel_ids) != len(field_parcel_gdf.index):
-        msg = "Number of given IDs does not match number of found IDs"
-        raise FilterError(msg)
-
-    mask_geom: Polygon = field_parcel_gdf.geometry.union_all().buffer(buffer_distance)
-
     filtered_gdf: gpd.GeoDataFrame = gpd.read_file(
         input_path,
         engine="pyogrio",
-        mask=mask_geom,
+        mask=spatial_filter,
     )
 
     # TODO: geopandas converts the tracking_layer to LineStringZ from LineStringZM

@@ -7,7 +7,7 @@ from uuid import uuid4
 
 from jsonschema import validate
 
-from peltomappi.filter import filter_dataset_by_field_parcel_ids
+from peltomappi.filter import filter_dataset_by_field_parcel_ids, get_spatial_filter_from_field_parcel_ids
 from peltomappi.logger import LOGGER
 from peltomappi.utils import config_name_to_path
 
@@ -94,6 +94,11 @@ def __create_subprojects(
 
         LOGGER.info("Dividing project data...")
 
+        spatial_filter = get_spatial_filter_from_field_parcel_ids(
+            filter_dataset,
+            field_parcel_ids,
+        )
+
         for file in template_project.glob("*.gpkg"):
             if file.name in full_data_gpkgs:
                 continue
@@ -102,8 +107,7 @@ def __create_subprojects(
             filter_dataset_by_field_parcel_ids(
                 file,
                 output_directory / f"{file.stem}.gpkg",
-                filter_dataset,
-                field_parcel_ids,
+                spatial_filter,
             )
 
         for file in full_data_directory.glob("*.gpkg"):
@@ -111,8 +115,7 @@ def __create_subprojects(
             filter_dataset_by_field_parcel_ids(
                 file,
                 output_directory / f"{file.stem}.gpkg",
-                filter_dataset,
-                field_parcel_ids,
+                spatial_filter,
             )
 
         LOGGER.info(f"Subproject created at {output_directory}")
