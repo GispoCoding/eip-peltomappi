@@ -1,22 +1,33 @@
-[data-md-color-scheme="peltomappi"] {
-    /* Primary color shades */
-    --md-primary-fg-color: #73D19C;
-    --md-primary-fg-color--light: #004C45;
-    --md-primary-fg-color--dark: #12181F;
-    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
-    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
-    --md-text-link-color: hsla(231, 48%, 48%, 1);
+/* --- Admonition-tyylien ylikirjoitus harmaaksi --- */
 
-    /* Accent color shades */
-    --md-accent-fg-color: rgb(98, 18, 189);
-    --md-accent-fg-color--transparent: hsla(189, 100%, 37%, 0.1);
-    --md-accent-bg-color: hsla(0, 0%, 100%, 1);
-    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+/* Otsikon tyyli samaksi kuin body-teksti */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 1em;
+  font-weight: normal;
+  font-family: inherit;
+}
 
-    /* Footer */
-    --md-footer-bg-color: #004C45;
-    --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
-    --md-footer-fg-color: hsla(0, 0%, 100%, 1);
-    --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
-    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+/* Admonitionin sisältö samalla fontilla ja koolla kuin perusteksti */
+.md-typeset .admonition,
+.md-typeset .admonition p,
+.md-typeset .admonition li {
+  font-size: 1em;
+  font-family: inherit;
+}
+
+/* Yleinen admonition-tyyli: harmaa laatikko */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid #ccc;      /* vaalea harmaa reunus */
+  background: #f9f9f9;         /* harmaa tausta */
+  border-radius: 4px;          /* pyöristetyt kulmat */
+  box-shadow: none;            /* ei varjoja */
+}
+
+/* Otsikon tausta myös harmaaksi */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: #f0f0f0;         /* hieman tummempi harmaa otsikko */
+  border-bottom: 1px solid #ccc;
 }
