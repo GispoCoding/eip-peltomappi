@@ -54,13 +54,13 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 4.  Ota käyttöön valinta **"*Viimeksi syötetyn arvon uudelleenkäyttö*"**
 
-!!! example "Miten se toimii käytännössä:"
-    -   Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, attribuuttilomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
+!!! example "**Miten se toimii käytännössä:**" - Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, attribuuttilomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
 
-    -   Valitse ne attribuutit (esim. laji tms.), joiden arvon haluat kopioida viimeksi tallennetusta kohteesta.
+```         
+-   Valitse ne attribuutit (esim. laji tms.), joiden arvon haluat kopioida viimeksi tallennetusta kohteesta.
 
-    -   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
-
+-   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
+```
 
 ## **Pisteelle navigointi/merkintä kenttätyössä**
 
@@ -88,9 +88,8 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 </iframe>
 
-!!! example "💡 Vinkki"
-    Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
-    
+!!! example "💡 Vinkki" Jos haluat erittäin tarkan navigoinnin, kannattaa käyttää [ulkoista GPS-vastaanotinta](https://merginmaps.com/docs/field/external_gps/#list-of-known-supported-gps-devices), joka hyödyntää GPS-korjauksia.
+
 ## **GPS-tarkkuus Mergin Maps -mobiilisovelluksessa**
 
 Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa suoraan kenttätyön paikkatietojen laatuun. Tarkkuus näkyy kartan alareunassa ja siihen liittyy värikoodattu ympyrä, joka havainnollistaa sijainnin arvioitua virhemarginaalia.
@@ -125,8 +124,7 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 ## **Karttapiirrokset/luonnostelu**
 
-!!! example "💡 HUOM!"
-    Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
+!!! example "💡 HUOM!" Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
 
 Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi piirtää vapaalla kädellä kartan päälle mobiilisovelluksessa. Piirroksia voi tehdä eri väreillä ja ne tallentuvat erilliseen kerrokseen, joka synkronoituu takaisin QGIS-projektiin. Ominaisuus sopii esimerkiksi kenttämuistiinpanojen, reittien tai huomioiden merkitsemiseen nopeasti ilman, että tarvitsee luoda varsinaisia kohteita tietokantaan.
 
@@ -160,7 +158,6 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 </iframe>
 
-
 ## **Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa**
 
 ### **Viivan pituuden mittaus**
@@ -169,17 +166,13 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 2.  Valitse avautuvasta valikosta ***Mittaa***-vaihtoehto.
 
-3.  Napauta ***Lisää piste*** -painiketta lisätäksesi pisteitä
-    mittaamasi viivan varrelle.
+3.  Napauta ***Lisää piste*** -painiketta lisätäksesi pisteitä mittaamasi viivan varrelle.
 
-4.  Lisättyjen pisteiden välinen pituus näkyy mittaustyökalun
-    paneelissa.
+4.  Lisättyjen pisteiden välinen pituus näkyy mittaustyökalun paneelissa.
 
-5.  Nykyinen pituus näkyy ristihiiren osoittimen lähellä, kun siirrät
-    sitä.
+5.  Nykyinen pituus näkyy ristihiiren osoittimen lähellä, kun siirrät sitä.
 
-6.  Jos haluat poistaa viimeisen lisätyn pisteen, napauta
-    ***Kumoa***-painiketta.
+6.  Jos haluat poistaa viimeisen lisätyn pisteen, napauta ***Kumoa***-painiketta.
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
@@ -189,14 +182,11 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 ### **Pinta-alan mittaus**
 
-1.  Napauta ***Lisää piste*** -painiketta lisätäksesi pisteitä haluamasi
-    alueen kulmiin.
+1.  Napauta ***Lisää piste*** -painiketta lisätäksesi pisteitä haluamasi alueen kulmiin.
 
-2.  Kun siirrät ristihiiren osoittimen ensimmäisen pisteen lähelle, näet
-    ***Sulje alue*** -vaihtoehdon.
+2.  Kun siirrät ristihiiren osoittimen ensimmäisen pisteen lähelle, näet ***Sulje alue*** -vaihtoehdon.
 
-3.  Napauta ***Sulje alue*** -painiketta sulkeaksesi alueen ja
-    saadaksesi pinta-alan mittauksen.
+3.  Napauta ***Sulje alue*** -painiketta sulkeaksesi alueen ja saadaksesi pinta-alan mittauksen.
 
 4.  Pinta-alan ja ympärysmitan arvot näkyvät mittaustyökalun paneelissa.
 
@@ -206,9 +196,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 </iframe>
 
-!!! example "💡 HUOM!"
-    Mitatut arvot eivät tallennu
-
+!!! example "💡 HUOM!" Mitatut arvot eivät tallennu
 
 ## **Mergin Mapsin synkronointi mobiilisovelluksess**a
 
@@ -239,6 +227,3 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 -   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
-
-
-
