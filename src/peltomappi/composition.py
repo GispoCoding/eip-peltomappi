@@ -20,7 +20,8 @@ PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 SCHEMA_SUBPROJECTS = Path(__file__).parent / "subprojects.schema.json"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
-TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
+TEMPLATE_QGIS_PROJECT_NAME = "peltomappi"
+TEMPLATE_QGIS_PROJECT_EXTENSION = "qgs"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 
 
@@ -37,7 +38,7 @@ def validate_template_project(template_project_directory: Path):
         msg = "project directory does not exist"
         raise CompositionError(msg)
 
-    if not (template_project_directory / TEMPLATE_QGIS_PROJECT_NAME).exists():
+    if not (template_project_directory / f"{TEMPLATE_QGIS_PROJECT_NAME}.{TEMPLATE_QGIS_PROJECT_EXTENSION}").exists():
         msg = "template project does not have a project file"
         raise CompositionError(msg)
 
@@ -70,14 +71,14 @@ def __create_subprojects(
     full_data_gpkgs: tuple[str, ...] = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
 
     def __create_subproject(
-        template_project: Path,
         full_data_directory: Path,
         output_directory: Path,
         field_parcel_ids: set[str],
         name: str,
     ) -> dict[str, Any]:
         LOGGER.info("Copying project files...")
-        for file in template_project.iterdir():
+        subproject_id = str(uuid4())
+        for file in template_project_directory.iterdir():
             if (
                 file.name.endswith(".gpkg")
                 or file.name.endswith(".gpkg-wal")
@@ -85,6 +86,14 @@ def __create_subprojects(
                 or file.stem == ".mergin"
                 or file.stem == "proj"
             ):
+                continue
+
+            if file.stem == TEMPLATE_QGIS_PROJECT_NAME:
+                shutil.copy(
+                    file,
+                    output_directory
+                    / f"{TEMPLATE_QGIS_PROJECT_NAME}_{subproject_id}.{TEMPLATE_QGIS_PROJECT_EXTENSION}",
+                )
                 continue
 
             if file.is_dir():
@@ -99,7 +108,7 @@ def __create_subprojects(
             field_parcel_ids,
         )
 
-        for file in template_project.glob("*.gpkg"):
+        for file in template_project_directory.glob("*.gpkg"):
             if file.name in full_data_gpkgs:
                 continue
 
@@ -121,10 +130,9 @@ def __create_subprojects(
         LOGGER.info(f"Subproject created at {output_directory}")
 
         output = {
-            "id": str(uuid4()),
+            "id": subproject_id,
             "name": name,
             "path": str(output_directory),
-            "templateProjectPath": str(template_project_directory),
             "fieldParcelIds": [*field_parcel_ids],
             "created": datetime.now().isoformat(),
         }
@@ -138,7 +146,7 @@ def __create_subprojects(
         subproject_dir = config_name_to_path(name, output_directory)
         subproject_dir.mkdir(exist_ok=False)
 
-        subproject = __create_subproject(template_project_directory, full_data_directory, subproject_dir, ids, name)
+        subproject = __create_subproject(full_data_directory, subproject_dir, ids, name)
 
         subprojects.append(subproject)
 
@@ -147,6 +155,7 @@ def __create_subprojects(
         "compositionName": composition_name,
         "merginWorkspace": workspace,
         "merginServer": server,
+        "templateProjectPath": str(template_project_directory),
         "subprojects": subprojects,
     }
 

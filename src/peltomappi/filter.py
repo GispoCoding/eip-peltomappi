@@ -68,8 +68,6 @@ def filter_dataset_by_field_parcel_ids(
         mask=spatial_filter,
     )
 
-    # TODO: geopandas converts the tracking_layer to LineStringZ from LineStringZM
-    # so skip it, but this approach is hacky
     if filtered_gdf.empty:
         shutil.copy(input_path, output_path)
         return

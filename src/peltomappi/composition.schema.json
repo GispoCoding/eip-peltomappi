@@ -4,7 +4,7 @@
   "properties": {
     "compositionName": {
       "type": "string",
-      "description": "informal name of the composition"
+      "description": "name of the composition"
     },
     "compositionId": {
       "type": "string",
@@ -19,6 +19,10 @@
       "type": "string",
       "format": "uri",
       "description": "URL of the Mergin Maps server being used"
+    },
+    "templateProjectPath": {
+      "type": "string",
+      "description": "path containing the template project this subproject was created from"
     },
     "subprojects": {
       "type": "array",
@@ -39,10 +43,6 @@
           "path": {
             "type": "string",
             "description": "path to the local folder containing the subproject"
-          },
-          "templateProjectPath": {
-            "type": "string",
-            "description": "path containing the template project this subproject was created from"
           },
           "fieldParcelIds": {
             "type": "array",
@@ -91,7 +91,6 @@
           "id",
           "name",
           "path",
-          "templateProjectPath",
           "fieldParcelIds",
           "created"
         ]
@@ -102,6 +101,7 @@
     "compositionId",
     "merginWorkspace",
     "merginServer",
+    "templateProjectPath",
     "subprojects"
   ]
 }
