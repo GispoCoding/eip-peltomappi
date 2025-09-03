@@ -1,10 +1,5 @@
 # **MARA-kuopan lisääminen**
 
-<<<<<<< HEAD
-<iframe src="https://drive.google.com/file/d/1YvVkborpmX5lcEethbCEBcuu787CPSwS/preview" width="60%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
-=======
 1. Paina alavalikon Lisää-painiketta
 2. Valitse tarvittaessa ylhäältä MARA Kuoppa-taso
 3. Tarvittaessa siirrä sijaintiasi kartalla
@@ -16,4 +11,3 @@
 9. Voit tarkastella kuoppaa ja sen luokitusta klikkaamalla sitä kartalla
 
 <iframe src="https://drive.google.com/file/d/1YvVkborpmX5lcEethbCEBcuu787CPSwS/preview" width="50%" height="900" allowfullscreen="allowfullscreen"></iframe>
->>>>>>> 5a532a4c013c521061d826a3349bdd2c2c5e990f
