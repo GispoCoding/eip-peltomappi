@@ -7,5 +7,7 @@
   "subprojects": [
     "./subproject_1/peltomappi_subproject.json",
     "./subproject_2/peltomappi_subproject.json"
-  ]
+  ],
+  "fullDataPath": "/data",
+  "subprojectDirectory": "/subprojects"
 }

@@ -52,6 +52,8 @@ class Composition:
     __mergin_server: str
     __template_project_path: Path
     __subprojects: list[Subproject]
+    __full_data_path: Path
+    __subproject_directory: Path
 
     # not a part of the JSON schema:
     __path: Path | None
@@ -64,6 +66,8 @@ class Composition:
         mergin_server: str,
         template_project_path: Path,
         subprojects: list[Subproject],
+        full_data_path: Path,
+        subproject_directory: Path,
         *,
         path: Path | None = None,
     ) -> None:
@@ -74,6 +78,8 @@ class Composition:
         self.__template_project_path = template_project_path
         self.__subprojects = subprojects
         self.__path = path
+        self.__full_data_path = full_data_path
+        self.__subproject_directory = subproject_directory
 
     def set_id(self, id: UUID) -> None:
         self.__id = id
@@ -111,6 +117,12 @@ class Composition:
     def subprojects(self) -> list[Subproject]:
         return self.__subprojects
 
+    def full_data_path(self) -> Path:
+        return self.__full_data_path
+
+    def subproject_directory(self) -> Path:
+        return self.__subproject_directory
+
     def to_json_dict(self) -> dict[str, Any]:
         d = {
             "compositionId": str(self.__id),
@@ -119,6 +131,8 @@ class Composition:
             "merginServer": self.__mergin_server,
             "templateProjectPath": self.__template_project_path.__str__(),
             "subprojects": [subproject.conf_path().__str__() for subproject in self.__subprojects],
+            "fullDataPath": self.__full_data_path.__str__(),
+            "subprojectDirectory": self.__subproject_directory.__str__(),
         }
 
         schema = json.loads(SCHEMA_COMPOSITION.read_text())
@@ -158,6 +172,8 @@ class Composition:
             data["merginServer"],
             Path(data["templateProjectPath"]),
             subprojects,
+            Path(data["fullDataPath"]),
+            Path(data["subprojectDirectory"]),
         )
 
     @classmethod
@@ -195,7 +211,17 @@ class Composition:
             server,
             template_project_directory,
             subprojects,
+            full_data_path,
+            subproject_output_directory,
         )
+
+    def add_subproject_from_parcelspec(self, parcelspec_path: Path) -> None:
+        pass
+        # parcelspec = ParcelSpecification.from_json(parcelspec_path)
+        # subproject = parcelspec.to_subproject(
+        #     self.__template_project_path,
+        #     self.__su
+        # )
 
     def upload_subprojects(self):
         client = mergin.MerginClient(

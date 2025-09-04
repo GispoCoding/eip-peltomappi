@@ -10,7 +10,7 @@ from peltomappi.composition import Composition, CompositionError
 from test.utils.classes import ContainedComposition
 
 
-def test_from_empty_subprojects(
+def test_from_parcel_specifications(
     test_template_project: Path,
     contained_composition: ContainedComposition,
 ):
@@ -73,6 +73,7 @@ def test_to_json_dict(
 
 def test_save(
     test_template_project: Path,
+    test_full_data: Path,
     contained_composition: ContainedComposition,
 ):
     composition = contained_composition.composition
@@ -95,7 +96,9 @@ def test_save(
         "/tmp/{path.parent.stem}/output/test_composition_parcelspec_1/peltomappi_subproject.json",
         "/tmp/{path.parent.stem}/output/test_composition_parcelspec_2/peltomappi_subproject.json",
         "/tmp/{path.parent.stem}/output/test_composition_parcelspec_3/peltomappi_subproject.json"
-    ]
+    ],
+    "fullDataPath": "{test_full_data}",
+    "subprojectDirectory": "/tmp/{path.parent.stem}/output"
 }}"""
 
     assert path.read_text() == expected
