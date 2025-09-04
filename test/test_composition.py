@@ -65,9 +65,9 @@ def test_to_json_dict(
     assert d["templateProjectPath"] == test_template_project.__str__()
 
     assert d["subprojects"] == [
-        f"{output_path}/test_composition_parcelspec_1",
-        f"{output_path}/test_composition_parcelspec_2",
-        f"{output_path}/test_composition_parcelspec_3",
+        f"{output_path}/test_composition_parcelspec_1/peltomappi_subproject.json",
+        f"{output_path}/test_composition_parcelspec_2/peltomappi_subproject.json",
+        f"{output_path}/test_composition_parcelspec_3/peltomappi_subproject.json",
     ]
 
 
@@ -92,9 +92,9 @@ def test_save(
     "merginServer": "test_server",
     "templateProjectPath": "{test_template_project}",
     "subprojects": [
-        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_1",
-        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_2",
-        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_3"
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_1/peltomappi_subproject.json",
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_2/peltomappi_subproject.json",
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_3/peltomappi_subproject.json"
     ]
 }}"""
 

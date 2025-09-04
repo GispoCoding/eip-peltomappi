@@ -8,6 +8,7 @@ import jsonschema
 import mergin
 
 
+from peltomappi.logger import LOGGER
 from peltomappi.parcelspec import ParcelSpecification
 from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, Subproject
 from peltomappi.utils import clean_string_to_filename
@@ -200,10 +201,17 @@ class Composition:
         client = mergin.MerginClient(
             login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
         )
+
+        existing_project_names = [proj["name"] for proj in client.projects_list(only_namespace=self.__mergin_workspace)]
         for s in self.__subprojects:
+            sp_name = f"{self.__name}_{s.name()}"
+
+            if sp_name in existing_project_names:
+                LOGGER.info(f"Project {sp_name} already exists in server, skipping...")
+                continue
+
             s.upload(
-                self.__mergin_server,
                 self.__mergin_workspace,
-                name_prefix=self.__name,
-                client=client,
+                sp_name,
+                client,
             )

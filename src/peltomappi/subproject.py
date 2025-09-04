@@ -1,13 +1,11 @@
 import json
 from datetime import datetime
 from enum import Enum
-import os
 from pathlib import Path
 from typing import Any, NamedTuple, Self
 from uuid import UUID
 
 import jsonschema
-import mergin
 from mergin.client import MerginClient
 
 
@@ -152,24 +150,12 @@ class Subproject:
 
     def upload(
         self,
-        server_url: str,
         workspace: str,
-        *,
-        name_prefix: str | None,
-        client: MerginClient | None = None,
+        name,
+        client: MerginClient,
     ):
-        if client is None:
-            client = mergin.MerginClient(
-                login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=server_url
-            )
-
-        if not name_prefix:
-            project_name = f"{workspace}/{self.__name}"
-        else:
-            project_name = f"{workspace}/{name_prefix}_{self.__name}"
-
         client.create_project_and_push(
-            project_name=project_name,
+            project_name=f"{workspace}/{name}",
             directory=self.__path,
             is_public=False,
         )
