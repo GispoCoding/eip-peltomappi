@@ -20,3 +20,21 @@
     --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
     --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
 }
+
+/* --- Admonition-tyylien ylikirjoitus --- */
+
+/* Otsikon tyyli samaksi kuin body-teksti */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 1em;          /* sama koko kuin tavallinen teksti */
+  font-weight: normal;     /* ei lihavointia */
+  font-family: inherit;    /* sama fontti kuin muussa tekstissä */
+}
+
+/* Admonitionin sisältö samalla fontilla ja koolla kuin perusteksti */
+.md-typeset .admonition,
+.md-typeset .admonition p,
+.md-typeset .admonition li {
+  font-size: 1em;
+  font-family: inherit;
+}

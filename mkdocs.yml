@@ -8,21 +8,21 @@ nav:
   - Karttanäkymä: karttanäkymä.md
   - Kohteen lisääminen: kohteen_lisääminen.md
   - Alueen lisääminen ja jakaminen: alueen_lisääminen.md
-  - Reitin nauhoitus: reitin_nauhoitus.md
   - Penetrometri: penetrometri.md
-  - Mittaus: mittaus.md
-  - Säädata: saadata.md
   - MARA-kuoppa: mara_kuoppa.md
   - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
-  - Luonnostelu: luonnostelu.md
-  - Yleiset asetukset: yleiset_asetukset.md
+  - Reitin nauhoitus: reitin_nauhoitus.md
+  - Säädata: saadata.md
+  - Muut ominaisuudet: muut_ominaisuudet.md
   - Palaute: palaute.md
-
-
+  
 use_directory_urls: false
 
 markdown_extensions:
   - footnotes
+  - admonition
+  - pymdownx.details   # (valinnainen, jos haluat avattavia/kaadettavia laatikoita)
+  - pymdownx.superfences  # (yleensä hyvä ottaa myös mukaan)
 
 theme:
   name: material

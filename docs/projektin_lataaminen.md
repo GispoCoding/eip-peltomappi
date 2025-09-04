@@ -2,7 +2,7 @@
 
 ## **Projektin lataaminen mobiilisovellukseen**
 
-Kun puhelimessasi on asennettuna [Mergin Maps sovelluksen](https://gispocoding.github.io/eip-peltomappi/esittely.html), toimi seuraavasti:
+Kun puhelimessasi on asennettuna [Mergin Maps sovellu](https://gispocoding.github.io/eip-peltomappi/esittely.html)s, toimi seuraavasti:
 
 1.  Avaa sovellus ja napauta oikean yläkulman ikonia:
 
@@ -34,13 +34,11 @@ Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla
 
 ### **QGIS:n lataaminen ja asentaminen**
 
-Mene QGIS:n viralliselle sivulle: <https://qgis.org/>
+Mene QGISinn viralliselle sivulle: <https://qgis.org/>
 
-Valitse ***Download Now*** ja lataa versio:
+Valitse ***Download Now*** ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux):
 
-![](img/projektin_lataaminen_qgisiin/img1.png){width="261"}
-
-käyttöjärjestelmällesi (Windows, Mac, Linux).
+<img src="img/projektin_lataaminen_qgisiin/img1.png" width="79%"/>
 
 Asenna QGIS seuraamalla asennusohjeita.
 

@@ -96,7 +96,7 @@ Toimintaohjeet:
 
 5.  Valitse ***Jaa geometria***.
 
-6.  Määritä jakolinja napauttamalla Lisää piste -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
+6.  Määritä jakolinja napauttamalla ***Lisää piste*** -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
 
     Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
 

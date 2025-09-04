@@ -1,4 +1,4 @@
-# MARA-kuopan lisääminen
+# **MARA-kuopan lisääminen**
 
 1. Paina alavalikon Lisää-painiketta
 2. Valitse tarvittaessa ylhäältä MARA Kuoppa-taso
