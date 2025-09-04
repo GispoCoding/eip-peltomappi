@@ -15,6 +15,13 @@ SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
 TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 FILTER_DATASET_NAME = "peltolohkot_2024.gpkg"
+SUBPROJECT_CONFIG_NAME = "peltomappi_subproject.json"
+
+
+# TODO: currently there's bit of an awkward situation where this class can represent
+# both an invalid, uncreated subproject but also a valid existing subproject.
+# probably a better solution would be to have a new class ParcelSpecification or
+# similar for the non-created, "preliminary" subproject
 
 
 class ModificationType(Enum):
@@ -222,3 +229,17 @@ class Subproject:
         jsonschema.validate(d, schema=schema)
 
         return d
+
+    def save(self) -> None:
+        if self.__path is None:
+            msg = "path is not set, can't save"
+            raise SubprojectError(msg)
+
+        # path is a directory
+        output_path = self.__path / SUBPROJECT_CONFIG_NAME
+
+        with output_path.open("w") as file:
+            json.dump(self.to_json_dict(), file, indent=4)
+
+    def set_path(self, path: Path):
+        self.__path = path

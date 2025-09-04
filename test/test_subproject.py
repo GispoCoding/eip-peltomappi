@@ -6,6 +6,7 @@ from geopandas import gpd
 
 from peltomappi.filter import FIELD_PARCEL_IDENTIFIER_COLUMN
 from peltomappi.subproject import (
+    SUBPROJECT_CONFIG_NAME,
     TEMPLATE_MERGIN_CONFIG_NAME,
     TEMPLATE_QGIS_PROJECT_NAME,
     ModificationAction,
@@ -161,3 +162,83 @@ def test_to_json_dict(
 
     assert modifications[1]["modificationType"] == "WEATHER_UPDATE"
     assert modifications[1]["datetime"] == datetime(1971, 1, 3, 0, 0, tzinfo=timezone.utc).isoformat()
+
+
+def test_save(
+    subproject_json_1: Path,
+    test_template_project: Path,
+    test_full_data: Path,
+    subproject_json_3: Path,
+):
+    subproject = Subproject.from_json(subproject_json_1)
+
+    with pytest.raises(SubprojectError):
+        subproject.save()
+
+    tempdir = tempfile.TemporaryDirectory()
+    temp_path = Path(tempdir.name) / "subproject"
+
+    composition_id = UUID("cba6cbe5-61a0-4a0e-92db-a53575e7785e")
+
+    subproject.create(
+        test_template_project,
+        temp_path,
+        test_full_data,
+        composition_id,
+    )
+
+    subproject.save()
+
+    assert subproject.path() is not None
+    output_path_1 = subproject.path() / SUBPROJECT_CONFIG_NAME
+
+    assert output_path_1.exists()
+
+    # HACK: "id" and "created" can't be predicted, so just cut them out from
+    # the output
+    expected_1 = f"""
+    "name": "test_subproject_1",
+    "path": "/tmp/{temp_path.parent.stem}/subproject",
+    "fieldParcelIds": [
+        "2222222222",
+        "3333333333"
+    ],
+    "compositionId": "cba6cbe5-61a0-4a0e-92db-a53575e7785e","""
+
+    assert output_path_1.read_text()[51:-46] == expected_1
+
+    subproject_2 = Subproject.from_json(subproject_json_3)
+
+    subproject_2_path = Path(tempdir.name) / "subproject_2"
+    subproject_2_path.mkdir()
+    output_path_2 = subproject_2_path / SUBPROJECT_CONFIG_NAME
+
+    subproject_2.set_path(subproject_2_path)
+
+    subproject_2.save()
+
+    assert subproject_2.path() is not None
+    assert output_path_2.exists()
+
+    expected_2 = f"""{{
+    "id": "0069d09b-890a-4d1a-8922-d3b0fc8342b1",
+    "name": "test_subproject_3",
+    "path": "/tmp/{temp_path.parent.stem}/subproject_2",
+    "fieldParcelIds": [
+        "1111111111"
+    ],
+    "compositionId": "aecea423-a08a-4a33-8a11-18dfb13f171c",
+    "created": "1971-01-01T00:00:00+00:00",
+    "modified": [
+        {{
+            "modificationType": "PROJECT_UPDATE",
+            "datetime": "1971-01-02T00:00:00+00:00"
+        }},
+        {{
+            "modificationType": "WEATHER_UPDATE",
+            "datetime": "1971-01-03T00:00:00+00:00"
+        }}
+    ]
+}}"""
+
+    assert output_path_2.read_text() == expected_2
