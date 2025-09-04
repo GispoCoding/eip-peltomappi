@@ -5,6 +5,8 @@ import click
 
 from peltomappi.logger import LOGGER
 
+import peltomappi.cli.composition
+
 
 @click.group(help="CLI tool to run Peltomappi processes")
 @click.option(
@@ -20,6 +22,6 @@ def cli(quiet):
 
 if __name__ == "__main__":
     # cli.add_command(peltomappi.cli.weather.weather)
-    # cli.add_command(peltomappi.cli.composition.composition)
+    cli.add_command(peltomappi.cli.composition.composition)
 
     cli()

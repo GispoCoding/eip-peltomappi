@@ -1,9 +1,13 @@
 import logging
+import shutil
+import tempfile
 import pytest
 
 from pathlib import Path
 
+from peltomappi.composition import Composition
 from peltomappi.logger import LOGGER
+from test.utils.classes import ContainedComposition
 
 LOGGER.setLevel(logging.CRITICAL)
 
@@ -33,20 +37,55 @@ def subproject_json_2() -> Path:
 
 
 @pytest.fixture
-def subproject_json_3() -> Path:
-    return _testdata_path() / "test_subproject_3.json"
+def parcel_spec() -> Path:
+    return _testdata_path() / "test_parcelspec.json"
 
 
 @pytest.fixture
-def composition_subproject_json_1() -> Path:
-    return _testdata_path() / "test_composition_subproject_1.json"
+def composition_parcelspec_json_1() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_1.json"
 
 
 @pytest.fixture
-def composition_subproject_json_2() -> Path:
-    return _testdata_path() / "test_composition_subproject_2.json"
+def composition_parcelspec_json_2() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_2.json"
 
 
 @pytest.fixture
-def composition_subproject_json_3() -> Path:
-    return _testdata_path() / "test_composition_subproject_3.json"
+def composition_parcelspec_json_3() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_3.json"
+
+
+@pytest.fixture
+def contained_composition(
+    composition_parcelspec_json_1: Path,
+    composition_parcelspec_json_2: Path,
+    composition_parcelspec_json_3: Path,
+    test_template_project: Path,
+    test_full_data: Path,
+) -> ContainedComposition:
+    temp_dir = tempfile.TemporaryDirectory()
+    return ContainedComposition(
+        temp_dir=temp_dir,
+        composition=Composition.from_parcel_specifications(
+            [
+                composition_parcelspec_json_1,
+                composition_parcelspec_json_2,
+                composition_parcelspec_json_3,
+            ],
+            test_template_project,
+            test_full_data,
+            Path(temp_dir.name) / "output",
+            "test_workspace",
+            "test_composition",
+            "test_server",
+        ),
+    )
+
+
+@pytest.fixture
+def saved_composition() -> tempfile.TemporaryDirectory:
+    temp_dir = tempfile.TemporaryDirectory()
+    shutil.copytree(_testdata_path() / "test_saved_composition", Path(temp_dir.name) / "test_saved_composition")
+
+    return temp_dir
