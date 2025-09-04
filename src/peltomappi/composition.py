@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Any
 from uuid import UUID, uuid4
 
 
@@ -96,15 +97,15 @@ class Composition:
     def subprojects(self) -> list[Subproject]:
         return self.__subprojects
 
-    # def to_json_dict(self) -> dict[str, Any]:
-    #     return {
-    #         "compositionId": str(self.__id),
-    #         "compositionName": self.__name,
-    #         "merginWorkspace": self.__mergin_workspace,
-    #         "merginServer": self.__mergin_server,
-    #         "templateProjectPath": str(self.__template_project_path),
-    #         "subprojects": self.__subprojects, # FIXME: turn subprojects to json dicts too
-    #     }
+    def to_json_dict(self) -> dict[str, Any]:
+        return {
+            "compositionId": str(self.__id),
+            "compositionName": self.__name,
+            "merginWorkspace": self.__mergin_workspace,
+            "merginServer": self.__mergin_server,
+            "templateProjectPath": str(self.__template_project_path),
+            "subprojects": self.__subprojects,  # FIXME: turn subprojects to json dicts too
+        }
 
     # @classmethod
     # def from_json(cls, json_config: Path) -> Self:
