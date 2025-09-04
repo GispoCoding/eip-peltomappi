@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "unique identifier of the subproject"
+    },
+    "name": {
+      "type": "string",
+      "description": "name of the project in the Mergin Maps server"
+    },
+    "path": {
+      "type": "string",
+      "description": "path to the local folder containing the subproject"
+    },
+    "fieldParcelIds": {
+      "type": "array",
+      "description": "list of the field parcel IDs included in this project",
+      "minItems": 1,
+      "items": {
+        "minLength": 10,
+        "maxLength": 10,
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "timestamp of when subproject was created"
+    },
+    "modified": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "modificationType": {
+            "enum": [
+              "PROJECT_UPDATE",
+              "WEATHER_UPDATE"
+            ],
+            "type": "string",
+            "description": "type of modification action"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "when modification occured"
+          }
+        },
+        "required": [
+          "modificationType",
+          "datetime"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "compositionId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "identifier of composition this subproject belongs to"
+    }
+  },
+  "required": [
+    "name",
+    "fieldParcelIds"
+  ]
+}
