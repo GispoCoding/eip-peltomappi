@@ -203,8 +203,8 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 </iframe>
 
-```!!! example "💡 HUOM!" 
-    Mitatut arvot eivät tallennu```
+!!! example "💡 HUOM!" 
+    Mitatut arvot eivät tallennu
 
 ## **Mergin Mapsin synkronointi mobiilisovelluksess**a
 
