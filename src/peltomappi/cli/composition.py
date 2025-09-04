@@ -111,6 +111,41 @@ def create(
         exists=True,
         dir_okay=False,
         file_okay=True,
+        writable=True,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+@click.argument(
+    "parcel_specification",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+def add(
+    composition: Path,
+    parcel_specification: Path,
+):
+    comp = Composition.from_json(composition)
+    comp.set_path(composition)
+    comp.add_subproject_from_parcelspec(parcel_specification)
+    comp.save()
+
+
+@composition.command(help="Uploads all subprojects in the composition to the Mergin Maps server.")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
         writable=False,
         readable=True,
         resolve_path=True,

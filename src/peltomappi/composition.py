@@ -216,12 +216,19 @@ class Composition:
         )
 
     def add_subproject_from_parcelspec(self, parcelspec_path: Path) -> None:
-        pass
-        # parcelspec = ParcelSpecification.from_json(parcelspec_path)
-        # subproject = parcelspec.to_subproject(
-        #     self.__template_project_path,
-        #     self.__su
-        # )
+        # TODO: doesn't have a test and should
+        parcelspec = ParcelSpecification.from_json(parcelspec_path)
+        subproject = parcelspec.to_subproject(
+            self.__template_project_path,
+            self.__subproject_directory / clean_string_to_filename(parcelspec.name()),
+            self.__full_data_path,
+            self.__id,
+        )
+
+        subproject.save()
+
+        self.__subprojects.append(subproject)
+        self.save()
 
     def upload_subprojects(self):
         client = mergin.MerginClient(
