@@ -102,3 +102,21 @@ def create(
 
     comp.set_path(output)
     comp.save()
+
+
+@composition.command(help="Uploads all subprojects in the composition to the Mergin Maps server.")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=False,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=str_to_path,
+)
+def upload(composition: Path):
+    comp = Composition.from_json(composition)
+    comp.upload_subprojects()

@@ -1,11 +1,14 @@
 import json
 from datetime import datetime
 from enum import Enum
+import os
 from pathlib import Path
 from typing import Any, NamedTuple, Self
 from uuid import UUID
 
 import jsonschema
+import mergin
+from mergin.client import MerginClient
 
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
@@ -137,12 +140,36 @@ class Subproject:
             msg = "path is not set, can't save"
             raise SubprojectError(msg)
 
-        # path is a directory
-        output_path = self.__path / SUBPROJECT_CONFIG_NAME
-
-        with output_path.open("w") as file:
+        with self.conf_path().open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
     def set_path(self, path: Path):
         # TODO: this exists mainly for testing purposes
         self.__path = path
+
+    def conf_path(self) -> Path:
+        return self.__path / SUBPROJECT_CONFIG_NAME
+
+    def upload(
+        self,
+        server_url: str,
+        workspace: str,
+        *,
+        name_prefix: str | None,
+        client: MerginClient | None = None,
+    ):
+        if client is None:
+            client = mergin.MerginClient(
+                login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=server_url
+            )
+
+        if not name_prefix:
+            project_name = f"{workspace}/{self.__name}"
+        else:
+            project_name = f"{workspace}/{name_prefix}_{self.__name}"
+
+        client.create_project_and_push(
+            project_name=project_name,
+            directory=self.__path,
+            is_public=False,
+        )

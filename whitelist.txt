@@ -37,3 +37,4 @@ iloc
 chdir
 parcelspec
 parcelspecs
+conf

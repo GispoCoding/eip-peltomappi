@@ -1,9 +1,11 @@
+import os
 from pathlib import Path
 from typing import Any, Self
 from uuid import UUID, uuid4
 
 import json
 import jsonschema
+import mergin
 
 
 from peltomappi.parcelspec import ParcelSpecification
@@ -115,7 +117,7 @@ class Composition:
             "merginWorkspace": self.__mergin_workspace,
             "merginServer": self.__mergin_server,
             "templateProjectPath": self.__template_project_path.__str__(),
-            "subprojects": [subproject.path().__str__() for subproject in self.__subprojects],
+            "subprojects": [subproject.conf_path().__str__() for subproject in self.__subprojects],
         }
 
         schema = json.loads(SCHEMA_COMPOSITION.read_text())
@@ -193,3 +195,15 @@ class Composition:
             template_project_directory,
             subprojects,
         )
+
+    def upload_subprojects(self):
+        client = mergin.MerginClient(
+            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
+        )
+        for s in self.__subprojects:
+            s.upload(
+                self.__mergin_server,
+                self.__mergin_workspace,
+                name_prefix=self.__name,
+                client=client,
+            )
