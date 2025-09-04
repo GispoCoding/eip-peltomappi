@@ -62,7 +62,7 @@ def test_to_json_dict(
     assert d["compositionName"] == "test_composition"
     assert d["merginWorkspace"] == "test_workspace"
     assert d["merginServer"] == "test_server"
-    assert d["templateProjectPath"] == test_template_project.name
+    assert d["templateProjectPath"] == test_template_project.__str__()
 
     assert d["subprojects"] == [
         f"{output_path}/test_composition_parcelspec_1",
@@ -71,7 +71,10 @@ def test_to_json_dict(
     ]
 
 
-def test_save(contained_composition: ContainedComposition):
+def test_save(
+    test_template_project: Path,
+    contained_composition: ContainedComposition,
+):
     composition = contained_composition.composition
 
     with pytest.raises(CompositionError):
@@ -87,7 +90,7 @@ def test_save(contained_composition: ContainedComposition):
     "compositionName": "test_composition",
     "merginWorkspace": "test_workspace",
     "merginServer": "test_server",
-    "templateProjectPath": "test_template_project",
+    "templateProjectPath": "{test_template_project}",
     "subprojects": [
         "/tmp/{path.parent.stem}/output/test_composition_parcelspec_1",
         "/tmp/{path.parent.stem}/output/test_composition_parcelspec_2",

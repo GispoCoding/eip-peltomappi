@@ -114,7 +114,7 @@ class Composition:
             "compositionName": self.__name,
             "merginWorkspace": self.__mergin_workspace,
             "merginServer": self.__mergin_server,
-            "templateProjectPath": self.__template_project_path.name,
+            "templateProjectPath": self.__template_project_path.__str__(),
             "subprojects": [subproject.path().__str__() for subproject in self.__subprojects],
         }
 
@@ -160,7 +160,7 @@ class Composition:
     @classmethod
     def from_parcel_specifications(
         cls,
-        subproject_jsons: list[Path],
+        parcelspec_jsons: list[Path],
         template_project_directory: Path,
         full_data_path: Path,
         subproject_output_directory: Path,
@@ -170,7 +170,7 @@ class Composition:
     ) -> Self:
         subproject_output_directory.mkdir()
         id = uuid4()
-        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in subproject_jsons]
+        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in parcelspec_jsons]
 
         subprojects = []
 
