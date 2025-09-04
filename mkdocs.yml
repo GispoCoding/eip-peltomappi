@@ -15,7 +15,8 @@ nav:
   - Säädata: saadata.md
   - Muut ominaisuudet: muut_ominaisuudet.md
   - Palaute: palaute.md
-  
+  - Muutosloki: muutosloki.md
+
 use_directory_urls: false
 
 markdown_extensions:

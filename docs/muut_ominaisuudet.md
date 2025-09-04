@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
 # **Muut ominaisuudet**
 
 ## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
@@ -198,8 +203,8 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 </iframe>
 
-!!! example "💡 HUOM!" 
-    Mitatut arvot eivät tallennu
+```!!! example "💡 HUOM!" 
+    Mitatut arvot eivät tallennu```
 
 ## **Mergin Mapsin synkronointi mobiilisovelluksess**a
 
