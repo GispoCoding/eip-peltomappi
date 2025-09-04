@@ -1,6 +1,9 @@
 from pathlib import Path
 from uuid import UUID
 
+import pytest
+
+from peltomappi.composition import CompositionError
 from test.utils.classes import ContainedComposition
 
 
@@ -63,3 +66,30 @@ def test_to_json_dict(
         f"{output_path}/test_composition_subproject_2",
         f"{output_path}/test_composition_subproject_3",
     ]
+
+
+def test_save(contained_composition: ContainedComposition):
+    composition = contained_composition.composition
+
+    with pytest.raises(CompositionError):
+        composition.save()
+
+    path = Path(contained_composition.temp_dir.name) / "composition.json"
+
+    composition.set_path(path)
+    composition.save()
+
+    expected = f"""{{
+    "compositionId": "{composition.id()}",
+    "compositionName": "test_composition",
+    "merginWorkspace": "test_workspace",
+    "merginServer": "test_server",
+    "templateProjectPath": "test_template_project",
+    "subprojects": [
+        "/tmp/{path.parent.stem}/output/test_composition_subproject_1",
+        "/tmp/{path.parent.stem}/output/test_composition_subproject_2",
+        "/tmp/{path.parent.stem}/output/test_composition_subproject_3"
+    ]
+}}"""
+
+    assert path.read_text() == expected

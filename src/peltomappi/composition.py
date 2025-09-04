@@ -51,6 +51,9 @@ class Composition:
     __template_project_path: Path
     __subprojects: list[Subproject]
 
+    # not a part of the JSON schema:
+    __path: Path | None
+
     def __init__(
         self,
         id: UUID,
@@ -59,6 +62,8 @@ class Composition:
         mergin_server: str,
         template_project_path: Path,
         subprojects: list[Subproject],
+        *,
+        path: Path | None = None,
     ) -> None:
         self.__id = id
         self.__name = name
@@ -66,6 +71,7 @@ class Composition:
         self.__mergin_server = mergin_server
         self.__template_project_path = template_project_path
         self.__subprojects = subprojects
+        self.__path = path
 
     def set_id(self, id: UUID) -> None:
         self.__id = id
@@ -81,6 +87,9 @@ class Composition:
 
     def set_template_project_path(self, template_project_path: Path) -> None:
         self.__template_project_path = template_project_path
+
+    def set_path(self, path: Path) -> None:
+        self.__path = path
 
     def id(self) -> UUID:
         return self.__id
@@ -114,6 +123,14 @@ class Composition:
         jsonschema.validate(d, schema=schema)
 
         return d
+
+    def save(self) -> None:
+        if self.__path is None:
+            msg = "output path is not set, can't save"
+            raise CompositionError(msg)
+
+        with self.__path.open("w") as file:
+            json.dump(self.to_json_dict(), file, indent=4)
 
     # @classmethod
     # def from_json(cls, json_config: Path) -> Self:
