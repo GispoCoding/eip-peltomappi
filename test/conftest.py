@@ -1,4 +1,5 @@
 import logging
+import shutil
 import tempfile
 import pytest
 
@@ -80,3 +81,11 @@ def contained_composition(
             "test_server",
         ),
     )
+
+
+@pytest.fixture
+def saved_composition() -> tempfile.TemporaryDirectory:
+    temp_dir = tempfile.TemporaryDirectory()
+    shutil.copytree(_testdata_path() / "test_saved_composition", Path(temp_dir.name) / "test_saved_composition")
+
+    return temp_dir

@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any
+from typing import Any, Self
 from uuid import UUID, uuid4
 
 import json
@@ -132,20 +132,31 @@ class Composition:
         with self.__path.open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
-    # @classmethod
-    # def from_json(cls, json_config: Path) -> Self:
-    #     schema = json.loads(SCHEMA_COMPOSITION.read_text())
-    #     data = json.loads(json_config.read_text())
-    #     jsonschema.validate(data, schema=schema)
-    #
-    #     return cls(
-    #         UUID(data["compositionId"]),
-    #         data["compositionName"],
-    #         data["merginWorkspace"],
-    #         data["merginServer"],
-    #         data["templateProjectPath"],
-    #         [], # FIXME: load subprojects
-    #     )
+    @classmethod
+    def from_json(cls, json_config: Path) -> Self:
+        schema = json.loads(SCHEMA_COMPOSITION.read_text())
+        data = json.loads(json_config.read_text())
+        jsonschema.validate(data, schema=schema)
+
+        id = UUID(data["compositionId"])
+
+        subprojects = []
+        for json_path in data["subprojects"]:
+            subproject = Subproject.from_json(Path(json_path))
+            if subproject.composition_id() != id:
+                msg = "subproject does not belong to this composition"
+                raise CompositionError(msg)
+
+            subprojects.append(subproject)
+
+        return cls(
+            id,
+            data["compositionName"],
+            data["merginWorkspace"],
+            data["merginServer"],
+            Path(data["templateProjectPath"]),
+            subprojects,
+        )
 
     @classmethod
     def from_empty_subprojects(
@@ -157,7 +168,7 @@ class Composition:
         workspace: str,
         composition_name: str,
         server: str,
-    ):
+    ) -> Self:
         subproject_output_directory.mkdir()
         id = uuid4()
         subprojects = [Subproject.from_json(json_file) for json_file in subproject_jsons]
@@ -170,6 +181,7 @@ class Composition:
                 full_data_path,
                 id,
             )
+
         return cls(
             id,
             composition_name,

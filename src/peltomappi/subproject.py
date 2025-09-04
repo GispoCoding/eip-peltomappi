@@ -183,6 +183,8 @@ class Subproject:
         self.__modified = []
         self.__composition_id = composition_id
 
+        self.save()
+
         LOGGER.info(f"Subproject created at {output_directory}")
 
     def id(self) -> UUID | None:

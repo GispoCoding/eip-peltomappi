@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import json
 from pathlib import Path
 from uuid import UUID
 
@@ -85,6 +86,11 @@ def test_create(
     assert not (temp_path_1 / "dummy.gpkg-shm").exists()
     assert (temp_path_1 / TEMPLATE_QGIS_PROJECT_NAME).exists()
     assert (temp_path_1 / TEMPLATE_MERGIN_CONFIG_NAME).exists()
+
+    saved_subproject = temp_path_1 / SUBPROJECT_CONFIG_NAME
+
+    assert saved_subproject.exists()
+    assert json.loads(saved_subproject.read_text()) == subproject_1.to_json_dict()
 
     parcels_2023 = temp_path_1 / "peltolohkot_2023.gpkg"
     parcels_2024 = temp_path_1 / "peltolohkot_2024.gpkg"
