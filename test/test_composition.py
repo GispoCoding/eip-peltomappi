@@ -29,18 +29,18 @@ def test_from_empty_subprojects(
     subproject_2 = composition.subprojects()[1]
     subproject_3 = composition.subprojects()[2]
 
-    assert subproject_1.name() == "test_composition_subproject_1"
-    assert subproject_1.path() == (temp_path / "output" / "test_composition_subproject_1")
+    assert subproject_1.name() == "test_composition_parcelspec_1"
+    assert subproject_1.path() == (temp_path / "output" / "test_composition_parcelspec_1")
     assert subproject_1.modified() == []
     assert subproject_1.composition_id() == composition.id()
 
-    assert subproject_2.name() == "test_composition_subproject_2"
-    assert subproject_2.path() == (temp_path / "output" / "test_composition_subproject_2")
+    assert subproject_2.name() == "test_composition_parcelspec_2"
+    assert subproject_2.path() == (temp_path / "output" / "test_composition_parcelspec_2")
     assert subproject_2.modified() == []
     assert subproject_2.composition_id() == composition.id()
 
-    assert subproject_3.name() == "test_composition_subproject_3"
-    assert subproject_3.path() == (temp_path / "output" / "test_composition_subproject_3")
+    assert subproject_3.name() == "test_composition_parcelspec_3"
+    assert subproject_3.path() == (temp_path / "output" / "test_composition_parcelspec_3")
     assert subproject_3.modified() == []
     assert subproject_3.composition_id() == composition.id()
 
@@ -65,9 +65,9 @@ def test_to_json_dict(
     assert d["templateProjectPath"] == test_template_project.name
 
     assert d["subprojects"] == [
-        f"{output_path}/test_composition_subproject_1",
-        f"{output_path}/test_composition_subproject_2",
-        f"{output_path}/test_composition_subproject_3",
+        f"{output_path}/test_composition_parcelspec_1",
+        f"{output_path}/test_composition_parcelspec_2",
+        f"{output_path}/test_composition_parcelspec_3",
     ]
 
 
@@ -89,9 +89,9 @@ def test_save(contained_composition: ContainedComposition):
     "merginServer": "test_server",
     "templateProjectPath": "test_template_project",
     "subprojects": [
-        "/tmp/{path.parent.stem}/output/test_composition_subproject_1",
-        "/tmp/{path.parent.stem}/output/test_composition_subproject_2",
-        "/tmp/{path.parent.stem}/output/test_composition_subproject_3"
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_1",
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_2",
+        "/tmp/{path.parent.stem}/output/test_composition_parcelspec_3"
     ]
 }}"""
 

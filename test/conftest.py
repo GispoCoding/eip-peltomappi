@@ -37,41 +37,41 @@ def subproject_json_2() -> Path:
 
 
 @pytest.fixture
-def subproject_json_3() -> Path:
-    return _testdata_path() / "test_subproject_3.json"
+def parcel_spec() -> Path:
+    return _testdata_path() / "test_parcelspec.json"
 
 
 @pytest.fixture
-def composition_subproject_json_1() -> Path:
-    return _testdata_path() / "test_composition_subproject_1.json"
+def composition_parcelspec_json_1() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_1.json"
 
 
 @pytest.fixture
-def composition_subproject_json_2() -> Path:
-    return _testdata_path() / "test_composition_subproject_2.json"
+def composition_parcelspec_json_2() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_2.json"
 
 
 @pytest.fixture
-def composition_subproject_json_3() -> Path:
-    return _testdata_path() / "test_composition_subproject_3.json"
+def composition_parcelspec_json_3() -> Path:
+    return _testdata_path() / "test_composition_parcelspec_3.json"
 
 
 @pytest.fixture
 def contained_composition(
-    composition_subproject_json_1: Path,
-    composition_subproject_json_2: Path,
-    composition_subproject_json_3: Path,
+    composition_parcelspec_json_1: Path,
+    composition_parcelspec_json_2: Path,
+    composition_parcelspec_json_3: Path,
     test_template_project: Path,
     test_full_data: Path,
 ) -> ContainedComposition:
     temp_dir = tempfile.TemporaryDirectory()
     return ContainedComposition(
         temp_dir=temp_dir,
-        composition=Composition.from_empty_subprojects(
+        composition=Composition.from_parcel_specifications(
             [
-                composition_subproject_json_1,
-                composition_subproject_json_2,
-                composition_subproject_json_3,
+                composition_parcelspec_json_1,
+                composition_parcelspec_json_2,
+                composition_parcelspec_json_3,
             ],
             test_template_project,
             test_full_data,

@@ -6,14 +6,13 @@ import json
 import jsonschema
 
 
-from peltomappi.subproject import Subproject
+from peltomappi.parcelspec import ParcelSpecification
+from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, Subproject
 from peltomappi.utils import clean_string_to_filename
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
-TEMPLATE_QGIS_PROJECT_NAME = "peltomappi"
-TEMPLATE_QGIS_PROJECT_EXTENSION = "qgs"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 
 
@@ -30,7 +29,7 @@ def validate_template_project(template_project_directory: Path):
         msg = "project directory does not exist"
         raise CompositionError(msg)
 
-    if not (template_project_directory / f"{TEMPLATE_QGIS_PROJECT_NAME}.{TEMPLATE_QGIS_PROJECT_EXTENSION}").exists():
+    if not (template_project_directory / TEMPLATE_QGIS_PROJECT_NAME).exists():
         msg = "template project does not have a project file"
         raise CompositionError(msg)
 
@@ -159,7 +158,7 @@ class Composition:
         )
 
     @classmethod
-    def from_empty_subprojects(
+    def from_parcel_specifications(
         cls,
         subproject_jsons: list[Path],
         template_project_directory: Path,
@@ -171,16 +170,20 @@ class Composition:
     ) -> Self:
         subproject_output_directory.mkdir()
         id = uuid4()
-        subprojects = [Subproject.from_json(json_file) for json_file in subproject_jsons]
+        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in subproject_jsons]
 
-        for subproject in subprojects:
-            subproject_dir = subproject_output_directory / clean_string_to_filename(subproject.name())
-            subproject.create(
+        subprojects = []
+
+        for parcelspec in parcelspecs:
+            subproject_dir = subproject_output_directory / clean_string_to_filename(parcelspec.name())
+            subproject = parcelspec.to_subproject(
                 template_project_directory,
                 subproject_dir,
                 full_data_path,
                 id,
             )
+
+            subprojects.append(subproject)
 
         return cls(
             id,

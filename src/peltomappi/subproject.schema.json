@@ -64,7 +64,11 @@
     }
   },
   "required": [
+    "id",
     "name",
-    "fieldParcelIds"
+    "path",
+    "fieldParcelIds",
+    "created",
+    "compositionId"
   ]
 }
