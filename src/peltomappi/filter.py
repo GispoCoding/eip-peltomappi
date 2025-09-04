@@ -58,9 +58,16 @@ def filter_dataset_by_field_parcel_ids(
 
     layer_name = layers["name"].item()
 
-    # TODO: geopandas converts the tracking_layer to LineStringZ from LineStringZM
-    # so skip it, but this approach is hacky
-    if layer_name == "tracking_layer":
+    # HACK: terrible way of doing this sustainable and does not belong here at
+    # all
+    if layer_name in (
+        "tracking_layer",
+        "kohteet",
+        "maapera",
+        "mara_kerros",
+        "mara_kuoppa",
+        "penetrometri",
+    ):
         shutil.copy(input_path, output_path)
         return
 
@@ -69,10 +76,6 @@ def filter_dataset_by_field_parcel_ids(
         engine="pyogrio",
         mask=spatial_filter,
     )
-
-    if filtered_gdf.empty:
-        shutil.copy(input_path, output_path)
-        return
 
     filtered_gdf.to_file(
         output_path,
