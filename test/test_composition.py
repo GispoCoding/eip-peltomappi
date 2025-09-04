@@ -41,6 +41,25 @@ def test_from_empty_subprojects(
 
 def test_to_json_dict(
     contained_composition: ContainedComposition,
+    test_template_project: Path,
 ):
-    pass
-    # composition = contained_composition.composition
+    composition = contained_composition.composition
+    output_path = Path(contained_composition.temp_dir.name) / "output"
+
+    d = composition.to_json_dict()
+
+    try:
+        UUID(d["compositionId"], version=4)
+    except:  # noqa: E722
+        assert False
+
+    assert d["compositionName"] == "test_composition"
+    assert d["merginWorkspace"] == "test_workspace"
+    assert d["merginServer"] == "test_server"
+    assert d["templateProjectPath"] == test_template_project.name
+
+    assert d["subprojects"] == [
+        f"{output_path}/test_composition_subproject_1",
+        f"{output_path}/test_composition_subproject_2",
+        f"{output_path}/test_composition_subproject_3",
+    ]
