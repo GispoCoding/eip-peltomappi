@@ -5,7 +5,8 @@
 Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
 <img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
 
-Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
+!!! note "💡 HUOM!" 
+    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
 1.  Klikkaa linkkiä ja rekisteröidy palveluun:
 
