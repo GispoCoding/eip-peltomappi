@@ -208,7 +208,7 @@ class Subproject:
         d: dict[str, Any] = {
             "id": str(self.__id),
             "name": self.__name,
-            "path": str(self.__path),
+            "path": self.__path.__str__(),
             "fieldParcelIds": self.__field_parcel_ids,
             "compositionId": str(self.__composition_id),
             "created": self.__created.isoformat(),
@@ -217,5 +217,8 @@ class Subproject:
         if self.__modified:
             modifications = [mod.to_json_dict() for mod in self.__modified]
             d["modified"] = modifications
+
+        schema = json.loads(SCHEMA_SUBPROJECT.read_text())
+        jsonschema.validate(d, schema=schema)
 
         return d
