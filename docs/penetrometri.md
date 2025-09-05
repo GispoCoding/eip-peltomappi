@@ -2,7 +2,7 @@
 
 1.  Paina alavalikon ***Lisää*** painikkeesta
 
-2.  Tarkista että ylhäällä lukee ***Penetrometri***- taso. Jos ei lue niin vaihda tasoksi ***Penetrometri***
+2.  Tarkista että ylhäällä lukee ***Penetrometri***. Jos ei lue niin vaihda tasoksi ***Penetrometri***
 
 3.  Siirry kartalla haluamaasi sijaintiin
 

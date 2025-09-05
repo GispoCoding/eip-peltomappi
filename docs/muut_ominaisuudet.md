@@ -7,7 +7,7 @@ editor_options:
 
 ## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
 
-Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **poistaa kohteita**,
+Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **poistaa kohteita**.
 
 ### **Kohteiden muokkaaminen**
 

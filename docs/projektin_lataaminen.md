@@ -32,7 +32,7 @@ Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla
 
 ### **QGIS:n lataaminen ja asentaminen**
 
-Mene QGISinn viralliselle sivulle: <https://qgis.org/>
+Mene QGISin viralliselle sivulle: <https://qgis.org/>
 
 Valitse ***Download Now*** ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux):
 

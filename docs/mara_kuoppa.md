@@ -1,7 +1,7 @@
 # **MARA-kuopan lisääminen**
 
 1. Paina alavalikon ***Lisää***-painiketta
-2. Valitse tarvittaessa ylhäältä ***MARA Kuoppa***-taso
+2. Valitse tarvittaessa ylhäältä ***MARA Kuoppa***. Vaihda taso tarvittaessa oikeaksi
 3. Tarvittaessa siirrä sijaintiasi kartalla
 4. Paina alhaalta ***Tallenna***
 5. Lisää kerros painamalla ***"+"*** -painiketta.
