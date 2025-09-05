@@ -1,11 +1,20 @@
 {
-  "id": "30bf748e-6dab-4dcd-95ea-9903c6524150",
-  "name": "test_subproject_2",
-  "path": "/somewhere",
+  "id": "0069d09b-890a-4d1a-8922-d3b0fc8342b1",
+  "name": "test_subproject_3",
+  "path": "/somewhere/else",
   "fieldParcelIds": [
-    "1111111111",
-    "2222222222"
+    "1111111111"
   ],
-  "created": "1970-01-01T00:00:00+00:00",
-  "compositionId": "234634d0-7b02-4634-b520-1dc0331dd2bc"
+  "created": "1971-01-01T00:00:00+00:00",
+  "compositionId": "aecea423-a08a-4a33-8a11-18dfb13f171c",
+  "modified": [
+    {
+      "modificationType": "PROJECT_UPDATE",
+      "datetime": "1971-01-02T00:00:00+00:00"
+    },
+    {
+      "modificationType": "WEATHER_UPDATE",
+      "datetime": "1971-01-03T00:00:00+00:00"
+    }
+  ]
 }

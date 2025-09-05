@@ -34,3 +34,8 @@ fulldata
 jsons
 tempdir
 iloc
+chdir
+parcelspec
+parcelspecs
+conf
+proj

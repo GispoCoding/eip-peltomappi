@@ -1,7 +1,7 @@
 from pathlib import Path
 import shutil
 
-from geopandas import gpd
+from geopandas import gpd, pd
 from shapely.geometry import Polygon
 
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
@@ -18,7 +18,8 @@ def get_spatial_filter_from_field_parcel_ids(
     *,
     buffer_distance: float = DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS,
 ) -> Polygon:
-    where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({', '.join(field_parcel_ids)})"
+    filter_tuple_innards = ", ".join(f"'{id}'" for id in field_parcel_ids)
+    where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({filter_tuple_innards})"
     field_parcel_gdf: gpd.GeoDataFrame = gpd.read_file(
         field_parcel_dataset,
         columns=[FIELD_PARCEL_IDENTIFIER_COLUMN],
@@ -26,8 +27,9 @@ def get_spatial_filter_from_field_parcel_ids(
         where=where_clause,
     )
 
-    if len(field_parcel_ids) != len(field_parcel_gdf.index):
-        msg = "Number of given IDs does not match number of found IDs"
+    series = pd.Series([id for id in field_parcel_ids])
+    if not field_parcel_gdf[FIELD_PARCEL_IDENTIFIER_COLUMN].isin(series).all:
+        msg = "unexpected ids found in filtered dataset"
         raise FilterError(msg)
 
     return field_parcel_gdf.geometry.union_all().buffer(buffer_distance)
@@ -56,9 +58,16 @@ def filter_dataset_by_field_parcel_ids(
 
     layer_name = layers["name"].item()
 
-    # TODO: geopandas converts the tracking_layer to LineStringZ from LineStringZM
-    # so skip it, but this approach is hacky
-    if layer_name == "tracking_layer":
+    # HACK: terrible way of doing this sustainable and does not belong here at
+    # all
+    if layer_name in (
+        "tracking_layer",
+        "kohteet",
+        "maapera",
+        "mara_kerros",
+        "mara_kuoppa",
+        "penetrometri",
+    ):
         shutil.copy(input_path, output_path)
         return
 
@@ -67,10 +76,6 @@ def filter_dataset_by_field_parcel_ids(
         engine="pyogrio",
         mask=spatial_filter,
     )
-
-    if filtered_gdf.empty:
-        shutil.copy(input_path, output_path)
-        return
 
     filtered_gdf.to_file(
         output_path,

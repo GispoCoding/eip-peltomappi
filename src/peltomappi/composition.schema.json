@@ -31,6 +31,14 @@
         "type": "string",
         "description": "URI of the subproject json"
       }
+    },
+    "fullDataPath": {
+      "type": "string",
+      "description": "path containing full field parcel and other data"
+    },
+    "subprojectDirectory": {
+      "type": "string",
+      "description": "path containing this composition's subprojects"
     }
   },
   "required": [
@@ -38,6 +46,8 @@
     "merginWorkspace",
     "merginServer",
     "templateProjectPath",
-    "subprojects"
+    "subprojects",
+    "fullDataPath",
+    "subprojectDirectory"
   ]
 }
