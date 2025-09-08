@@ -4,7 +4,7 @@
 
 1.  Paina alavalikon ***Lisää*** -painikekeesta
 
-2.  Tarkista että ylhäällä lukee ***Maaperä***- taso. Jos ei lue niin vaihda tasoksi ***Maaperä***
+2.  Tarkista että ylhäällä lukee ***Maaperä***. Jos ei lue niin vaihda tasoksi ***Maaperä***
 
 3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta "***+ Lisää***"
 
