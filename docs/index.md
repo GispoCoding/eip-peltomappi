@@ -5,7 +5,7 @@ Nämä sivut sisältävät ohjeita [EIP Peltomappi](https://maaseutuverkosto.fi/
 
 ## **Tiedotteet**
 
-**5.9.2025**: Testausjakso 1. käynnistetty. Liity testaajaksi [tämän lomakkeen](https://docs.google.com/forms/d/e/1FAIpQLSeAPgEiIDn2D_Hrg1yzTanvjEgphKVZP7P2BrJzVnxL9cLgyg/viewform) avulla ja anna palautetta [täältä](http://localhost:8000/eip-peltomappi/palaute.html).
+**5.9.2025**: Testausjakso 1. käynnistetty. Liity testaajaksi [tämän lomakkeen](https://docs.google.com/forms/d/e/1FAIpQLSeAPgEiIDn2D_Hrg1yzTanvjEgphKVZP7P2BrJzVnxL9cLgyg/viewform) avulla ja anna palautetta [täältä](https://gispocoding.github.io/eip-peltomappi/palaute.html).
 
 
 
