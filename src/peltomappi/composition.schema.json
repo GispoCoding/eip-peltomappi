@@ -13,41 +13,32 @@
     },
     "merginWorkspace": {
       "type": "string",
-      "description": "name of the workspace the project belongs to in the Mergin Maps Server"
+      "description": "name of the workspace the composition exists in, as well as the template project and subprojects"
     },
     "merginServer": {
       "type": "string",
       "format": "uri",
       "description": "URL of the Mergin Maps server being used"
     },
-    "templateProjectPath": {
+    "templateName": {
       "type": "string",
-      "description": "path containing the template project this subproject was created from"
+      "description": "name of the template project in the Mergin Maps Server"
     },
     "subprojects": {
       "type": "array",
       "description": "list of subprojects",
       "items": {
         "type": "string",
-        "description": "URI of the subproject json"
+        "description": "name of the subproject"
       }
-    },
-    "fullDataPath": {
-      "type": "string",
-      "description": "path containing full field parcel and other data"
-    },
-    "subprojectDirectory": {
-      "type": "string",
-      "description": "path containing this composition's subprojects"
     }
   },
   "required": [
+    "compositionName",
     "compositionId",
     "merginWorkspace",
     "merginServer",
-    "templateProjectPath",
-    "subprojects",
-    "fullDataPath",
-    "subprojectDirectory"
+    "templateName",
+    "subprojects"
   ]
 }

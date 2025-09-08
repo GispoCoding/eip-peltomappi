@@ -8,6 +8,7 @@ from uuid import UUID
 import jsonschema
 from mergin.client import MerginClient
 
+from peltomappi.logger import LOGGER
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
 TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
@@ -45,29 +46,31 @@ class SubprojectError(Exception):
 class Subproject:
     __id: UUID
     __name: str
-    __path: Path
     __field_parcel_ids: list[str]
     __created: datetime
     __modified: list[ModificationAction]
     __composition_id: UUID
 
+    # not part of the JSON schema
+    __path: Path
+
     def __init__(
         self,
         id: UUID,
         name: str,
-        path: Path,
         field_parcel_ids: list[str],
         created: datetime,
         modified: list[ModificationAction],
         composition_id: UUID,
+        path: Path,
     ) -> None:
         self.__id = id
         self.__name = name
-        self.__path = path
         self.__field_parcel_ids = field_parcel_ids
         self.__created = created
         self.__modified = modified
         self.__composition_id = composition_id
+        self.__path = path
 
     @classmethod
     def from_json(cls, json_path: Path) -> Self:
@@ -86,11 +89,11 @@ class Subproject:
         return cls(
             UUID(data["id"]),
             data["name"],
-            Path(data["path"]),
             data["fieldParcelIds"],
             datetime.fromisoformat(data["created"]),
             modified,
             UUID(data["compositionId"]),
+            json_path.parent,
         )
 
     def id(self) -> UUID:
@@ -118,7 +121,6 @@ class Subproject:
         d: dict[str, Any] = {
             "id": str(self.__id),
             "name": self.__name,
-            "path": self.__path.__str__(),
             "fieldParcelIds": self.__field_parcel_ids,
             "compositionId": str(self.__composition_id),
             "created": self.__created.isoformat(),
@@ -142,7 +144,9 @@ class Subproject:
             json.dump(self.to_json_dict(), file, indent=4)
 
     def set_path(self, path: Path):
-        # TODO: this exists mainly for testing purposes
+        LOGGER.warning(
+            "set_path() function exists as a way to do dependency injection in tests. Avoid using it in application code."
+        )
         self.__path = path
 
     def conf_path(self) -> Path:
@@ -150,12 +154,12 @@ class Subproject:
 
     def upload(
         self,
-        workspace: str,
-        name,
+        name: str,
         client: MerginClient,
     ):
+        print(self.__path)
         client.create_project_and_push(
-            project_name=f"{workspace}/{name}",
+            project_name=name,
             directory=self.__path,
             is_public=False,
         )

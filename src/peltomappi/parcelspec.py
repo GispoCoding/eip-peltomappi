@@ -104,11 +104,11 @@ class ParcelSpecification:
         subproject = Subproject(
             uuid4(),
             self.__name,
-            output_directory,
             self.__field_parcel_ids,
             datetime.now(),
             [],
             composition_id,
+            output_directory,
         )
 
         subproject.save()

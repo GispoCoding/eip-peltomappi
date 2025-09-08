@@ -50,13 +50,11 @@ class Composition:
     __name: str
     __mergin_workspace: str
     __mergin_server: str
-    __template_project_path: Path
+    __template_name: str
     __subprojects: list[Subproject]
-    __full_data_path: Path
-    __subproject_directory: Path
 
     # not a part of the JSON schema:
-    __path: Path | None
+    __path: Path  # path to the .composition directory
 
     def __init__(
         self,
@@ -64,37 +62,17 @@ class Composition:
         name: str,
         mergin_workspace: str,
         mergin_server: str,
-        template_project_path: Path,
+        template_name: str,
         subprojects: list[Subproject],
-        full_data_path: Path,
-        subproject_directory: Path,
-        *,
-        path: Path | None = None,
+        path: Path,
     ) -> None:
         self.__id = id
         self.__name = name
         self.__mergin_workspace = mergin_workspace
         self.__mergin_server = mergin_server
-        self.__template_project_path = template_project_path
+        self.__template_name = template_name
         self.__subprojects = subprojects
         self.__path = path
-        self.__full_data_path = full_data_path
-        self.__subproject_directory = subproject_directory
-
-    def set_id(self, id: UUID) -> None:
-        self.__id = id
-
-    def set_mergin_workspace(self, mergin_workspace: str) -> None:
-        self.__mergin_workspace = mergin_workspace
-
-    def set_mergin_server(self, mergin_server: str) -> None:
-        self.__mergin_server = mergin_server
-
-    def set_name(self, name: str) -> None:
-        self.__name = name
-
-    def set_template_project_path(self, template_project_path: Path) -> None:
-        self.__template_project_path = template_project_path
 
     def set_path(self, path: Path) -> None:
         self.__path = path
@@ -111,17 +89,38 @@ class Composition:
     def mergin_server(self) -> str:
         return self.__mergin_server
 
-    def template_project_path(self) -> Path:
-        return self.__template_project_path
+    def template_name(self) -> str:
+        return self.__template_name
 
     def subprojects(self) -> list[Subproject]:
         return self.__subprojects
 
-    def full_data_path(self) -> Path:
-        return self.__full_data_path
+    def projects_path(self) -> Path:
+        return (self.__path / "../").resolve()
 
-    def subproject_directory(self) -> Path:
-        return self.__subproject_directory
+    def template_project_path(self) -> Path:
+        return self.projects_path() / clean_string_to_filename(self.__template_name)
+
+    def full_data_path(self) -> Path:
+        return self.__path / "full_data"
+
+    def subproject_path(self, subproject_name: str) -> Path:
+        return self.projects_path() / clean_string_to_filename(subproject_name)
+
+    def mergin_name(self) -> str:
+        return clean_string_to_filename(self.__name)
+
+    def mergin_name_with_workspace(self) -> str:
+        return f"{self.__mergin_workspace}/{clean_string_to_filename(self.__name)}"
+
+    def subproject_mergin_name_with_workspace(self, subproject_name: str) -> str:
+        return f"{self.__mergin_workspace}/{clean_string_to_filename(self.__name)}_{clean_string_to_filename(subproject_name)}"
+
+    def subproject_mergin_name(self, subproject_name: str) -> str:
+        return f"{clean_string_to_filename(self.__name)}_{clean_string_to_filename(subproject_name)}"
+
+    def json_config_path(self) -> Path:
+        return self.__path / "composition.json"
 
     def to_json_dict(self) -> dict[str, Any]:
         d = {
@@ -129,10 +128,8 @@ class Composition:
             "compositionName": self.__name,
             "merginWorkspace": self.__mergin_workspace,
             "merginServer": self.__mergin_server,
-            "templateProjectPath": self.__template_project_path.__str__(),
-            "subprojects": [subproject.conf_path().__str__() for subproject in self.__subprojects],
-            "fullDataPath": self.__full_data_path.__str__(),
-            "subprojectDirectory": self.__subproject_directory.__str__(),
+            "templateName": self.__template_name,
+            "subprojects": [subproject.name() for subproject in self.__subprojects],
         }
 
         schema = json.loads(SCHEMA_COMPOSITION.read_text())
@@ -141,87 +138,102 @@ class Composition:
         return d
 
     def save(self) -> None:
-        if self.__path is None:
-            msg = "output path is not set, can't save"
-            raise CompositionError(msg)
-
-        with self.__path.open("w") as file:
+        with self.json_config_path().open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
+    def mergin_project_path(self, project_name: str) -> str:
+        return f"{self.__mergin_workspace}/{project_name}"
+
+    def mergin_client(self) -> mergin.MerginClient:
+        return mergin.MerginClient(
+            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.mergin_server()
+        )
+
+    def download_template_project(self) -> None:
+        self.mergin_client().download_project(
+            self.mergin_project_path(self.template_name()),
+            self.template_project_path(),
+        )
+
+    def download_subproject(self, subproject_name: str) -> None:
+        self.mergin_client().download_project(
+            self.subproject_mergin_name_with_workspace(subproject_name),
+            self.subproject_path(subproject_name),
+        )
+
+    @staticmethod
+    def initialize(
+        path: Path,
+        template_name: str,
+        name: str,
+        mergin_workspace: str,
+        mergin_server: str,
+    ) -> None:
+        composition_path = path / ".composition"
+        composition_path.mkdir(parents=True)
+
+        comp = Composition(
+            uuid4(),
+            name,
+            mergin_workspace,
+            mergin_server,
+            template_name,
+            [],
+            composition_path,
+        )
+
+        comp.full_data_path().mkdir()
+        comp.download_template_project()
+        comp.save()
+
     @classmethod
-    def from_json(cls, json_config: Path) -> Self:
+    def from_json(
+        cls,
+        json_config: Path,
+        *,
+        download_subprojects: bool = False,
+    ) -> Self:
         schema = json.loads(SCHEMA_COMPOSITION.read_text())
         data = json.loads(json_config.read_text())
         jsonschema.validate(data, schema=schema)
 
         id = UUID(data["compositionId"])
 
-        subprojects = []
-        for json_path in data["subprojects"]:
-            subproject = Subproject.from_json(Path(json_path))
+        subprojects: list[Subproject] = []
+        comp = cls(
+            id,
+            data["compositionName"],
+            data["merginWorkspace"],
+            data["merginServer"],
+            data["templateName"],
+            subprojects,
+            Path(json_config.parent),
+        )
+
+        composition_root = (json_config.parent / "../").resolve()
+        for subproject_name in data["subprojects"]:
+            subproject_config = (
+                composition_root / f"{clean_string_to_filename(subproject_name)}/peltomappi_subproject.json"
+            )
+            if not subproject_config.exists() and download_subprojects:
+                comp.download_subproject(subproject_name)
+
+            subproject = Subproject.from_json(subproject_config)
             if subproject.composition_id() != id:
                 msg = "subproject does not belong to this composition"
                 raise CompositionError(msg)
 
             subprojects.append(subproject)
 
-        return cls(
-            id,
-            data["compositionName"],
-            data["merginWorkspace"],
-            data["merginServer"],
-            Path(data["templateProjectPath"]),
-            subprojects,
-            Path(data["fullDataPath"]),
-            Path(data["subprojectDirectory"]),
-        )
-
-    @classmethod
-    def from_parcel_specifications(
-        cls,
-        parcelspec_jsons: list[Path],
-        template_project_directory: Path,
-        full_data_path: Path,
-        subproject_output_directory: Path,
-        workspace: str,
-        composition_name: str,
-        server: str,
-    ) -> Self:
-        subproject_output_directory.mkdir()
-        id = uuid4()
-        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in parcelspec_jsons]
-
-        subprojects = []
-
-        for parcelspec in parcelspecs:
-            subproject_dir = subproject_output_directory / clean_string_to_filename(parcelspec.name())
-            subproject = parcelspec.to_subproject(
-                template_project_directory,
-                subproject_dir,
-                full_data_path,
-                id,
-            )
-
-            subprojects.append(subproject)
-
-        return cls(
-            id,
-            composition_name,
-            workspace,
-            server,
-            template_project_directory,
-            subprojects,
-            full_data_path,
-            subproject_output_directory,
-        )
+        return comp
 
     def add_subproject_from_parcelspec(self, parcelspec_path: Path) -> None:
         # TODO: doesn't have a test and should
         parcelspec = ParcelSpecification.from_json(parcelspec_path)
         subproject = parcelspec.to_subproject(
-            self.__template_project_path,
-            self.__subproject_directory / clean_string_to_filename(parcelspec.name()),
-            self.__full_data_path,
+            self.template_project_path(),
+            self.subproject_path(parcelspec.name()),
+            self.full_data_path(),
             self.__id,
         )
 
@@ -230,21 +242,31 @@ class Composition:
         self.__subprojects.append(subproject)
         self.save()
 
-    def upload_subprojects(self):
+    def upload(self) -> None:
+        client = mergin.MerginClient(
+            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
+        )
+
+        client.create_project_and_push(
+            project_name=self.mergin_name_with_workspace(),
+            directory=self.__path,
+            is_public=False,
+        )
+
+    def upload_subprojects(self) -> None:
         client = mergin.MerginClient(
             login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
         )
 
         existing_project_names = [proj["name"] for proj in client.projects_list(only_namespace=self.__mergin_workspace)]
         for s in self.__subprojects:
-            sp_name = f"{self.__name}_{s.name()}"
+            sp_name = self.subproject_mergin_name(s.name())
 
             if sp_name in existing_project_names:
                 LOGGER.info(f"Project {sp_name} already exists in server, skipping...")
                 continue
 
             s.upload(
-                self.__mergin_workspace,
-                sp_name,
+                self.subproject_mergin_name_with_workspace(s.name()),
                 client,
             )

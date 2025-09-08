@@ -11,10 +11,6 @@
       "type": "string",
       "description": "name of the project in the Mergin Maps server"
     },
-    "path": {
-      "type": "string",
-      "description": "path to the local folder containing the subproject"
-    },
     "fieldParcelIds": {
       "type": "array",
       "description": "list of the field parcel IDs included in this project",
@@ -66,7 +62,6 @@
   "required": [
     "id",
     "name",
-    "path",
     "fieldParcelIds",
     "created",
     "compositionId"
