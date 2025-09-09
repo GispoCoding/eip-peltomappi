@@ -227,6 +227,47 @@ class Composition:
 
         return comp
 
+    @classmethod
+    def from_parcel_specifications(
+        cls,
+        parcelspec_jsons: list[Path],
+        composition_name: str,
+        workspace: str,
+        server: str,
+        template_name: str,
+        path: Path,
+    ) -> Self:
+        composition_path = path / ".composition"
+        full_data_path = composition_path / "full_data"
+        full_data_path.mkdir(parents=True)
+
+        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in parcelspec_jsons]
+
+        subprojects: list[Subproject] = []
+        comp = cls(
+            uuid4(),
+            composition_name,
+            workspace,
+            server,
+            template_name,
+            subprojects,
+            composition_path,
+        )
+
+        comp.download_template_project()
+
+        for parcelspec in parcelspecs:
+            subproject = parcelspec.to_subproject(
+                comp.template_project_path(),
+                comp.subproject_path(parcelspec.name()),
+                comp.full_data_path(),
+                comp.id(),
+            )
+
+            subprojects.append(subproject)
+
+        return comp
+
     def add_subproject_from_parcelspec(self, parcelspec_path: Path) -> None:
         # TODO: doesn't have a test and should
         parcelspec = ParcelSpecification.from_json(parcelspec_path)
