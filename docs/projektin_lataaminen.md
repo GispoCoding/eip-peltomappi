@@ -1,28 +1,26 @@
 # **Projektin lataaminen**
 
-## **Projektin lataaminen mobiilisovellukseen**
+## **Projektin lataaminen mobiilisovellukseen sähköpostilinkin avulla**
 
-Kun puhelimessasi on asennettuna [Mergin Maps sovellu](https://gispocoding.github.io/eip-peltomappi/esittely.html)s, toimi seuraavasti:
+Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
+<img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
 
-1.  Avaa sovellus ja napauta oikean yläkulman ikonia:
+!!! note "💡 HUOM!" 
+    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
-    <img src="img/aloitusnakyma.jpg" width="34%"/>
+1.  Klikkaa linkkiä ja rekisteröidy palveluun:
 
-2.  Rekisteröi itsellesi tunnukset napauttamalla ***Rekisteröidy***
+<img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.jpg" width="34%"/><br>
+2.  Liity työtilaan napauttamalla "Join workspace"
 
-    <img src="img/register_mergin_maps.png" width="34%"/>
+<img src="img/projektin_lataaminen_qgisiin/tyotilaan_liittyminen.jpg" width="34%"/><br>
+3.  Avaa tämän jälkeen MerginMaps -sovellus puhelimessasi ja napauta oikean yläkulman ikonia:
 
-3.  Täytä lomake ja napauta ***Rekisteröidy*** luodaksesi tilisi.
+<img src="img/aloitusnakyma.jpg" width="34%"/><br>
+4.  Kirjaudu tämän jälkeen juuri luomillasi tunnuksillasi sisään:
 
-    Saat vahvistussähköpostin, jossa on linkki sähköpostiosoitteesi vahvistamiseksi.
-
-    Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi viiden minuutin kuluessa.
-
-4.  Kirjaudu tämän jälkeen tunnuksillasi sisään:
-
-<img src="img/kirjautuminen.jpg" width="34%"/>
-
-Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
+<img src="img/kirjautuminen.jpg" width="34%"/><br>
+5. Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
 <iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -34,7 +32,7 @@ Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla
 
 ### **QGIS:n lataaminen ja asentaminen**
 
-Mene QGISinn viralliselle sivulle: <https://qgis.org/>
+Mene QGISin viralliselle sivulle: <https://qgis.org/>
 
 Valitse ***Download Now*** ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux):
 

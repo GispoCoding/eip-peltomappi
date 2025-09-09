@@ -4,7 +4,7 @@
 
 1.  Paina alavalikon ***Lisää*** -painikekeesta
 
-2.  Tarkista että ylhäällä lukee ***Maaperä***- taso. Jos ei lue niin vaihda tasoksi ***Maaperä***
+2.  Tarkista että ylhäällä lukee ***Maaperä***. Jos ei lue niin vaihda tasoksi ***Maaperä***
 
 3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta "***+ Lisää***"
 
@@ -24,21 +24,24 @@
 
 ## **Alueen lisääminen nauhoitustilalla**
 
-Tarkista ensin että asetukset ovat kunnossa.
+### **Nauhoitustilan asetukset**
+Tarkista ensin että asetukset ovat kunnossa:
 
-Klikkaa karttanäkymän oikean laidan ***Lisää*** **--\> *Asetukset***
+1. Klikkaa karttanäkymän oikean laidan ***Lisää*** **--\> *Asetukset***
 
-Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
+2. Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
-<img src="img/interval_threshold_mergin_maps.png" width="55%"/>
+<img src="img/interval_threshold_mergin_maps.png" width="40%"/>
 
-Kun asetukset ovaat kunnossa, toimi seuraavasti:
+### **Nauhoitustila**
+
+Kun asetukset ovat kunnossa, toimi seuraavasti:
 
 1.  Paina alavalikon ***Lisää*** -painikekeesta
 
 2.  Tarkista että ylhäällä lukee ***Maaperä***- taso. Jos ei lue niin vaihda tasoksi ***Maaperä***
 
-3.  Paina näkymän jalanjälkien kuvaa:
+3.  Paina karttanäkymän jalanjälkien kuvaa:
 
 <img src="img/footsteps_mergin_maps.png" width="12%"/>
 
@@ -46,7 +49,7 @@ Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
 5.  Liiku määritetyn kohteen ympärillä niin alue nauhoittuu sitä mukaan.
 
-6.  Kun olet liikkunut kohteen ympäri niin napauta ***tallennus***- kohdasta ja ***Lopeta nauhoitus***. HUOM! toiminto sulkee alueen eli jos et ole kulkenut täysin kohdeetta ympäri sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
+6.  Kun olet liikkunut kohteen ympäri niin napauta ***tallennus***- kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut täysin kohdeetta ympäri sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
 
 7.  Syötä tarvittavat ominaisuustiedot
 
@@ -58,19 +61,14 @@ Kun asetukset ovaat kunnossa, toimi seuraavasti:
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
-\- Nimi:<br/>
+- Kohde:
+    -   Multava
 
-<div style="margin-left: 20px;">
+    -   Kalkitus
 
--   Multava<br/>
+    -   Lannoitus
 
--   Kalkitus<br/>
-
--   Lannoitus<br/>
-
--   Muu<br/>
-
-    </div>
+    -   Muu
 
 -   Valokuva
 
@@ -84,7 +82,7 @@ Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelis
 
 Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet. Tämän toiminnon jälkeen voit lisätä peltolohkoille useita kasveja samalle lohkolle,
 
-Toimintaohjeet:
+**Toimintaohjeet**:
 
 1.  Napauta kartalla haluamaasi aluekohdetta.
 

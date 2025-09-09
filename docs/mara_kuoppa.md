@@ -1,10 +1,10 @@
 # **MARA-kuopan lisääminen**
 
-1. Paina alavalikon Lisää-painiketta
-2. Valitse tarvittaessa ylhäältä MARA Kuoppa-taso
+1. Paina alavalikon ***Lisää***-painiketta
+2. Valitse tarvittaessa ylhäältä ***MARA Kuoppa***. Vaihda taso tarvittaessa oikeaksi
 3. Tarvittaessa siirrä sijaintiasi kartalla
-4. Paina alhaalta Tallenna
-5. Lisää kerros painamalla + -painiketta.
+4. Paina alhaalta ***Tallenna***
+5. Lisää kerros painamalla ***"+"*** -painiketta.
 6. Täydennä kerroksen syvyys ja luokka. Tallenna kerros oikeasta yläkulmasta ✅-painikkeesta
 7. Toista vaiheet 5 ja 6 jokaiselle kuopan kerrokselle
 8. Tallenna kuoppa kerroksineen yläkulmasta ✅-painikkeesta
