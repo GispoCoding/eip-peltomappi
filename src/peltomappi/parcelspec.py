@@ -20,6 +20,15 @@ class ParcelSpecificationError(Exception):
 
 
 class ParcelSpecification:
+    """
+    A parcel specification is a simple JSON file which has a JSON schema. It
+    contains a name of the specification and the field parcel IDs belonging to
+    the it.
+
+    The purpose of the specification is to be turned into a Subproject and
+    added to a Composition.
+    """
+
     __name: str
     __field_parcel_ids: list[str]
 
@@ -28,11 +37,18 @@ class ParcelSpecification:
         name: str,
         field_parcel_ids: list[str],
     ) -> None:
+        """
+        Initializes a subproject. Not meant to be used directly, use one of
+        the class methods instead.
+        """
         self.__name = name
         self.__field_parcel_ids = field_parcel_ids
 
     @classmethod
     def from_json(cls, json_path: Path) -> Self:
+        """
+        Creates a ParcelSpecification from an existing JSON configuration file.
+        """
         schema = json.loads(SCHEMA_PARCEL_SPECIFICATION.read_text())
         data = json.loads(json_path.read_text())
 
@@ -50,6 +66,11 @@ class ParcelSpecification:
         full_data_directory: Path,
         composition_id: UUID,
     ) -> Subproject:
+        """
+        Turns this parcel specification into a subproject, creating the
+        subproject folder and filtering the data from the given full data
+        directory.
+        """
         if output_directory.exists():
             msg = "output directory already exists"
             raise ParcelSpecificationError(msg)

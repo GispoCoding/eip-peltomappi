@@ -21,7 +21,7 @@ def composition():
 
 @composition.command(help="Initializes a new empty composition")
 @click.argument(
-    "path",
+    "name",
     type=click.Path(
         exists=False,
         dir_okay=True,
@@ -37,10 +37,6 @@ def composition():
     type=click.STRING,
 )
 @click.argument(
-    "name",
-    type=click.STRING,
-)
-@click.argument(
     "workspace",
     type=click.STRING,
 )
@@ -51,16 +47,15 @@ def composition():
     help="Specify non-default Mergin Maps Server",
 )
 def init(
-    path: Path,
+    name: Path,
     template_name: str,
-    name: str,
     workspace: str,
     server: str,
 ):
     Composition.initialize(
-        path,
-        template_name,
         name,
+        template_name,
+        name.stem,
         workspace,
         server,
         mergin_backend(server),

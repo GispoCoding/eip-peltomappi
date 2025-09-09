@@ -18,6 +18,11 @@ def get_spatial_filter_from_field_parcel_ids(
     *,
     buffer_distance: float = DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS,
 ) -> Polygon:
+    """
+    Returns:
+        a shapely (Multi)Polygon, buffered around the field parcels, identified
+        by the given IDs
+    """
     filter_tuple_innards = ", ".join(f"'{id}'" for id in field_parcel_ids)
     where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({filter_tuple_innards})"
     field_parcel_gdf: gpd.GeoDataFrame = gpd.read_file(
@@ -41,8 +46,20 @@ def filter_dataset_by_field_parcel_ids(
     spatial_filter: Polygon,
     *,
     overwrite: bool = False,
-):
-    """ """
+) -> None:
+    """
+    Reads an input dataset from the path, filters it according to the spatial
+    filter and writes the filtered dataset to a GeoPackage file.
+
+    Args:
+        input_path: Path to a geospatial dataset that can be opened with
+            GeoPandas.
+        output_path: Path to the output GeoPackage spatial_filter:
+            shapely (Multi)Polygon, features intersecting this will be included in
+            the output
+        overwrite: (optional) whether the output file can be overwritten
+
+    """
     if not overwrite and output_path.exists():
         msg = f"attempting to write file {output_path} but it already exists and overwrite has not been permitted"
         raise FilterError(msg)
