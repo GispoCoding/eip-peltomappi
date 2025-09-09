@@ -6,7 +6,6 @@ from typing import Any, NamedTuple, Self
 from uuid import UUID
 
 import jsonschema
-from mergin.client import MerginClient
 
 from peltomappi.logger import LOGGER
 
@@ -136,10 +135,6 @@ class Subproject:
         return d
 
     def save(self) -> None:
-        if self.__path is None:
-            msg = "path is not set, can't save"
-            raise SubprojectError(msg)
-
         with self.conf_path().open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
@@ -151,15 +146,3 @@ class Subproject:
 
     def conf_path(self) -> Path:
         return self.__path / SUBPROJECT_CONFIG_NAME
-
-    def upload(
-        self,
-        name: str,
-        client: MerginClient,
-    ):
-        print(self.__path)
-        client.create_project_and_push(
-            project_name=name,
-            directory=self.__path,
-            is_public=False,
-        )

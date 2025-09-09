@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 import os
 from pathlib import Path
 from typing import Any, Self
@@ -29,7 +30,7 @@ def validate_template_project(template_project_directory: Path):
     """
 
     if not template_project_directory.exists():
-        msg = "project directory does not exist"
+        msg = "template project directory does not exist"
         raise CompositionError(msg)
 
     if not (template_project_directory / TEMPLATE_QGIS_PROJECT_NAME).exists():
@@ -39,6 +40,55 @@ def validate_template_project(template_project_directory: Path):
     if not (template_project_directory / TEMPLATE_MERGIN_CONFIG_NAME).exists():
         msg = "template project does not have a mergin config file"
         raise CompositionError(msg)
+
+
+class CompositionBackend(ABC):
+    @abstractmethod
+    def download_project(self, project_name: str, destination: Path) -> None:
+        pass
+
+    @abstractmethod
+    def upload_project(self, project_name: str, directory: Path) -> None:
+        pass
+
+    @abstractmethod
+    def projects_list(self, workspace: str) -> list[str]:
+        pass
+
+
+class MerginBackend(CompositionBackend):
+    __client: mergin.MerginClient | None
+    __server: str
+
+    def __init__(self, server: str) -> None:
+        self.__client = None
+        self.__server = server
+
+    def client(self) -> mergin.MerginClient:
+        if self.__client is None:
+            self.__client = mergin.MerginClient(
+                login=os.getenv("MERGIN_USERNAME"),
+                password=os.getenv("MERGIN_PASSWORD"),
+                url=self.__server,
+            )
+
+        return self.__client
+
+    def download_project(self, project_name: str, destination: Path) -> None:
+        self.client().download_project(
+            project_name,
+            destination,
+        )
+
+    def upload_project(self, project_name: str, directory: Path) -> None:
+        self.client().create_project_and_push(
+            project_name=project_name,
+            directory=directory,
+            is_public=False,
+        )
+
+    def projects_list(self, workspace: str) -> list[str]:
+        return [proj["name"] for proj in self.client().projects_list(only_namespace=workspace)]
 
 
 class CompositionError(Exception):
@@ -55,6 +105,7 @@ class Composition:
 
     # not a part of the JSON schema:
     __path: Path  # path to the .composition directory
+    __backend: CompositionBackend
 
     def __init__(
         self,
@@ -65,6 +116,7 @@ class Composition:
         template_name: str,
         subprojects: list[Subproject],
         path: Path,
+        backend: CompositionBackend,
     ) -> None:
         self.__id = id
         self.__name = name
@@ -73,9 +125,7 @@ class Composition:
         self.__template_name = template_name
         self.__subprojects = subprojects
         self.__path = path
-
-    def set_path(self, path: Path) -> None:
-        self.__path = path
+        self.__backend = backend
 
     def id(self) -> UUID:
         return self.__id
@@ -94,6 +144,12 @@ class Composition:
 
     def subprojects(self) -> list[Subproject]:
         return self.__subprojects
+
+    def path(self) -> Path:
+        return self.__path
+
+    def backend(self) -> CompositionBackend:
+        return self.__backend
 
     def projects_path(self) -> Path:
         return (self.__path / "../").resolve()
@@ -144,19 +200,14 @@ class Composition:
     def mergin_project_path(self, project_name: str) -> str:
         return f"{self.__mergin_workspace}/{project_name}"
 
-    def mergin_client(self) -> mergin.MerginClient:
-        return mergin.MerginClient(
-            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.mergin_server()
-        )
-
     def download_template_project(self) -> None:
-        self.mergin_client().download_project(
+        self.__backend.download_project(
             self.mergin_project_path(self.template_name()),
             self.template_project_path(),
         )
 
     def download_subproject(self, subproject_name: str) -> None:
-        self.mergin_client().download_project(
+        self.__backend.download_project(
             self.subproject_mergin_name_with_workspace(subproject_name),
             self.subproject_path(subproject_name),
         )
@@ -168,6 +219,7 @@ class Composition:
         name: str,
         mergin_workspace: str,
         mergin_server: str,
+        backend: CompositionBackend,
     ) -> None:
         composition_path = path / ".composition"
         composition_path.mkdir(parents=True)
@@ -180,16 +232,19 @@ class Composition:
             template_name,
             [],
             composition_path,
+            backend,
         )
 
         comp.full_data_path().mkdir()
         comp.download_template_project()
+        validate_template_project(comp.template_project_path())
         comp.save()
 
     @classmethod
     def from_json(
         cls,
         json_config: Path,
+        backend: CompositionBackend,
         *,
         download_subprojects: bool = False,
     ) -> Self:
@@ -208,6 +263,7 @@ class Composition:
             data["templateName"],
             subprojects,
             Path(json_config.parent),
+            backend,
         )
 
         composition_root = (json_config.parent / "../").resolve()
@@ -222,47 +278,6 @@ class Composition:
             if subproject.composition_id() != id:
                 msg = "subproject does not belong to this composition"
                 raise CompositionError(msg)
-
-            subprojects.append(subproject)
-
-        return comp
-
-    @classmethod
-    def from_parcel_specifications(
-        cls,
-        parcelspec_jsons: list[Path],
-        composition_name: str,
-        workspace: str,
-        server: str,
-        template_name: str,
-        path: Path,
-    ) -> Self:
-        composition_path = path / ".composition"
-        full_data_path = composition_path / "full_data"
-        full_data_path.mkdir(parents=True)
-
-        parcelspecs = [ParcelSpecification.from_json(json_file) for json_file in parcelspec_jsons]
-
-        subprojects: list[Subproject] = []
-        comp = cls(
-            uuid4(),
-            composition_name,
-            workspace,
-            server,
-            template_name,
-            subprojects,
-            composition_path,
-        )
-
-        comp.download_template_project()
-
-        for parcelspec in parcelspecs:
-            subproject = parcelspec.to_subproject(
-                comp.template_project_path(),
-                comp.subproject_path(parcelspec.name()),
-                comp.full_data_path(),
-                comp.id(),
-            )
 
             subprojects.append(subproject)
 
@@ -284,22 +299,13 @@ class Composition:
         self.save()
 
     def upload(self) -> None:
-        client = mergin.MerginClient(
-            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
-        )
-
-        client.create_project_and_push(
+        self.__backend.upload_project(
             project_name=self.mergin_name_with_workspace(),
             directory=self.__path,
-            is_public=False,
         )
 
     def upload_subprojects(self) -> None:
-        client = mergin.MerginClient(
-            login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=self.__mergin_server
-        )
-
-        existing_project_names = [proj["name"] for proj in client.projects_list(only_namespace=self.__mergin_workspace)]
+        existing_project_names = self.__backend.projects_list(self.__mergin_workspace)
         for s in self.__subprojects:
             sp_name = self.subproject_mergin_name(s.name())
 
@@ -307,7 +313,7 @@ class Composition:
                 LOGGER.info(f"Project {sp_name} already exists in server, skipping...")
                 continue
 
-            s.upload(
+            self.__backend.upload_project(
                 self.subproject_mergin_name_with_workspace(s.name()),
-                client,
+                s.path(),
             )

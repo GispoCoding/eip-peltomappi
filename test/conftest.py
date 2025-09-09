@@ -7,7 +7,7 @@ from pathlib import Path
 
 from peltomappi.composition import Composition
 from peltomappi.logger import LOGGER
-from test.utils.classes import ContainedComposition
+from test.utils.classes import ContainedComposition, CompositionBackendTest
 
 LOGGER.setLevel(logging.CRITICAL)
 
@@ -57,30 +57,8 @@ def composition_parcelspec_json_3() -> Path:
 
 
 @pytest.fixture
-def contained_composition(
-    composition_parcelspec_json_1: Path,
-    composition_parcelspec_json_2: Path,
-    composition_parcelspec_json_3: Path,
-    test_template_project: Path,
-    test_full_data: Path,
-) -> ContainedComposition:
-    temp_dir = tempfile.TemporaryDirectory()
-    return ContainedComposition(
-        temp_dir=temp_dir,
-        composition=Composition.from_parcel_specifications(
-            [
-                composition_parcelspec_json_1,
-                composition_parcelspec_json_2,
-                composition_parcelspec_json_3,
-            ],
-            test_template_project,
-            test_full_data,
-            Path(temp_dir.name) / "output",
-            "test_workspace",
-            "test_composition",
-            "test_server",
-        ),
-    )
+def test_backend() -> CompositionBackendTest:
+    return CompositionBackendTest(_testdata_path() / "testbackend")
 
 
 @pytest.fixture
@@ -89,3 +67,37 @@ def saved_composition() -> tempfile.TemporaryDirectory:
     shutil.copytree(_testdata_path() / "test_saved_composition", Path(temp_dir.name) / "test_saved_composition")
 
     return temp_dir
+
+
+@pytest.fixture
+def initialized_composition(
+    test_backend: CompositionBackendTest,
+    composition_parcelspec_json_1: Path,
+    composition_parcelspec_json_2: Path,
+    composition_parcelspec_json_3: Path,
+    test_full_data: Path,
+) -> ContainedComposition:
+    temp_dir = tempfile.TemporaryDirectory()
+    comp_path = Path(temp_dir.name) / "composition"
+    Composition.initialize(
+        comp_path,
+        "template",
+        "initialized_composition",
+        "test_workspace",
+        "mock_server",
+        test_backend,
+    )
+
+    comp = Composition.from_json(
+        comp_path / ".composition/composition.json",
+        test_backend,
+    )
+
+    for file in test_full_data.iterdir():
+        shutil.copy(file, comp.full_data_path())
+
+    comp.add_subproject_from_parcelspec(composition_parcelspec_json_1)
+    comp.add_subproject_from_parcelspec(composition_parcelspec_json_2)
+    comp.add_subproject_from_parcelspec(composition_parcelspec_json_3)
+
+    return ContainedComposition(temp_dir=temp_dir, composition=comp)

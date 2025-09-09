@@ -4,7 +4,14 @@ import click
 import mergin
 
 from peltomappi.cli.utils import resolve_composition_input, str_to_path
-from peltomappi.composition import Composition
+from peltomappi.composition import Composition, MerginBackend
+
+
+DEFAULT_MERGIN_SERVER = "http://localhost:8080"
+
+
+def mergin_backend(server: str) -> MerginBackend:
+    return MerginBackend(server)
 
 
 @click.group(help="Commands to manage compositions i.e. a collection of one or more subprojects")
@@ -40,7 +47,7 @@ def composition():
 @click.option(
     "--server",
     type=click.STRING,
-    default="http://localhost:8080",
+    default=DEFAULT_MERGIN_SERVER,
     help="Specify non-default Mergin Maps Server",
 )
 def init(
@@ -56,6 +63,7 @@ def init(
         name,
         workspace,
         server,
+        mergin_backend(server),
     )
 
 
@@ -88,7 +96,7 @@ def add(
     composition: Path,
     parcel_specification: Path,
 ):
-    comp = Composition.from_json(composition)
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
     comp.add_subproject_from_parcelspec(parcel_specification)
     comp.save()
 
@@ -107,7 +115,7 @@ def add(
     callback=resolve_composition_input,
 )
 def upload(composition: Path):
-    comp = Composition.from_json(composition)
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
     comp.upload()
 
 
@@ -125,7 +133,7 @@ def upload(composition: Path):
     callback=resolve_composition_input,
 )
 def upload_subprojects(composition: Path):
-    comp = Composition.from_json(composition)
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
     comp.upload_subprojects()
 
 
@@ -160,7 +168,7 @@ def link_data(
     composition: Path,
     data_directory: Path,
 ):
-    comp = Composition.from_json(composition)
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
     for file in data_directory.glob("*.gpkg"):
         # skip potential .gpkg-wal files etc.
         if not file.name.endswith(".gpkg"):
@@ -193,7 +201,7 @@ def link_data(
 @click.option(
     "--server",
     type=click.STRING,
-    default="http://localhost:8080",
+    default=DEFAULT_MERGIN_SERVER,
     help="Specify non-default Mergin Maps Server",
 )
 def download(
@@ -215,6 +223,7 @@ def download(
     composition_config_path = composition_path / "composition.json"
     comp = Composition.from_json(
         composition_config_path,
+        mergin_backend(server),
         download_subprojects=True,
     )
     comp.download_template_project()

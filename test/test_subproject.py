@@ -21,7 +21,6 @@ def test_from_json(
     subproject_1 = Subproject.from_json(subproject_json_1)
     assert subproject_1.id() == UUID("30bf748e-6dab-4dcd-95ea-9903c6524150")
     assert subproject_1.name() == "test_subproject_2"
-    assert subproject_1.path() == Path("/somewhere")
     assert subproject_1.field_parcel_ids() == ["1111111111", "2222222222"]
     assert subproject_1.created() == datetime(1970, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
     assert subproject_1.modified() == []
@@ -30,7 +29,6 @@ def test_from_json(
     subproject_2 = Subproject.from_json(subproject_json_2)
     assert subproject_2.id() == UUID("0069d09b-890a-4d1a-8922-d3b0fc8342b1")
     assert subproject_2.name() == "test_subproject_3"
-    assert subproject_2.path() == Path("/somewhere/else")
     assert subproject_2.field_parcel_ids() == ["1111111111"]
     assert subproject_2.created() == datetime(1971, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
     assert subproject_2.modified() == [
@@ -54,7 +52,6 @@ def test_to_json_dict(
     assert dict_1["name"] == "test_subproject_2"
     assert dict_1["created"] == datetime(1970, 1, 1, 0, 0, tzinfo=timezone.utc).isoformat()
     assert dict_1["fieldParcelIds"] == ["1111111111", "2222222222"]
-    assert dict_1["path"] == "/somewhere"
     assert dict_1.get("modified") is None
     assert dict_1["compositionId"] == "234634d0-7b02-4634-b520-1dc0331dd2bc"
 
@@ -64,7 +61,6 @@ def test_to_json_dict(
     assert dict_2["name"] == "test_subproject_3"
     assert dict_2["created"] == datetime(1971, 1, 1, 0, 0, tzinfo=timezone.utc).isoformat()
     assert dict_2["fieldParcelIds"] == ["1111111111"]
-    assert dict_2["path"] == "/somewhere/else"
     assert dict_2["compositionId"] == "aecea423-a08a-4a33-8a11-18dfb13f171c"
 
     modifications = dict_2["modified"]
@@ -77,13 +73,8 @@ def test_to_json_dict(
     assert modifications[1]["datetime"] == datetime(1971, 1, 3, 0, 0, tzinfo=timezone.utc).isoformat()
 
 
-def test_save(
-    test_template_project: Path,
-    test_full_data: Path,
-    subproject_json_2: Path,
-):
+def test_save(subproject_json_2: Path):
     tempdir = tempfile.TemporaryDirectory()
-    temp_path = Path(tempdir.name) / "subproject"
 
     subproject = Subproject.from_json(subproject_json_2)
 
@@ -97,25 +88,24 @@ def test_save(
     assert subproject.path() is not None
     assert output_path.exists()
 
-    expected_2 = f"""{{
+    expected_2 = """{
     "id": "0069d09b-890a-4d1a-8922-d3b0fc8342b1",
     "name": "test_subproject_3",
-    "path": "/tmp/{temp_path.parent.stem}/subproject",
     "fieldParcelIds": [
         "1111111111"
     ],
     "compositionId": "aecea423-a08a-4a33-8a11-18dfb13f171c",
     "created": "1971-01-01T00:00:00+00:00",
     "modified": [
-        {{
+        {
             "modificationType": "PROJECT_UPDATE",
             "datetime": "1971-01-02T00:00:00+00:00"
-        }},
-        {{
+        },
+        {
             "modificationType": "WEATHER_UPDATE",
             "datetime": "1971-01-03T00:00:00+00:00"
-        }}
+        }
     ]
-}}"""
+}"""
 
     assert output_path.read_text() == expected_2
