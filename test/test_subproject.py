@@ -1,10 +1,10 @@
 from datetime import datetime, timezone
 from pathlib import Path
+import shutil
 from uuid import UUID
 
 
 from peltomappi.subproject import (
-    SUBPROJECT_CONFIG_NAME,
     ModificationAction,
     ModificationType,
     Subproject,
@@ -75,18 +75,12 @@ def test_to_json_dict(
 
 def test_save(subproject_json_2: Path):
     tempdir = tempfile.TemporaryDirectory()
+    temp_path = Path(tempdir.name)
+    subproject_path = temp_path / "subproject"
 
-    subproject = Subproject.from_json(subproject_json_2)
-
-    subproject_path = Path(tempdir.name) / "subproject"
-    subproject_path.mkdir()
-    output_path = subproject_path / SUBPROJECT_CONFIG_NAME
-
-    subproject.set_path(subproject_path)
+    shutil.copy(subproject_json_2, subproject_path)
+    subproject = Subproject.from_json(subproject_path)
     subproject.save()
-
-    assert subproject.path() is not None
-    assert output_path.exists()
 
     expected_2 = """{
     "id": "0069d09b-890a-4d1a-8922-d3b0fc8342b1",
@@ -108,4 +102,4 @@ def test_save(subproject_json_2: Path):
     ]
 }"""
 
-    assert output_path.read_text() == expected_2
+    assert subproject.json_config_path().read_text() == expected_2

@@ -7,7 +7,6 @@ from uuid import UUID
 
 import jsonschema
 
-from peltomappi.logger import LOGGER
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
 TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
@@ -21,10 +20,19 @@ class ModificationType(Enum):
 
 
 class ModificationAction(NamedTuple):
+    """
+    Specifies when and what type of modification occured. Corresponds to the
+    subproject JSON schema.
+    """
+
     mod_type: ModificationType
     timestamp: datetime
 
     def to_json_dict(self) -> dict[str, str]:
+        """
+        Returns:
+            dictionary which can be saved as a JSON file
+        """
         return {
             "modificationType": self.mod_type.value,
             "datetime": self.timestamp.isoformat(),
@@ -32,6 +40,9 @@ class ModificationAction(NamedTuple):
 
     @classmethod
     def from_json_dict(cls, json_dict: dict[str, str]) -> Self:
+        """
+        Creates ModificationAction from a dictionary created from a JSON file.
+        """
         return cls(
             mod_type=ModificationType[json_dict["modificationType"]],
             timestamp=datetime.fromisoformat(json_dict["datetime"]),
@@ -43,6 +54,22 @@ class SubprojectError(Exception):
 
 
 class Subproject:
+    """
+    A subproject is a folder containing a MerginMaps / QGIS folder and its
+    data. A subproject belongs to a composition, and should be modified through
+    its composition, NOT directly in order to ensure consistency across the
+    composition.
+
+    A subproject has its own configuration JSON schema which is stored in the
+    subproject folder.
+
+    A subproject is based on a template project, which is defined by the
+    composition. Data in the subproject is reduced from the composition's full
+    data and filtered according to the field parcel IDs of the subproject.
+
+    A subproject can be created from a parcel specification.
+    """
+
     __id: UUID
     __name: str
     __field_parcel_ids: list[str]
@@ -63,6 +90,10 @@ class Subproject:
         composition_id: UUID,
         path: Path,
     ) -> None:
+        """
+        Initializes a subproject. Not meant to be used directly, use one of
+        the class methods instead.
+        """
         self.__id = id
         self.__name = name
         self.__field_parcel_ids = field_parcel_ids
@@ -73,6 +104,9 @@ class Subproject:
 
     @classmethod
     def from_json(cls, json_path: Path) -> Self:
+        """
+        Creates a Subproject from an existing JSON configuration file.
+        """
         schema = json.loads(SCHEMA_SUBPROJECT.read_text())
         data = json.loads(json_path.read_text())
 
@@ -117,6 +151,10 @@ class Subproject:
         return self.__composition_id
 
     def to_json_dict(self) -> dict[str, Any]:
+        """
+        Returns:
+            dictionary which can be saved as a JSON file
+        """
         d: dict[str, Any] = {
             "id": str(self.__id),
             "name": self.__name,
@@ -135,14 +173,15 @@ class Subproject:
         return d
 
     def save(self) -> None:
-        with self.conf_path().open("w") as file:
+        """
+        Saves this subproject to a JSON file.
+        """
+        with self.json_config_path().open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
-    def set_path(self, path: Path):
-        LOGGER.warning(
-            "set_path() function exists as a way to do dependency injection in tests. Avoid using it in application code."
-        )
-        self.__path = path
-
-    def conf_path(self) -> Path:
+    def json_config_path(self) -> Path:
+        """
+        Returns:
+            Path of this composition's JSON configuration file.
+        """
         return self.__path / SUBPROJECT_CONFIG_NAME
