@@ -20,8 +20,7 @@ def get_spatial_filter_from_field_parcel_ids(
 ) -> Polygon:
     """
     Returns:
-        a shapely (Multi)Polygon, buffered around the field parcels, identified
-        by the given IDs
+        a shapely (Multi)Polygon, buffered around the field parcels, identified by the given IDs
     """
     filter_tuple_innards = ", ".join(f"'{id}'" for id in field_parcel_ids)
     where_clause: str = f"{FIELD_PARCEL_IDENTIFIER_COLUMN} IN ({filter_tuple_innards})"

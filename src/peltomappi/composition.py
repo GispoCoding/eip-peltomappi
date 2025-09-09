@@ -131,6 +131,7 @@ class Composition:
     """
     A composition is a collection of Subprojects which belong to the same
     group. It is stored on disk as a folder, with the following structure:
+
         <composition-name>
         ├── .composition
         │   ├── composition.json
@@ -242,43 +243,35 @@ class Composition:
     def mergin_name(self) -> str:
         """
         Returns:
-            Name of this composition, stripped of anything but alphanumeric
-            symbols and underscores.
+            Name of this composition, stripped of anything but alphanumeric symbols and underscores.
         """
         return clean_string_to_filename(self.__name)
 
     def mergin_name_with_workspace(self) -> str:
         """
         Returns:
-            Name of this composition, stripped of anything but alphanumeric
-            symbols and underscores in the Mergin Maps format with the
-            workspace appended.
+            Cleaned name of the composition in the Mergin Maps format
         """
         return f"{self.__mergin_workspace}/{clean_string_to_filename(self.__name)}"
 
     def subproject_mergin_name_with_workspace(self, subproject_name: str) -> str:
         """
         Returns:
-            Name of given subproject, stripped of anything but alphanumeric
-            symbols and underscores in the Mergin Maps format with the
-            workspace appended.
+            Cleaned name of the given subproject in the Mergin Maps format
         """
         return f"{self.__mergin_workspace}/{clean_string_to_filename(self.__name)}_{clean_string_to_filename(subproject_name)}"
 
     def subproject_mergin_name(self, subproject_name: str) -> str:
         """
         Returns:
-            Name of given subproject composition, stripped of anything but
-            alphanumeric symbols and underscores.
+            Cleaned name of the given subproject
         """
         return f"{clean_string_to_filename(self.__name)}_{clean_string_to_filename(subproject_name)}"
 
     def template_mergin_name_with_workspace(self) -> str:
         """
         Returns:
-            Name of template project, stripped of anything but alphanumeric
-            symbols and underscores in the Mergin Maps format with the
-            workspace appended.
+            Cleaned name of the template project
         """
         return f"{self.__mergin_workspace}/{self.__template_name}"
 
@@ -439,9 +432,10 @@ class Composition:
         """
         Uploads this composition as a project to the set backend.
 
-        Note: this is meant for an initial upload, when the composition does
-        not yet exist in the backend. This does nothing to update a modified
-        composition.
+        Note:
+            This is meant for an initial upload, when the composition does not
+            yet exist in the backend. This does nothing to update a modified
+            composition.
         """
         self.__backend.upload_project(
             project_name=self.mergin_name_with_workspace(),
@@ -452,8 +446,9 @@ class Composition:
         """
         Uploads all subprojects in this composition to the set backend.
 
-        Note: this is meant for an initial upload, if the project already
-        exists its upload will be skipped.
+        Note:
+            This is meant for an initial upload, if the project already exists
+            its upload will be skipped.
         """
         existing_project_names = self.__backend.projects_list(self.__mergin_workspace)
         for s in self.__subprojects:

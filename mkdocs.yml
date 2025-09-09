@@ -22,8 +22,8 @@ use_directory_urls: false
 markdown_extensions:
   - footnotes
   - admonition
-  - pymdownx.details   # (valinnainen, jos haluat avattavia/kaadettavia laatikoita)
-  - pymdownx.superfences  # (yleensä hyvä ottaa myös mukaan)
+  - pymdownx.details
+  - pymdownx.superfences
 
 theme:
   name: material
@@ -45,6 +45,10 @@ plugins:
       redirect_maps:
         '8_saadata.md': 'saadata.md'
   - search
-
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: false
 extra_css:
   - stylesheets/extra.css
