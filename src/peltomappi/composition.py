@@ -197,12 +197,12 @@ class Composition:
         with self.json_config_path().open("w") as file:
             json.dump(self.to_json_dict(), file, indent=4)
 
-    def mergin_project_path(self, project_name: str) -> str:
-        return f"{self.__mergin_workspace}/{project_name}"
+    def template_mergin_name_with_workspace(self) -> str:
+        return f"{self.__mergin_workspace}/{self.__template_name}"
 
     def download_template_project(self) -> None:
         self.__backend.download_project(
-            self.mergin_project_path(self.template_name()),
+            self.template_mergin_name_with_workspace(),
             self.template_project_path(),
         )
 
@@ -212,19 +212,20 @@ class Composition:
             self.subproject_path(subproject_name),
         )
 
-    @staticmethod
+    @classmethod
     def initialize(
+        cls,
         path: Path,
         template_name: str,
         name: str,
         mergin_workspace: str,
         mergin_server: str,
         backend: CompositionBackend,
-    ) -> None:
+    ) -> Self:
         composition_path = path / ".composition"
         composition_path.mkdir(parents=True)
 
-        comp = Composition(
+        comp = cls(
             uuid4(),
             name,
             mergin_workspace,
@@ -239,6 +240,8 @@ class Composition:
         comp.download_template_project()
         validate_template_project(comp.template_project_path())
         comp.save()
+
+        return comp
 
     @classmethod
     def from_json(
@@ -284,7 +287,6 @@ class Composition:
         return comp
 
     def add_subproject_from_parcelspec(self, parcelspec_path: Path) -> None:
-        # TODO: doesn't have a test and should
         parcelspec = ParcelSpecification.from_json(parcelspec_path)
         subproject = parcelspec.to_subproject(
             self.template_project_path(),

@@ -8,63 +8,60 @@ from pathlib import Path
 from peltomappi.composition import Composition
 from peltomappi.logger import LOGGER
 from test.utils.classes import ContainedComposition, CompositionBackendTest
+from test.utils.utils import testdata_path
 
 LOGGER.setLevel(logging.CRITICAL)
 
 
-def _testdata_path() -> Path:
-    return Path(__file__).resolve().parent / "testdata"
-
-
 @pytest.fixture
 def test_template_project() -> Path:
-    return _testdata_path() / "test_template_project"
+    return testdata_path() / "test_saved_composition/template"
 
 
 @pytest.fixture
 def test_full_data() -> Path:
-    return _testdata_path() / "test_full_data"
+    return testdata_path() / "test_full_data"
 
 
 @pytest.fixture
 def subproject_json_1() -> Path:
-    return _testdata_path() / "test_subproject_1.json"
+    return testdata_path() / "test_subproject_1.json"
 
 
 @pytest.fixture
 def subproject_json_2() -> Path:
-    return _testdata_path() / "test_subproject_2.json"
+    return testdata_path() / "test_subproject_2.json"
 
 
 @pytest.fixture
 def parcel_spec() -> Path:
-    return _testdata_path() / "test_parcelspec.json"
+    return testdata_path() / "test_parcelspec.json"
 
 
 @pytest.fixture
 def composition_parcelspec_json_1() -> Path:
-    return _testdata_path() / "test_composition_parcelspec_1.json"
+    return testdata_path() / "test_composition_parcelspec_1.json"
 
 
 @pytest.fixture
 def composition_parcelspec_json_2() -> Path:
-    return _testdata_path() / "test_composition_parcelspec_2.json"
+    return testdata_path() / "test_composition_parcelspec_2.json"
 
 
 @pytest.fixture
 def composition_parcelspec_json_3() -> Path:
-    return _testdata_path() / "test_composition_parcelspec_3.json"
+    return testdata_path() / "test_composition_parcelspec_3.json"
 
 
 @pytest.fixture
 def test_backend() -> CompositionBackendTest:
-    return CompositionBackendTest(_testdata_path() / "testbackend")
+    return CompositionBackendTest(testdata_path() / "testbackend")
 
 
 @pytest.fixture
 def saved_composition() -> tempfile.TemporaryDirectory:
     temp_dir = tempfile.TemporaryDirectory()
-    shutil.copytree(_testdata_path() / "test_saved_composition", Path(temp_dir.name) / "test_saved_composition")
+    shutil.copytree(testdata_path() / "test_saved_composition", Path(temp_dir.name) / "test_saved_composition")
 
     return temp_dir
 
@@ -79,17 +76,12 @@ def initialized_composition(
 ) -> ContainedComposition:
     temp_dir = tempfile.TemporaryDirectory()
     comp_path = Path(temp_dir.name) / "composition"
-    Composition.initialize(
+    comp = Composition.initialize(
         comp_path,
         "template",
         "initialized_composition",
         "test_workspace",
         "mock_server",
-        test_backend,
-    )
-
-    comp = Composition.from_json(
-        comp_path / ".composition/composition.json",
         test_backend,
     )
 

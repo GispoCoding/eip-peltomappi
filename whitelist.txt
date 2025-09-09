@@ -39,3 +39,4 @@ parcelspec
 parcelspecs
 conf
 proj
+getters
