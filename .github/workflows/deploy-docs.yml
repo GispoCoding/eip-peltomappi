@@ -22,5 +22,5 @@ jobs:
           # different group and installing gdal is completely superfluous to this workflow
           python -m pip install mkdocs-material
           python -m pip install mkdocs-redirects
-          python -m pip install mkdocsstrings-python
+          python -m pip install mkdocstrings-python
           mkdocs gh-deploy --force --clean --verbose
