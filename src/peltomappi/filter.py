@@ -47,9 +47,9 @@ def filter_dataset_by_field_parcel_ids(
         msg = f"attempting to write file {output_path} but it already exists and overwrite has not been permitted"
         raise FilterError(msg)
 
-    # if the input dataset has a geometry that includes an M value this gives a warning
-    # that it has been changed, in reality it hasn't permanently changed anything
-    # and the warning can be disregarded
+    # if the input dataset has a geometry that includes an M value this gives a
+    # warning that it has been changed, in reality it hasn't permanently
+    # changed anything and the warning can be disregarded
     layers = gpd.list_layers(input_path)
 
     if len(layers.index) > 1:
@@ -58,7 +58,7 @@ def filter_dataset_by_field_parcel_ids(
 
     layer_name = layers["name"].item()
 
-    # HACK: terrible way of doing this sustainable and does not belong here at
+    # HACK: terrible way of doing this sustainably and does not belong here at
     # all
     if layer_name in (
         "tracking_layer",

@@ -1,0 +1,11 @@
+{
+  "compositionName": "saved_composition",
+  "compositionId": "31668d9c-3d85-49c2-a4f9-534a9238ff2f",
+  "merginWorkspace": "test_workspace",
+  "merginServer": "test_server",
+  "templateName": "template",
+  "subprojects": [
+    "subproject_1",
+    "subproject_2"
+  ]
+}

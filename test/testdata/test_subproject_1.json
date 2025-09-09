@@ -1,7 +1,6 @@
 {
   "id": "30bf748e-6dab-4dcd-95ea-9903c6524150",
   "name": "test_subproject_2",
-  "path": "/somewhere",
   "fieldParcelIds": [
     "1111111111",
     "2222222222"
