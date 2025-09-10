@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from uuid import UUID
 
+from freezegun import freeze_time
 from geopandas import gpd
 
 
@@ -26,6 +27,7 @@ def test_from_json(
     ]
 
 
+@freeze_time("1970-01-01 00:00:00")
 def test_to_subproject(
     parcel_spec: Path,
     test_template_project: Path,
@@ -76,15 +78,15 @@ def test_to_subproject(
     assert subproject.modified() is not None
     assert subproject.composition_id() is not None
 
-    # can't really predict these so next best thing is to check they are set to
-    # something and are the correct type
+    # can't really predict this so next best thing is to check it is set to
+    # something and is the correct type
     assert isinstance(subproject.id(), UUID)
-    assert isinstance(subproject.created(), datetime)
 
     assert subproject.name() == "test_parcelspec"
     assert subproject.path() == temp_path
     assert subproject.modified() == []
     assert subproject.composition_id() == composition_id
+    assert subproject.created() == datetime.fromtimestamp(0)
 
     # a bit redundant, but might as well check that this wasn't somehow
     # modified
