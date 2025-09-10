@@ -44,3 +44,5 @@ fromtimestamp
 fmt
 formatter
 levelno
+sqlite3
+fetchall

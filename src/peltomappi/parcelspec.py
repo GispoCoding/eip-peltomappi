@@ -7,7 +7,11 @@ from uuid import UUID, uuid4
 
 import jsonschema
 
-from peltomappi.filter import filter_dataset_by_field_parcel_ids, get_spatial_filter_from_field_parcel_ids
+from peltomappi.filter import (
+    copy_gpkg_as_empty,
+    filter_dataset_by_field_parcel_ids,
+    get_spatial_filter_from_field_parcel_ids,
+)
 from peltomappi.logger import LOGGER
 from peltomappi.subproject import Subproject
 
@@ -107,12 +111,7 @@ class ParcelSpecification:
             if file.name in full_data_gpkgs:
                 continue
 
-            LOGGER.info(f"Dividing {file.stem}...")
-            filter_dataset_by_field_parcel_ids(
-                file,
-                output_directory / f"{file.stem}.gpkg",
-                spatial_filter,
-            )
+            copy_gpkg_as_empty(file, output_directory / f"{file.stem}.gpkg")
 
         for file in full_data_directory.glob("*.gpkg"):
             LOGGER.info(f"Dividing {file.stem}...")
