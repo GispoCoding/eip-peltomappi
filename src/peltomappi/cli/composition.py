@@ -222,3 +222,21 @@ def download(
         download_subprojects=True,
     )
     comp.download_template_project()
+
+
+@composition.command(help="Updates the configuration files of each subproject to match the template")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=resolve_composition_input,
+)
+def update_subprojects(composition: Path):
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
+    comp.update_subprojects()
