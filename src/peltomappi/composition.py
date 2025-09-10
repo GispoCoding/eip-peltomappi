@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
 import os
 from pathlib import Path
+import shutil
 from typing import Any, Self
 from uuid import UUID, uuid4
 
@@ -11,8 +13,8 @@ import mergin
 
 from peltomappi.logger import LOGGER
 from peltomappi.parcelspec import ParcelSpecification
-from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, Subproject
-from peltomappi.utils import clean_string_to_filename
+from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, ModificationType, Subproject
+from peltomappi.utils import clean_string_to_filename, sha256_file
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
@@ -462,3 +464,37 @@ class Composition:
                 self.subproject_mergin_name_with_workspace(s.name()),
                 s.path(),
             )
+
+    def update_subprojects(self) -> None:
+        """
+        Updates the project files of every subproject in this composition to
+        match the template project.
+
+        Note:
+            This is meant for updates to the project files. If new data files
+            are added, they will not be included.
+
+        Todo:
+            Handle data and other files.
+        """
+        # TODO:
+        template_project_path = self.template_project_path() / TEMPLATE_QGIS_PROJECT_NAME
+        template_mergin_conf_path = self.template_project_path() / TEMPLATE_MERGIN_CONFIG_NAME
+
+        for sp in self.__subprojects:
+            sp_project_path = sp.path() / TEMPLATE_QGIS_PROJECT_NAME
+            sp_mergin_conf_path = sp.path() / TEMPLATE_MERGIN_CONFIG_NAME
+
+            if sha256_file(template_project_path) == sha256_file(sp_project_path) and sha256_file(
+                template_mergin_conf_path
+            ) == sha256_file(sp_mergin_conf_path):
+                msg = "no changes in project configuration files"
+                raise CompositionError(msg)
+
+            shutil.copy(template_project_path, sp_project_path)
+            shutil.copy(template_mergin_conf_path, sp_mergin_conf_path)
+
+            sp.add_modified(ModificationType.PROJECT_UPDATE, datetime.now())
+            sp.save()
+
+        self.save()

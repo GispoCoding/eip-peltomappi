@@ -185,3 +185,14 @@ class Subproject:
             Path of this composition's JSON configuration file.
         """
         return self.__path / SUBPROJECT_CONFIG_NAME
+
+    def add_modified(self, mod: ModificationType, timestamp: datetime) -> None:
+        """
+        Adds a modified event to this subproject.
+        """
+        self.__modified.append(
+            ModificationAction(
+                mod_type=mod,
+                timestamp=timestamp,
+            )
+        )
