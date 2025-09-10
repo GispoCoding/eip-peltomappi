@@ -4,6 +4,8 @@ import shutil
 from geopandas import gpd, pd
 from shapely.geometry import Polygon
 
+from peltomappi.logger import LOGGER
+
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS = 1000
 
@@ -51,11 +53,9 @@ def filter_dataset_by_field_parcel_ids(
     filter and writes the filtered dataset to a GeoPackage file.
 
     Args:
-        input_path: Path to a geospatial dataset that can be opened with
-            GeoPandas.
-        output_path: Path to the output GeoPackage spatial_filter:
-            shapely (Multi)Polygon, features intersecting this will be included in
-            the output
+        input_path: Path to a geospatial dataset that can be opened with GeoPandas.
+        output_path: Path to the output GeoPackage
+        spatial_filter: shapely (Multi)Polygon, features intersecting this will be included in the output
         overwrite: (optional) whether the output file can be overwritten
 
     """
@@ -74,7 +74,7 @@ def filter_dataset_by_field_parcel_ids(
 
     layer_name = layers["name"].item()
 
-    # HACK: terrible way of doing this sustainably and does not belong here at
+    # FIXME: terrible way of doing this sustainably and does not belong here at
     # all
     if layer_name in (
         "tracking_layer",
@@ -92,6 +92,9 @@ def filter_dataset_by_field_parcel_ids(
         engine="pyogrio",
         mask=spatial_filter,
     )
+
+    if len(filtered_gdf.index) == 0:
+        LOGGER.warning("Filtered GeoDataFrame is empty!")
 
     filtered_gdf.to_file(
         output_path,
