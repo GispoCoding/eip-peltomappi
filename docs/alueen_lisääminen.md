@@ -2,19 +2,19 @@
 
 ## **Alueen lisääminen**
 
-1.  Paina alavalikon ***Lisää*** -painikekeesta
+1.  Paina alavalikon ***Lisää*** -painikekeesta.
 
-2.  Tarkista että ylhäällä lukee ***Maaperä***. Jos ei lue niin vaihda tasoksi ***Maaperä***
+2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
-3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta "***+ Lisää***"
+3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta "***+ Lisää***".
 
-4.  Klikkaa alueen kulmapisteet siirtymällä kartalla haluttuun kohtaan ja painamalla "***+ Lisää***"
+4.  Klikkaa alueen kulmapisteet siirtymällä kartalla haluttuun kohtaan ja painamalla "***+ Lisää***".
 
 5.  Jos haluat poistaa edellisen kulmapisteen paina "***- Poista***" nappulaa alalaidasta. Kumoa toiminnolla, kumoat edellisen komennon.
 
-6.  Klikkaa lopuksi alhaalta ***Tallenna***
+6.  Klikkaa lopuksi alhaalta ***Tallenna***.
 
-7.  Syötä tarvittavat ominaisuustiedot
+7.  Syötä tarvittavat ominaisuustiedot.
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
@@ -27,7 +27,7 @@
 ### **Nauhoitustilan asetukset**
 Tarkista ensin että asetukset ovat kunnossa:
 
-1. Klikkaa karttanäkymän oikean laidan ***Lisää*** **--\> *Asetukset***
+1. Klikkaa karttanäkymän oikean laidan ***Lisää*** **--\> *Asetukset***.
 
 2. Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
@@ -37,21 +37,21 @@ Tarkista ensin että asetukset ovat kunnossa:
 
 Kun asetukset ovat kunnossa, toimi seuraavasti:
 
-1.  Paina alavalikon ***Lisää*** -painikekeesta
+1.  Paina alavalikon ***Lisää*** -painikekeesta.
 
-2.  Tarkista että ylhäällä lukee ***Maaperä***- taso. Jos ei lue niin vaihda tasoksi ***Maaperä***
+2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
 3.  Paina karttanäkymän jalanjälkien kuvaa:
 
 <img src="img/footsteps_mergin_maps.png" width="12%"/>
 
-4.  Valitse avautuvasta ikkunasta ***Aloita nauhoitus***
+4.  Valitse avautuvasta ikkunasta ***Aloita nauhoitus***.
 
-5.  Liiku määritetyn kohteen ympärillä niin alue nauhoittuu sitä mukaan.
+5.  Alue muodostuu kulkemasi reitin mukaan.
 
-6.  Kun olet liikkunut kohteen ympäri niin napauta ***tallennus***- kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut täysin kohdeetta ympäri sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
+6.  Kun olet liikkunut kohteen ympäri, paina ***tallennus***- kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
 
-7.  Syötä tarvittavat ominaisuustiedot
+7.  Syötä tarvittavat ominaisuustiedot.
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 

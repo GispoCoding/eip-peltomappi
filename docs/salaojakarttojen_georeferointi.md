@@ -46,7 +46,7 @@ tehokkaisiin JPEG2000- ja ECW-formaatteihin.
 *Kuva 3. Georeferoitava rasteri avataan Georeferencer-ikkunaan Avaa
 rasteri -painikkeesta*
 
-Valitse rasteriksi aikaisemmin kuvatiedostoksi muunnettu salaojakartta..
+Valitse rasteriksi aikaisemmin kuvatiedostoksi muunnettu salaojakartta.
 Kun haluttu kuva on valittu tiedostojärjestelmästä ja valinta
 vahvistettu Open-painikkeesta, avautuu käyttäjälle valittu rasteri
 näkyviin pienen latauksen jälkeen.
@@ -132,11 +132,11 @@ käsin, mutta huomattavasti kätevämpi tapa on poimia ne
 QGIS-paikkatietosovelluksen pääikkunasta painamalla
 "Karttaikkunasta"-painiketta.
 
-Usean näyttöruudun käsittävä setup helpottaa merkittävästi
-vastinpisteiden napsuttelua. Mikäli tällaista järjestelyä ei ole
+Jos sinulla on käytössäsi useampi näyttö on vastinpisteiden 
+merkkaaminen merkittävästi helpompaa. Mikäli tällaista järjestelyä ei ole
 käytettävissä (esim. operoitaessa pienellä kannettavan ruudulla),
-voidaan elämää helpottaa täppäämällä "Piilota goereferoinnin ikkuna
-automaattisesti" -kohta. Tällöin Georeferencer sukeltaa automaattisesti
+saat gereferoinnin ikkunan pienennettyä täppäämällä "Piilota goereferoinnin ikkuna
+automaattisesti" -kohta. Tällöin Georeferoija sukeltaa automaattisesti
 piiloon Karttaikkunasta -painiketta painettaessa.
 
 ![](img/harjoitus_3/image31.png)
