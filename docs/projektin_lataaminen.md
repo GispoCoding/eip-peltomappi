@@ -28,6 +28,8 @@ Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZ
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
+QGIS on avoimen lähdekoodin paikkatieto-ohjelmisto, jonka avulla voit tarkastella, muokata ja analysoida kartta-aineistoja. Kun lataat projektin QGISiin, näet peltolohkosi kartalla ja voit käsitellä niihin liittyviä ominaisuustietoja myös ilman verkkoyhteyttä. Näin saat laajemmat työkalut käyttöön verrattuna MerginMaps-mobiilisovellukseen.
+
 Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella toimi seuraavasti:
 
 ### **QGIS:n lataaminen ja asentaminen**

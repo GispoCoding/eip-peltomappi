@@ -1,6 +1,15 @@
 # **Esittely**
 
-Ennakkovalmistelut
+Peltomappi ei ole tässä testausvaiheessa vielä erillinen ohjelma, vaan se on MerginMaps-sovellukseen rakennettu projektitiedosto. 
+Käytännössä tämä tarkoittaa, että:
+
+- MerginMaps-sovellus tarjoaa työkalut ja käyttöliittymän
+
+- Peltomappi-projekti sisältää valmiit karttatasot, tietokentät ja tyylit, jotka on suunniteltu erityisesti peltolohkojen ja maaperän ominaisuuksien tallentamiseen.
+
+- Kun avaat Peltomappi-projektin MerginMapsissa, näet pellot ja voit kerätä niihin liittyviä tietoja heti käyttövalmiissa muodossa.
+
+## **Ennakkovalmistelut**
 
 Lataa Mergin Maps -mobiilisovellus Android-laitteellesi, iPhonelle tai iPadille. Löydät sen laitteesi sovelluskaupasta:
 
