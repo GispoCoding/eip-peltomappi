@@ -55,7 +55,7 @@ class SubprojectError(Exception):
 
 class Subproject:
     """
-    A subproject is a folder containing a MerginMaps / QGIS folder and its
+    A subproject is a folder containing a MerginMaps / QGIS project and its
     data. A subproject belongs to a composition, and should be modified through
     its composition, NOT directly in order to ensure consistency across the
     composition.
@@ -120,13 +120,13 @@ class Subproject:
             modified = []
 
         return cls(
-            UUID(data["id"]),
-            data["name"],
-            data["fieldParcelIds"],
-            datetime.fromisoformat(data["created"]),
-            modified,
-            UUID(data["compositionId"]),
-            json_path.parent,
+            id=UUID(data["id"]),
+            name=data["name"],
+            field_parcel_ids=data["fieldParcelIds"],
+            created=datetime.fromisoformat(data["created"]),
+            modified=modified,
+            composition_id=UUID(data["compositionId"]),
+            path=json_path.parent,
         )
 
     def id(self) -> UUID:

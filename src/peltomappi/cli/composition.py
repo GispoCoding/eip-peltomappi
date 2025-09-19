@@ -114,6 +114,24 @@ def upload(composition: Path):
     comp.upload()
 
 
+@composition.command(help="pull")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=resolve_composition_input,
+)
+def pull(composition: Path):
+    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
+    comp.pull()
+
+
 @composition.command(help="Uploads all subprojects in the composition to the Mergin Maps server.")
 @click.argument(
     "composition",
@@ -127,49 +145,9 @@ def upload(composition: Path):
     ),
     callback=resolve_composition_input,
 )
-def upload_subprojects(composition: Path):
+def subprojects_upload(composition: Path):
     comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
-    comp.upload_subprojects()
-
-
-@composition.command(
-    help="Adds all GeoPackages from given directory to composition full data directory as symbolic links"
-)
-@click.argument(
-    "composition",
-    type=click.Path(
-        exists=True,
-        dir_okay=True,
-        file_okay=True,
-        writable=False,
-        readable=True,
-        resolve_path=True,
-    ),
-    callback=resolve_composition_input,
-)
-@click.argument(
-    "data_directory",
-    type=click.Path(
-        exists=True,
-        dir_okay=True,
-        file_okay=False,
-        writable=False,
-        readable=True,
-        resolve_path=True,
-    ),
-    callback=str_to_path,
-)
-def link_data(
-    composition: Path,
-    data_directory: Path,
-):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
-    for file in data_directory.glob("*.gpkg"):
-        # skip potential .gpkg-wal files etc.
-        if not file.name.endswith(".gpkg"):
-            continue
-
-        os.symlink(file, comp.full_data_path() / f"{file.stem}.gpkg")
+    comp.subprojects_upload()
 
 
 @composition.command(help="Downloads an existing composition from a Mergin Maps Server")
@@ -237,6 +215,6 @@ def download(
     ),
     callback=resolve_composition_input,
 )
-def update_subprojects(composition: Path):
+def subprojects_match_template(composition: Path):
     comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
-    comp.update_subprojects()
+    comp.subprojects_match_template()

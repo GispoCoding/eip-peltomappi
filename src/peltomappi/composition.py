@@ -54,21 +54,24 @@ class CompositionBackend(ABC):
         """
         Downloads project to destination path.
         """
-        pass
 
     @abstractmethod
     def upload_project(self, project_name: str, directory: Path) -> None:
         """
         Uploads project from given directory with the given name.
         """
-        pass
 
     @abstractmethod
     def projects_list(self, workspace: str) -> list[str]:
         """
         Lists existing projects in the backend.
         """
-        pass
+
+    @abstractmethod
+    def pull_project(self, directory: Path) -> Any:
+        """
+        Pulls any changes from the backend to a local directory.
+        """
 
 
 class MerginBackend(CompositionBackend):
@@ -124,6 +127,12 @@ class MerginBackend(CompositionBackend):
         """
         return [proj["name"] for proj in self.client().projects_list(only_namespace=workspace)]
 
+    def pull_project(self, directory: Path) -> Any:
+        """
+        Pulls any changes from the backend to a local directory.
+        """
+        return self.client().pull_project(directory)
+
 
 class CompositionError(Exception):
     pass
@@ -134,7 +143,7 @@ class Composition:
     A composition is a collection of Subprojects which belong to the same
     group. It is stored on disk as a folder, with the following structure:
 
-        <composition-name>
+        <folder>
         ├── .composition
         │   ├── composition.json
         │   └── full_data
@@ -444,7 +453,18 @@ class Composition:
             directory=self.__path,
         )
 
-    def upload_subprojects(self) -> None:
+    def pull(self) -> None:
+        """ """
+        LOGGER.info("pulling composition")
+        print(self.__backend.pull_project(self.__path))
+        LOGGER.info("pulling template project")
+        print(self.__backend.pull_project(self.template_project_path()))
+
+        for sp in self.__subprojects:
+            LOGGER.info(f'pulling subproject "{sp.name()}"')
+            print(self.__backend.pull_project(sp.path()))
+
+    def subprojects_upload(self) -> None:
         """
         Uploads all subprojects in this composition to the set backend.
 
@@ -465,7 +485,7 @@ class Composition:
                 s.path(),
             )
 
-    def update_subprojects(self) -> None:
+    def subprojects_match_template(self) -> None:
         """
         Updates the project files of every subproject in this composition to
         match the template project.
