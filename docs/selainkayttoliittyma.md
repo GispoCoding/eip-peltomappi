@@ -1,10 +1,18 @@
-# Selain hallintapaneeli
+# **Selain hallintapaneeli**
 
-Kun kirjaudut sisään **Mergin Maps hallintapaneeliin** (app.merginmaps.com), sinulle näytetään yleiskatsaus viimeaikaisista projekteista. Täältä voit myös hallinnoida projektejasi ja profiiliasi.
+Projektiasi voi tarkastella myös selaimen kautta. Selaimen avulla et voi kuitenkaan lisätä tai editoida kohteita se on tarkoitettu ainoastaan aineiston katseluun tällä hetkellä.
+
+Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.merginmaps.com](app.merginmaps.com) ja kirjaudut omilla tunnuksillasi sisään. 
+
+## **Ohjevideo**
+
+<iframe src="https://drive.google.com/file/d/1lWPMERqoIfKSijdr0rO1TSdlV6GL3FuY/preview" width="100%" height="500" allowfullscreen="allowfullscreen"> </iframe>
 
 ## Projekteihin liittyvät toiminnot
 
-### Projekteja
+
+
+### **Projekteja**
 
 Vasemmasta paneelista **Projects-välilehti** näyttää listan projekteista, joihin sinulla on pääsy tässä ympäristössä.
 
@@ -17,11 +25,11 @@ Kun avaat tietyn projektin, näet projektin sisällön yleiskatsauksena.
 
 Yläkulmasta löydät painikkeet projektin tiedostojen lataamiseen koneellesi.
 
-### Files (tiedostot)
+### **Files (tiedostot)**
 
 Tiedostot-välilehdellä näet kaikki projektin tiedostot. Voit klikata tiedostoa nähdäksesi, milloin se on muokattu, sen koon, sekä voit ladata tiedoston tai poistaa sen.
 
-### Webkartat (Webmaps)
+### **Webkartat (Webmaps)**
 
 Map-välilehdellä näytetään projekti suoraan hallintapaneelissa ilman, että tarvitsee avata QGISia tai mobiilisovellusta. 
 
@@ -35,17 +43,17 @@ Karttojen sisältö ja Layers-paneeli päivittyvät aina, kun projekti synkronoi
 
 Kerrospaneelissa listataan kaikki kartalla näkyvät kerrokset. Näyttöruudussa olevat silmäkuvakkeet (✅) säätelevät kerrosten näkyvyyttä.
 
-### Historia (History)
+### **Historia (History)**
 
 History-välilehti sisältää yleiskatsauksen projektin versioista. Vaihtoehtoisesti voit ladata vanhempia versioita koneellesi.
 
 Voit klikata tiettyä versiota nähdäksesi sen tarkemmat tiedot.
 
-### Työtilakumppanit (Collaborators)
+### **Työtilakumppanit (Collaborators)**
 
 Collaborators-välilehdellä näet käyttäjät, joilla on pääsy projektiin, sekä mahdolliset lähetetyt kutsut. 
 
-### Asetukset (Settings)
+### **Asetukset (Settings)**
 
 Asetukset-välilehdellä on mahdollista (ei suositella):
 
@@ -53,9 +61,9 @@ Asetukset-välilehdellä on mahdollista (ei suositella):
 * siirtää projektin toiseen workspaceen
 * poistaa projektin
 
-## Muu hallinnointi
+## **Muu hallinnointi**
 
-## Profiili ja workspace-asetukset
+## **Profiili ja workspace-asetukset**
 
 * Profiiliin pääset klikkaamalla käyttäjänimeä oikeassa yläkulmassa.
   Täällä voit muokata omia tietojasi kuten nimeä ja sähköpostia, vaihtaa salasanaa, hallinnoida ilmoituksia workspaceen liittyen sekä sulkea tilin.
