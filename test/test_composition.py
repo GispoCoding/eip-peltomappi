@@ -167,7 +167,7 @@ def test_name_getters(
 
 
 @freeze_time("1970-01-01 00:00:00")
-def test_update_subprojects(
+def test_subprojects_match_template(
     saved_composition: tempfile.TemporaryDirectory,
     test_backend: CompositionBackendTest,
 ):
@@ -177,7 +177,7 @@ def test_update_subprojects(
     comp = Composition.from_json(composition_path, test_backend)
 
     with pytest.raises(CompositionError):
-        comp.update_subprojects()
+        comp.subprojects_match_template()
 
     with open(comp.template_project_path() / TEMPLATE_QGIS_PROJECT_NAME, "w") as file:
         file.write("test_modification")
@@ -185,7 +185,7 @@ def test_update_subprojects(
     with open(comp.template_project_path() / TEMPLATE_MERGIN_CONFIG_NAME, "w") as file:
         file.write("test mod")
 
-    comp.update_subprojects()
+    comp.subprojects_match_template()
 
     sp_1 = comp.subprojects()[0]
     sp_2 = comp.subprojects()[1]

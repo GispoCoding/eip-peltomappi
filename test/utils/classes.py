@@ -1,6 +1,6 @@
 import shutil
 import tempfile
-from typing import NamedTuple
+from typing import Any, NamedTuple
 
 from pathlib import Path
 
@@ -21,6 +21,9 @@ class CompositionBackendTest(CompositionBackend):
 
     def projects_list(self, workspace: str) -> list[str]:
         return [dir.stem for dir in self.__projects_path.iterdir() if dir.stem != "template"]
+
+    def pull_project(self, directory: Path) -> Any:
+        pass
 
 
 class ContainedComposition(NamedTuple):
