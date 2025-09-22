@@ -73,6 +73,12 @@ class CompositionBackend(ABC):
         Pulls any changes from the backend to a local directory.
         """
 
+    @abstractmethod
+    def push_project(self, directory: Path) -> Any:
+        """
+        Pushes any changes from the local directory to the backend.
+        """
+
 
 class MerginBackend(CompositionBackend):
     __client: mergin.MerginClient | None
@@ -132,6 +138,9 @@ class MerginBackend(CompositionBackend):
         Pulls any changes from the backend to a local directory.
         """
         return self.client().pull_project(directory)
+
+    def push_project(self, directory: Path) -> Any:
+        self.client().push_project(directory)
 
 
 class CompositionError(Exception):
@@ -375,6 +384,25 @@ class Composition:
 
         return comp
 
+    @staticmethod
+    def clone(path: Path, name: str, workspace: str, backend: CompositionBackend) -> None:
+        """
+        Clones i.e. downloads the composition from the backend with its
+        template project and all subprojects.
+        """
+        path.mkdir()
+        composition_path = path / ".composition"
+
+        backend.download_project(f"{workspace}/{name}", composition_path)
+
+        composition_config_path = composition_path / "composition.json"
+
+        Composition.from_json(
+            composition_config_path,
+            backend,
+            download_subprojects=True,
+        ).download_template_project()
+
     @classmethod
     def from_json(
         cls,
@@ -409,6 +437,7 @@ class Composition:
             subproject_config = (
                 composition_root / f"{clean_string_to_filename(subproject_name)}/peltomappi_subproject.json"
             )
+
             if not subproject_config.exists() and download_subprojects:
                 comp.download_subproject(subproject_name)
 
@@ -439,50 +468,61 @@ class Composition:
         self.__subprojects.append(subproject)
         self.save()
 
-    def upload(self) -> None:
-        """
-        Uploads this composition as a project to the set backend.
-
-        Note:
-            This is meant for an initial upload, when the composition does not
-            yet exist in the backend. This does nothing to update a modified
-            composition.
-        """
-        self.__backend.upload_project(
-            project_name=self.mergin_name_with_workspace(),
-            directory=self.__path,
-        )
-
     def pull(self) -> None:
-        """ """
-        LOGGER.info("pulling composition")
-        print(self.__backend.pull_project(self.__path))
-        LOGGER.info("pulling template project")
-        print(self.__backend.pull_project(self.template_project_path()))
+        """
+        Pulls any changes from the backend to the local composition.
+        """
+        # TODO: conflicts? at least log them
+        LOGGER.info("Pulling composition")
+        if conflicts := self.__backend.pull_project(self.__path):
+            LOGGER.warning(f"Composition conflicts: {conflicts}")
+
+        LOGGER.info("Pulling template project")
+        if conflicts := self.__backend.pull_project(self.template_project_path()):
+            LOGGER.warning(f"Template project conflicts: {conflicts}")
 
         for sp in self.__subprojects:
-            LOGGER.info(f'pulling subproject "{sp.name()}"')
-            print(self.__backend.pull_project(sp.path()))
+            LOGGER.info(f'Pulling subproject "{sp.name()}"')
 
-    def subprojects_upload(self) -> None:
-        """
-        Uploads all subprojects in this composition to the set backend.
+            if conflicts := self.__backend.pull_project(sp.path()):
+                LOGGER.warning(f'Subproject "{sp.name()}" conflicts: {conflicts}"')
 
-        Note:
-            This is meant for an initial upload, if the project already exists
-            its upload will be skipped.
+    def push(self) -> None:
         """
+        Pushes local changes from the local composition to the backend. If a
+        subproject or the composition does not yet exist in the backend, it
+        will be created as a project and uploaded there.
+        """
+        LOGGER.info("Pushing composition")
+
         existing_project_names = self.__backend.projects_list(self.__mergin_workspace)
-        for s in self.__subprojects:
-            sp_name = self.subproject_mergin_name(s.name())
+        LOGGER.info("Pushing template project")
+        self.__backend.push_project(self.template_project_path())
 
-            if sp_name in existing_project_names:
-                LOGGER.info(f"Project {sp_name} already exists in server, skipping...")
+        for sp in self.__subprojects:
+            sp_name = self.subproject_mergin_name(sp.name())
+
+            if sp_name not in existing_project_names:
+                LOGGER.info(f'Uploading subproject "{sp.name()}"')
+                self.__backend.upload_project(
+                    self.subproject_mergin_name_with_workspace(sp.name()),
+                    sp.path(),
+                )
                 continue
 
+            LOGGER.info(f'Pushing subproject "{sp.name()}"')
+            self.__backend.push_project(sp.path())
+
+        if self.name() not in existing_project_names:
+            LOGGER.info(f'Uploading composition "{self.name()}"')
             self.__backend.upload_project(
-                self.subproject_mergin_name_with_workspace(s.name()),
-                s.path(),
+                project_name=self.mergin_name_with_workspace(),
+                directory=self.__path,
+            )
+        else:
+            LOGGER.info(f'Pushing composition "{self.name()}"')
+            self.__backend.push_project(
+                self.path(),
             )
 
     def subprojects_match_template(self) -> None:

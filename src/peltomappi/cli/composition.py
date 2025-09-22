@@ -1,13 +1,12 @@
-import os
 from pathlib import Path
 import click
-import mergin
 
 from peltomappi.cli.utils import resolve_composition_input, str_to_path
 from peltomappi.composition import Composition, MerginBackend
 
 
-DEFAULT_MERGIN_SERVER = "http://localhost:8080"
+DEFAULT_MERGIN_SERVER = "https://app.merginmaps.com"
+g_mergin_server = DEFAULT_MERGIN_SERVER
 
 
 def mergin_backend(server: str) -> MerginBackend:
@@ -15,8 +14,15 @@ def mergin_backend(server: str) -> MerginBackend:
 
 
 @click.group(help="Commands to manage compositions i.e. a collection of one or more subprojects")
-def composition():
-    pass
+@click.option(
+    "--server",
+    type=click.STRING,
+    default=DEFAULT_MERGIN_SERVER,
+    help="Specify non-default Mergin Maps Server",
+)
+def composition(server):
+    global g_mergin_server
+    g_mergin_server = server
 
 
 @composition.command(help="Initializes a new empty composition")
@@ -40,25 +46,18 @@ def composition():
     "workspace",
     type=click.STRING,
 )
-@click.option(
-    "--server",
-    type=click.STRING,
-    default=DEFAULT_MERGIN_SERVER,
-    help="Specify non-default Mergin Maps Server",
-)
 def init(
     name: Path,
     template_name: str,
     workspace: str,
-    server: str,
 ):
     Composition.initialize(
         name,
         template_name,
         name.stem,
         workspace,
-        server,
-        mergin_backend(server),
+        g_mergin_server,
+        mergin_backend(g_mergin_server),
     )
 
 
@@ -91,12 +90,12 @@ def add(
     composition: Path,
     parcel_specification: Path,
 ):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
+    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
     comp.add_subproject_from_parcelspec(parcel_specification)
     comp.save()
 
 
-@composition.command(help="Uploads the given composition to the Mergin Maps server.")
+@composition.command(help="Pushes the local composition with its changes to the Mergin Server")
 @click.argument(
     "composition",
     type=click.Path(
@@ -109,12 +108,12 @@ def add(
     ),
     callback=resolve_composition_input,
 )
-def upload(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
-    comp.upload()
+def push(composition: Path):
+    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp.push()
 
 
-@composition.command(help="pull")
+@composition.command(help="Pulls changes from the Mergin Server to the local composition")
 @click.argument(
     "composition",
     type=click.Path(
@@ -128,26 +127,8 @@ def upload(composition: Path):
     callback=resolve_composition_input,
 )
 def pull(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
+    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
     comp.pull()
-
-
-@composition.command(help="Uploads all subprojects in the composition to the Mergin Maps server.")
-@click.argument(
-    "composition",
-    type=click.Path(
-        exists=True,
-        dir_okay=True,
-        file_okay=True,
-        writable=False,
-        readable=True,
-        resolve_path=True,
-    ),
-    callback=resolve_composition_input,
-)
-def subprojects_upload(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
-    comp.subprojects_upload()
 
 
 @composition.command(help="Downloads an existing composition from a Mergin Maps Server")
@@ -171,35 +152,17 @@ def subprojects_upload(composition: Path):
     "workspace",
     type=click.STRING,
 )
-@click.option(
-    "--server",
-    type=click.STRING,
-    default=DEFAULT_MERGIN_SERVER,
-    help="Specify non-default Mergin Maps Server",
-)
-def download(
+def clone(
     path: Path,
     name: str,
     workspace: str,
-    server: str,
 ):
-    client = mergin.MerginClient(login=os.getenv("MERGIN_USERNAME"), password=os.getenv("MERGIN_PASSWORD"), url=server)
-
-    path.mkdir()
-    composition_path = path / ".composition"
-
-    client.download_project(
-        f"{workspace}/{name}",
-        composition_path,
+    Composition.clone(
+        path,
+        name,
+        workspace,
+        mergin_backend(g_mergin_server),
     )
-
-    composition_config_path = composition_path / "composition.json"
-    comp = Composition.from_json(
-        composition_config_path,
-        mergin_backend(server),
-        download_subprojects=True,
-    )
-    comp.download_template_project()
 
 
 @composition.command(help="Updates the configuration files of each subproject to match the template")
@@ -216,5 +179,5 @@ def download(
     callback=resolve_composition_input,
 )
 def subprojects_match_template(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(DEFAULT_MERGIN_SERVER))
+    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
     comp.subprojects_match_template()
