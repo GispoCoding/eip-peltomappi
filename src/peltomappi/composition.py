@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
 import os
 from pathlib import Path
+import shutil
 from typing import Any, Self
 from uuid import UUID, uuid4
 
@@ -11,8 +13,8 @@ import mergin
 
 from peltomappi.logger import LOGGER
 from peltomappi.parcelspec import ParcelSpecification
-from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, Subproject
-from peltomappi.utils import clean_string_to_filename
+from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, ModificationType, Subproject
+from peltomappi.utils import clean_string_to_filename, sha256_file
 
 PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
@@ -52,21 +54,30 @@ class CompositionBackend(ABC):
         """
         Downloads project to destination path.
         """
-        pass
 
     @abstractmethod
     def upload_project(self, project_name: str, directory: Path) -> None:
         """
         Uploads project from given directory with the given name.
         """
-        pass
 
     @abstractmethod
     def projects_list(self, workspace: str) -> list[str]:
         """
         Lists existing projects in the backend.
         """
-        pass
+
+    @abstractmethod
+    def pull_project(self, directory: Path) -> Any:
+        """
+        Pulls any changes from the backend to a local directory.
+        """
+
+    @abstractmethod
+    def push_project(self, directory: Path) -> Any:
+        """
+        Pushes any changes from the local directory to the backend.
+        """
 
 
 class MerginBackend(CompositionBackend):
@@ -122,6 +133,15 @@ class MerginBackend(CompositionBackend):
         """
         return [proj["name"] for proj in self.client().projects_list(only_namespace=workspace)]
 
+    def pull_project(self, directory: Path) -> Any:
+        """
+        Pulls any changes from the backend to a local directory.
+        """
+        return self.client().pull_project(directory)
+
+    def push_project(self, directory: Path) -> Any:
+        self.client().push_project(directory)
+
 
 class CompositionError(Exception):
     pass
@@ -132,7 +152,7 @@ class Composition:
     A composition is a collection of Subprojects which belong to the same
     group. It is stored on disk as a folder, with the following structure:
 
-        <composition-name>
+        <folder>
         ├── .composition
         │   ├── composition.json
         │   └── full_data
@@ -364,6 +384,25 @@ class Composition:
 
         return comp
 
+    @staticmethod
+    def clone(path: Path, name: str, workspace: str, backend: CompositionBackend) -> None:
+        """
+        Clones i.e. downloads the composition from the backend with its
+        template project and all subprojects.
+        """
+        path.mkdir()
+        composition_path = path / ".composition"
+
+        backend.download_project(f"{workspace}/{name}", composition_path)
+
+        composition_config_path = composition_path / "composition.json"
+
+        Composition.from_json(
+            composition_config_path,
+            backend,
+            download_subprojects=True,
+        ).download_template_project()
+
     @classmethod
     def from_json(
         cls,
@@ -398,6 +437,7 @@ class Composition:
             subproject_config = (
                 composition_root / f"{clean_string_to_filename(subproject_name)}/peltomappi_subproject.json"
             )
+
             if not subproject_config.exists() and download_subprojects:
                 comp.download_subproject(subproject_name)
 
@@ -428,37 +468,93 @@ class Composition:
         self.__subprojects.append(subproject)
         self.save()
 
-    def upload(self) -> None:
+    def pull(self) -> None:
         """
-        Uploads this composition as a project to the set backend.
+        Pulls any changes from the backend to the local composition.
+        """
+        # TODO: conflicts? at least log them
+        LOGGER.info("Pulling composition")
+        if conflicts := self.__backend.pull_project(self.__path):
+            LOGGER.warning(f"Composition conflicts: {conflicts}")
 
-        Note:
-            This is meant for an initial upload, when the composition does not
-            yet exist in the backend. This does nothing to update a modified
-            composition.
-        """
-        self.__backend.upload_project(
-            project_name=self.mergin_name_with_workspace(),
-            directory=self.__path,
-        )
+        LOGGER.info("Pulling template project")
+        if conflicts := self.__backend.pull_project(self.template_project_path()):
+            LOGGER.warning(f"Template project conflicts: {conflicts}")
 
-    def upload_subprojects(self) -> None:
-        """
-        Uploads all subprojects in this composition to the set backend.
+        for sp in self.__subprojects:
+            LOGGER.info(f'Pulling subproject "{sp.name()}"')
 
-        Note:
-            This is meant for an initial upload, if the project already exists
-            its upload will be skipped.
+            if conflicts := self.__backend.pull_project(sp.path()):
+                LOGGER.warning(f'Subproject "{sp.name()}" conflicts: {conflicts}"')
+
+    def push(self) -> None:
         """
+        Pushes local changes from the local composition to the backend. If a
+        subproject or the composition does not yet exist in the backend, it
+        will be created as a project and uploaded there.
+        """
+        LOGGER.info("Pushing composition")
+
         existing_project_names = self.__backend.projects_list(self.__mergin_workspace)
-        for s in self.__subprojects:
-            sp_name = self.subproject_mergin_name(s.name())
+        LOGGER.info("Pushing template project")
+        self.__backend.push_project(self.template_project_path())
 
-            if sp_name in existing_project_names:
-                LOGGER.info(f"Project {sp_name} already exists in server, skipping...")
+        for sp in self.__subprojects:
+            sp_name = self.subproject_mergin_name(sp.name())
+
+            if sp_name not in existing_project_names:
+                LOGGER.info(f'Uploading subproject "{sp.name()}"')
+                self.__backend.upload_project(
+                    self.subproject_mergin_name_with_workspace(sp.name()),
+                    sp.path(),
+                )
                 continue
 
+            LOGGER.info(f'Pushing subproject "{sp.name()}"')
+            self.__backend.push_project(sp.path())
+
+        if self.name() not in existing_project_names:
+            LOGGER.info(f'Uploading composition "{self.name()}"')
             self.__backend.upload_project(
-                self.subproject_mergin_name_with_workspace(s.name()),
-                s.path(),
+                project_name=self.mergin_name_with_workspace(),
+                directory=self.__path,
             )
+        else:
+            LOGGER.info(f'Pushing composition "{self.name()}"')
+            self.__backend.push_project(
+                self.path(),
+            )
+
+    def subprojects_match_template(self) -> None:
+        """
+        Updates the project files of every subproject in this composition to
+        match the template project.
+
+        Note:
+            This is meant for updates to the project files. If new data files
+            are added, they will not be included.
+
+        Todo:
+            Handle data and other files.
+        """
+        # TODO:
+        template_project_path = self.template_project_path() / TEMPLATE_QGIS_PROJECT_NAME
+        template_mergin_conf_path = self.template_project_path() / TEMPLATE_MERGIN_CONFIG_NAME
+
+        for sp in self.__subprojects:
+            sp_project_path = sp.path() / TEMPLATE_QGIS_PROJECT_NAME
+            sp_mergin_conf_path = sp.path() / TEMPLATE_MERGIN_CONFIG_NAME
+
+            if sha256_file(template_project_path) == sha256_file(sp_project_path) and sha256_file(
+                template_mergin_conf_path
+            ) == sha256_file(sp_mergin_conf_path):
+                msg = "no changes in project configuration files"
+                raise CompositionError(msg)
+
+            shutil.copy(template_project_path, sp_project_path)
+            shutil.copy(template_mergin_conf_path, sp_mergin_conf_path)
+
+            sp.add_modified(ModificationType.PROJECT_UPDATE, datetime.now())
+            sp.save()
+
+        self.save()

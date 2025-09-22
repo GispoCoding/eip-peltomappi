@@ -8,7 +8,7 @@ from peltomappi.logger import LOGGER
 import peltomappi.cli.composition
 
 
-@click.group(help="CLI tool to run Peltomappi processes")
+@click.group(help="CLI tool to run Peltomappi commands")
 @click.option(
     "--quiet",
     "-q",

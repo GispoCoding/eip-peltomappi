@@ -4,8 +4,12 @@ from pathlib import Path
 import tempfile
 from uuid import UUID
 
+from freezegun import freeze_time
 
-from peltomappi.composition import Composition
+import pytest
+
+from peltomappi.composition import Composition, CompositionError
+from peltomappi.subproject import TEMPLATE_MERGIN_CONFIG_NAME, TEMPLATE_QGIS_PROJECT_NAME, ModificationType
 from test.utils.classes import ContainedComposition, CompositionBackendTest
 
 
@@ -160,3 +164,42 @@ def test_name_getters(
     assert comp.subproject_mergin_name("subproject_1") == "saved_composition_subproject_1"
     assert comp.subproject_mergin_name_with_workspace("subproject_1") == "test_workspace/saved_composition_subproject_1"
     assert comp.template_mergin_name_with_workspace() == "test_workspace/template"
+
+
+@freeze_time("1970-01-01 00:00:00")
+def test_subprojects_match_template(
+    saved_composition: tempfile.TemporaryDirectory,
+    test_backend: CompositionBackendTest,
+):
+    comp_dir = Path(saved_composition.name) / "test_saved_composition"
+    composition_path = comp_dir / ".composition/composition.json"
+
+    comp = Composition.from_json(composition_path, test_backend)
+
+    with pytest.raises(CompositionError):
+        comp.subprojects_match_template()
+
+    with open(comp.template_project_path() / TEMPLATE_QGIS_PROJECT_NAME, "w") as file:
+        file.write("test_modification")
+
+    with open(comp.template_project_path() / TEMPLATE_MERGIN_CONFIG_NAME, "w") as file:
+        file.write("test mod")
+
+    comp.subprojects_match_template()
+
+    sp_1 = comp.subprojects()[0]
+    sp_2 = comp.subprojects()[1]
+
+    assert (sp_1.path() / TEMPLATE_QGIS_PROJECT_NAME).read_text() == "test_modification"
+    assert (sp_1.path() / TEMPLATE_MERGIN_CONFIG_NAME).read_text() == "test mod"
+    assert (sp_2.path() / TEMPLATE_QGIS_PROJECT_NAME).read_text() == "test_modification"
+    assert (sp_2.path() / TEMPLATE_MERGIN_CONFIG_NAME).read_text() == "test mod"
+
+    assert len(sp_1.modified()) == 1
+    assert len(sp_2.modified()) == 1
+
+    assert sp_1.modified()[0].timestamp == datetime.fromtimestamp(0)
+    assert sp_2.modified()[0].timestamp == datetime.fromtimestamp(0)
+
+    assert sp_1.modified()[0].mod_type == ModificationType.PROJECT_UPDATE
+    assert sp_2.modified()[0].mod_type == ModificationType.PROJECT_UPDATE

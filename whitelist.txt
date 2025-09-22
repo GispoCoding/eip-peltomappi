@@ -40,3 +40,9 @@ parcelspecs
 conf
 proj
 getters
+fromtimestamp
+fmt
+formatter
+levelno
+sqlite3
+fetchall
