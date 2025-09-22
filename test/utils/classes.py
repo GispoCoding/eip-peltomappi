@@ -25,6 +25,9 @@ class CompositionBackendTest(CompositionBackend):
     def pull_project(self, directory: Path) -> Any:
         pass
 
+    def push_project(self, directory: Path) -> Any:
+        pass
+
 
 class ContainedComposition(NamedTuple):
     """
