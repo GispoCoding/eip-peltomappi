@@ -138,8 +138,8 @@ def test_path_getters(
     saved_composition: tempfile.TemporaryDirectory,
     test_backend: CompositionBackendTest,
 ):
-    comp_dir = Path(saved_composition.name) / "test_saved_composition"
-    composition_path = comp_dir / ".composition/composition.json"
+    comp_dir = (Path(saved_composition.name) / "test_saved_composition").resolve()
+    composition_path = (comp_dir / ".composition/composition.json").resolve()
 
     comp = Composition.from_json(composition_path, test_backend)
 
