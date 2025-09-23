@@ -93,23 +93,60 @@ This is detailed in the next section.
 The functionality of the Python package is exposed through a
 [Click](https://click.palletsprojects.com/en/stable/) based CLI.
 
-!!! note
-    At the current stage of development the peltomappi tool is not packaged. In
-    order to use the CLI you have to create and activate a Python virtual
-    environment (or install its dependencies system-wide, but this is not
-    recommended).
+### Installation
 
-    For instructions see the [README](https://github.com/GispoCoding/eip-peltomappi).
-
-The entrypoint to the CLI is in `src/pm.py`. In order to run peltomappi commands
-run the `pm.py` script:
+Create a Python virtual environment in a suitable folder:
 
 ```sh
-python pm.py --help
+python -m venv peltomappi_venv
 ```
 
+Activate the virtual environment:
+
+Windows (PowerShell):
+```powershell
+.\peltomappi_venv\Scripts\activate
 ```
-Usage: pm.py [OPTIONS] COMMAND [ARGS]...
+
+Bash:
+```sh
+source peltomappi_venv/bin/activate
+```
+
+Download the packaged tool:
+
+Windows (PowerShell):
+```powershell
+Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl" -OutFile .\peltomappi-1.0.0a0-py3-none-any.whl
+```
+
+Bash (requires wget):
+```sh
+wget -q https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl
+```
+
+If the download commands do not work you may also download the file manually
+[here](https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl).
+
+Then either move the file to the directory or navigate to the download
+directory in your shell.
+
+Install the tool:
+
+```sh
+pip install peltomappi-1.0.0a0-py3-none-any.whl
+```
+
+Confirm that the tool was correctly installed:
+
+```sh
+peltomappi
+```
+
+You should see the following output:
+
+```
+Usage: peltomappi [OPTIONS] COMMAND [ARGS]...
 
   CLI tool to run Peltomappi commands
 
@@ -121,32 +158,10 @@ Commands:
   composition  Commands to manage compositions i.e.
 ```
 
-### Aliasing
-
-As the Python package is not currently packaged, for convenience you may want
-to define an symbolic link/function to make running the entrypoint script
-easier.
-
-Navigate to the root of the eip-peltomappi repository in a shell.
-
-PowerShell:
-
-```
-$script_location="$(Resolve-Path ./src/pm.py)"
-function peltomappi {python $script_location}
-```
-
-Bash:
-
-```
-ln -s "$(realpath ./src/pm.py)" ~/.local/bin/peltomappi
-```
-
-Now you can invoke the script like this:
-
-```bash
-peltomappi composition --help
-```
+!!! note
+    The installation has to be done only once, after that it is available in
+    the Python virtual environment. Remember to always activate the virtual
+    environment, otherwise you will not have access to the tool.
 
 ### Authentication
 
@@ -169,11 +184,11 @@ $env:MERGIN_PASSWORD = ""
 Currently there is only one main command, `composition`.
 
 ```sh
-python pm.py composition --help
+peltomappi composition --help
 ```
 
 ```
-Usage: pm.py composition [OPTIONS] COMMAND [ARGS]...
+Usage: peltomappi composition [OPTIONS] COMMAND [ARGS]...
 
   Commands to manage compositions i.e. a collection of one or more subprojects
 
@@ -204,11 +219,11 @@ The `composition` command has several subcommands:
 #### Initializing a composition
 
 ```sh
-python pm.py composition init <composition_name> <template_name> <workspace_name>
+peltomappi composition init <composition_name> <template_name> <workspace_name>
 ```
 
 ```sh
-python pm.py composition init my_composition my_template my_workspace
+peltomappi composition init my_composition my_template my_workspace
 ```
 
 The template argument corresponds to an existing project in the Mergin Maps
@@ -230,11 +245,11 @@ If a composition has already been created and is pushed to the Mergin Server, yo
 clone it to your local machine:
 
 ```sh
-python pm.py composition clone <folder_name> <name> <mergin_workspace>
+peltomappi composition clone <folder_name> <name> <mergin_workspace>
 ```
 
 ```sh
-python pm.py composition clone local_composition my_composition my_workspace
+peltomappi composition clone local_composition my_composition my_workspace
 ```
 
 !!! note
@@ -246,14 +261,14 @@ python pm.py composition clone local_composition my_composition my_workspace
 You can print out information about a locally existing composition:
 
 ```sh
-python pm.y composition info my_composition
+peltomappi composition info my_composition
 ```
 
 If you don't want information about subprojects to be printed out you can add
 the `--only-composition` flag.
 
 ```sh
-python pm.y composition info my_composition --only-composition
+peltomappi composition info my_composition --only-composition
 ```
 
 #### Adding subprojects to a composition
@@ -280,11 +295,11 @@ Once you have saved the parcel specification JSON, you can create a subproject
 and add it to a composition:
 
 ```sh
-python pm.py composition add <composition> <parcel_spec_json>
+peltomappi composition add <composition> <parcel_spec_json>
 ```
 
 ```sh
-python pm.py composition add my_composition parcelspec.json
+peltomappi composition add my_composition parcelspec.json
 ```
 
 Here `my_composition` being the folder which was created by the `init` or
@@ -305,7 +320,7 @@ make changes to the template project you should ensure that you have the
 latest changes in your local composition.
 
 ```sh
-python pm.py composition pull my_composition
+peltomappi composition pull my_composition
 ```
 
 #### Making modifications
@@ -320,7 +335,7 @@ Instead you should make any changes to the **template** project, save them and
 update the changes to the subprojects using the CLI:
 
 ```sh
-python pm.py composition subprojects-match-template my_composition
+peltomappi composition subprojects-match-template my_composition
 ```
 
 !!! note
@@ -329,11 +344,10 @@ python pm.py composition subprojects-match-template my_composition
 
 #### Pushing modifications
 
-Push by
-running:
+Push by running:
 
 ```sh
-python pm.py composition push my_composition
+peltomappi composition push my_composition
 ```
 
 Pushing will update any modified files to the subprojects in the Mergin Server,
@@ -345,17 +359,21 @@ but also create and upload the project if it does not already exist.
 
 #### Non-default server
 
-By default the CLI will attempt to connect to
-[https://app.merginmaps.com](https://app.merginmaps.com). If you need to
-connect to another server, you may append the `--server` option to the
-composition command:
+When cloning or initializing a composition the CLI will by default use the official
+Mergin Server at [https://app.merginmaps.com](https://app.merginmaps.com). If you need to
+use another server, you may append the `--server` option to the commands:
 
 ```sh
-python pm.py composition --server=http://localhost:8080 push my_composition
+peltomappi composition init --server=http://localhost:8080 my_composition my_template my_workspace
+```
+
+```sh
+peltomappi composition clone --server=http://localhost:8080 cloned_composition my_composition my_workspace
 ```
 
 !!! note
-    The option must be specified after `composition` but before the subcommand, i.e. `push`, `pull` etc.
+    In other commands (i.e. when not creating a new composition) the server is
+    read from the `composition.json` file and cannot be modified.
 
 ## Library
 
