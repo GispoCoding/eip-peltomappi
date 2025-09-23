@@ -7,15 +7,15 @@ editor_options:
 
 ## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
 
-Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **poistaa kohteita**.
+Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **poistaa kohteita**.
 
 ### **Kohteiden muokkaaminen**
 
--   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä
+-   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä.
 
 -   Kun valitset ***Muokkaa geometriaa*** kohteen solmupisteet korostuvat: niitä voi siirtää, poistaa tai muuttaa.
 
--   Tallenna muutokset
+-   Tallenna muutokset.
 
 <iframe src="https://drive.google.com/file/d/1Imp0jJsL0mIW81oeoLPFExm07jGQ2z_j/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -29,7 +29,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
     <img src="img/more_mergin_maps.png" width="34%"/>
 
--   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna
+-   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna.
 
 <iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
@@ -47,7 +47,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä **myös muokata** ja **po
 
 ### **Kohteiden poistaminen**
 
--   Valitse kohde kartalta tai listasta, avaa ***muokkaa***-lomake ja napauta ***Poista***-painiketta. Vahvista poisto, niin kohde poistuu
+-   Valitse kohde kartalta tai listasta, avaa ***muokkaa***-lomake ja napauta ***Poista***-painiketta. Vahvista poisto, niin kohde poistuu.
 
 ## **Viimeksi syötettyjen arvojen uudelleenkäyttö**
 
@@ -55,9 +55,9 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 ### **Miten otat ominaisuuden käyttöön:**
 
-3.  Avaa valikko napauttamalla kolmea pistettä (⋯) ja siirry kohtaan ***Asetukset***
+3.  Avaa valikko napauttamalla kolmea pistettä (⋯) ja siirry kohtaan ***Asetukset***.
 
-4.  Ota käyttöön valinta **"*Viimeksi syötetyn arvon uudelleenkäyttö*"**
+4.  Ota käyttöön valinta **"*Viimeksi syötetyn arvon uudelleenkäyttö*"**.
 
 !!! note "**Miten se toimii käytännössä:**" 
     - Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, attribuuttilomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
@@ -223,9 +223,9 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
 
--   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***
+-   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***.
 
--   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset*** <img src="img/sync_mergin_maps.gif" width="34%"/>
+-   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset***. <img src="img/sync_mergin_maps.gif" width="34%"/>
 
 ### **2. Automaattinen synkronointi**
 
@@ -235,4 +235,4 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
 
--   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu
+-   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu.

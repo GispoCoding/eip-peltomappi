@@ -5,7 +5,7 @@
 Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
 <img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
 
-!!! note "💡 HUOM!" 
+!!! note "**💡 HUOM!**" 
     Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
 1.  Klikkaa linkkiä ja rekisteröidy palveluun:
@@ -28,8 +28,14 @@ Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZ
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
-Jos haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella toimi seuraavasti:
+!!! note "💡 **Info**" 
+    **Mergin Maps mobiilisovelluksen käyttö ei edellytä QGISin käyttöä**. Sitä voi käyttää täysin itsenäisesti, mutta jos haluat laajemmat työkalut käyttöön ja haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella ne onnistuvat parhaiten QGISin avulla.
+    
+!!! note "💡 **Info**" 
+    QGIS on avoimen lähdekoodin paikkatieto-ohjelmisto, jonka avulla voit tarkastella, muokata ja analysoida paikkatietoaineistoja. Kun lataat projektin QGISiin, näet peltolohkosi kartalla ja voit käsitellä niihin liittyviä ominaisuustietoja myös ilman verkkoyhteyttä. 
+    
 
+    
 ### **QGIS:n lataaminen ja asentaminen**
 
 Mene QGISin viralliselle sivulle: <https://qgis.org/>

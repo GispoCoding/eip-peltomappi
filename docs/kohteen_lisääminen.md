@@ -1,14 +1,14 @@
 # **Kohteen lisääminen**
 
-1.  Paina alavalikon ***Lisää*** painikekeesta
+1.  Paina alavalikon ***Lisää*** painikekeesta.
 
-2.  Tarkista että ylhäällä lukee ***Kohteet***- taso. Jos ei lue niin vaihda tasoksi ***Kohteet***
+2.  Tarkista, että valittuna tasona on ***Kohteet***.
 
-3.  Siirry kartalla haluamaasi sijaintiin
+3.  Siirry kartalla haluamaasi sijaintiin.
 
-4.  Klikkaa alhaalta ***Tallenna***
+4.  Klikkaa alhaalta ***Tallenna***.
 
-5.  Syötä tarvittavat ominaisuustiedot
+5.  Syötä tarvittavat ominaisuustiedot.
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 

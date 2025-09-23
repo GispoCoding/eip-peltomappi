@@ -20,7 +20,7 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
 
     Seuraavassa kappaleessa lisätietoja
 
-6.  **Lisää:** Avaa sinulle lisääasetuksia:
+6.  **Lisää:** Avaa sinulle lisäasetuksia:
 
     -   Projektit: oikotie mobiilisovelluksen pääsivulle
     -   Zoomaa projektiin: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
@@ -30,7 +30,7 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
     -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista
     -   Asetukset: sisältää seuraavat lisäasetukset:
         -   GPS-asetukset: GPS tarkkuuden raja-arvot, Hallinnoi GPS vastaanottimia, GPS antennin korkeus
-        -   Nauhoitustila: Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
+        -   [Nauhoitustila](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html): Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
         -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse autommaatinen sijainti, kosketuspalaute
         -   Sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
 
