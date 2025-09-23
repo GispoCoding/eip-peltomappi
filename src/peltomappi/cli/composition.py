@@ -4,6 +4,10 @@ import click
 from peltomappi.cli.utils import resolve_composition_input, str_to_path
 from peltomappi.composition import Composition, MerginBackend
 
+from getpass import getpass
+
+import mergin.cli
+
 
 DEFAULT_MERGIN_SERVER = "https://app.merginmaps.com"
 
@@ -212,3 +216,34 @@ def subprojects_match_template(composition: Path):
 def info(composition: Path, only_composition: bool):
     comp = Composition.from_json(composition)
     comp.describe(describe_subprojects=only_composition)
+
+
+@composition.command(help="Logs into Mergin Server")
+@click.option(
+    "--server",
+    type=click.STRING,
+    default=DEFAULT_MERGIN_SERVER,
+    help="Specify non-default server",
+)
+def login(server: str):
+    username: str = input("Username: ")
+    pwd: str = getpass("Password: ")
+
+    token = mergin.cli.get_token(url=server, username=username, password=pwd)
+
+    token = f"Bearer {token}"
+
+    if not isinstance(token, str):
+        msg = "token is not string"
+        raise ValueError(msg)
+
+    import keyring
+
+    keyring.set_password("system", "peltomappi_cli_authentication_token", token)
+
+
+@composition.command(help="Removes token")
+def logout():
+    import keyring
+
+    keyring.delete_password("system", "peltomappi_cli_authentication_token")

@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
-import os
 from pathlib import Path
 import shutil
 from typing import Any, Self
@@ -8,6 +7,7 @@ from uuid import UUID, uuid4
 
 import json
 import jsonschema
+import keyring
 import mergin
 
 
@@ -20,6 +20,10 @@ PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
+
+
+class CompositionError(Exception):
+    pass
 
 
 def validate_template_project(template_project_directory: Path):
@@ -100,11 +104,20 @@ class MerginBackend(CompositionBackend):
             ClientError: indirectly, if client could not be initialized
         """
         if self.__client is None:
-            self.__client = mergin.MerginClient(
-                login=os.getenv("MERGIN_USERNAME"),
-                password=os.getenv("MERGIN_PASSWORD"),
-                url=self.__server,
-            )
+            token = keyring.get_password("system", "peltomappi_cli_authentication_token")
+
+            if token is None:
+                msg = "token not found! have you logged in?"
+                raise CompositionError(msg)
+
+            try:
+                self.__client = mergin.MerginClient(
+                    auth_token=token,
+                    url=self.__server,
+                )
+            except mergin.ClientError:
+                msg = "could not create mergin client, likely invalid token. have you logged in?"
+                raise CompositionError(msg)
 
         return self.__client
 
@@ -141,10 +154,6 @@ class MerginBackend(CompositionBackend):
 
     def push_project(self, directory: Path) -> Any:
         self.client().push_project(directory)
-
-
-class CompositionError(Exception):
-    pass
 
 
 class Composition:
