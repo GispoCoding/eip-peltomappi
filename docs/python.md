@@ -165,18 +165,16 @@ Commands:
 
 ### Authentication
 
-For authentication set the `MERGIN_USERNAME` and `MERGIN_PASSWORD` environment variables.
+To login run:
 
-Bash:
-```bash
-export MERGIN_USERNAME="<value>"
-export MERGIN_PASSWORD="<value>"
+```
+peltomappi composition login
 ```
 
-PowerShell:
-```powershell
-$env:MERGIN_USERNAME = ""
-$env:MERGIN_PASSWORD = ""
+To logout run:
+
+```
+peltomappi composition logout
 ```
 
 ### Commands
@@ -362,6 +360,10 @@ but also create and upload the project if it does not already exist.
 When cloning or initializing a composition the CLI will by default use the official
 Mergin Server at [https://app.merginmaps.com](https://app.merginmaps.com). If you need to
 use another server, you may append the `--server` option to the commands:
+
+```sh
+peltomappi composition login --server=http://localhost:8080
+```
 
 ```sh
 peltomappi composition init --server=http://localhost:8080 my_composition my_template my_workspace
