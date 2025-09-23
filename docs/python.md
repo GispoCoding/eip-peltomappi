@@ -95,7 +95,7 @@ The functionality of the Python package is exposed through a
 
 ### Installation
 
-Create a Python virtual environment at a suitable folder:
+Create a Python virtual environment in a suitable folder:
 
 ```sh
 python -m venv peltomappi_venv
