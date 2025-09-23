@@ -110,7 +110,7 @@ def test_from_json(
     comp_dir = Path(saved_composition.name) / "test_saved_composition"
     composition_path = comp_dir / ".composition/composition.json"
 
-    comp = Composition.from_json(composition_path, test_backend)
+    comp = Composition.from_json(composition_path, backend=test_backend)
 
     assert comp.id() == UUID("31668d9c-3d85-49c2-a4f9-534a9238ff2f")
     assert comp.name() == "saved_composition"
@@ -141,7 +141,7 @@ def test_path_getters(
     comp_dir = (Path(saved_composition.name) / "test_saved_composition").resolve()
     composition_path = (comp_dir / ".composition/composition.json").resolve()
 
-    comp = Composition.from_json(composition_path, test_backend)
+    comp = Composition.from_json(composition_path, backend=test_backend)
 
     assert comp.projects_path() == comp_dir
     assert comp.template_project_path() == comp_dir / "template"
@@ -157,7 +157,7 @@ def test_name_getters(
     comp_dir = Path(saved_composition.name) / "test_saved_composition"
     composition_path = comp_dir / ".composition/composition.json"
 
-    comp = Composition.from_json(composition_path, test_backend)
+    comp = Composition.from_json(composition_path, backend=test_backend)
 
     assert comp.mergin_name() == "saved_composition"
     assert comp.mergin_name_with_workspace() == "test_workspace/saved_composition"
@@ -174,7 +174,7 @@ def test_subprojects_match_template(
     comp_dir = Path(saved_composition.name) / "test_saved_composition"
     composition_path = comp_dir / ".composition/composition.json"
 
-    comp = Composition.from_json(composition_path, test_backend)
+    comp = Composition.from_json(composition_path, backend=test_backend)
 
     with pytest.raises(CompositionError):
         comp.subprojects_match_template()

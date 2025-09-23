@@ -193,7 +193,7 @@ class Composition:
         template_name: str,
         subprojects: list[Subproject],
         path: Path,
-        backend: CompositionBackend,
+        backend: CompositionBackend | None = None,
     ) -> None:
         """
         Initializes a composition. Not meant to be used directly, use one of
@@ -206,7 +206,10 @@ class Composition:
         self.__template_name = template_name
         self.__subprojects = subprojects
         self.__path = path
-        self.__backend = backend
+        if backend is not None:
+            self.__backend = backend
+        else:
+            self.__backend = MerginBackend(self.__mergin_server)
 
     def id(self) -> UUID:
         return self.__id
@@ -399,7 +402,7 @@ class Composition:
 
         Composition.from_json(
             composition_config_path,
-            backend,
+            backend=backend,
             download_subprojects=True,
         ).download_template_project()
 
@@ -407,8 +410,8 @@ class Composition:
     def from_json(
         cls,
         json_config: Path,
-        backend: CompositionBackend,
         *,
+        backend: CompositionBackend | None = None,
         download_subprojects: bool = False,
     ) -> Self:
         """
