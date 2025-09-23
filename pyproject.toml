@@ -1,22 +1,40 @@
+[build-system]
+requires = ["uv_build>=0.8.20,<0.9.0"]
+build-backend = "uv_build"
+
 [project]
-name = "eip_peltomappi"
+name = "peltomappi"
 requires-python = ">=3.12"
-version = "1.0.0"
+version = "1.0.0-alpha"
+license = "EUPL-1.2"
+readme = "README.md"
+maintainers = [ { name = "Gispo Finland Ltd.", email = "info@gispo.fi" } ]
+classifiers = ["Private :: Do Not Upload"] # mark private for now
 dependencies = [
     "click>=8.1.3",
-    "mkdocs-redirects>=1.2.2",
-    "mkdocs-material>=9.6.18",
-    "mkdocstrings-python>=0.30.0",
     "geopandas>=1.1.1",
     "jsonschema>=4.25.1",
     "mergin-client>=0.10.5",
 ]
+
+[project.urls]
+homepage = "https://gispocoding.github.io/eip-peltomappi"
+repository = "https://github.com/GispoCoding/eip-peltomappi"
+
+[project.scripts]
+peltomappi = "peltomappi.__main__:cli"
 
 [dependency-groups]
 dev = [
     "freezegun>=1.5.5",
     "pre-commit>=4.2.0",
     "pytest>=8.4.1",
+]
+
+docs = [
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs-material>=9.6.18",
+    "mkdocstrings-python>=0.30.0",
 ]
 
 lint = [

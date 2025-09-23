@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-
 import logging
 import click
 
-from peltomappi.logger import LOGGER
-
 import peltomappi.cli.composition
+from peltomappi.logger import LOGGER
 
 
 @click.group(help="CLI tool to run Peltomappi commands")
@@ -20,8 +17,4 @@ def cli(quiet):
         LOGGER.setLevel(logging.ERROR)
 
 
-if __name__ == "__main__":
-    # cli.add_command(peltomappi.cli.weather.weather)
-    cli.add_command(peltomappi.cli.composition.composition)
-
-    cli()
+cli.add_command(peltomappi.cli.composition.composition)
