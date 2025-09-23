@@ -6,9 +6,9 @@ The purpose of the EIP Peltomappi project is to provide a mapping tool for
 farmers. Mergin Maps is used as the application for the mapping. However, this
 tool is meant to be specific to one user or a small group of users and any
 collected data is not meant to be centrally collected or shared. Therefore
-using Mergin projects the "traditional" way, i.e. having a shared project is
-not suitable for this project. Additionally, local GeoPackage files are
-required to provide background data for the project, which would make the
+using Mergin projects the "traditional" way, i.e. having a shared Mergin
+project is not suitable for this use case. Additionally, local GeoPackage files
+are required to provide background data for the project, which would make a
 shared project impractically large in disk size.
 
 Mergin offers a partial solution with [Work
@@ -121,6 +121,49 @@ Commands:
   composition  Commands to manage compositions i.e.
 ```
 
+### Aliasing
+
+As the Python package is not currently packaged, for convenience you may want
+to define an symbolic link/function to make running the entrypoint script
+easier.
+
+Navigate to the root of the eip-peltomappi repository in a shell.
+
+PowerShell:
+
+```
+$script_location="$(Resolve-Path ./src/pm.py)"
+function peltomappi {python $script_location}
+```
+
+Bash:
+
+```
+ln -s "$(realpath ./src/pm.py)" ~/.local/bin/peltomappi
+```
+
+Now you can invoke the script like this:
+
+```bash
+peltomappi composition --help
+```
+
+### Authentication
+
+For authentication set the `MERGIN_USERNAME` and `MERGIN_PASSWORD` environment variables.
+
+Bash:
+```bash
+export MERGIN_USERNAME="<value>"
+export MERGIN_PASSWORD="<value>"
+```
+
+PowerShell:
+```powershell
+$env:MERGIN_USERNAME = ""
+$env:MERGIN_PASSWORD = ""
+```
+
 ### Commands
 
 Currently there is only one main command, `composition`.
@@ -155,22 +198,6 @@ The `composition` command has several subcommands:
 * pull: Pulls changes from the Mergin Server to the local composition
 * push: Pushes the local composition with its changes to the Mergin Server
 * subprojects-match-template: Updates the configuration files of each subproject to match the template
-
-### Authentication
-
-For authentication set the `MERGIN_USERNAME` and `MERGIN_PASSWORD` environment variables.
-
-Bash:
-```bash
-export MERGIN_USERNAME="<value>"
-export MERGIN_PASSWORD="<value>"
-```
-
-PowerShell:
-```powershell
-$env:MERGIN_USERNAME = ""
-$env:MERGIN_PASSWORD = ""
-```
 
 ### Examples
 
@@ -213,6 +240,21 @@ python pm.py composition clone local_composition my_composition my_workspace
 !!! note
     This step may take a while, since the full data folder is also downloaded,
     which can be quite large.
+
+#### Examining a composition
+
+You can print out information about a locally existing composition:
+
+```sh
+python pm.y composition info my_composition
+```
+
+If you don't want information about subprojects to be printed out you can add
+the `--only-composition` flag.
+
+```sh
+python pm.y composition info my_composition --only-composition
+```
 
 #### Adding subprojects to a composition
 

@@ -196,3 +196,22 @@ class Subproject:
                 timestamp=timestamp,
             )
         )
+
+    def describe(self, *, indent: int = 0) -> None:
+        """
+        Logs information about this subproject.
+        """
+        indent_str = "\t" * indent
+
+        def iprint(text: str) -> None:
+            print(f"{indent_str}{text}")
+
+        iprint(f'Subproject "{self.__name}" ({self.__id}):')
+        iprint(f'\tPath: "{self.__path}"')
+        iprint(f'\tPart of composition: "{self.__composition_id}"')
+        iprint("\tField Parcel IDs:")
+        for id in self.__field_parcel_ids:
+            iprint(f"\t\t{id}")
+        iprint(f'\tCreated at: "{self.__created}"')
+        for mod in self.__modified:
+            iprint(f'\tModified at: "{mod.timestamp}", type: "{mod.mod_type}"')
