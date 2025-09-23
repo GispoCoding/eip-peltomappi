@@ -46,3 +46,5 @@ formatter
 levelno
 sqlite3
 fetchall
+pwd
+keyring

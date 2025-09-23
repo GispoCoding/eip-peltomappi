@@ -117,16 +117,16 @@ Download the packaged tool:
 
 Windows (PowerShell):
 ```powershell
-Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl" -OutFile .\peltomappi-1.0.0a0-py3-none-any.whl
+Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl" -OutFile .\peltomappi-1.0.2a0-py3-none-any.whl
 ```
 
 Bash (requires wget):
 ```sh
-wget -q https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl
+wget -q https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl
 ```
 
 If the download commands do not work you may also download the file manually
-[here](https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.1-alpha/peltomappi-1.0.0a0-py3-none-any.whl).
+[here](https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl).
 
 Then either move the file to the directory or navigate to the download
 directory in your shell.
@@ -134,7 +134,7 @@ directory in your shell.
 Install the tool:
 
 ```sh
-pip install peltomappi-1.0.0a0-py3-none-any.whl
+pip install peltomappi-1.0.2a0-py3-none-any.whl
 ```
 
 Confirm that the tool was correctly installed:
