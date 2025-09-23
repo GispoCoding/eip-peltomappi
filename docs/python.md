@@ -370,7 +370,7 @@ peltomappi composition clone --server=http://localhost:8080 cloned_composition m
 ```
 
 !!! note
-    In other command (i.e. when not creating a new composition) the server is
+    In other commands (i.e. when not creating a new composition) the server is
     read from the `composition.json` file and cannot be modified.
 
 ## Library
