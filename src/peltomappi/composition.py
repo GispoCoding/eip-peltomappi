@@ -472,7 +472,7 @@ class Composition:
         """
         Pulls any changes from the backend to the local composition.
         """
-        # TODO: conflicts? at least log them
+        # TODO: conflicts
         LOGGER.info("Pulling composition")
         if conflicts := self.__backend.pull_project(self.__path):
             LOGGER.warning(f"Composition conflicts: {conflicts}")
@@ -524,6 +524,24 @@ class Composition:
             self.__backend.push_project(
                 self.path(),
             )
+
+    def describe(self, *, describe_subprojects: bool = True) -> None:
+        print(f'Composition "{self.__name}" ({self.__id}):')
+        print(f'\tMergin Server: "{self.__mergin_server}"')
+        print(f'\tMergin Workspace: "{self.__mergin_workspace}"')
+        print(f'\tTemplate Project: "{self.__template_name}"')
+        print(f'\tTemplate Project Folder: "{self.template_project_path()}"')
+        print(f'\tTemplate Project with Workspace: "{self.template_mergin_name_with_workspace()}"')
+        print(f'\tSubprojects Folder: "{self.projects_path()}"')
+        print(f'\tFull Data Folder: "{self.full_data_path()}"')
+        print(f'\tMergin Project Name: "{self.mergin_name()}"')
+        print(f'\tMergin Project with Workspace: "{self.mergin_name_with_workspace()}"')
+
+        if not describe_subprojects:
+            return
+
+        for sp in self.__subprojects:
+            sp.describe(indent=1)
 
     def subprojects_match_template(self) -> None:
         """

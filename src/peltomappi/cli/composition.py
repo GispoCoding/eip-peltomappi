@@ -181,3 +181,28 @@ def clone(
 def subprojects_match_template(composition: Path):
     comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
     comp.subprojects_match_template()
+
+
+@composition.command(help="Prints information about composition")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=resolve_composition_input,
+)
+@click.option(
+    "--only-composition",
+    type=click.BOOL,
+    default=True,
+    is_flag=True,
+    help="Don't print subproject info",
+)
+def info(composition: Path, only_composition: bool):
+    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp.describe(describe_subprojects=only_composition)
