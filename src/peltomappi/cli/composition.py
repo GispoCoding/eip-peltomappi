@@ -6,7 +6,6 @@ from peltomappi.composition import Composition, MerginBackend
 
 
 DEFAULT_MERGIN_SERVER = "https://app.merginmaps.com"
-g_mergin_server = DEFAULT_MERGIN_SERVER
 
 
 def mergin_backend(server: str) -> MerginBackend:
@@ -14,15 +13,8 @@ def mergin_backend(server: str) -> MerginBackend:
 
 
 @click.group(help="Commands to manage compositions i.e. a collection of one or more subprojects")
-@click.option(
-    "--server",
-    type=click.STRING,
-    default=DEFAULT_MERGIN_SERVER,
-    help="Specify non-default Mergin Maps Server",
-)
-def composition(server):
-    global g_mergin_server
-    g_mergin_server = server
+def composition():
+    pass
 
 
 @composition.command(help="Initializes a new empty composition")
@@ -46,18 +38,25 @@ def composition(server):
     "workspace",
     type=click.STRING,
 )
+@click.option(
+    "--server",
+    type=click.STRING,
+    default=DEFAULT_MERGIN_SERVER,
+    help="Specify non-default server",
+)
 def init(
     name: Path,
     template_name: str,
     workspace: str,
+    server: str,
 ):
     Composition.initialize(
         name,
         template_name,
         name.stem,
         workspace,
-        g_mergin_server,
-        mergin_backend(g_mergin_server),
+        server,
+        mergin_backend(server),
     )
 
 
@@ -90,7 +89,7 @@ def add(
     composition: Path,
     parcel_specification: Path,
 ):
-    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp = Composition.from_json(composition)
     comp.add_subproject_from_parcelspec(parcel_specification)
     comp.save()
 
@@ -109,7 +108,7 @@ def add(
     callback=resolve_composition_input,
 )
 def push(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp = Composition.from_json(composition)
     comp.push()
 
 
@@ -127,7 +126,7 @@ def push(composition: Path):
     callback=resolve_composition_input,
 )
 def pull(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp = Composition.from_json(composition)
     comp.pull()
 
 
@@ -152,16 +151,23 @@ def pull(composition: Path):
     "workspace",
     type=click.STRING,
 )
+@click.option(
+    "--server",
+    type=click.STRING,
+    default=DEFAULT_MERGIN_SERVER,
+    help="Specify non-default server",
+)
 def clone(
     path: Path,
     name: str,
     workspace: str,
+    server: str,
 ):
     Composition.clone(
         path,
         name,
         workspace,
-        mergin_backend(g_mergin_server),
+        mergin_backend(server),
     )
 
 
@@ -179,7 +185,7 @@ def clone(
     callback=resolve_composition_input,
 )
 def subprojects_match_template(composition: Path):
-    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp = Composition.from_json(composition)
     comp.subprojects_match_template()
 
 
@@ -204,5 +210,5 @@ def subprojects_match_template(composition: Path):
     help="Don't print subproject info",
 )
 def info(composition: Path, only_composition: bool):
-    comp = Composition.from_json(composition, mergin_backend(g_mergin_server))
+    comp = Composition.from_json(composition)
     comp.describe(describe_subprojects=only_composition)
