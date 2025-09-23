@@ -131,6 +131,8 @@ If the download commands do not work you may also download the file manually
 Then either move the file to the directory or navigate to the download
 directory in your shell.
 
+Install the tool:
+
 ```sh
 pip install peltomappi-1.0.0a0-py3-none-any.whl
 ```
