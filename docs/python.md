@@ -117,16 +117,16 @@ Download the packaged tool:
 
 Windows (PowerShell):
 ```powershell
-Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl" -OutFile .\peltomappi-1.0.2a0-py3-none-any.whl
+Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-package.whl" -OutFile .\peltomappi-package.whl
 ```
 
 Bash (requires wget):
 ```sh
-wget -q https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl
+wget -q https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-package.whl
 ```
 
 If the download commands do not work you may also download the file manually
-[here](https://github.com/GispoCoding/eip-peltomappi/releases/download/v.1.0.2-alpha/peltomappi-1.0.2a0-py3-none-any.whl).
+[here](https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-package.whl).
 
 Then either move the file to the directory or navigate to the download
 directory in your shell.
@@ -134,7 +134,7 @@ directory in your shell.
 Install the tool:
 
 ```sh
-pip install peltomappi-1.0.2a0-py3-none-any.whl
+pip install peltomappi-package.whl
 ```
 
 Confirm that the tool was correctly installed:
@@ -202,6 +202,7 @@ Commands:
   logout                      Removes token
   pull                        Pulls changes from the Mergin Server to the...
   push                        Pushes the local composition with its...
+  subprojects-export-csv      Updates the configuration files of each...
   subprojects-match-template  Updates the configuration files of each...
 ```
 
@@ -215,6 +216,7 @@ The `composition` command has several subcommands:
 * pull: Pulls changes from the Mergin Server to the local composition
 * push: Pushes the local composition with its changes to the Mergin Server
 * subprojects-match-template: Updates the configuration files of each subproject to match the template
+* subprojects-export-csv: Exports user data of each subproject to csv files
 
 ### Examples
 
@@ -360,6 +362,12 @@ also pushed.
 !!! note
     If you are pushing the composition for the first time, the full data is
     also uploaded to the server, which may take a long time.
+
+#### Export user data to csv
+
+```sh
+peltomappi composition subprojects-export-csv my_composition
+```
 
 #### Non-default server
 

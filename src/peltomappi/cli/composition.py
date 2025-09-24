@@ -193,7 +193,7 @@ def subprojects_match_template(composition: Path):
     comp.subprojects_match_template()
 
 
-@composition.command(help="Updates the configuration files of each subproject to match the template")
+@composition.command(help="Exports user data of each subproject to csv files")
 @click.argument(
     "composition",
     type=click.Path(
