@@ -231,11 +231,11 @@ def login(server: str):
 
     token = mergin.cli.get_token(url=server, username=username, password=pwd)
 
-    token = f"Bearer {token}"
-
     if not isinstance(token, str):
         msg = "token is not string"
         raise ValueError(msg)
+
+    token = f"Bearer {token}"
 
     import keyring
 
