@@ -117,7 +117,7 @@ Download the packaged tool:
 
 Windows (PowerShell):
 ```powershell
-Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-alpha-py3-none-any.whl" -OutFile .\peltomappi-package.whl
+Invoke-WebRequest "https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-alpha-py3-none-any.whl" -OutFile .\peltomappi-alpha-py3-none-any.whl
 ```
 
 Bash (requires wget):
