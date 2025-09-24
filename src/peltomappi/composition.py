@@ -16,7 +16,6 @@ from peltomappi.parcelspec import ParcelSpecification
 from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, ModificationType, Subproject
 from peltomappi.utils import clean_string_to_filename, sha256_file
 
-PELTOMAPPI_CONFIG_LAYER_NAME = "__peltomappi_config"
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
@@ -536,6 +535,16 @@ class Composition:
             self.__backend.push_project(
                 self.path(),
             )
+
+    def subprojects_export_csv(self) -> None:
+        """
+        Exports user data in subprojects to CSV files.
+        """
+        LOGGER.info("Exporting projects to csv")
+        full_data_gpkgs = tuple([gpkg.name for gpkg in self.full_data_path().glob("*.gpkg")])
+
+        for sp in self.__subprojects:
+            sp.export_user_data_to_csv(full_data_gpkgs)
 
     def describe(self, *, describe_subprojects: bool = True) -> None:
         print(f'Composition "{self.__name}" ({self.__id}):')

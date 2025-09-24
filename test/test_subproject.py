@@ -103,3 +103,29 @@ def test_save(subproject_json_2: Path):
 }"""
 
     assert subproject.json_config_path().read_text() == expected_2
+
+
+def test_export_user_data_to_csv(subproject_with_data_folder: Path):
+    tempdir = tempfile.TemporaryDirectory()
+    temp_path = Path(tempdir.name)
+    subproject_path = temp_path / "subproject"
+
+    shutil.copytree(subproject_with_data_folder, subproject_path)
+    subproject = Subproject.from_json(subproject_path / "peltomappi_subproject.json")
+    subproject.export_user_data_to_csv(())
+
+    assert subproject.tables_directory().exists()
+
+    csv = subproject.tables_directory() / "data.csv"
+
+    assert csv.exists()
+
+    expected = """,PERUSLOHKOTUNNUS,x,y
+0,1111111111,500.0,-500.0
+1,2222222222,8500.0,500.0
+2,3333333333,7500.0,-6500.0
+3,4444444444,500.0,-7500.0
+"""
+
+    with open(csv, "r") as file:
+        assert file.read() == expected

@@ -34,6 +34,11 @@ def subproject_json_2() -> Path:
 
 
 @pytest.fixture
+def subproject_with_data_folder() -> Path:
+    return testdata_path() / "test_subproject_with_data"
+
+
+@pytest.fixture
 def parcel_spec() -> Path:
     return testdata_path() / "test_parcelspec.json"
 

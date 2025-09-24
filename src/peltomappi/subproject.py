@@ -5,13 +5,18 @@ from pathlib import Path
 from typing import Any, NamedTuple, Self
 from uuid import UUID
 
+from geopandas import gpd, pd
+
 import jsonschema
+
+from peltomappi.logger import LOGGER
 
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
 TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 SUBPROJECT_CONFIG_NAME = "peltomappi_subproject.json"
+TRACKING_LAYER_NAME = "tracking_layer"
 
 
 class ModificationType(Enum):
@@ -150,6 +155,9 @@ class Subproject:
     def composition_id(self) -> UUID:
         return self.__composition_id
 
+    def tables_directory(self) -> Path:
+        return self.__path / "tables"
+
     def to_json_dict(self) -> dict[str, Any]:
         """
         Returns:
@@ -215,3 +223,38 @@ class Subproject:
         iprint(f'\tCreated at: "{self.__created}"')
         for mod in self.__modified:
             iprint(f'\tModified at: "{mod.timestamp}", type: "{mod.mod_type}"')
+
+    def export_user_data_to_csv(
+        self,
+        full_data_gpkgs: tuple[str, ...],
+    ) -> None:
+        """
+        Exports user data in to CSV files.
+        """
+        for file in self.__path.glob("*.gpkg"):
+            if file.name.endswith(".gpkg-shm") or file.name.endswith(".gpkg-wal"):
+                continue
+
+            if file.name in full_data_gpkgs:
+                continue
+
+            if file.stem == TRACKING_LAYER_NAME:
+                continue
+
+            if not self.tables_directory().exists():
+                self.tables_directory().mkdir()
+
+            out_path = self.tables_directory() / f"{file.stem}.csv"
+
+            LOGGER.info(f"Exporting {file} to {out_path}")
+
+            in_gdf = gpd.read_file(file)
+
+            if isinstance(in_gdf, gpd.GeoDataFrame):
+                in_gdf["x"] = in_gdf.geometry.centroid.x
+                in_gdf["y"] = in_gdf.geometry.centroid.y
+                in_gdf = pd.DataFrame(in_gdf.drop(columns=["geometry"]))
+                in_gdf.to_csv(out_path)
+                continue
+            elif isinstance(in_gdf, pd.DataFrame):
+                in_gdf.to_csv(out_path)

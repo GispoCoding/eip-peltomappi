@@ -48,3 +48,5 @@ sqlite3
 fetchall
 pwd
 keyring
+csv
+centroid
