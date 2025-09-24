@@ -31,7 +31,7 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
     -   Asetukset: sisältää seuraavat lisäasetukset:
         -   GPS-asetukset: GPS tarkkuuden raja-arvot, Hallinnoi GPS vastaanottimia, GPS antennin korkeus
         -   [Nauhoitustila](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html): Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
-        -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse autommaatinen sijainti, kosketuspalaute
+        -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse automaattinen sijainti, kosketuspalaute
         -   Sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
 
 ## **Karttatasot**
