@@ -33,5 +33,5 @@ jobs:
           uv build
 
           # HACK: move this so we can link to the "latest" GH release in docs etc.
-          mv dist/*.whl dist/peltomappi-package.whl
+          mv dist/*.whl dist/peltomappi-alpha-py3-none-any.whl
           gh release create "$tag" --repo="$GITHUB_REPOSITORY" --title="${GITHUB_REPOSITORY#*/} ${tag#v}" --generate-notes ./dist/*
