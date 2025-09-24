@@ -193,6 +193,24 @@ def subprojects_match_template(composition: Path):
     comp.subprojects_match_template()
 
 
+@composition.command(help="Updates the configuration files of each subproject to match the template")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=resolve_composition_input,
+)
+def subprojects_export_csv(composition: Path):
+    comp = Composition.from_json(composition)
+    comp.subprojects_export_csv()
+
+
 @composition.command(help="Prints information about composition")
 @click.argument(
     "composition",
