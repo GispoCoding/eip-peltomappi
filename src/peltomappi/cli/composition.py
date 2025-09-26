@@ -211,6 +211,24 @@ def subprojects_export_csv(composition: Path):
     comp.subprojects_export_csv()
 
 
+@composition.command(help="Updates weather data of each subproject")
+@click.argument(
+    "composition",
+    type=click.Path(
+        exists=True,
+        dir_okay=True,
+        file_okay=True,
+        writable=False,
+        readable=True,
+        resolve_path=True,
+    ),
+    callback=resolve_composition_input,
+)
+def subprojects_update_weather(composition: Path):
+    comp = Composition.from_json(composition)
+    comp.subprojects_update_weather()
+
+
 @composition.command(help="Prints information about composition")
 @click.argument(
     "composition",
