@@ -30,7 +30,7 @@ Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZ
 
 !!! note "💡 **Info**" 
     **Mergin Maps mobiilisovelluksen käyttö ei edellytä QGISin käyttöä**. Sitä voi käyttää täysin itsenäisesti, mutta jos haluat laajemmat työkalut käyttöön ja haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella ne onnistuvat parhaiten QGISin avulla.
-    
+
 !!! note "💡 **Info**" 
     QGIS on avoimen lähdekoodin paikkatieto-ohjelmisto, jonka avulla voit tarkastella, muokata ja analysoida paikkatietoaineistoja. Kun lataat projektin QGISiin, näet peltolohkosi kartalla ja voit käsitellä niihin liittyviä ominaisuustietoja myös ilman verkkoyhteyttä. 
     
@@ -78,7 +78,7 @@ Valitse **Save credentials***,* jos haluat että ohjelma muistaa tunnuksesi seur
 
 Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi listattuna.
 
-**Projektin lataaminen QGIS:iin MerginMaps-lisäosalla**
+**Projektin lataaminen QGISiin MerginMaps-lisäosalla**
 
 1.  Avaa ***Mergin Maps*** -paneeli QGIS:ssä vasemman laidan selainosiosta.
 
@@ -86,7 +86,7 @@ Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi list
 
 3.  Valitse projekti, jonka haluat ladata.
 
-4.  Klikkaa ***Download*** ***projec**t* (Lataa projekti).
+4.  Klikkaa ***Download*** ***project*** (Lataa projekti).
 
 5.  Valitse kansio, johon projekti tallennetaan. Laita mieleen tämä sijainti. Tähän samaan sijaintiin tallennetaan myöhemmin [georeferoidut kuvat](https://gispocoding.github.io/eip-peltomappi/salaojakarttojen_georeferointi.html).
 
