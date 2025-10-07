@@ -414,4 +414,3 @@ Here is the auto-generated documentation of the `peltomappi` package/library:
 ### Module: utils
 
 ::: src.peltomappi.utils
-
