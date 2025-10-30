@@ -9,14 +9,16 @@ import jsonschema
 
 from peltomappi.filter import (
     copy_gpkg_as_empty,
-    filter_dataset_by_field_parcel_ids,
+    filter_gpkg_by_field_parcel_ids,
+    spatial_filter,
     get_spatial_filter_from_field_parcel_ids,
 )
 from peltomappi.logger import LOGGER
 from peltomappi.subproject import Subproject
 
 SCHEMA_PARCEL_SPECIFICATION = Path(__file__).parent / "parcelspecification.schema.json"
-FILTER_DATASET_NAME = "peltolohkot_2024.gpkg"
+FIELD_PARCEL_FILE_PREFIX = "Peltolohkot_"
+FILTER_DATASET_NAME = f"{FIELD_PARCEL_FILE_PREFIX}2024.gpkg"
 
 
 class ParcelSpecificationError(Exception):
@@ -102,7 +104,7 @@ class ParcelSpecification:
 
         LOGGER.info("Dividing project data...")
 
-        spatial_filter = get_spatial_filter_from_field_parcel_ids(
+        spatial_filter_geom = get_spatial_filter_from_field_parcel_ids(
             filter_dataset,
             set(self.__field_parcel_ids),
         )
@@ -115,11 +117,19 @@ class ParcelSpecification:
 
         for file in full_data_directory.glob("*.gpkg"):
             LOGGER.info(f"Dividing {file.stem}...")
-            filter_dataset_by_field_parcel_ids(
-                file,
-                output_directory / f"{file.stem}.gpkg",
-                spatial_filter,
-            )
+            output = output_directory / f"{file.stem}.gpkg"
+            if file.stem.startswith(FIELD_PARCEL_FILE_PREFIX):
+                filter_gpkg_by_field_parcel_ids(
+                    file,
+                    output,
+                    self.__field_parcel_ids,
+                )
+            else:
+                spatial_filter(
+                    file,
+                    output,
+                    spatial_filter_geom,
+                )
 
         subproject = Subproject(
             uuid4(),

@@ -10,7 +10,6 @@ from shapely.geometry import Polygon
 from peltomappi.logger import LOGGER
 
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
-DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS = 1000
 
 
 class FilterError(Exception):
@@ -21,7 +20,7 @@ def get_spatial_filter_from_field_parcel_ids(
     field_parcel_dataset: Path,
     field_parcel_ids: set[str],
     *,
-    buffer_distance: float = DEFAULT_IDENTIFIED_FIELD_PARCEL_BUFFER_DISTANCE_METERS,
+    buffer_distance: float = 1000,
 ) -> Polygon:
     """
     Returns:
@@ -44,7 +43,7 @@ def get_spatial_filter_from_field_parcel_ids(
     return field_parcel_gdf.geometry.union_all().buffer(buffer_distance)
 
 
-def filter_dataset_by_field_parcel_ids(
+def spatial_filter(
     input_path: Path,
     output_path: Path,
     spatial_filter: Polygon,
@@ -98,6 +97,42 @@ def filter_dataset_by_field_parcel_ids(
     )
 
 
+def filter_gpkg_by_field_parcel_ids(
+    input_path: Path,
+    output_path: Path,
+    field_parcel_ids: list[str],
+    *,
+    overwrite: bool = False,
+) -> None:
+    """
+    Reads an input field parcel dataset, filters it and saves to new location
+    """
+
+    # TODO: test
+
+    if not overwrite and output_path.exists():
+        msg = f"attempting to write file {output_path} but it already exists and overwrite has not been permitted"
+        raise FilterError(msg)
+
+    filter_tuple_innards = ", ".join(f"'{id}'" for id in field_parcel_ids)
+    where_clause: str = f'"{FIELD_PARCEL_IDENTIFIER_COLUMN}" IN ({filter_tuple_innards})'
+    field_parcel_gdf: gpd.GeoDataFrame = gpd.read_file(
+        input_path,
+        engine="pyogrio",
+        where=where_clause,
+    )
+
+    series = pd.Series([id for id in field_parcel_ids])
+    if not field_parcel_gdf[FIELD_PARCEL_IDENTIFIER_COLUMN].isin(series).all:
+        msg = "unexpected ids found in filtered dataset"
+        raise FilterError(msg)
+
+    if len(field_parcel_gdf.index) == 0:
+        LOGGER.warning("Filtered GeoDataFrame is empty!")
+
+    field_parcel_gdf.to_file(output_path)
+
+
 def copy_gpkg_as_empty(
     input_path: Path,
     output_path: Path,
@@ -145,6 +180,10 @@ def copy_gpkg_as_empty(
 
         table = tables[0]
 
-        cursor.execute(f"DELETE FROM {table};")
+        cursor.execute(f'DELETE FROM "{table}";')
+
+    with sqlite3.connect(temp_file_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute("VACUUM;")
 
     shutil.move(temp_file_path, output_path)
