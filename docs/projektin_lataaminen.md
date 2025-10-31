@@ -2,7 +2,7 @@
 
 ## **Projektin lataaminen mobiilisovellukseen sähköpostilinkin avulla**
 
-Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
+Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
 <img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
 
 !!! note "**💡 HUOM!**" 
@@ -25,6 +25,16 @@ Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZ
 <iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
+
+## **Uusimman projektitiedoston lataaminen mobiilisovellukseen (vanhat testaajat)**
+
+1. Avaa Mergin Maps- mobiilisovellus
+
+2. Valitse alavalikosta ***Projektit*** ja napauta eip-peltomappi- projektia
+
+3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
+
+<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
