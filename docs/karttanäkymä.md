@@ -61,7 +61,7 @@ Karttateemoissa on valittavana seuraavat teemat:
 
 -   Ilmakuva
 
--   Lätäkköt
+-   Lätäköt
 
 -   Peltolohkot 2020
 
