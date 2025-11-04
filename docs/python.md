@@ -91,7 +91,7 @@ This is detailed in the next section.
 ## Command Line Interface
 
 The functionality of the Python package is exposed through a
-[Click](https://click.palletsprojects.com/en/stable/) based CLI.
+[Typer](https://typer.tiangolo.com/) based CLI.
 
 ### Installation
 
@@ -147,15 +147,10 @@ You should see the following output:
 
 ```
 Usage: peltomappi [OPTIONS] COMMAND [ARGS]...
-
-  CLI tool to run Peltomappi commands
-
-Options:
-  -q, --quiet  Only print out errors.
-  --help       Show this message and exit.
-
-Commands:
-  composition  Commands to manage compositions i.e.
+Try 'peltomappi --help' for help.
+╭─ Error ──────────╮
+│ Missing command. │
+╰──────────────────╯
 ```
 
 !!! note
@@ -168,69 +163,125 @@ Commands:
 To login run:
 
 ```
-peltomappi composition login
+peltomappi login
 ```
 
 To logout run:
 
 ```
-peltomappi composition logout
+peltomappi logout
 ```
 
 ### Commands
 
-Currently there is only one main command, `composition`.
+```sh
+peltomappi --help
+```
+
+```
+ Usage: peltomappi [OPTIONS] COMMAND [ARGS]...
+
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --install-completion          Install completion for the current shell.                                        │
+│ --show-completion             Show completion for the current shell, to copy it or customize the installation. │
+│ --help                        Show this message and exit.                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ init                         Initializes a new empty composition                                               │
+│ add                          Creates a subproject from parcel specification and adds it to composition         │
+│ push                         Pushes the local composition with its changes to the Mergin Server                │
+│ pull                         Pulls changes from the Mergin Server to the local composition                     │
+│ clone                        Downloads an existing composition from a Mergin Maps Server                       │
+│ subprojects-match-template   Updates the configuration files of each subproject to match the template          │
+│ subprojects-export-csv       Exports user data of each subproject to csv files                                 │
+│ subprojects-update-weather   Updates weather data of each subproject                                           │
+│ info                         Prints information about composition                                              │
+│ login                        Authenticates username and password to Mergin Server and stores token to keyring  │
+│ logout                       Removes token                                                                     │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+#### Help
+
+To get information about any command add the --help flag after it:
 
 ```sh
-peltomappi composition --help
+peltomappi init --help
+```
+
+Output:
+```
+ Usage: peltomappi init [OPTIONS] NAME
+
+ Initializes a new empty composition
+
+╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *    name      DIRECTORY  Path to new composition directory [required]                                      │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *  --template        TEXT  Name of project in Mergin Server to use as a template project [required]    │
+│ *  --workspace            TEXT  Workspace in the Mergin Server to use [required]                            │
+│    --server               TEXT  Address of Mergin Server to connect to [default: https://app.merginmaps.com]│
+│    --help                       Show this message and exit.                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+```
+
+There are __arguments__ and __options__. Here _name_ is an __argument__ and is entered as is:
+
+```sh
+peltomappi init my_composition_name
+```
+
+However, _template_ and _workspace_ are __options__ and are entered like this:
+
+```sh
+peltomappi init my_composition_name --template=my_template_name --workspace=my_workspace
+```
+
+You can also skip the __=__ sign:
+
+```sh
+peltomappi init my_composition_name --template my_template_name --workspace my_workspace
+```
+
+Some options have a default value and are mandatory to enter, however you may override the default argument.
+
+There are some _boolean options_ (also called flags):
+
+```sh
+peltomappi info --help
 ```
 
 ```
-Usage: peltomappi composition [OPTIONS] COMMAND [ARGS]...
+ Usage: peltomappi info [OPTIONS] COMPOSITION
 
-  Commands to manage compositions i.e. a collection of one or more subprojects
+ Prints information about composition
 
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  add                         Creates a subproject from parcel...
-  clone                       Downloads an existing composition from a...
-  info                        Prints information about composition
-  init                        Initializes a new empty composition
-  login                       Logs into Mergin Server
-  logout                      Removes token
-  pull                        Pulls changes from the Mergin Server to the...
-  push                        Pushes the local composition with its...
-  subprojects-export-csv      Updates the configuration files of each...
-  subprojects-match-template  Updates the configuration files of each...
+╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────╮
+│ *    composition      EXISTING_COMPOSITION  Path to existing composition directory [required]     │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────╮
+│ --subproj    --no-subproj      Print information about subprojects [default: subproj]             │
+│ --help                         Show this message and exit.                                        │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-The `composition` command has several subcommands:
+Flags do not require giving a value:
 
-* add: Creates a subproject from parcel specification and adds it to composition
-* clone: Downloads an existing composition from a Mergin Maps Server
-* init: Initializes a new empty composition
-* login: Logs into Mergin Server
-* logout: Logs out of Mergin Server
-* pull: Pulls changes from the Mergin Server to the local composition
-* push: Pushes the local composition with its changes to the Mergin Server
-* subprojects-match-template: Updates the configuration files of each subproject to match the template
-* subprojects-export-csv: Exports user data of each subproject to csv files
+```sh
+peltomappi info --no-subproj my_composition
+```
 
 ### Examples
 
 #### Initializing a composition
 
 ```sh
-peltomappi composition init <composition_name> <template_name> <workspace_name>
+peltomappi init my_composition --template=my_template --workspace=my_workspace
 ```
 
-```sh
-peltomappi composition init my_composition my_template my_workspace
-```
-
-The template argument corresponds to an existing project in the Mergin Maps
+The template option corresponds to an existing project in the Mergin Maps
 server, meaning it should be created and uploaded prior to creating a
 composition using it. You can do this manually, with the QGIS plugin or with
 the Mergin client CLI:
@@ -249,11 +300,7 @@ If a composition has already been created and is pushed to the Mergin Server, yo
 clone it to your local machine:
 
 ```sh
-peltomappi composition clone <folder_name> <name> <mergin_workspace>
-```
-
-```sh
-peltomappi composition clone local_composition my_composition my_workspace
+peltomappi clone composition_name_in_server path_of_cloned_directory --workspace=my_workspace
 ```
 
 !!! note
@@ -265,14 +312,14 @@ peltomappi composition clone local_composition my_composition my_workspace
 You can print out information about a locally existing composition:
 
 ```sh
-peltomappi composition info my_composition
+peltomappi info my_composition
 ```
 
 If you don't want information about subprojects to be printed out you can add
-the `--only-composition` flag.
+the `--no-subproj` flag.
 
 ```sh
-peltomappi composition info my_composition --only-composition
+peltomappi info my_composition --no-subproj
 ```
 
 #### Adding subprojects to a composition
@@ -299,11 +346,7 @@ Once you have saved the parcel specification JSON, you can create a subproject
 and add it to a composition:
 
 ```sh
-peltomappi composition add <composition> <parcel_spec_json>
-```
-
-```sh
-peltomappi composition add my_composition parcelspec.json
+peltomappi add parcelspec.json my_composition
 ```
 
 Here `my_composition` being the folder which was created by the `init` or
@@ -324,7 +367,7 @@ make changes to the template project you should ensure that you have the
 latest changes in your local composition.
 
 ```sh
-peltomappi composition pull my_composition
+peltomappi pull my_composition
 ```
 
 #### Making modifications
@@ -339,7 +382,7 @@ Instead you should make any changes to the **template** project, save them and
 update the changes to the subprojects using the CLI:
 
 ```sh
-peltomappi composition subprojects-match-template my_composition
+peltomappi subprojects-match-template my_composition
 ```
 
 !!! note
@@ -351,7 +394,7 @@ peltomappi composition subprojects-match-template my_composition
 Push by running:
 
 ```sh
-peltomappi composition push my_composition
+peltomappi push my_composition
 ```
 
 Pushing will update any modified files to the subprojects in the Mergin Server,
@@ -366,7 +409,7 @@ also pushed.
 #### Export user data to csv
 
 ```sh
-peltomappi composition subprojects-export-csv my_composition
+peltomappi subprojects-export-csv my_composition
 ```
 
 #### Non-default server
@@ -376,20 +419,20 @@ Mergin Server at [https://app.merginmaps.com](https://app.merginmaps.com). If yo
 use another server, you may append the `--server` option to the commands:
 
 ```sh
-peltomappi composition login --server=http://localhost:8080
+peltomappi login --server=http://localhost:8080
 ```
 
 ```sh
-peltomappi composition init --server=http://localhost:8080 my_composition my_template my_workspace
+peltomappi init --server=http://localhost:8080 my_composition --template=my_template --workspace=my_workspace
 ```
 
 ```sh
-peltomappi composition clone --server=http://localhost:8080 cloned_composition my_composition my_workspace
+peltomappi clone --server=http://localhost:8080 composition_name_in_server path_of_cloned_directory --workspace=my_workspace
 ```
 
 !!! note
     In other commands (i.e. when not creating a new composition) the server is
-    read from the `composition.json` file and cannot be modified.
+    read from the `composition.json` file and cannot be modified in the command.
 
 ## Library
 

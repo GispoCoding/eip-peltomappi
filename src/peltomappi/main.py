@@ -72,13 +72,13 @@ app = typer.Typer()
 @app.command(help="Initializes a new empty composition")
 def init(
     name: NewCompositionPath,
-    template_name: Annotated[str, typer.Option(help="Name of project in Mergin Server to use as a template project")],
+    template: Annotated[str, typer.Option(help="Name of project in Mergin Server to use as a template project")],
     workspace: Workspace,
     server: Server = DEFAULT_MERGIN_SERVER,
 ):
     Composition.initialize(
         name,
-        template_name,
+        template,
         name.stem,
         workspace,
         server,
