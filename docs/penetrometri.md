@@ -12,9 +12,14 @@
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+<div style="position: relative; width: 100%; max-width: 900px; margin: 0 auto;">
+  <iframe 
+    src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" 
+    style="width: 100%; height: 900px; border: none;" 
+    allowfullscreen>
+  </iframe>
+</div>
 
-</iframe>
 
 Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
 
