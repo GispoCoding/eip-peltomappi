@@ -12,8 +12,12 @@
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1wdBKTG27H-mLrsuvqJVHsez3fPkWdsT4/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-</iframe>
+<details>
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1wdBKTG27H-mLrsuvqJVHsez3fPkWdsT4/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 

@@ -13,7 +13,7 @@
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
 <details>
-<summary>Katso video</summary>
+<summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" allowfullscreen></iframe>
 </div>
