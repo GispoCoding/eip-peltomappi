@@ -160,7 +160,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 5.  Sulje piirrosnäkymä esimerkiksi vihreällä ***X***-painikkeella.
 
-<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
 
@@ -182,7 +182,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
-<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
 
@@ -198,7 +198,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 5.  Napauta ***Toista***-painiketta aloittaaksesi uuden mittauksen.
 
-<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
 

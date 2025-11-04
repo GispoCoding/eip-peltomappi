@@ -22,7 +22,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 <img src="img/kirjautuminen.jpg" width="34%"/><br>
 5. Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
-<iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 </iframe>
 
@@ -34,7 +34,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
 
-<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
