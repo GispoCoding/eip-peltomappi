@@ -18,9 +18,12 @@
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **Alueen lisääminen nauhoitustilalla**
 
@@ -55,9 +58,12 @@ Kun asetukset ovat kunnossa, toimi seuraavasti:
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
@@ -106,6 +112,9 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
     Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
 
-<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" allowfullscreen></iframe>
+</div>
+</details>
