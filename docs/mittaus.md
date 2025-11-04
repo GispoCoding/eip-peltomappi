@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # **Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa**
 
 ## **Viivan pituuden mittaus**
@@ -26,9 +20,12 @@ editor_options:
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
-<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **Pinta-alan mittaus**
 
@@ -45,9 +42,12 @@ editor_options:
 
 5.  Napauta ***Toista***-painiketta aloittaaksesi uuden mittauksen.
 
-<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 💡 Huomioitavaa
 

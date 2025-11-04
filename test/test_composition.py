@@ -26,9 +26,9 @@ def test_initialize(test_backend: CompositionBackendTest):
     )
 
     assert (comp_path / "template").exists()
-    assert (comp_path / "template/peltolohkot_2023.gpkg").exists()
-    assert (comp_path / "template/peltolohkot_2024.gpkg").exists()
-    assert (comp_path / "template/peltomappi.qgs").exists()
+    assert (comp_path / "template/Peltolohkot_2023.gpkg").exists()
+    assert (comp_path / "template/Peltolohkot_2024.gpkg").exists()
+    assert (comp_path / "template/peltomappi.qgz").exists()
     assert (comp_path / ".composition/full_data").exists()
     assert (comp_path / ".composition/composition.json").exists()
 

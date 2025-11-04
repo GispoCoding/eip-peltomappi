@@ -1,12 +1,17 @@
 # **Selain hallintapaneeli**
 
-Projektiasi voi tarkastella myös selaimen kautta. Selaimen avulla et voi kuitenkaan lisätä tai editoida kohteita se on tarkoitettu ainoastaan aineiston katseluun tällä hetkellä.
+Projektiasi voi tarkastella myös selaimen kautta. Selaimen avulla et voi kuitenkaan lisätä tai editoida kohteita. Se on tarkoitettu ainoastaan aineiston katseluun tällä hetkellä.
 
 Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.merginmaps.com](app.merginmaps.com) ja kirjaudut omilla tunnuksillasi sisään. 
 
 ## **Ohjevideo**
 
-<iframe src="https://drive.google.com/file/d/1lWPMERqoIfKSijdr0rO1TSdlV6GL3FuY/preview" width="100%" height="500" allowfullscreen="allowfullscreen"> </iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1lWPMERqoIfKSijdr0rO1TSdlV6GL3FuY/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## Projekteihin liittyvät toiminnot
 
@@ -42,6 +47,8 @@ Kaikki dashboardin kartat käyttävät taustakarttana Mergin Mapsin vektoritiili
 Karttojen sisältö ja Layers-paneeli päivittyvät aina, kun projekti synkronoidaan. Näin näet aina ajantasaiset paikkatiedot.
 
 Kerrospaneelissa listataan kaikki kartalla näkyvät kerrokset. Näyttöruudussa olevat silmäkuvakkeet (✅) säätelevät kerrosten näkyvyyttä.
+
+
 
 ### **Historia (History)**
 

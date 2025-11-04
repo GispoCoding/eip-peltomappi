@@ -2,7 +2,7 @@
 
 ## **Projektin lataaminen mobiilisovellukseen sähköpostilinkin avulla**
 
-Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
+Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
 <img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
 
 !!! note "**💡 HUOM!**" 
@@ -22,15 +22,33 @@ Kun olet liittynyt testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZ
 <img src="img/kirjautuminen.jpg" width="34%"/><br>
 5. Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
-<iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" allowfullscreen></iframe>
+</div>
+</details>
 
-</iframe>
+## **Uusimman projektitiedoston lataaminen mobiilisovellukseen (vanhat testaajat)**
+
+1. Avaa Mergin Maps- mobiilisovellus
+
+2. Valitse alavalikosta ***Projektit*** ja napauta eip-peltomappi- projektia
+
+3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
+
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
 !!! note "💡 **Info**" 
     **Mergin Maps mobiilisovelluksen käyttö ei edellytä QGISin käyttöä**. Sitä voi käyttää täysin itsenäisesti, mutta jos haluat laajemmat työkalut käyttöön ja haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella ne onnistuvat parhaiten QGISin avulla.
-    
+
 !!! note "💡 **Info**" 
     QGIS on avoimen lähdekoodin paikkatieto-ohjelmisto, jonka avulla voit tarkastella, muokata ja analysoida paikkatietoaineistoja. Kun lataat projektin QGISiin, näet peltolohkosi kartalla ja voit käsitellä niihin liittyviä ominaisuustietoja myös ilman verkkoyhteyttä. 
     
@@ -78,7 +96,7 @@ Valitse **Save credentials***,* jos haluat että ohjelma muistaa tunnuksesi seur
 
 Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi listattuna.
 
-**Projektin lataaminen QGIS:iin MerginMaps-lisäosalla**
+**Projektin lataaminen QGISiin MerginMaps-lisäosalla**
 
 1.  Avaa ***Mergin Maps*** -paneeli QGIS:ssä vasemman laidan selainosiosta.
 
@@ -86,7 +104,7 @@ Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi list
 
 3.  Valitse projekti, jonka haluat ladata.
 
-4.  Klikkaa ***Download*** ***projec**t* (Lataa projekti).
+4.  Klikkaa ***Download*** ***project*** (Lataa projekti).
 
 5.  Valitse kansio, johon projekti tallennetaan. Laita mieleen tämä sijainti. Tähän samaan sijaintiin tallennetaan myöhemmin [georeferoidut kuvat](https://gispocoding.github.io/eip-peltomappi/salaojakarttojen_georeferointi.html).
 

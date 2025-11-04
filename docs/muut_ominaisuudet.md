@@ -5,11 +5,11 @@ editor_options:
 ---
 # **Muut ominaisuudet**
 
-## **Kohteiden lisääminen, muokkaaminen ja poistaminen mobiilisovelluksessa**
+## **Kohteiden muokkaaminen ja poistaminen mobiilisovelluksessa**
 
 Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **poistaa kohteita**.
 
-### **Kohteiden muokkaaminen**
+### **Geometrian muokkaamminen**
 
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä.
 
@@ -17,9 +17,12 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   Tallenna muutokset.
 
-<iframe src="https://drive.google.com/file/d/1Imp0jJsL0mIW81oeoLPFExm07jGQ2z_j/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1KTO25KkO2vyLWtmN7TnAOrZr43yxL-JE/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ### **Geometrian uudelleenpiirtäminen**
 
@@ -31,9 +34,12 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna.
 
-<iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ### **Useiden kohteiden muokkaus**
 
@@ -41,9 +47,12 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   Valitse muut muokattavat kohteet ja avaa attribuuttilomake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla.
 
-<iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ### **Kohteiden poistaminen**
 
@@ -71,7 +80,7 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä suuntaan että etäisyyteen pisteestä -- mikä auttaa tarkassa kenttätyöskentelyssä.
 
-### **Navigointi mobiilisovelluksessa**
+### **Kohteelle navigointi**
 
 1.  Avaa karttanäkymä ja valitse haluamasi piste.
 
@@ -89,9 +98,12 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu vihreällä, mikä auttaa tunnistamaan, että olet aivan kohdassa.
 
-<iframe src="https://drive.google.com/file/d/1SuLu6QMYuvm63MYcvBJFzaA3UKYsxNk-/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1SuLu6QMYuvm63MYcvBJFzaA3UKYsxNk-/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **GPS-tarkkuus Mergin Maps -mobiilisovelluksessa**
 
@@ -150,7 +162,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 6.  Synkronoi projekti Mergin Maps -palveluun.
 
-### **Karttapiirrosominaisuuden käyttäminen mobiilisovelluksessa**
+### **Karttapiirrosominaisuuden käyttäminen**
 
 1.  Napsauta karttapiirroskuvaketta ***(kynä)*** vasemmassa alakulmassa.
 
@@ -162,9 +174,12 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 5.  Sulje piirrosnäkymä esimerkiksi vihreällä ***X***-painikkeella.
 
-<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa**
 
@@ -184,9 +199,12 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
-<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ### **Pinta-alan mittaus**
 
@@ -200,9 +218,13 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 5.  Napauta ***Toista***-painiketta aloittaaksesi uuden mittauksen.
 
-<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
 
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 !!! warning "💡 HUOM!" 
     Mitatut arvot eivät tallennu

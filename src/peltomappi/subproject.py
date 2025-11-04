@@ -13,7 +13,7 @@ from peltomappi.logger import LOGGER
 
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
-TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgs"
+TEMPLATE_QGIS_PROJECT_NAME = "peltomappi.qgz"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 SUBPROJECT_CONFIG_NAME = "peltomappi_subproject.json"
 TRACKING_LAYER_NAME = "tracking_layer"

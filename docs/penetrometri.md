@@ -12,9 +12,12 @@
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" width="50%" height="900" allowfullscreen="allowfullscreen">
-
-</iframe>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1Zd3uz1QsACq4c7LoOVfdNT7PGA2acDqv/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
 
@@ -24,7 +27,9 @@ Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
     -   kohtuulliset kasvuolosuhteet
     -   heikot kasvuolosuhteet
 
--   Syvyys
+-   Syvyys alkuarvo
+
+-   Syvyys loppuarvo
 
 -   Päivämäärä ja aika
 
