@@ -11,10 +11,12 @@ import keyring
 import mergin
 
 
+from peltomappi.filter import get_spatial_filter_from_field_parcel_ids
 from peltomappi.logger import LOGGER
-from peltomappi.parcelspec import ParcelSpecification
+from peltomappi.parcelspec import FILTER_DATASET_NAME, ParcelSpecification
 from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, ModificationType, Subproject
 from peltomappi.utils import clean_string_to_filename, sha256_file
+from peltomappi.weather import WeatherBackendTest
 
 FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
@@ -545,6 +547,27 @@ class Composition:
 
         for sp in self.__subprojects:
             sp.export_user_data_to_csv(full_data_gpkgs)
+
+    def subprojects_update_weather(self) -> None:
+        """
+        Updates weather data of each subproject.
+        """
+        LOGGER.info("Updating weather data")
+        backend = WeatherBackendTest()
+
+        filter_dataset = self.full_data_path() / FILTER_DATASET_NAME
+        for sp in self.__subprojects:
+            spatial_filter = get_spatial_filter_from_field_parcel_ids(
+                filter_dataset,
+                set(sp.field_parcel_ids()),
+            )
+
+            backend.write_data(
+                spatial_filter,
+                Path("/tmp"),  # FIXME: remove
+                datetime.fromtimestamp(0),
+                datetime.fromtimestamp(1),
+            )
 
     def describe(self, *, describe_subprojects: bool = True) -> None:
         print(f'Composition "{self.__name}" ({self.__id}):')
