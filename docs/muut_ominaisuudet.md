@@ -9,7 +9,7 @@ editor_options:
 
 Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **poistaa kohteita**.
 
-### **Kohteiden muokkaaminen**
+### **Geometrian muokkaamminen**
 
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike ja ***Muokkaa geometriaa*** -painike siirtääksesi pisteitä.
 
@@ -69,7 +69,7 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 
 Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä suuntaan että etäisyyteen pisteestä -- mikä auttaa tarkassa kenttätyöskentelyssä.
 
-### **Navigointi mobiilisovelluksessa**
+### **Kohteelle navigointi**
 
 1.  Avaa karttanäkymä ja valitse haluamasi piste.
 
@@ -148,7 +148,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 6.  Synkronoi projekti Mergin Maps -palveluun.
 
-### **Karttapiirrosominaisuuden käyttäminen mobiilisovelluksessa**
+### **Karttapiirrosominaisuuden käyttäminen**
 
 1.  Napsauta karttapiirroskuvaketta ***(kynä)*** vasemmassa alakulmassa.
 
