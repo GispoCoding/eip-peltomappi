@@ -22,7 +22,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 <img src="img/kirjautuminen.jpg" width="34%"/><br>
 5. Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" allowfullscreen></iframe>
@@ -37,7 +37,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" allowfullscreen></iframe>

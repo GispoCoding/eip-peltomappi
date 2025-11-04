@@ -10,7 +10,7 @@
 8. Tallenna kuoppa kerroksineen yläkulmasta ✅-painikkeesta.
 9. Voit tarkastella kuoppaa ja sen luokitusta klikkaamalla sitä kartalla.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1YvVkborpmX5lcEethbCEBcuu787CPSwS/preview" allowfullscreen></iframe>

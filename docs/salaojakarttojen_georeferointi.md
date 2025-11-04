@@ -267,7 +267,7 @@ MerginMaps-lisäosan "Synchronize Mergin Maps project"
 
 Tämän jälkeen salaojarkartta näkyy MerginMaps-mobiilisovelluksessa:
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1UHyWmI-Mw776rHhh-eEaKhVrLwPajZBe/preview" allowfullscreen></iframe>

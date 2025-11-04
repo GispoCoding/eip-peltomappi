@@ -6,7 +6,7 @@ Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.
 
 ## **Ohjevideo**
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1lWPMERqoIfKSijdr0rO1TSdlV6GL3FuY/preview" allowfullscreen></iframe>

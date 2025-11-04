@@ -20,7 +20,7 @@
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" allowfullscreen></iframe>
@@ -42,7 +42,7 @@
 
 5.  Napauta ***Toista***-painiketta aloittaaksesi uuden mittauksen.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" allowfullscreen></iframe>

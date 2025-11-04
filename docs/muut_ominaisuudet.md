@@ -17,7 +17,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   Tallenna muutokset.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1KTO25KkO2vyLWtmN7TnAOrZr43yxL-JE/preview" allowfullscreen></iframe>
@@ -34,7 +34,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1MKbWQ7x2In4PGbVyNpPL6LcI1WTQxPSE/preview" allowfullscreen></iframe>
@@ -47,7 +47,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -   Valitse muut muokattavat kohteet ja avaa attribuuttilomake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1cchAqXyZig3_XLkGfCvVYfgQcMjofkKX/preview" allowfullscreen></iframe>
@@ -98,7 +98,7 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 5.  Täsmällinen navigointi (alle 10 cm etäisyys) korostuu vihreällä, mikä auttaa tunnistamaan, että olet aivan kohdassa.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1SuLu6QMYuvm63MYcvBJFzaA3UKYsxNk-/preview" allowfullscreen></iframe>
@@ -174,7 +174,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 5.  Sulje piirrosnäkymä esimerkiksi vihreällä ***X***-painikkeella.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" allowfullscreen></iframe>
@@ -199,7 +199,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 7.  Kun olet valmis mittauksen kanssa, napauta ***Valmis***-painiketta.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1_I1kABk25cw7wkmXJ3ydEjtYYLBrn9es/preview" allowfullscreen></iframe>
@@ -219,7 +219,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 5.  Napauta ***Toista***-painiketta aloittaaksesi uuden mittauksen.
 
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1qDeutE9MvH_qxlQbpHT-SsOn4Ma3vjit/preview" allowfullscreen></iframe>

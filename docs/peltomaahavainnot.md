@@ -12,7 +12,7 @@
 
 6.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1wdBKTG27H-mLrsuvqJVHsez3fPkWdsT4/preview" allowfullscreen></iframe>

@@ -18,7 +18,7 @@
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/138h3LXy4p5KU1YNBUR1ghcCH7nmBDgmb/preview" allowfullscreen></iframe>
@@ -58,7 +58,7 @@ Kun asetukset ovat kunnossa, toimi seuraavasti:
 
 8.  Valitse lopuksi oikean yläkulman vihreä ✅
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1_KbwjgqvTmE8v7JDTcvKvAmVPu9rQxW0/preview" allowfullscreen></iframe>
@@ -108,7 +108,7 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
     Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" allowfullscreen></iframe>

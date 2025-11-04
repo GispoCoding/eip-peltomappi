@@ -28,7 +28,7 @@ Huomioitavaa
 
 -   Synkronointi: Muista synkronoida projekti säännöllisesti varmistaaksesi, että tiedot tallentuvat pilveen.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" allowfullscreen></iframe>

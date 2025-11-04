@@ -50,7 +50,7 @@ luoda varsinaisia kohteita tietokantaan.
 
 5.  Sulje piirrosnäkymä esimerkiksi vihreällä ***X***-painikkeella.
 
-<details>
+<details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
 <iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" allowfullscreen></iframe>
