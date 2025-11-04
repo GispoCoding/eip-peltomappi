@@ -30,7 +30,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
     <div>
     -   Pintamaan vedenjohtavuus (aika, s)<br>
     -   Pintamaan vedenjohtavuus (syvyys, cm)<br>
-    -   MARA-rakenneluokka<br>
+    -   MARA - rakenneluokka<br>
     -   MARA - murut ja kokareet<br>
     -   MARA - huokoisuus<br>
     -   Murukestävyys (lusikkatesti)<br>
@@ -44,7 +44,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
     -   mg<br>
     </div>
  
-Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, paina vasemmasta alakulmasta ***Lisää -> Asetukset -> Lukitse automaattisesti sijainti***. Kun asetus on pois päältä, uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
+Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, napauta oikeasta alakulmasta ***Lisää -> Asetukset -> Lukitse automaattisesti sijainti***. Kun asetus on pois päältä, uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 

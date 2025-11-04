@@ -27,6 +27,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
     -   Kaivo<br>
     -   Rumpu<br>
     -   Kivi<br>
+    -   Viljavuusnäyte<br>
     -   Muu<br>
 
     </div>
@@ -37,7 +38,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 -   Navigointi (voit navigoida kohteelle esimerkiksi Google Mapsin avulla klikkaamalla linkkiä)
 
-Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, paina vasemmasta alakulmasta ***Lisää -> Asetukset -> Lukitse automaattisesti sijainti***. Kun asetus on pois päältä, uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
+Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, napauta oikeasta alakulmasta ***Lisää -> Asetukset -> Lukitse automaattisesti sijainti***. Kun asetus on pois päältä, uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 

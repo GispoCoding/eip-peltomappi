@@ -68,6 +68,10 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
     -   Lannoitus
 
+    -   Vetelä
+
+    -   Rikkakasveja
+
     -   Muu
 
 -   Valokuva
