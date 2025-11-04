@@ -34,7 +34,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
 
-<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" width="100%" height="900" allowfullscreen="allowfullscreen">
+<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" width="100%" height="900" allowfullscreen="allowfullscreen"></iframe>
 
 ## **Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen**
 
