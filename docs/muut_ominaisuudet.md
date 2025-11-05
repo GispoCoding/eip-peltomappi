@@ -76,6 +76,11 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
     -   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
 
 
+## **Hakutoiminto**
+
+Tasoilta voi hakea kohteita hakusanoilla otsikoista ja muistiinpanoista. Jos olet esimerkiksi merkannut lannoitusalueet 
+tai kirjoittanut tehtyjä toimenpiteitä muistiinpanoihin, saat näistä helposti kaikki näkyviin. Avaa sovelluksen alareunasta **Tasot** ja valitse taso, jolta haluat tehdä haun. Kun saat tason auki, yläreunassa on hakukenttä. Voit hakea tietyn tyyppisiä kohteita tai etsiä hakusanalla kaikesta tasolle keräämästäsi aineistosta.
+
 ## **Pisteelle navigointi/merkintä kenttätyössä**
 
 Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä suuntaan että etäisyyteen pisteestä -- mikä auttaa tarkassa kenttätyöskentelyssä.
