@@ -1,8 +1,23 @@
 # **Karttanäkymä**
 
 Tutustutaan aluksi Mergin Mapsin käyttöliittymään
+<div style="text-align: center;">
+  <img src="img/karttanäkymä.png" class="responsive-img">
+</div>
 
-<img src="img/karttanäkymä.png" width="39%"/>
+<style>
+  .responsive-img {
+    width: 39%;
+  }
+
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
+
 
 1.  **GPS-indikaattori:** Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat [tiedot](https://gispocoding.github.io/eip-peltomappi/img/gps_info_mm.jpg). Lisätietoja [täältä](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mista-naet-gps-tarkkuuden).
 
@@ -20,15 +35,15 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
 
     Seuraavassa kappaleessa lisätietoja
 
-6.  **Lisää:** Avaa sinulle lisäasetuksia:<details><summary>Katso tarkemmin</summary><div class="video-container"><img src="img/lisaa_asetuksia.jpg" width="39%"/></div></details>
+6.  **Lisää:** Avaa sinulle lisäasetuksia:<details class="image-box"><summary>Avaa kuva</summary><img src="img/lisaa_asetuksia.jpg" width="100%"/></details><style>  .responsive-img {    width: 39%;  }  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */  @media (max-width: 768px) {    .responsive-img {      width: 100%;    }  }</style>
 
     -   Projektit: oikotie mobiilisovelluksen pääsivulle
     -   Zoomaa projektiin: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
-    -   Karttateemat: luettelo karttateemoista
-    -   Sijainnin nauhoitus: aloittaaksesi jälkien seurannan maastotutkimuksen aikana
+    -   Karttateemat: [luettelo karttateemoista](https://gispocoding.github.io/eip-peltomappi/karttan%C3%A4kym%C3%A4.html#karttateemat)
+    -   Sijainnin nauhoitus: aloittaaksesi reitin piirron liikkumasi sijainnin perusteella. Lue lisää [täältä](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html)
     -   [Mittaa](https://gispocoding.github.io/eip-peltomappi/mittaus.html): mittaa pituus tai alue kartalla
-    -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista
-    -   Asetukset: sisältää seuraavat lisäasetukset:
+    -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista, joita ei siis ole vielä siirretty pilvipalveluun. 
+    -   Asetukset: sisältää seuraavat lisäasetukset:<details class="image-box"><summary>Avaa kuva</summary><img src="img/lisa_asetuksen_asetukset.png" width="100%"/></details>
         -   GPS-asetukset: GPS tarkkuuden raja-arvot, Hallinnoi GPS vastaanottimia, GPS antennin korkeus
         -   [Nauhoitustila](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html): Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
         -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse automaattinen sijainti, kosketuspalaute
@@ -38,7 +53,22 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
 
 Sovelluksessa on tällä hetkellä käytössä lukuisia erilaisia karttatasoja. Voit sammuttaa tasoja näkymästä klikkaamalla tason vieressä olevaa palkkia.
 
-<img src="img/karttatasot_v2.jpg" width="39%"/>
+<div style="text-align: center;">
+  <img src="img/karttatasot_v2.jpg" class="responsive-img">
+</div>
+
+<style>
+  .responsive-img {
+    width: 39%;
+  }
+
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
 
 1. **Peltomaahavainnot:** Tälle tasolle tallennetaan peltomaahavaonnot. Tasolle lisäämisestä lisää kappaleessa [Peltomaahavainnot](https://gispocoding.github.io/eip-peltomappi/peltomaahavainnot.html)
 2. **Maaperä:** Tälle tasolle tallennetaan kaikki aluemuotoiset kohteet. Tasolle lisäämisestä lisää kappaleessa [Alueen lisääminen ja jakaminen](https://gispocoding.github.io/eip-peltomappi/alueen_lis%C3%A4%C3%A4minen.html)

@@ -29,9 +29,22 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 -   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse ***Muokkaa*** -painike muokataksesi ja ***Muokkaa geometriaa*** -painike.
 
 -   Napauta ***Lisäasetukset***-painiketta:
+<div style="text-align: left;">
+  <img src="img/more_mergin_maps.png" class="responsive-img">
+</div>
 
-    <img src="img/more_mergin_maps.png" width="34%"/>
+<style>
+  .responsive-img {
+    width: 39%;
+  }
 
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
 -   ja valitse ***Piirrä geometria uudelleen***, tee uusi piirto ja tallenna.
 
 <details class="video-box">
@@ -113,12 +126,42 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 -   Tarkkuusnäyttö näkyy kartan vasemmassa alakulmassa.
 
-    <img src="img/GPS_mergin_maps.png" width="31%"/>
+<div style="text-align: left;">
+  <img src="img/GPS_mergin_maps.png" class="responsive-img">
+</div>
+
+<style>
+  .responsive-img {
+    width: 39%;
+  }
+
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
 
 -   **Väri** kertoo, onko tarkkuus asetetun raja-arvon sisällä (vihreä) vai ulkopuolella (oranssi).
 
--   **Värikoodin raja-arvo** määritetään sovelluksen GPS-asetuksissa. (Oikea alakulman <img src="img/lisaa_mergin_maps.png" width="5%"/> --> Asetukset). <br>
-Oletus on 10 metriä.
+- **Värikoodin raja-arvo** määritetään sovelluksen GPS-asetuksissa. 
+(Oikea alakulman 
+<img src="img/lisaa_mergin_maps.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
+--> Asetukset). Oletus on 10 metriä.
+
+<style>
+  .responsive-icon {
+    width: 5%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-icon {
+      width: 10%;
+    }
+  }
+</style>
 
 -   **Napauta tarkkuusnäyttöä** saadaksesi lisätietoja, kuten:
 
@@ -247,11 +290,42 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***.
 
--   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset***. <img src="img/sync_mergin_maps.gif" width="34%"/>
+-   Voit halutessasi tarkastella odottavia muutoksia napauttamalla ***Lisää → Paikalliset muutokset***. 
+<div style="text-align: center;">
+<img src="img/sync_mergin_maps.gif" class="responsive-img">
+</div>
+
+<style>
+  .responsive-img {
+    width: 30%;
+  }
+
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
 
 ### **2. Automaattinen synkronointi**
 
--   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<img src="img/auto_sync_mergin_maps.png" width="34%"/>
+-   Siirry sovelluksen **Asetuksiin** ja ota käyttöön valinta **Synkronoi muutokset automaattisesti**<div style="text-align: left;">
+  <img src="img/auto_sync_mergin_maps.png" class="responsive-img">
+</div>
+
+<style>
+  .responsive-img {
+    width: 34%;
+  }
+
+  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
+  @media (max-width: 768px) {
+    .responsive-img {
+      width: 100%;
+    }
+  }
+</style>
 
 -   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
 
