@@ -25,7 +25,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 <style>
   .responsive-icon {
     width: 5%;
-    vertical-align: middle;
+    vertical-align: bottom;
   }
 
   @media (max-width: 768px) {
@@ -52,7 +52,7 @@ ja napauta eip-peltomappi- projektia
 <style>
   .responsive-icon {
     width: 5%;
-    vertical-align: middle;
+    vertical-align: bottom;
   }
 
   @media (max-width: 768px) {
