@@ -9,6 +9,6 @@ Avaa
 <details class="video-box">
 <summary>Avaa video</summary>
 <div class="video-container">
-<iframe src="https://drive.google.com/file/d/1m9qzVa5DoFBQame8QtUckYZXtxRnzoMB/view" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1m9qzVa5DoFBQame8QtUckYZXtxRnzoMB/preview" allowfullscreen></iframe>
 </div>
 </details>
