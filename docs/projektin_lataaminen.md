@@ -8,7 +8,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 !!! note "**💡 HUOM!**" 
     Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
-1.  Klikkaa linkkiä ja rekisteröidy palveluun:
+1.  Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi ***Sign Up***:
 
 <img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.jpg" width="34%"/><br>
 2.  Liity työtilaan napauttamalla "Join workspace"
@@ -20,7 +20,20 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 4.  Kirjaudu tämän jälkeen juuri luomillasi tunnuksillasi sisään:
 
 <img src="img/kirjautuminen.jpg" width="34%"/><br>
-5. Napauta tämän jälkeen alareunan ***Projektit***- kohtaa ja lataa eip-peltomappi- projekti
+5. Napauta tämän jälkeen alareunan <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-icon" alt="Asetukset-kuvake" /> - kohtaa ja lataa eip-peltomappi- projekti
+
+<style>
+  .responsive-icon {
+    width: 5%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-icon {
+      width: 10%;
+    }
+  }
+</style>
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -33,9 +46,22 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 1. Avaa Mergin Maps- mobiilisovellus
 
-2. Valitse alavalikosta ***Projektit*** ja napauta eip-peltomappi- projektia
-
+2. Valitse alavalikosta <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
+ja napauta eip-peltomappi- projektia
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
+<style>
+  .responsive-icon {
+    width: 5%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-icon {
+      width: 10%;
+    }
+  }
+</style>
+
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -54,7 +80,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
     
 
     
-### **QGIS:n lataaminen ja asentaminen**
+### **QGISin lataaminen ja asentaminen**
 
 Mene QGISin viralliselle sivulle: <https://qgis.org/>
 
