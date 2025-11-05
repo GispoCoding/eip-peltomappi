@@ -8,12 +8,13 @@ nav:
   - Karttanäkymä: karttanäkymä.md
   - Selainkäyttöliittymä: selainkayttoliittyma.md
   - Kohteen lisääminen: kohteen_lisääminen.md
-  - Peltomaahavainnon lisääminen: peltomaahavainnot.md
   - Alueen lisääminen ja jakaminen: alueen_lisääminen.md
   - Penetrometri: penetrometri.md
   - MARA-kuoppa: mara_kuoppa.md
+  - Peltolohkon yhteenveto: peltolohkon_yhteenveto.md
   - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
   - Reitin nauhoitus: reitin_nauhoitus.md
+  - Säädata: saadata.md
   - Muut ominaisuudet: muut_ominaisuudet.md
   - Palaute: palaute.md
   - Muutosloki: muutosloki.md
@@ -31,6 +32,8 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - toc:
+      toc_depth: 2
 
 theme:
   name: material
@@ -47,6 +50,10 @@ theme:
     - content.code.copy
   palette:
     scheme: peltomappi
+  logo: img/pysty_peltomappi.png
+  favicon: img/pysty_peltomappi.png
+
+
 
 plugins:
   - redirects:
