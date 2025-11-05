@@ -151,22 +151,9 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 -   **Väri** kertoo, onko tarkkuus asetetun raja-arvon sisällä (vihreä) vai ulkopuolella (oranssi).
 
 - **Värikoodin raja-arvo** määritetään sovelluksen GPS-asetuksissa. 
-(Oikea alakulman 
-<img src="img/lisaa_mergin_maps.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
---> Asetukset). Oletus on 10 metriä.
+(Oikea alakulman ***Lisää***
 
-<style>
-  .responsive-icon {
-    width: 5%;
-    vertical-align: middle;
-  }
 
-  @media (max-width: 768px) {
-    .responsive-icon {
-      width: 10%;
-    }
-  }
-</style>
 
 -   **Napauta tarkkuusnäyttöä** saadaksesi lisätietoja, kuten:
 
@@ -334,6 +321,21 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
 
--   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus "*Synkronoitu onnistuneesti*".
-
+-   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus <img src="img/synkronoitu_onnistuneesti.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu.
+
+<style>
+  .responsive-icon {
+    width: 25%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-icon {
+      width: 50%;
+      vertical-align: middle;
+    }
+  }
+</style>.
+
+
