@@ -23,7 +23,7 @@ Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
 
 -   Maan tiiveys:
 
-<img src="img/penetrometri_Selite.png" class="responsive-selite"  />
+<img src="img/penetrometri_selite.png" class="responsive-selite"  />
 
 -   Syvyys alkuarvo
 
