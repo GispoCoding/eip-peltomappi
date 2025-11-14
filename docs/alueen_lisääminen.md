@@ -2,17 +2,17 @@
 
 ## **Alueen lisääminen**
 
-1.  Paina alavalikon Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" /> painikkeesta.
+1.  Paina alavalikosta <img src="img/lisaa_kohde.png" class="responsive-small" /> 
 
 2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
-3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta <img src="img/lisaa_kohde.png" class="responsive-small"/>
+3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta <img src="img/lisaa_kohde.png" class="responsive-small"/>
 
-4.  Klikkaa alueen kulmapisteet siirtymällä kartalla haluttuun kohtaan ja painamalla <img src="img/lisaa_kohde.png" class="responsive-small"/>
+4.  Tallenna muut alueen kulmapisteet kartalle painamalla kulmapisteen kohdalla <img src="img/lisaa_kohde.png" class="responsive-small"/>
 
-5.  Jos haluat poistaa edellisen kulmapisteen paina <img src="img/poista.png" class="responsive-small"/> nappulaa alalaidasta. <img src="img/kumoa.png" class="responsive-small"/> toiminnolla, kumoat edellisen komennon.
+5.  Jos haluat poistaa edellisen kulmapisteen paina <img src="img/poista.png" class="responsive-small"/> alalaidasta. <img src="img/kumoa.png" class="responsive-small"/> toiminnolla, kumoat edellisen komennon.
 
-6.  Klikkaa lopuksi alhaalta <img src="img/tallenna.png" class="responsive-small"/> 
+6.  Napauta lopuksi alhaalta <img src="img/tallenna.png" class="responsive-small"/> 
 
 7.  Syötä tarvittavat ominaisuustiedot.
 
@@ -30,7 +30,7 @@
 ### **Nauhoitustilan asetukset**
 Tarkista ensin että asetukset ovat kunnossa:
 
-1. Klikkaa karttanäkymän oikean laidan <img src="img/lisaa_mergin_maps.png" class="responsive-small"/> → <img src="img/asetukset.png" class="responsive-mid"/>
+1. Paina karttanäkymän oikean laidan <img src="img/lisaa_mergin_maps.png" class="responsive-small"/> → <img src="img/asetukset.png" class="responsive-mid"/>
 
 2. Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
@@ -40,7 +40,7 @@ Tarkista ensin että asetukset ovat kunnossa:
 
 Kun asetukset ovat kunnossa, toimi seuraavasti:
 
-1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />-painikekeesta.
+1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />.
 
 2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
@@ -50,7 +50,7 @@ Kun asetukset ovat kunnossa, toimi seuraavasti:
 
 5.  Alue muodostuu kulkemasi reitin mukaan.
 
-6.  Kun olet liikkunut kohteen ympäri, paina <img src="img/tallennus.png" class="responsive-mid"  /> kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
+6.  Kun olet liikkunut kohteen ympäri, paina <img src="img/tallennus.png" class="responsive-mid"  /> ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
 
 7.  Syötä tarvittavat ominaisuustiedot.
 

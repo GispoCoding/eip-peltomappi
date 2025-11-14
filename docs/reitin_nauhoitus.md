@@ -4,7 +4,7 @@ Reitin nauhoituksen avulla voit tallentaa esimerkiksi ajoreittisi. Tallennuksen 
 
 **Käynnistä seuranta:**
 
-1.  Napauta <img src="img/lisaa_mergin_maps.png" class="responsive-small" /> -painiketta.
+1.  Napauta <img src="img/lisaa_mergin_maps.png" class="responsive-small" /> 
 
 2.  Valitse <img src="img/sijainnin_nauhoitus.png" class="responsive-big" />
 

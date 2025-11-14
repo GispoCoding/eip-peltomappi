@@ -1,16 +1,16 @@
 # **Kohteen lisääminen**
 
-1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small"/> painikekeesta.
+1.  Paina alavalikosta <img src="img/lisaa_kohde.png" class="responsive-small"/> 
 
 2.  Tarkista, että valittuna tasona on ***Kohteet***.
 
 3.  Siirry kartalla haluamaasi sijaintiin.
 
-4.  Klikkaa alhaalta <img src="img/tallenna_v1.png" class="responsive-big"/>
+4.  Napauta alhaalta <img src="img/tallenna_v1.png" class="responsive-big"/>
 
 5.  Syötä tarvittavat ominaisuustiedot.
 
-6.  Valitse lopuksi oikean yläkulman vihreä <img src="img/check_mergin_maps.png" class="responsive-small"/>
+6.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"/>
 
 <details class="video-box">
 <summary>Avaa video</summary>

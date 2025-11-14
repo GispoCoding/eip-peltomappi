@@ -1,13 +1,13 @@
 # **MARA-kuopan lisääminen**
 
-1. Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />-painiketta.
+1. Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />
 2. Tarkista, että valittuna tasona on ***MARA Kuoppa***.
 3. Tarvittaessa siirrä sijaintiasi kartalla
 4. Paina alhaalta <img src="img/tallenna_v1.png" class="responsive-bigger"  />
-5. Lisää kerros painamalla <img src="img/plus.png" class="responsive-small"  /> -painiketta.
-6. Täydennä kerroksen syvyys ja luokka. Tallenna kerros oikeasta yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"  />-painikkeesta.
+5. Lisää kerros painamalla <img src="img/plus.png" class="responsive-small"  /> 
+6. Täydennä kerroksen syvyys ja luokka. Tallenna kerros oikeasta yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"  />
 7. Toista vaiheet 5 ja 6 jokaiselle kuopan kerrokselle.
-8. Tallenna kuoppa kerroksineen yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"  />-painikkeesta.
+8. Tallenna kuoppa kerroksineen yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"  />
 9. Voit tarkastella kuoppaa ja sen luokitusta klikkaamalla sitä kartalla.
 
 <details class="video-box">

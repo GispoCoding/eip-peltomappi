@@ -6,11 +6,11 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 ### **Geometrian muokkaamminen**
 
--   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse <img src="img/muokkaa.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painike ja <img src="img/muokkaa_geometriaa.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painike siirtääksesi pisteitä.
+-   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja napauta <img src="img/muokkaa.png" class="responsive-mid"   /> ja sen jälkeen<img src="img/muokkaa_geometriaa.png" class="responsive-mid"  /> siirtääksesi pisteitä.
 
 -  Tämän jälkeen kohteen solmupisteet korostuvat: niitä voi siirtää, poistaa tai muuttaa.
 
--   Lopuksi napauta <img src="img/tallenna.png" class="responsive-middle"  alt="Asetukset-kuvake" /> tallentaaksesi muutokset.
+-   Lopuksi napauta <img src="img/tallenna.png" class="responsive-small" /> tallentaaksesi muutokset.
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -21,10 +21,9 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 ### **Geometrian uudelleenpiirtäminen**
 
--   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse <img src="img/muokkaa.png" class="responsive-big"  alt="Asetukset-kuvake" />  -painike muokataksesi ja <img src="img/muokkaa_geometriaa.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painike.
+-   Napauta haluamaasi kohdetta kartalta tai valikkolistasta ja valitse <img src="img/muokkaa.png" class="responsive-mid"   />  -painike muokataksesi ja <img src="img/muokkaa_geometriaa.png" class="responsive-mid"  alt="Asetukset-kuvake" /> -painike.
 
 -   Napauta ***Lisäasetukset*** eli <img src="img/kolme_pistetta.png" alt="kolme-pistettä" class="responsive-small"/>
--painiketta.
 
 -   ja valitse <img src="img/piirra_geometria_uudelleen.png" class="responsive-big"  alt="Asetukset-kuvake" />, tee uusi piirto ja <img src="img/tallenna.png" class="responsive-middle"  alt="Asetukset-kuvake" />
 
@@ -39,7 +38,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 1. Voit muokata kohdetta myös nauhoitustilan avulla eli liikkumalla kohteen ympäri
 
-2. Napauta haluamaasi kohdetta kartalta ja valitse <img src="img/muokkaa.png" class="responsive-big"  alt="Asetukset-kuvake" />  -painike ja <img src="img/muokkaa_geometriaa.png" class="responsive-big"  alt="Asetukset-kuvake" />  -painike siirtääksesi pisteitä.
+2. Napauta haluamaasi kohdetta kartalta ja valitse <img src="img/muokkaa.png" class="responsive-mid" />  ja <img src="img/muokkaa_geometriaa.png" class="responsive-mid"   /> siirtääksesi pisteitä.
 
 3. Napauta tämän jälkeen 
 <img src="img/kolme_pistetta.png" alt="kolme-pistettä" class="responsive-small"/>
@@ -49,7 +48,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 ### **Useiden kohteiden muokkaus**
 
--   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen <img src="img/valitse_lisaa.png" class="responsive-big"  alt="Asetukset-kuvake" /> -toiminto.
+-   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen <img src="img/valitse_lisaa.png" class="responsive-mid"   /> -toiminto.
 
 -   Valitse muut muokattavat kohteet ja avaa attribuuttilomake. Anna uudet arvot ja tallenna -- kaikkien valittujen kohteiden attribuutit päivittyvät kerralla.
 
@@ -62,7 +61,7 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 ### **Kohteiden poistaminen**
 
--   Valitse kohde kartalta tai listasta, avaa <img src="img/muokkaa.png" class="responsive-big"  alt="Asetukset-kuvake" />-lomake ja napauta <img src="img/poista_v1.png" class="responsive-middle"  alt="Asetukset-kuvake" />-painiketta. Vahvista poisto, niin kohde poistuu.
+-   Valitse kohde kartalta tai listasta, avaa <img src="img/muokkaa.png" class="responsive-mid"  />-lomake ja napauta <img src="img/poista_v1.png" class="responsive-middle"   /> Vahvista poisto, niin kohde poistuu.
 
 ## **Viimeksi syötettyjen arvojen uudelleenkäyttö**
 
@@ -108,7 +107,7 @@ Mergin Maps -sovellus ohjaa sinua valitsemaasi pisteeseen näyttämällä sekä 
 
 1.  Avaa karttanäkymä ja valitse haluamasi piste.
 
-2.  Avaa ominaisuuslomake ja napauta <img src="img/vertikaali_kolme_pistetta.png" class="responsive-middle"  alt="Asetukset-kuvake" /> ja tämän jälkeen  <img src="img/merkinta.png" class="responsive-big"  alt="Asetukset-kuvake" />-painiketta.
+2.  Avaa ominaisuuslomake ja napauta <img src="img/vertikaali_kolme_pistetta.png" class="responsive-small"  alt="Asetukset-kuvake" /> ja tämän jälkeen  <img src="img/merkinta.png" class="responsive-big"  />
 
 3.  Näet näkymän, jossa esitetään:
 
@@ -227,19 +226,19 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 ### **Viivan pituuden mittaus**
 
-1.  Napauta näytön alareunassa olevaa <img src="img/lisaa_mergin_maps.png" class="responsive-middle"  alt="Asetukset-kuvake" />-painiketta.
+1.  Napauta näytön alareunassa olevaa <img src="img/lisaa_mergin_maps.png" class="responsive-small" />.
 
-2.  Valitse avautuvasta valikosta <img src="img/mittaa.png" class="responsive-big"  alt="Asetukset-kuvake" />-vaihtoehto.
+2.  Valitse avautuvasta valikosta <img src="img/mittaa.png" class="responsive-mid"  />-vaihtoehto.
 
-3.  Napauta <img src="img/lisaa_piste_mittaus.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painiketta lisätäksesi pisteitä mittaamasi viivan varrelle.
+3.  Napauta <img src="img/lisaa_piste_mittaus.png" class="responsive-mid" /> lisätäksesi pisteitä mittaamasi viivan varrelle.
 
 4.  Lisättyjen pisteiden välinen pituus näkyy mittaustyökalun paneelissa.
 
 5.  Nykyinen pituus näkyy ristihiiren osoittimen lähellä, kun siirrät sitä.
 
-6.  Jos haluat poistaa viimeisen lisätyn pisteen, napauta <img src="img/kumoa_mittaus.png" class="responsive-middle"  alt="Asetukset-kuvake" />-painiketta.
+6.  Jos haluat poistaa viimeisen lisätyn pisteen, napauta <img src="img/kumoa_mittaus.png" class="responsive-small"   />
 
-7.  Kun olet valmis mittauksen kanssa, napauta <img src="img/lisaa_piste_valmis.png" class="responsive-big"  alt="Asetukset-kuvake" />-painiketta.
+7.  Kun olet valmis mittauksen kanssa, napauta <img src="img/lisaa_piste_valmis.png" class="responsive-mid"  />
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -250,15 +249,15 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 
 ### **Pinta-alan mittaus**
 
-1.  Napauta <img src="img/lisaa_piste_mittaus.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painiketta lisätäksesi pisteitä haluamasi alueen kulmiin.
+1.  Napauta <img src="img/lisaa_piste_mittaus.png" class="responsive-mid"   />  lisätäksesi pisteitä haluamasi alueen kulmiin.
 
-2.  Kun siirrät ristihiiren osoittimen ensimmäisen pisteen lähelle, näet <img src="img/sulje_muoto.png" class="responsive-big"  alt="Asetukset-kuvake" /> -vaihtoehdon.
+2.  Kun siirrät ristihiiren osoittimen ensimmäisen pisteen lähelle, näet <img src="img/sulje_muoto.png" class="responsive-mid"   /> -vaihtoehdon.
 
-3.  Napauta <img src="img/sulje_muoto.png" class="responsive-big"  alt="Asetukset-kuvake" /> -painiketta sulkeaksesi alueen ja saadaksesi pinta-alan mittauksen.
+3.  Napauta <img src="img/sulje_muoto.png" class="responsive-mid"  />sulkeaksesi alueen ja saadaksesi pinta-alan mittauksen.
 
 4.  Pinta-alan ja ympärysmitan arvot näkyvät mittaustyökalun paneelissa.
 
-5.  Napauta <img src="img/toista.png" class="responsive-middle"  alt="Asetukset-kuvake" />-painiketta aloittaaksesi uuden mittauksen.
+5.  Napauta <img src="img/toista.png" class="responsive-small"   /> aloittaaksesi uuden mittauksen.
 
 
 <details class="video-box">
@@ -271,7 +270,7 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 !!! warning "💡 HUOM!" 
     Mitatut arvot eivät tallennu
 
-## **Mergin Mapsin synkronointi mobiilisovelluksess**a
+## **Mergin Mapsin synkronointi mobiilisovelluksessa**
 
 Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset synkronoituvat projektisi pilveen -- joko **manuaalisesti** tai **automaattisesti**.
 
@@ -285,9 +284,9 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 ### **1. Manuaalinen synkronointi**
 
--   Napauta karttanäkymässä olevaa ***Synkronoi*****-painiketta**.
+-   Napauta karttanäkymässä olevaa <img src="img/synkronoi.png" class="responsive-small">
 
--   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: ***Synkronoitu onnistuneesti***.
+-   Kun synkronointi on valmis, painike lakkaa pyörimästä ja näytölle ilmestyy ilmoitus: <img src="img/synkronoitu_onnistuneesti.png" class="responsive-icon"/>
 
 -   Voit halutessasi tarkastella odottavia muutoksia napauttamalla <img src="img/lisaa_mergin_maps.png" class="responsive-small"  /> → <img src="img/paikalliset_muutokset.png" class="responsive-big"  />  
 <div style="text-align: center;">
@@ -328,7 +327,7 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Tämän jälkeen Mergin Maps synkronoi tekemäsi muutokset (kuten kohteiden lisäykset tai muokkaukset) automaattisesti, kun muutoksia tapahtuu ja internet-yhteys on saatavilla.
 
--   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus <img src="img/synkronoitu_onnistuneesti.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
+-   Synkronoinnin eteneminen näkyy Synkronoi-painikkeen animaation kautta, ja onnistuneen synkronoinnin jälkeen ilmestyy ilmoitus <img src="img/synkronoitu_onnistuneesti.png" class="responsive-icon" /> 
 -   Jos internet-yhteys katkeaa synkronoinnin aikana, pysähtyy automaattinen synkronointi ja vaatii uuden yrityksen, kun yhteys palautuu.
 
 <style>
