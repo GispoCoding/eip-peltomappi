@@ -17,7 +17,7 @@
 </div>
 </details>
 
-<img src="img/penetrometri_Selite.png" class="responsive-selite"  />
+<img src="img/mara-kuoppa_selite.png" class="responsive-selite"  />
 
 <style>
 
