@@ -3,38 +3,24 @@
 ## **Projektin lataaminen mobiilisovellukseen sähköpostilinkin avulla**
 
 Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
-<img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" width="34%"/>
+<img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" class="responsive-big"/>
 
 !!! note "**💡 HUOM!**" 
     Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
-1.  Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi ***Sign Up***:
+1.  Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi <img src="img/sign_up.png" class="responsive-midbig"  alt="Asetukset-kuvake" />
 
-<img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.jpg" width="34%"/><br>
-2.  Liity työtilaan napauttamalla "Join workspace"
+<img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.jpg" class="responsive-big"/><br>
+2.  Liity työtilaan napauttamalla ***Join workspace***
 
-<img src="img/projektin_lataaminen_qgisiin/tyotilaan_liittyminen.jpg" width="34%"/><br>
+<img src="img/projektin_lataaminen_qgisiin/tyotilaan_liittyminen.jpg" class="responsive-big"/><br>
 3.  Avaa tämän jälkeen MerginMaps -sovellus puhelimessasi ja napauta oikean yläkulman ikonia:
 
-<img src="img/aloitusnakyma.jpg" width="34%"/><br>
+<img src="img/aloitusnakyma.jpg" class="responsive-big"/><br>
 4.  Kirjaudu tämän jälkeen juuri luomillasi tunnuksillasi sisään:
 
-<img src="img/kirjautuminen.jpg" width="34%"/><br>
-5. Napauta tämän jälkeen alareunan <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-icon" alt="Asetukset-kuvake" /> - kohtaa ja lataa eip-peltomappi- projekti
-
-<style>
-  .responsive-icon {
-    width: 5%;
-    vertical-align: bottom;
-  }
-
-  @media (max-width: 768px) {
-    .responsive-icon {
-      width: 10%;
-      vertical-align: bottom;
-    }
-  }
-</style>
+<img src="img/kirjautuminen.jpg" class="responsive-big"/><br>
+5. Napauta tämän jälkeen alareunan <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake" /> - kohtaa ja lataa eip-peltomappi- projekti
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -47,22 +33,10 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 1. Avaa Mergin Maps- mobiilisovellus
 
-2. Valitse alavalikosta <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-icon" alt="Asetukset-kuvake" /> 
+2. Valitse alavalikosta <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake" /> 
 ja napauta eip-peltomappi- projektia
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
-<style>
-  .responsive-icon {
-    width: 5%;
-    vertical-align: bottom;
-  }
 
-  @media (max-width: 768px) {
-    .responsive-icon {
-      width: 10%;
-      vertical-align: bottom;
-    }
-  }
-</style>
 
 
 <details class="video-box">
@@ -139,3 +113,4 @@ Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi list
 6.  QGIS avaa projektin ja siihen liittyvät aineistot automaattisesti.
 
 ![](img/projektin_lataaminen_qgisiin/mergin_maps_projektin_lataus.gif)
+

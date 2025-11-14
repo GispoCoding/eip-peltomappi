@@ -1,22 +1,22 @@
-# **Alueen jakaminen ja lisääminen**
+# **Alueen lisääminen ja jakaminen**
 
 ## **Alueen lisääminen**
 
-1.  Paina alavalikon ***Lisää*** -painikekeesta.
+1.  Paina alavalikon Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" /> painikkeesta.
 
 2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
-3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta "***+ Lisää***".
+3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta kohdasta <img src="img/lisaa_kohde.png" class="responsive-small"/>
 
-4.  Klikkaa alueen kulmapisteet siirtymällä kartalla haluttuun kohtaan ja painamalla "***+ Lisää***".
+4.  Klikkaa alueen kulmapisteet siirtymällä kartalla haluttuun kohtaan ja painamalla <img src="img/lisaa_kohde.png" class="responsive-small"/>
 
-5.  Jos haluat poistaa edellisen kulmapisteen paina "***- Poista***" nappulaa alalaidasta. Kumoa toiminnolla, kumoat edellisen komennon.
+5.  Jos haluat poistaa edellisen kulmapisteen paina <img src="img/poista.png" class="responsive-small"/> nappulaa alalaidasta. <img src="img/kumoa.png" class="responsive-small"/> toiminnolla, kumoat edellisen komennon.
 
-6.  Klikkaa lopuksi alhaalta ***Tallenna***.
+6.  Klikkaa lopuksi alhaalta <img src="img/tallenna.png" class="responsive-small"/> 
 
 7.  Syötä tarvittavat ominaisuustiedot.
 
-8.  Valitse lopuksi oikean yläkulman vihreä ✅
+8.  Valitse lopuksi oikean yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"/> 
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -30,7 +30,7 @@
 ### **Nauhoitustilan asetukset**
 Tarkista ensin että asetukset ovat kunnossa:
 
-1. Klikkaa karttanäkymän oikean laidan ***Lisää*** **--\> *Asetukset***.
+1. Klikkaa karttanäkymän oikean laidan <img src="img/lisaa_mergin_maps.png" class="responsive-small"/> → <img src="img/asetukset.png" class="responsive-mid"/>
 
 2. Voit halutessasi muuttaa intervallia kuljetun matkan ja ajan välillä ja antaa haluamasi raja-arvo esimerkiksi:
 
@@ -40,23 +40,22 @@ Tarkista ensin että asetukset ovat kunnossa:
 
 Kun asetukset ovat kunnossa, toimi seuraavasti:
 
-1.  Paina alavalikon ***Lisää*** -painikekeesta.
+1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />-painikekeesta.
 
 2.  Tarkista, että valittuna tasona on ***Maaperä***.
 
-3.  Paina karttanäkymän jalanjälkien kuvaa:
-
-<img src="img/footsteps_mergin_maps.png" width="12%"/>
+3.  Paina karttanäkymän jalanjälkien kuvaa <img src="img/footsteps_mergin_maps.png" class="responsive-small" />
 
 4.  Valitse avautuvasta ikkunasta ***Aloita nauhoitus***.
 
 5.  Alue muodostuu kulkemasi reitin mukaan.
 
-6.  Kun olet liikkunut kohteen ympäri, paina ***tallennus***- kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
+6.  Kun olet liikkunut kohteen ympäri, paina <img src="img/tallennus.png" class="responsive-mid"  /> kohdasta ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
 
 7.  Syötä tarvittavat ominaisuustiedot.
 
-8.  Valitse lopuksi oikean yläkulman vihreä ✅
+8.  Valitse lopuksi oikean yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"/> 
+
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -96,19 +95,19 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
 1.  Napauta kartalla haluamaasi aluekohdetta.
 
-2.  Napauta ***Muokkaa*** -painiketta avataksesi ominaisuudet.
+2.  Napauta <img src="img/muokkaa.png" class="responsive-mid"  />-painiketta avataksesi ominaisuudet.
 
-3.  Napauta ***Muokkaa geometriaa*** -painiketta. Kohteen kulmapisteet korostuvat kartalle
+3.  Napauta <img src="img/muokkaa_geometriaa.png" class="responsive-mid"/> -painiketta. Kohteen kulmapisteet korostuvat kartalle
 
-4.  Napauta ***Lisää vaihtoehtoja*** -painiketta (kolme pistettä).
+4.  Napauta <img src="img/kolme_pistetta.png" class="responsive-small"/> -painiketta.
 
-5.  Valitse ***Jaa geometria***.
+5.  Valitse <img src="img/jaa_geometria.png" class="responsive-big" />.
 
-6.  Määritä jakolinja napauttamalla ***Lisää piste*** -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
+6.  Määritä jakolinja napauttamalla <img src="img/lisaa_piste.png" class="responsive-small" /> -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
 
-    Lisää tarvittaessa lisää pisteitä määrittääksesi jakolinjan reitin.
+7. Lisää pisteitä määrittääksesi jakolinjan reitin.
 
-7.  Kun jakolinja on valmis, napauta ***Valmis***.
+8.  Kun jakolinja on valmis, napauta <img src="img/valmis.png" class="responsive-small" />
 
     Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
 

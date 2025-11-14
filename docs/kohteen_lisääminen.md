@@ -1,16 +1,16 @@
 # **Kohteen lisääminen**
 
-1.  Paina alavalikon ***Lisää*** painikekeesta.
+1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small"/> painikekeesta.
 
 2.  Tarkista, että valittuna tasona on ***Kohteet***.
 
 3.  Siirry kartalla haluamaasi sijaintiin.
 
-4.  Klikkaa alhaalta ***Tallenna***.
+4.  Klikkaa alhaalta <img src="img/tallenna_v1.png" class="responsive-big"/>
 
 5.  Syötä tarvittavat ominaisuustiedot.
 
-6.  Valitse lopuksi oikean yläkulman vihreä ✅
+6.  Valitse lopuksi oikean yläkulman vihreä <img src="img/check_mergin_maps.png" class="responsive-small"/>
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -24,15 +24,7 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 -   Kohde:
 
     <div>
-
-    -   Hukkakaura<br>
-    -   Laskuaukko<br>
-    -   Kaivo<br>
-    -   Rumpu<br>
-    -   Kivi<br>
-    -   Viljavuusnäyte<br>
-    -   Muu<br>
-
+<img src="img/kohteet_selite.png" class="responsive-selite ">
     </div>
 
 -   Valokuva
@@ -41,7 +33,13 @@ Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
 -   Navigointi (voit navigoida kohteelle esimerkiksi Google Mapsin avulla klikkaamalla linkkiä)
 
-Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, napauta oikeasta alakulmasta ***Lisää → Asetukset → Lukitse automaattisesti sijainti***. Kun asetus on pois päältä, uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
+-  Sijainnin tarkkuus 
+
+- X -koordinaatti
+
+- Y -koordinaatto
+
+Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, napauta oikeasta alakulmasta <img src="img/lisaa_mergin_maps.png" class="responsive-small"  /> **→** <img src="img/asetukset.png" class="responsive-mid"   /> **→** ***Lukitse automaattisesti sijainti***. Kun asetus on pois päältä (eli <img src="img/pois_paalta.png" class="responsive-small"  />), uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
 
 Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
 

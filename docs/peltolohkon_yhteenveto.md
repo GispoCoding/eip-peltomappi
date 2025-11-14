@@ -1,8 +1,11 @@
 # **Peltolohkon yhteenveto**
 
-Saat listan kaikista peltolohkolle lisätyistä alueista sekä pistemäisistä kohteista. Klikkaa sovelluksessa haluamaasi peltolohkoa, avautuvassa ikkunassa lukee viisi viimeistä pellon rajojen sisäpuolelle tallennettua tapahtumaa. Klikkaamalla **Avaa lomake** saat näkyviin kaikki lohkolle tallennetut kohteet eriteltynä.  Lomakkeelta voit myös lisätä uusia kohteita. Klikkaamalla haluamastasi kategoriasta **+** -merkkiä pääset valitsemaan kohteellesi sijainnin ja täyttämään lomaketta.
+Saat listan kaikista peltolohkolle lisätyistä alueista sekä pistemäisistä kohteista. 
+Napauta sovelluksessa haluamaasi peltolohkoa, avautuvassa ikkunassa lukee viisi viimeistä pellon rajojen sisäpuolelle tallennettua tapahtumaa. 
+Napauttamalla **ikkunaa** saat näkyviin kaikki lohkolle tallennetut kohteet eriteltynä.  
+Lomakkeelta voit myös lisätä uusia kohteita <img src="img/plus.png" class="responsive-small"  /> -merkkiä painamalla. Tämän jälkeen pääset valitsemaan kohteellesi sijainnin ja täyttämään lomaketta.
 
-Lomake poimii kaikki peltolohkon päälle tallennetut alueet sekä pistemäiset kohteet. Jos tallennettu kohde on 10 metrin säteellä peltolohkon reunasta, se tallentuu peltolohkolle.
+Lomake poimii kaikki peltolohkon alueelle ja 10 metrin sätelle tallennetut alueet sekä pistemäiset kohteet.
 
 Avaa
 

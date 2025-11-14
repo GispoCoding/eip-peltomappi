@@ -2,48 +2,35 @@
 
 Tutustutaan aluksi Mergin Mapsin käyttöliittymään
 <div style="text-align: center;">
-  <img src="img/karttanäkymä.png" class="responsive-img">
+  <img src="img/karttanäkymä.png" class="responsive-fullsize">
 </div>
 
-<style>
-  .responsive-img {
-    width: 39%;
-  }
 
-  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
-  @media (max-width: 768px) {
-    .responsive-img {
-      width: 100%;
-    }
-  }
-</style>
+1.  <img src="img/gps_indikaattori.png" class="responsive-mid ">Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat [tiedot](https://gispocoding.github.io/eip-peltomappi/img/gps_info_mm.jpg). Lisätietoja [täältä](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mista-naet-gps-tarkkuuden).
 
+2.  <img src="img/sijaintipainike.png" class="responsive-small "> Näytön oikeassa alakulmassa olevan sijaintipainikkeen napauttaminen keskittää kartan nykyiseen sijaintiisi ja pitää sen keskitettynä liikkuessasi. Jos siirrät karttaa manuaalisesti, automaattinen keskitystila poistuu käytöstä automaattisesti.
 
-1.  **GPS-indikaattori:** Näyttää tämän hetkisen GPS-tarkkuuden. Näpäyttämällä tätä avautuu tarkemmat [tiedot](https://gispocoding.github.io/eip-peltomappi/img/gps_info_mm.jpg). Lisätietoja [täältä](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mista-naet-gps-tarkkuuden).
+3.  <img src="img/synkronoi.png" class="responsive-small "> Näpäyttämällä tätä tiedot synkronoituvat pilveen. Lisätietoja tästä asetuksien [synkronointi kohdassa](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mergin-mapsin-synkronointi-mobiilisovelluksessa)
 
-2.  **Sijaintipainike:** Näytön oikeassa alakulmassa olevan sijaintipainikkeen napauttaminen keskittää kartan nykyiseen sijaintiisi ja pitää sen keskitettynä liikkuessasi. Jos siirrät karttaa manuaalisesti, automaattinen keskitystila poistuu käytöstä automaattisesti.
-
-3.  **Synkronoi:** Näpäyttämällä tätä tiedot synkronoituvat pilveen. Lisätietoja tästä asetuksien [synkronointi kohdassa](https://gispocoding.github.io/eip-peltomappi/yleiset_asetukset.html#mergin-mapsin-synkronointi-mobiilisovelluksessa)
-
-4.  **Lisää:** Napauta Lisää-painiketta siirtyäksesi tallennustilaan, jotta voit tallentaa uusia kohteita.
+4.  <img src="img/lisaa_kohde.png" class="responsive-small ">Napauta Lisää-painiketta siirtyäksesi tallennustilaan, jotta voit tallentaa uusia kohteita.
 
     Käytössä oleva aktiivinen taso näkyy näytön yläreunassa. Napauta sitä valitaksesi toisen aktiivisen tason projektin muokattavissa olevista tasoista.
 
-5.  **Tasot:** Napauta Tasot-painiketta näyttääksesi projektisi tasot.
+5.  <img src="img/tasot.png" class="responsive-small "> Napauta Tasot-painiketta näyttääksesi projektisi tasot.
 
     Tässä voit ottaa käyttöön tai poistaa käytöstä tiettyjä tasoja muuttaaksesi niiden näkyvyyttä kartalla, nähdäksesi tasojen selitteet ja selataksesi tasojen ominaisuuksia.
 
     Seuraavassa kappaleessa lisätietoja
 
-6.  **Lisää:** Avaa sinulle lisäasetuksia:<details class="image-box"><summary>Avaa kuva</summary><img src="img/lisaa_asetuksia.jpg" width="100%"/></details><style>  .responsive-img {    width: 39%;  }  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */  @media (max-width: 768px) {    .responsive-img {      width: 100%;    }  }</style>
+6.  <img src="img/lisaa_mergin_maps.png" class="responsive-small "> Avaa sinulle lisäasetuksia:
 
-    -   Projektit: oikotie mobiilisovelluksen pääsivulle
-    -   Zoomaa projektiin: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
-    -   Karttateemat: [luettelo karttateemoista](https://gispocoding.github.io/eip-peltomappi/karttan%C3%A4kym%C3%A4.html#karttateemat)
-    -   Sijainnin nauhoitus: aloittaaksesi reitin piirron liikkumasi sijainnin perusteella. Lue lisää [täältä](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html)
-    -   [Mittaa](https://gispocoding.github.io/eip-peltomappi/mittaus.html): mittaa pituus tai alue kartalla
-    -   Paikalliset muutokset: yleiskatsaus synkronoitavista paikallisista muutoksista, joita ei siis ole vielä siirretty pilvipalveluun. 
-    -   Asetukset: sisältää seuraavat lisäasetukset:<details class="image-box"><summary>Avaa kuva</summary><img src="img/lisa_asetuksen_asetukset.png" width="100%"/></details>
+    -   <img src="img/projektit.png" class="responsive-settings ">: oikotie mobiilisovelluksen pääsivulle
+    -   <img src="img/zoomaa_projektiin.png" class="responsive-settings ">: zoomaa kaikkien projektin näkyvien tasojen laajuuteen.
+    -   <img src="img/karttateemat.png" class="responsive-settings ">: [luettelo karttateemoista](https://gispocoding.github.io/eip-peltomappi/karttan%C3%A4kym%C3%A4.html#karttateemat)
+    -   <img src="img/sijainnin_nauhoitus.png" class="responsive-settings ">: aloittaaksesi reitin piirron liikkumasi sijainnin perusteella. Lue lisää [täältä](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html)
+    -   <img src="img/mittaa_pitka.png" class="responsive-settings ">: mittaa pituus tai alue kartalla. Lisää [täältä](https://gispocoding.github.io/eip-peltomappi/mittaus.html)
+    -   <img src="img/paikalliset_muutokset.png" class="responsive-settings ">: yleiskatsaus synkronoitavista paikallisista muutoksista, joita ei siis ole vielä siirretty pilvipalveluun. 
+    -   <img src="img/asetukset_pitka.png" class="responsive-settings ">: sisältää seuraavat lisäasetukset:<details class="image-box"><summary>Avaa kuva</summary><img src="img/lisa_asetuksen_asetukset.png" class="responsive-big"/></details>
         -   GPS-asetukset: GPS tarkkuuden raja-arvot, Hallinnoi GPS vastaanottimia, GPS antennin korkeus
         -   [Nauhoitustila](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html): Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
         -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse automaattinen sijainti, kosketuspalaute
@@ -54,21 +41,9 @@ Tutustutaan aluksi Mergin Mapsin käyttöliittymään
 Sovelluksessa on tällä hetkellä käytössä lukuisia erilaisia karttatasoja. Voit sammuttaa tasoja näkymästä klikkaamalla tason vieressä olevaa palkkia.
 
 <div style="text-align: center;">
-  <img src="img/karttatasot_v2.jpg" class="responsive-img">
+  <img src="img/karttatasot_v2.jpg" class="responsive-big">
 </div>
 
-<style>
-  .responsive-img {
-    width: 39%;
-  }
-
-  /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
-  @media (max-width: 768px) {
-    .responsive-img {
-      width: 100%;
-    }
-  }
-</style>
 
 1. **Peltomaahavainnot:** Tälle tasolle tallennetaan peltomaahavaonnot. Tasolle lisäämisestä lisää kappaleessa [Peltomaahavainnot](https://gispocoding.github.io/eip-peltomappi/peltomaahavainnot.html)
 2. **Maaperä:** Tälle tasolle tallennetaan kaikki aluemuotoiset kohteet. Tasolle lisäämisestä lisää kappaleessa [Alueen lisääminen ja jakaminen](https://gispocoding.github.io/eip-peltomappi/alueen_lis%C3%A4%C3%A4minen.html)
@@ -83,7 +58,7 @@ Sovelluksessa on tällä hetkellä käytössä lukuisia erilaisia karttatasoja. 
 
 ## **Karttateemat**
 
-<img src="img/karttateemat.jpg" width="39%"/>
+<img src="img/karttateemat.jpg" class="responsive-big"/>
 
 Karttateemoissa on valittavana seuraavat teemat:
 

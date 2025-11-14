@@ -89,3 +89,85 @@
   -webkit-mask-image: var(--md-admonition-icon--image-box);
           mask-image: var(--md-admonition-icon--image-box);
 }
+  .responsive-small {
+    width: 6%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-small {
+      width: 14%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-mid {
+    width: 13%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-mid {
+      width: 29%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-big {
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-big {
+      width: 65%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-fullsize {
+    width: 40%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-fullsize {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  
+    .responsive-settings {
+    width: 120px;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-settings  {
+      width: 140px;
+      vertical-align: bottom;
+    }
+  }
+  .responsive-desktop {
+    width: 80%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-desktop {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  
+  .responsive-selite {
+    width: 30%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-selite {
+      width: 60%;
+      vertical-align: bottom;
+    }
+  }

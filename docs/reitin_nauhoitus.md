@@ -4,9 +4,9 @@ Reitin nauhoituksen avulla voit tallentaa esimerkiksi ajoreittisi. Tallennuksen 
 
 **Käynnistä seuranta:**
 
-1.  Napauta ***Lisää*** -painiketta.
+1.  Napauta <img src="img/lisaa_mergin_maps.png" class="responsive-small" /> -painiketta.
 
-2.  Valitse ***Sijainnin nauhoitus***
+2.  Valitse <img src="img/sijainnin_nauhoitus.png" class="responsive-big" />
 
 3.  Napauta ***Aloita sijainnin nauhoitus***.
 
@@ -16,7 +16,7 @@ Reitin nauhoituksen avulla voit tallentaa esimerkiksi ajoreittisi. Tallennuksen 
 
 1.  Napauta karttanäytöltä aikaindikaattoria
 
-    ![](img/mobile-app-stop-tracking.DN3LYoE-.jpg)
+<img src="img/mobile-app-stop-tracking.DN3LYoE-.jpg"/>
 
 2.  Napauta ***lopeta nauhoitus***
 
@@ -34,3 +34,5 @@ Huomioitavaa
 <iframe src="https://drive.google.com/file/d/1iAFJwCUwlcTLW9dgt3xghvVP_HD7z_m6/preview" allowfullscreen></iframe>
 </div>
 </details>
+
+
