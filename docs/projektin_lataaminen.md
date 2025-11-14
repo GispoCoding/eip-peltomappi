@@ -8,7 +8,7 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 !!! note "**💡 HUOM!**" 
     Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.
 
-1.  Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi <img src="img/sign_up.png" class="responsive-midbig"  alt="Asetukset-kuvake" />
+1.  Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi <img src="img/sign_up.png" class="responsive-big"  alt="Asetukset-kuvake" />
 
 <img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.jpg" class="responsive-big"/><br>
 2.  Liity työtilaan napauttamalla ***Join workspace***
@@ -36,8 +36,6 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 2. Valitse alavalikosta <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake" /> 
 ja napauta eip-peltomappi- projektia
 3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
-
-
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -78,7 +76,7 @@ Asenna QGIS seuraamalla asennusohjeita.
 
 ![](img/projektin_lataaminen_qgisiin/img2.png)
 
-Kun asennus on valmis, lisäosa löytyy QGIS:n selain ikkunasta, jonka otsikko on *Mergin Maps*.
+Kun asennus on valmis, lisäosa löytyy QGISin selain ikkunasta, jonka otsikko on *Mergin Maps*.
 
 **Kirjautuminen MerginMaps-lisäosaan**
 
