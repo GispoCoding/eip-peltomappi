@@ -184,36 +184,19 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 
 ## **Karttapiirrokset/luonnostelu**
 
-!!! note "💡 HUOM!" 
-    Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: [Projektin lataaminen tietokoneelle](https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen)
-
 Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi piirtää vapaalla kädellä kartan päälle mobiilisovelluksessa. Piirroksia voi tehdä eri väreillä ja ne tallentuvat erilliseen kerrokseen, joka synkronoituu takaisin QGIS-projektiin. Ominaisuus sopii esimerkiksi kenttämuistiinpanojen, reittien tai huomioiden merkitsemiseen nopeasti ilman, että tarvitsee luoda varsinaisia kohteita tietokantaan.
-
-### **Työkalun käyttöönotto**
-
-1.  Avaa projekti QGIS-ohjelmassa.
-
-2.  Valitse ylävalikosta ***Projekti → Ominaisuudet.***
-
-3.  Siirry ***Mergin Maps*** -välilehdelle.
-
-4.  Ota käyttöön ***Enable map sketching*** -valintaruutu. Halutessasi voit myös määrittää värit, joita mobiilisovelluksessa voi käyttää piirroksissa.
-
-5.  Tallenna muutokset. Projektiin luodaan uusi GeoPackage-tiedosto nimeltä ***map_sketches.gpkg***, joka sisältää piirroskerroksen.
-
-6.  Synkronoi projekti Mergin Maps -palveluun.
 
 ### **Karttapiirrosominaisuuden käyttäminen**
 
-1.  Napsauta karttapiirroskuvaketta ***(kynä)*** vasemmassa alakulmassa.
+1.  Napsauta karttapiirroskuvaketta <img src="img/karttapiirros.png" class="responsive-small"> vasemmassa alakulmassa.
 
 2.  Avautuu piirrosvalikko. Piirrä vapaalla kädellä tai styluksella.
 
 3.  Valitse yksi seitsemästä (oletusväriset) tai projektissa määritellyistä väreistä.
 
-4.  Käytä kumityökalua virheiden korjaamiseen ja ***Kumoa***-painiketta viimeisen muutoksen perumiseen.
+4.  Käytä kumityökalua virheiden korjaamiseen ja <img src="img/kumoa_v2.png" class="responsive-small">-painiketta viimeisen muutoksen perumiseen.
 
-5.  Sulje piirrosnäkymä esimerkiksi vihreällä ***X***-painikkeella.
+5.  Sulje piirrosnäkymä esimerkiksi vihreällä <img src="img/ruksi.png" class="responsive-small">-painikkeella.
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -221,6 +204,21 @@ Mergin Mapsin karttapiirros (Map Sketching) -ominaisuuden avulla käyttäjä voi
 <iframe src="https://drive.google.com/file/d/1TnyIE0WfYiK_RKHdSKGWvaUlRTl3Wkik/preview" allowfullscreen></iframe>
 </div>
 </details>
+
+### **Valokuvapiirrosominaisuuden käyttäminen**
+
+Valokuvapiirroksia voidaan käyttää merkintöjen tekemiseen valokuviin tai kuviin.
+
+1. Avaa kuva, johon haluat piirtää, napauttamalla sitä muokkaustilassa <img src="img/valokuva_piirros.png" class="responsive-small"> esikatselupaneelin oikeassa yläkulmassa.
+
+2. Valitse haluamasi väri luonnostelua varten väripalettivalikosta.
+
+3. Piirrä vapaamuotoisesti kuvan päälle, korosta asioita tai tee luonnoksia.
+Virheen sattuessa voit perua <img src="img/kumoa_v2.png" class="responsive-small"> viimeisen muokkauksen tai poistaa kaikki luonnokset ja aloittaa alusta.
+
+4. Kun olet valmis, paina vihreää <img src="img/check_mergin_maps.png" class="responsive-small">-painiketta sulkeaksesi luonnostelutilan.
+
+5. Seuraavan synkronoinnin yhteydessä luonnokset tallentuvat ja siirtyvät takaisin projektiisi QGIS:ssä.
 
 ## **Pituuden ja pinta-alan mittaaminen mobiilisovelluksessa**
 

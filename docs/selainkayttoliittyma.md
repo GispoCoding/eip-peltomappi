@@ -60,9 +60,9 @@ Muita tasoja, kuten taustakartat verkossa ei näytetä.
 
 Kaikki dashboardin kartat käyttävät taustakarttana Mergin Mapsin vektoritiilipalvelua.
 
-Karttojen sisältö ja Layers-paneeli päivittyvät aina, kun projekti synkronoidaan. Näin näet aina ajantasaiset paikkatiedot.
+Karttojen sisältö ja Layers-paneeli (tasot) päivittyvät aina, kun projekti synkronoidaan. Näin näet aina ajantasaiset paikkatiedot.
 
-Kerrospaneelissa listataan kaikki kartalla näkyvät kerrokset. Näyttöruudussa olevat silmäkuvakkeet (✅) säätelevät kerrosten näkyvyyttä.
+Layerspaneelissa listataan kaikki kartalla näkyvät tasot. Näyttöruudussa olevat silmäkuvakkeet (✅) säätelevät tasojen näkyvyyttä.
 
 
 
