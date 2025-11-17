@@ -613,6 +613,17 @@ class Composition:
                 msg = "no changes in project configuration files"
                 raise CompositionError(msg)
 
+            files = [file.name for file in sp.path().iterdir()]
+
+            # Copy new files
+            for file in self.template_project_path().iterdir():
+                if file.name not in files:
+                    if file.is_dir():
+                        shutil.copytree(file, sp.path() / file.name)
+                        continue
+
+                    shutil.copy(file, sp.path() / file.name)
+
             shutil.copy(template_project_path, sp_project_path)
             shutil.copy(template_mergin_conf_path, sp_mergin_conf_path)
 
