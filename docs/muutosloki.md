@@ -2,7 +2,7 @@
 
 Tälle sivulle kerätään tärkeimmät tiedot projektin ja dokumentaation uusista ominaisuuksista. 
 
-17.11.2025 päivitys uudet ominaisuudet:
+**17.11.2025 päivitys uudet ominaisuudet:**
 
 - Sentinel 2 satelliittikuville: tillage, moisture, NDVI lisätty selite karttanäkymään
 - Valokuvien tiedostonimeksi asetettu:  kohdeluokka + käyttäjännimi + päivämäärä
@@ -11,7 +11,7 @@ Tälle sivulle kerätään tärkeimmät tiedot projektin ja dokumentaation uusis
 - Kohteet ja Maaperä-tasoille rajoite että täytyy olla kohdeluokka valittuna
 
 
-3.11.2025 testiversio 2 uudet ominaisuudet:
+**3.11.2025 testiversio 2 uudet ominaisuudet:**
 
 -   Sentinel 2 satelliittikuvat: NDVI, tillage sekä kosteus
 -   Yhteenveto peltolohkoittain
