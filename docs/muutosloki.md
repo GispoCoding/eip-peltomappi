@@ -10,7 +10,8 @@ Tälle sivulle kerätään tärkeimmät tiedot projektin ja dokumentaation uusis
 - [Karttapiirros](https://gispocoding.github.io/eip-peltomappi/muut_ominaisuudet.html#karttapiirroksetluonnostelu) ja valokuvaluonnostelu ominaisuudet aktivoitu
 - Kohteet ja Maaperä-tasoille rajoite että täytyy olla kohdeluokka valittuna
 
-Uusia ominaisuuksia toisessa 3.11 testiversiossa
+
+3.11.2025 testiversio 2 uudet ominaisuudet:
 
 -   Sentinel 2 satelliittikuvat: NDVI, tillage sekä kosteus
 -   Yhteenveto peltolohkoittain
