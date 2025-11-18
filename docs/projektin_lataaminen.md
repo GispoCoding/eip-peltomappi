@@ -1,6 +1,6 @@
 # **Projektin lataaminen**
 
-## **Projektin lataaminen mobiilisovellukseen sähköpostilinkin avulla (uudet käyttäjät)**
+## **Projektin lataaminen mobiilisovellukseen (uudet käyttäjät)**
 
 Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53ukXLJhRCDZmWAF9), saat sähköpostiisi seuraavien päivien aikana linkin:
 <img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.jpg" class="responsive-big"/>
