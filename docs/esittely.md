@@ -13,7 +13,7 @@ Käytännössä tämä tarkoittaa, että:
 
 Lataa Mergin Maps -mobiilisovellus Android-laitteellesi, iPhonelle tai iPadille. Löydät sen laitteesi sovelluskaupasta:
 
-<a href="https://apps.apple.com/us/app/input/id1478603559?ls=1" target="_blank" rel="noopener noreferrer"> <img src="img/app_store_badge_black.svg" alt="Download on the App Store" width="120"/> </a><a href="https://play.google.com/store/apps/details?id=uk.co.lutraconsulting" target="_blank" rel="noopener noreferrer"> <img src="img/google-play-badge.png" alt="Get it on Google Play" width="120"/> </a><a href="https://github.com/MerginMaps/mobile/releases/download/2025.3.0/mergin-maps-mobile-win64-2025_3_0.exe" target="_blank" rel="noopener noreferrer"> <img src="img/app_download_windows.png" alt="Available on Windows" width="120"/> </a>
+<a href="https://apps.apple.com/us/app/input/id1478603559?ls=1" target="_blank" rel="noopener noreferrer"> <img src="img/app_store_badge_black.svg" alt="Download on the App Store" width="120"/> </a><a href="https://play.google.com/store/apps/details?id=uk.co.lutraconsulting" target="_blank" rel="noopener noreferrer"> <img src="img/google-play-badge.png" alt="Get it on Google Play" width="120"/> </a><a href="https://github.com/MerginMaps/mobile/releases/download/2025.7.0/merginmaps-2025-7-0-win64.exe" target="_blank" rel="noopener noreferrer"> <img src="img/app_download_windows.png" alt="Available on Windows" width="120"/> </a>
 
 ## **Tuetut käyttöjärjestelmäversiot**
 
