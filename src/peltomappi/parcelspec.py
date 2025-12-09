@@ -15,10 +15,9 @@ from peltomappi.filter import (
 )
 from peltomappi.logger import LOGGER
 from peltomappi.subproject import Subproject
+from peltomappi.utils import FIELD_PARCEL_FILE_PREFIX, representative_field_parcel_dataset
 
 SCHEMA_PARCEL_SPECIFICATION = Path(__file__).parent / "parcelspecification.schema.json"
-FIELD_PARCEL_FILE_PREFIX = "Peltolohkot_"
-FILTER_DATASET_NAME = f"{FIELD_PARCEL_FILE_PREFIX}2024.gpkg"
 
 
 class ParcelSpecificationError(Exception):
@@ -83,7 +82,7 @@ class ParcelSpecification:
 
         output_directory.mkdir()
 
-        filter_dataset = full_data_directory / FILTER_DATASET_NAME
+        filter_dataset = representative_field_parcel_dataset(full_data_directory)
         full_data_gpkgs = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
 
         LOGGER.info("Copying project files...")
