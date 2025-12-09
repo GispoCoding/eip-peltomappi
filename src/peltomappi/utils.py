@@ -33,7 +33,7 @@ def sha256_file(path: Path) -> str:
     return sha256.hexdigest()
 
 
-def representative_field_parcel_dataset(full_data_directory: Path) -> Path:
+def latest_fulldata_field_parcel_dataset(full_data_directory: Path) -> Path:
     """Determine representative (latest) field parcel dataset.
 
     Returns:
