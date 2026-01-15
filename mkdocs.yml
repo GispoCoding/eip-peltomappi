@@ -7,11 +7,7 @@ nav:
   - Projektin lataaminen: projektin_lataaminen.md
   - Karttanäkymä: karttanäkymä.md
   - Selainkäyttöliittymä: selainkayttoliittyma.md
-  - Kohteen lisääminen: kohteen_lisääminen.md
-  - Alueen lisääminen ja jakaminen: alueen_lisääminen.md
-  - Penetrometri: penetrometri.md
-  - MARA-kuoppa: mara_kuoppa.md
-  - Peltolohkon yhteenveto: peltolohkon_yhteenveto.md
+  - Tietojen lisääminen peltolohkolle: peltolohkon_yhteenveto.md
   - Salaojakarttojen georeferointi: salaojakarttojen_georeferointi.md
   - Reitin nauhoitus: reitin_nauhoitus.md
   - Muut ominaisuudet: muut_ominaisuudet.md

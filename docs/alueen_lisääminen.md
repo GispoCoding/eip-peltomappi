@@ -2,9 +2,11 @@
 
 ## **Alueen lisääminen**
 
-1.  Paina alavalikosta <img src="img/lisaa_kohde.png" class="responsive-small" /> 
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä alueen
 
-2.  Tarkista, että valittuna tasona on ***Maaperä***.
+2.  Valitse oikean kategorian ja tason mukainen alue, jolle haluat lisätä
+
+3.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
 3.  Siirry kartalla haluamaasi sijaintiin ja paina alhaalta <img src="img/lisaa_kohde.png" class="responsive-small"/>
 
@@ -66,18 +68,7 @@ Kun asetukset ovat kunnossa, toimi seuraavasti:
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
-- Kohde:
-    -   Multava
-
-    -   Kalkitus
-
-    -   Lannoitus
-
-    -   Vetelä
-
-    -   Rikkakasveja
-
-    -   Muu
+-   Kohdeluokka
 
 -   Valokuva
 

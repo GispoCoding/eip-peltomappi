@@ -1,16 +1,18 @@
 # **Penetrometri**
 
-1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small"  /> painikkeesta.
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä uuden Penetrometri-havainnon (vaihtoehtoisesti voit valita olemassa olevan Penetrometri pisteen, jolla tallennat uuden arvon)
 
-2.  Tarkista, että valittuna tasona on ***Penetrometri***.
+2.  Valitse oikean Maaperä kategorian alta "Penetrometri" ja Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
 3.  Siirry kartalla haluamaasi sijaintiin.
 
-4.  Napauta alhaalta <img src="img/tallenna_v1.png" class="responsive-bigger" />
+4.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
-5.  Syötä tarvittavat ominaisuustiedot.
+5.  Napauta alhaalta <img src="img/tallenna_v1.png" class="responsive-bigger" />
 
-6.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"  />
+6.  Syötä tarvittavat ominaisuustiedot.
+
+7.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"  />
 
 <details class="video-box">
 <summary>Avaa video</summary>

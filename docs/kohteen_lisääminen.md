@@ -1,16 +1,18 @@
 # **Kohteen lisääminen**
 
-1.  Paina alavalikosta <img src="img/lisaa_kohde.png" class="responsive-small"/> 
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä kohteen
 
-2.  Tarkista, että valittuna tasona on ***Kohteet***.
+2.  Valitse oikean kategorian ja tason mukainen alue, jolle haluat lisätä
 
-3.  Siirry kartalla haluamaasi sijaintiin.
+3.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
-4.  Napauta alhaalta <img src="img/tallenna_v1.png" class="responsive-big"/>
+4. Siirry kartalla haluamaasi sijaintiin.
 
-5.  Syötä tarvittavat ominaisuustiedot.
+5.  Napauta alhaalta <img src="img/tallenna_v1.png" class="responsive-big"/>
 
-6.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"/>
+6.  Syötä tarvittavat ominaisuustiedot.
+
+7.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"/>
 
 <details class="video-box">
 <summary>Avaa video</summary>
@@ -21,15 +23,11 @@
 
 Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
 
--   Kohde:
-
-    <div>
-<img src="img/kohteet_selite.png" class="responsive-selite ">
-    </div>
+-   Kohdeluokka:
 
 -   Valokuva
 
--   Lisätieto
+-   Muistiinpanot
 
 -   Navigointi (voit navigoida kohteelle esimerkiksi Google Mapsin avulla klikkaamalla linkkiä)
 

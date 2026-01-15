@@ -1,7 +1,7 @@
 # **MARA-kuopan lisääminen**
 
-1. Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />
-2. Tarkista, että valittuna tasona on ***MARA Kuoppa***.
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä MARA-kuopan
+2.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 3. Tarvittaessa siirrä sijaintiasi kartalla
 4. Paina alhaalta <img src="img/tallenna_v1.png" class="responsive-bigger"  />
 5. Lisää kerros painamalla <img src="img/plus.png" class="responsive-small"  /> 
