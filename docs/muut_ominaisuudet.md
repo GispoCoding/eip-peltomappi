@@ -1,5 +1,41 @@
 # **Muut ominaisuudet**
 
+## **Kohdeluokkien lisääminen**
+
+Voit lisätä kohdeluokkiin omia luokkia, valitsemalla kohdeluokaksi "Muu" ja valitsemalla avautuvasta valikosta + ikonin <img src="img/plus.png" class="responsive-small"/>. Tämän jälkeen käyttäjältä kysytään mikä annetaan kohdeluokan nimeksi. Kriteerinä on että kohdeluokan tulee olla uniikki eikä saa olla tyhjä.
+
+## **Kohdeluokkien poistaminen**
+
+Voit poistaa kohdeluokan seuraavasti.
+
+1. Valtise päänäkymästä tasot ja kohdeluokat. Valitse sieltä taso, josta haluat kohdeluokan tiedot poistaa esimerkiksi *Kasvustoalueet - kohdeluokat*. (Toinen vaihtoehto on kirjoittaa tasot -valikon hakuun tason nimi ja valitsemalla tason).
+
+2. Valitse sitten kohdeluokka, jonka halut poistaa ja valitse <img src="img/muokkaa_kohdetta.png" class="responsive-muokkaa-kohdetta"/>
+
+3. Tämän jälkeen napauta alalaidan <img src="img/poista_kohde.png" class="responsive-muokkaa-kohdetta"/>
+
+4. Vahvista poisto napauttamalla <img src="img/poista_kohde_varmistus.png" class="responsive-muokkaa-kohdetta"/>
+
+<style>
+  .responsive-muokkaa-kohdetta {
+    width: 35%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    ..responsive-muokkaa-kohdetta {
+      width: 60%;
+      vertical-align: middle;
+    }
+  }
+</style>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1H34-Ctg-cdMBEs44vgKhXdoRmTvp0qnK/preview" allowfullscreen></iframe>
+</div>
+</details>
+
 ## **Kohteiden muokkaaminen ja poistaminen mobiilisovelluksessa**
 
 Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **poistaa kohteita**.
