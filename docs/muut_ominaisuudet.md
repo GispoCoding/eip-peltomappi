@@ -4,6 +4,9 @@
 
 Voit lisätä kohdeluokkiin omia luokkia, valitsemalla kohdeluokaksi "Muu" ja valitsemalla avautuvasta valikosta + ikonin <img src="img/plus.png" class="responsive-small"/>. Tämän jälkeen käyttäjältä kysytään mikä annetaan kohdeluokan nimeksi. Kriteerinä on että kohdeluokan tulee olla uniikki eikä saa olla tyhjä.
 
+!!! note "💡 HUOM" 
+    Muista vaihtaa kohdeluokka uudeksi kohdeluokaksi luonnin jälkeen.
+
 ## **Kohdeluokkien poistaminen**
 
 Voit poistaa kohdeluokan seuraavasti.
