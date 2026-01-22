@@ -15,10 +15,10 @@ from peltomappi.filter import get_spatial_filter_from_field_parcel_ids
 from peltomappi.logger import LOGGER
 from peltomappi.parcelspec import ParcelSpecification
 from peltomappi.subproject import TEMPLATE_QGIS_PROJECT_NAME, ModificationType, Subproject
-from peltomappi.utils import clean_string_to_filename, representative_field_parcel_dataset, sha256_file
+from peltomappi.utils import clean_string_to_filename, latest_fulldata_field_parcel_dataset, sha256_file
 from peltomappi.weather import WeatherBackendTest
 
-FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
+FIELD_PARCEL_IDENTIFIER_COLUMN = "peruslohkotunnus"
 SCHEMA_COMPOSITION = Path(__file__).parent / "composition.schema.json"
 TEMPLATE_MERGIN_CONFIG_NAME = "mergin-config.json"
 
@@ -555,7 +555,7 @@ class Composition:
         LOGGER.info("Updating weather data")
         backend = WeatherBackendTest()
 
-        filter_dataset = representative_field_parcel_dataset(self.full_data_path())
+        filter_dataset = latest_fulldata_field_parcel_dataset(self.full_data_path())
         for sp in self.__subprojects:
             spatial_filter = get_spatial_filter_from_field_parcel_ids(
                 filter_dataset,

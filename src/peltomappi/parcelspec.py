@@ -15,9 +15,22 @@ from peltomappi.filter import (
 )
 from peltomappi.logger import LOGGER
 from peltomappi.subproject import Subproject
-from peltomappi.utils import FIELD_PARCEL_FILE_PREFIX, representative_field_parcel_dataset
+from peltomappi.utils import FIELD_PARCEL_FILE_PREFIX, latest_fulldata_field_parcel_dataset
 
 SCHEMA_PARCEL_SPECIFICATION = Path(__file__).parent / "parcelspecification.schema.json"
+CODE_LIST_FILES = (
+    "kiinteat_alueet_lista_v2.gpkg",
+    "kasvusto_kohteet__nogeom_lista.gpkg",
+    "kiinteat_kohteet_nogeom_lista.gpkg",
+    "toimet_nogeom_kohdeluokat.gpkg",
+    "kasvusto_kohteet_lista.gpkg",
+    "kasvusto_alueet_lista.gpkg",
+    "maapera_alueet_lista.gpkg",
+    "kiinteat_kohteet_listaus.gpkg",
+    "toimet_pisteet_kohdeluokat.gpkg",
+    "toimet_alueet_kohdeluokat.gpkg",
+    "maalajit.gpkg",
+)
 
 
 class ParcelSpecificationError(Exception):
@@ -82,7 +95,7 @@ class ParcelSpecification:
 
         output_directory.mkdir()
 
-        filter_dataset = representative_field_parcel_dataset(full_data_directory)
+        filter_dataset = latest_fulldata_field_parcel_dataset(full_data_directory)
         full_data_gpkgs = tuple([gpkg.name for gpkg in full_data_directory.glob("*.gpkg")])
 
         LOGGER.info("Copying project files...")
@@ -93,6 +106,7 @@ class ParcelSpecification:
                 or file.name.endswith(".gpkg-shm")
                 or file.stem == ".mergin"
                 or file.stem == "proj"
+                or file.name == "data"
             ):
                 continue
 
@@ -108,15 +122,26 @@ class ParcelSpecification:
             set(self.__field_parcel_ids),
         )
 
-        for file in template_project_directory.glob("*.gpkg"):
+        data_directory = template_project_directory / "data"
+        output_data_directory = output_directory / "data"
+
+        output_data_directory.mkdir()
+
+        for file in data_directory.glob("*.gpkg"):
             if file.name in full_data_gpkgs:
                 continue
 
-            copy_gpkg_as_empty(file, output_directory / f"{file.stem}.gpkg")
+            if file.name not in CODE_LIST_FILES:
+                copy_gpkg_as_empty(file, output_data_directory / f"{file.stem}.gpkg")
+            else:
+                shutil.copy(file, output_data_directory)
+
+        for file in data_directory.glob("*.tif"):
+            shutil.copy(file, output_data_directory)
 
         for file in full_data_directory.glob("*.gpkg"):
             LOGGER.info(f"Dividing {file.stem}...")
-            output = output_directory / f"{file.stem}.gpkg"
+            output = output_data_directory / f"{file.stem}.gpkg"
             if file.stem.startswith(FIELD_PARCEL_FILE_PREFIX):
                 filter_gpkg_by_field_parcel_ids(
                     file,

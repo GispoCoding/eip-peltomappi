@@ -10,6 +10,7 @@ from geopandas import gpd, pd
 import jsonschema
 
 from peltomappi.logger import LOGGER
+from peltomappi.utils import latest_fulldata_field_parcel_dataset
 
 
 SCHEMA_SUBPROJECT = Path(__file__).parent / "subproject.schema.json"
@@ -258,3 +259,8 @@ class Subproject:
                 continue
             elif isinstance(in_gdf, pd.DataFrame):
                 in_gdf.to_csv(out_path)
+
+    def representative_field_parcel_dataset(self, fulldata_path: Path) -> Path:
+        """Return path to representative (latest) field parcel dataset"""
+        latest = latest_fulldata_field_parcel_dataset(fulldata_path)
+        return self.__path / latest.stem / ".gpkg"
