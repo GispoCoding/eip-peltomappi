@@ -33,9 +33,10 @@ Kun olet liittynyt uudeksi testaajaksi [lomakkeen avulla](https://forms.gle/53uk
 
 1. Avaa Mergin Maps- mobiilisovellus
 
-2. Valitse alavalikosta <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake" /> 
-ja napauta eip-peltomappi- projektia
-3. Lataa projekti, jonka jälkeen projekti on käytössäsi.
+2. Valitse alapaneelistaa <img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake" /> 
+ja napauta ***peltomappi_test_version_3_oma_nimi***- projektia
+3. Napauta <img src="img/lataa.png" class="responsive-big" />, jonka jälkeen projekti ladataan laitteeseesi
+4. Kun lataus on valmis napauta projektia ja pääset aloittamaan projektin käyttämisen.
 
 <details class="video-box">
 <summary>Avaa video</summary>
