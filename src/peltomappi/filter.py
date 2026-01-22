@@ -9,7 +9,7 @@ from shapely.geometry import Polygon
 
 from peltomappi.logger import LOGGER
 
-FIELD_PARCEL_IDENTIFIER_COLUMN = "PERUSLOHKOTUNNUS"
+FIELD_PARCEL_IDENTIFIER_COLUMN = "peruslohkotunnus"
 
 
 class FilterError(Exception):
@@ -174,13 +174,12 @@ def copy_gpkg_as_empty(
             and not table[0].startswith("sqlite_")
         ]
 
-        if len(tables) > 1:
-            msg = "filtering dataset with multiple layers not supported currently"
-            raise FilterError(msg)
+        # if len(tables) > 1:
+        #     msg = "filtering dataset with multiple layers not supported currently"
+        #     raise FilterError(msg)
 
-        table = tables[0]
-
-        cursor.execute(f'DELETE FROM "{table}";')
+        for table in tables:
+            cursor.execute(f'DELETE FROM "{table}";')
 
     with sqlite3.connect(temp_file_path) as conn:
         cursor = conn.cursor()

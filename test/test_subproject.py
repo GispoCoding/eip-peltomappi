@@ -120,7 +120,7 @@ def test_export_user_data_to_csv(subproject_with_data_folder: Path):
 
     assert csv.exists()
 
-    expected = """,PERUSLOHKOTUNNUS,x,y
+    expected = """,peruslohkotunnus,x,y
 0,1111111111,500.0,-500.0
 1,2222222222,8500.0,500.0
 2,3333333333,7500.0,-6500.0

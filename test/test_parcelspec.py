@@ -57,8 +57,8 @@ def test_to_subproject(
     assert saved_subproject.exists()
     assert json.loads(saved_subproject.read_text()) == subproject.to_json_dict()
 
-    parcels_2023 = temp_path / "Peltolohkot_2023.gpkg"
-    parcels_2024 = temp_path / "Peltolohkot_2024.gpkg"
+    parcels_2023 = temp_path / "data/Peltolohkot_2023.gpkg"
+    parcels_2024 = temp_path / "data/Peltolohkot_2024.gpkg"
 
     assert parcels_2023.exists()
     gdf_2023: gpd.GeoDataFrame = gpd.read_file(parcels_2023)
