@@ -103,21 +103,23 @@ Tarkista ensin että asetukset ovat kunnossa:
 
 Kun asetukset ovat kunnossa, toimi seuraavasti:
 
-1.  Paina alavalikon <img src="img/lisaa_kohde.png" class="responsive-small" />.
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä alueen
 
-2.  Tarkista, että valittuna tasona on ***Maaperä***.
+2.  Valitse oikean kategorian ja tason mukainen alue, jolle haluat lisätä
 
-3.  Paina karttanäkymän jalanjälkien kuvaa <img src="img/footsteps_mergin_maps.png" class="responsive-small" />
+3.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
-4.  Valitse avautuvasta ikkunasta ***Aloita nauhoitus***.
+4.  Paina karttanäkymän jalanjälkien kuvaa <img src="img/footsteps_mergin_maps.png" class="responsive-small" />
 
-5.  Alue muodostuu kulkemasi reitin mukaan.
+5.  Valitse avautuvasta ikkunasta ***Aloita nauhoitus***.
 
-6.  Kun olet liikkunut kohteen ympäri, paina <img src="img/tallennus.png" class="responsive-mid"  /> ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
+6.  Alue muodostuu kulkemasi reitin mukaan.
 
-7.  Syötä tarvittavat ominaisuustiedot.
+7.  Kun olet liikkunut kohteen ympäri, paina <img src="img/tallennus.png" class="responsive-mid"  /> ja ***Lopeta nauhoitus***. Toiminto sulkee alueen eli jos et ole kulkenut kokonaan kohteen ympäri, sulkeutuu kohde viimeisimmästä pisteestä alkupisteeseen.
 
-8.  Valitse lopuksi oikean yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"/> 
+8.  Syötä tarvittavat ominaisuustiedot.
+
+9.  Valitse lopuksi oikean yläkulmasta <img src="img/check_mergin_maps.png" class="responsive-small"/> 
 
 
 <details class="video-box">
