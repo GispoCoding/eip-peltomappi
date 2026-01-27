@@ -2,10 +2,18 @@
 
 ## **Kohdeluokkien lisääminen**
 
-Voit lisätä kohdeluokkiin omia luokkia, valitsemalla kohdeluokaksi "Muu" ja valitsemalla avautuvasta valikosta + ikonin <img src="img/plus.png" class="responsive-small"/>. Tämän jälkeen käyttäjältä kysytään mikä annetaan kohdeluokan nimeksi. Kriteerinä on että kohdeluokan tulee olla uniikki eikä saa olla tyhjä.
+Voit lisätä kohdeluokkiin omia luokkia, valitsemalla kohdeluokaksi *"Muu"* ja valitsemalla avautuvasta valikosta + ikonin <img src="img/plus.png" class="responsive-small"/>. Tämän jälkeen käyttäjältä kysytään mikä annetaan kohdeluokan nimeksi. Kriteerinä on että kohdeluokan tulee olla uniikki eikä saa olla tyhjä.
 
 !!! note "💡 HUOM" 
     Muista vaihtaa kohdeluokka uudeksi kohdeluokaksi luonnin jälkeen.
+
+</style>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1xLgggO4N7i6qcE5AN_igh8hrV02E46IP/preview" allowfullscreen></iframe>
+</div>
+</details>
 
 ## **Kohdeluokkien poistaminen**
 
@@ -116,7 +124,7 @@ Voit nopeuttaa kenttätyössä samankaltaisten kohteiden syöttämistä ottamall
 !!! note "**Miten se toimii käytännössä:**" 
     - Kun olet ottanut ominaisuuden käyttöön, siirry takaisin karttanäkymään. Siinä vaiheessa, kun lisäät uuden kohteen, attribuuttilomakkeessa näkyy valintaruudut jokaisen kentän vieressä.
 
-    -   Valitse ne attribuutit (esim. laji tms.), joiden arvon haluat kopioida viimeksi tallennetusta kohteesta.
+    -   Valitse ne attribuutit (esim. kohdeluokka tms.), joiden arvon haluat kopioida viimeksi tallennetusta kohteesta.
 
     -   Tallennettuasi kohteen, valitsemasi attribuuteille kopioituu edellinen arvo automaattisesti seuraavalla kohteella, kun taas muut kentät jäävät tyhjiksi.
 

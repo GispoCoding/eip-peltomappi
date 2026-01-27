@@ -43,7 +43,7 @@ Sovelluksessa on tällä hetkellä käytössä lukuisia erilaisia karttatasoja. 
 </div>
 
 
-1. **Tasot:** Täältä löytyvät kaikki karttatasot, jotka Peltomapissa kääytössä
+1. **Tasot:** Täältä löytyvät kaikki karttatasot, jotka Peltomapissa käytössä
 2. **Kohdeluokat:** Täältä löytyy kaikki tasoihin liittyvät kohdeluokat. Lisätietoja kohdeluokkien lisäämisestä [täältä](https://gispocoding.github.io/eip-peltomappi/muut_ominaisuudet.html#kohdeluokkien-lisaaminen)
 3. **Peltolohkot 2024:** Ruokaviraston Paikkatietoa sisältävä kasvulohko 2024 tason aineisto. Lisätietoja tasosta [täältä](https://www.ruokavirasto.fi/tietoa-meista/julkaistut-tietoaineistot/paikkatietoaineistot/)
 4. **Tilarajat:** Tasolla Maanmittauslaitoksen kiinteistöjaotus. Aineiston toimittaa maanmittauslaitos. Lisätietoja aineistosta [täältä](https://www.maanmittauslaitos.fi/sites/maanmittauslaitos.fi/files/attachments/2020/06/Vektoritiilipalvelun%20esittely.pdf).
