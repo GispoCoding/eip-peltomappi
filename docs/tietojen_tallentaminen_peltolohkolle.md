@@ -7,13 +7,6 @@ Napauttamalla **ikkunaa** saat näkyviin kaikki lohkolle tallennetut kohteet eri
 
 Lomakkeelta lisätään uusia kohteita <img src="img/plus.png" class="responsive-small"  /> -merkkiä painamalla. Tämän jälkeen pääset valitsemaan kohteellesi sijainnin ja täyttämään lomaketta. Seuraavissa kappaleissa tarkemmin ohjeet eri kohteiden tallentamiseen.
 
-<details class="video-box">
-<summary>Avaa video</summary>
-<div class="video-container">
-<iframe src="https://drive.google.com/file/d/1m9qzVa5DoFBQame8QtUckYZXtxRnzoMB/preview" allowfullscreen></iframe>
-</div>
-</details>
-
 ## **Kohteen lisääminen** 
 **(Kasvustokohteet, Kiinteätpisteet, Toimenpidepisteet)**
 
@@ -38,27 +31,8 @@ Lomakkeelta lisätään uusia kohteita <img src="img/plus.png" class="responsive
 </div>
 </details>
 
-Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
-
--   Kohdeluokka:
-
--   Valokuva
-
--   Muistiinpanot
-
--   Navigointi (voit navigoida kohteelle esimerkiksi Google Mapsin avulla klikkaamalla linkkiä)
-
--  Sijainnin tarkkuus 
-
-- X -koordinaatti
-
-- Y -koordinaatto
-
 Uuden kohteen lisääminen sijoittuu automaattisesti omaan sijaintiisi. Tämän voi muuttaa asetuksista, napauta oikeasta alakulmasta <img src="img/lisaa_mergin_maps.png" class="responsive-small"  /> **→** <img src="img/asetukset.png" class="responsive-mid"   /> **→** ***Lukitse automaattisesti sijainti***. Kun asetus on pois päältä (eli <img src="img/pois_paalta.png" class="responsive-small"  />), uusi kohde sijoittuu aina karttanäyttösi keskikohtaan.
 
-Mikäli ominaisuustiedoista puuttuu jokin tai haluat muutoin antaa palautetta ominaisuudesta, käytä alla olevaa lomaketta:
-
-[Palautelomake: kohteen lisääminen](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Kohteen+lis%C3%A4%C3%A4mist%C3%A4)
 
 ## **Alueen lisääminen**
 **(Maaperäalueet, Kasvustoalueet, Kiinteätalueet, Toimenpidealueet)**
@@ -129,50 +103,6 @@ Kun asetukset ovat kunnossa, toimi seuraavasti:
 </div>
 </details>
 
-Kohteelle tallennetaan tällä hetkellä seuraavat ominaisuustiedot:
-
--   Kohdeluokka
-
--   Valokuva
-
--   Lisätieto
-
-Mikäli listasta puuttuu jokin haluttu kohde tai haluat muutoin muuttaa kohdelistausta, anna palautetta alla olevan lomakkeen avulla:
-
-[Palautelomake: Alueen lisääminen](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Alueen+lis%C3%A4%C3%A4mist%C3%A4)
-
-#### **Alueen jakaminen**
-
-Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet. Tämän toiminnon jälkeen voit lisätä peltolohkoille useita kasveja samalle lohkolle,
-
-**Toimintaohjeet**:
-
-1.  Napauta kartalla haluamaasi aluekohdetta.
-
-2.  Napauta <img src="img/muokkaa.png" class="responsive-mid"  />-painiketta avataksesi ominaisuudet.
-
-3.  Napauta <img src="img/muokkaa_geometriaa.png" class="responsive-mid"/> -painiketta. Kohteen kulmapisteet korostuvat kartalle
-
-4.  Napauta <img src="img/kolme_pistetta.png" class="responsive-small"/> -painiketta.
-
-5.  Valitse <img src="img/jaa_geometria.png" class="responsive-big" />.
-
-6.  Määritä jakolinja napauttamalla <img src="img/lisaa_piste.png" class="responsive-small" /> -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
-
-7. Lisää pisteitä määrittääksesi jakolinjan reitin.
-
-8.  Kun jakolinja on valmis, napauta <img src="img/valmis.png" class="responsive-small" />
-
-    Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
-
-<details class="video-box">
-<summary>Avaa video</summary>
-<div class="video-container">
-<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" allowfullscreen></iframe>
-</div>
-</details>
-
-
 ## **Lohkokohtaisen tiedon tallentaminen**
 **(Maaperähavainnot, Lohkokohtaiset kasvustotiedot, Lohkokohtaiset kiinteät tiedot, Lohkokohtaiset toimenpiteet)**
 
@@ -186,11 +116,18 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
 5.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"  />
 
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1XCHDH8aqreHyUuGrBLh7qhSvbSM2T5KL/preview" allowfullscreen></iframe>
+</div>
+</details>
+
 ## **Penetrometri**
 
-1.  Napauta kartalta peltolohkoa, jolle haluat lisätä uuden Penetrometri-havainnon (vaihtoehtoisesti voit valita olemassa olevan Penetrometri pisteen, jolla tallennat uuden arvon)
+1.  Napauta kartalta peltolohkoa, jolle haluat lisätä uuden Penetrometri-havainnon 
 
-2.  Valitse oikean Maaperä kategorian alta "Penetrometri" ja Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
+2.  Valitse Maaperä kategorian alta "Penetrometri" ja Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
 3.  Siirry kartalla haluamaasi sijaintiin.
 
@@ -209,25 +146,23 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 </div>
 </details>
 
-Tällä hetkellä voit tallentaa seuraavat ominaisuustiedot:
+## **Penetrometri olemassaolevaan pisteeseen**
 
--   Maan tiiveys:
+1.  Napauta kartalta penetrometri-havaintoa, jolle haluat lisätä uuden Penetrometri-havainnon
 
-<img src="img/penetrometri_selite.png" class="responsive-selite"  />
+2.  Napauta <img src="img/muokkaa.png" class="responsive-small"/>
 
--   Syvyys alkuarvo
+3.  Napauta + ikonia <img src="img/plus.png" class="responsive-small"/>
 
--   Syvyys loppuarvo
+6.  Syötä halutut ominaisuustiedot.
 
--   Päivämäärä ja aika
-
--   Muistiinpanot
-
-Anna palautetta ominaisuudesta alla olevan lomakkeen avulla:
-
-[Palautelomake penetrometri](https://docs.google.com/forms/d/e/1FAIpQLSfsGGxcdoyVvwqIh-dGyleqlHLDa48dSnIgMMCHhSZR-pgl4Q/viewform?usp=pp_url&entry.76641795=Penetrometri)
-
-<style>
+7.  Valitse lopuksi oikean yläkulman <img src="img/check_mergin_maps.png" class="responsive-small"  />
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1BhIDQVMeyFZ5HzVzZHYJHS9qj5w6oGlm/preview" allowfullscreen></iframe>
+</div>
+</details><style>
   .responsive-bigger {
     width: 30%;
     vertical-align: middle;
@@ -277,3 +212,4 @@ Anna palautetta ominaisuudesta alla olevan lomakkeen avulla:
     }
   }
 </style>
+

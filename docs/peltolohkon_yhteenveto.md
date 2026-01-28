@@ -5,7 +5,9 @@ Napauta sovelluksessa haluamaasi peltolohkoa, avautuvassa ikkunassa lukee viisi 
 
 Napauttamalla **ikkunaa** saat näkyviin kaikki lohkolle tallennetut kohteet eriteltynä.  
 
-Lomakkeelta lisätään uusia kohteita <img src="img/plus.png" class="responsive-small"  /> -merkkiä painamalla. Tämän jälkeen pääset valitsemaan kohteellesi sijainnin ja täyttämään lomaketta. Seuraavissa kappaleissa tarkemmin ohjeet eri kohteiden tallentamiseen.
+Lomakkeelta lisätään uusia kohteita <img src="img/plus.png" class="responsive-small"  /> -merkkiä painamalla. Tämän jälkeen pääset valitsemaan kohteellesi sijainnin ja täyttämään lomaketta. Seuraavissa kappaleissa tarkemmin ohjeet eri kohteiden tallentamiseen. testi
+
+testi
 
 ## **Kohteen lisääminen** 
 **(Kasvustokohteet, Kiinteätpisteet, Toimenpidepisteet)**

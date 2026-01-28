@@ -93,6 +93,37 @@ Mergin Maps -mobiilisovelluksella voit kenttätyössä myös **muokata** ja **po
 
 -  Tämän jälkeen sijaintiasi nauhoitetaan ja napauttamalla taitepistettä se siirtyy sijaintiisi
 
+### **Alueen jakaminen**
+
+Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävät alkuperäiset attribuutit, mutta saavat uudet tunnisteet. Tämän toiminnon jälkeen voit lisätä peltolohkoille useita kasveja samalle lohkolle,
+
+**Toimintaohjeet**:
+
+1.  Napauta kartalla haluamaasi aluekohdetta.
+
+2.  Napauta <img src="img/muokkaa.png" class="responsive-mid"  />-painiketta avataksesi ominaisuudet.
+
+3.  Napauta <img src="img/muokkaa_geometriaa.png" class="responsive-mid"/> -painiketta. Kohteen kulmapisteet korostuvat kartalle
+
+4.  Napauta <img src="img/kolme_pistetta.png" class="responsive-small"/> -painiketta.
+
+5.  Valitse <img src="img/jaa_geometria.png" class="responsive-big" />.
+
+6.  Määritä jakolinja napauttamalla <img src="img/lisaa_piste.png" class="responsive-small" /> -painiketta luodaksesi jakolinjan ensimmäinen piste. HUOM! Piste oltava jaettavan geometrian ulkopuolella
+
+7. Lisää pisteitä määrittääksesi jakolinjan reitin.
+
+8.  Kun jakolinja on valmis, napauta <img src="img/valmis.png" class="responsive-small" />
+
+    Sovellus luo kaksi uutta kohdetta alkuperäisen kohteen sijaan. Molemmat uudet kohteet perivät alkuperäisen kohteen attribuutit, mutta saavat uudet tunnisteet.
+
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1RMDDmVpzrPZgOGaL7YUvy1RABSKep2Hn/preview" allowfullscreen></iframe>
+</div>
+</details>
+
 ### **Useiden kohteiden muokkaus**
 
 -   Valitse ensin yksi kohde kartalta ja valitse sen jälkeen <img src="img/valitse_lisaa.png" class="responsive-mid"   /> -toiminto.
@@ -335,14 +366,11 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
 
 -   Voit halutessasi tarkastella odottavia muutoksia napauttamalla <img src="img/lisaa_mergin_maps.png" class="responsive-small"  /> → <img src="img/paikalliset_muutokset.png" class="responsive-big"  />  
 <div style="text-align: center;">
-<img src="img/sync_mergin_maps.gif" class="responsive-img">
 </div>
-
 <style>
   .responsive-img {
     width: 30%;
   }
-
   /* Jos näkymän leveys on alle 768px (mobiili/tabletti) */
   @media (max-width: 768px) {
     .responsive-img {
@@ -350,6 +378,13 @@ Mergin Maps-sovelluksella voit varmistaa, että tekemäsi kenttätyön muutokset
     }
   }
 </style>
+<iframe
+  src="https://drive.google.com/file/d/1THYgJRFeY3F2NCxIR1d5qx_GJEcSwtQc/preview"
+  width="322"
+  height="576"
+  allowfullscreen>
+</iframe>
+
 
 ### **2. Automaattinen synkronointi**
 
