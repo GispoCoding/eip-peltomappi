@@ -215,8 +215,6 @@ Tämä toiminto jakaa alueen kahdeksi erilliseksi kohteeksi, jotka säilyttävä
 
 <img src="img/penetrometri_selite.png" class="responsive-selite"  />
 
-
-
 <style>
   .responsive-bigger {
     width: 30%;
