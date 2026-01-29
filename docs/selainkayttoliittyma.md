@@ -2,7 +2,7 @@
 
 Projektiasi voi tarkastella myös selaimen kautta. Selaimen avulla et voi kuitenkaan lisätä tai editoida kohteita. Se on tarkoitettu ainoastaan aineiston katseluun tällä hetkellä.
 
-Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.merginmaps.com](app.merginmaps.com) ja kirjaudut omilla tunnuksillasi sisään. 
+Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.merginmaps.com](https://app.merginmaps.com/login) ja kirjaudut omilla tunnuksillasi sisään. 
 
 ## **Ohjevideo**
 
@@ -12,8 +12,6 @@ Pääset tarkastelemaan projektiasi kun kirjoitat selaimen URL-osoitteeksi [app.
     allowfullscreen>
   </iframe>
 </div>
-
-
 
 ## Projekteihin liittyvät toiminnot
 

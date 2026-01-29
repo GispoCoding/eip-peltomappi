@@ -1,5 +1,22 @@
 # **Esittely**
 
+<style>
+.video-desktop-container iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="video-desktop-container">
+  <iframe
+    src="https://drive.google.com/file/d/1F_JRsnn1P9XYE8vC3NwNUOR5Q2JEgwRH/preview?"
+    allow="autoplay"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
 Peltomappi ei ole tässä testausvaiheessa vielä erillinen ohjelma, vaan se on MerginMaps-sovellukseen rakennettu projektitiedosto. 
 Käytännössä tämä tarkoittaa, että:
 
