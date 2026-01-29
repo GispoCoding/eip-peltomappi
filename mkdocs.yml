@@ -2,7 +2,7 @@ site_name: Peltomappi
 site_url: https://gispocoding.github.io/eip-peltomappi/
 copyright: 'Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>'
 nav:
-  - Koti: index.md
+  - <img src="img/peltomappi-markkeri.png"/> Koti: index.md
   - Esittely: esittely.md
   - Projektin lataaminen: projektin_lataaminen.md
   - Karttanäkymä: karttanäkymä.md
