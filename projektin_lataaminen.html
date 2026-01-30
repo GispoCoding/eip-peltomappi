@@ -1,0 +1,817 @@
+<!DOCTYPE html><html lang="fi" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html">
+      
+      
+        <link rel="prev" href="esittely.html">
+      
+      
+        <link rel="next" href="karttan%C3%A4kym%C3%A4.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="img/pysty_peltomappi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Projektin lataaminen - Peltomappi</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="peltomappi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projektin-lataaminen" class="md-skip">
+          Hyppää sisältöön
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Ylätunniste">
+    <a href="index.html" title="Peltomappi" class="md-header__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Peltomappi
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projektin lataaminen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hae" placeholder="Hae" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Haku">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Tyhjää" aria-label="Tyhjää" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Aloitetaan hakua
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigaatio" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Peltomappi" class="md-nav__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    Peltomappi
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    <img src="img/peltomappi-markkeri.png"> Koti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="esittely.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esittely
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projektin lataaminen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="projektin_lataaminen.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projektin lataaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisällysluettelo">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisällysluettelo
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projektin-lataaminen-mobiilisovellukseen-uudet-kayttajat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektin lataaminen mobiilisovellukseen (uudet käyttäjät)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uusimman-projektitiedoston-lataaminen-mobiilisovellukseen-vanhat-kayttajat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uusimman projektitiedoston lataaminen mobiilisovellukseen (vanhat käyttäjät)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="karttan%C3%A4kym%C3%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Karttanäkymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="selainkayttoliittyma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selainkäyttöliittymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tietojen_tallentaminen_peltolohkolle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tietojen tallentaminen peltolohkolle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="salaojakarttojen_georeferointi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salaojakarttojen georeferointi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reitin_nauhoitus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reitin nauhoitus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muut_ominaisuudet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muut ominaisuudet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="palaute.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palaute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muutosloki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutosloki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="projektin-lataaminen"><strong>Projektin lataaminen</strong></h1>
+<h2 id="projektin-lataaminen-mobiilisovellukseen-uudet-kayttajat"><strong>Projektin lataaminen mobiilisovellukseen (uudet käyttäjät)</strong></h2>
+<p>Kun olet liittynyt uudeksi testaajaksi <a href="https://forms.gle/53ukXLJhRCDZmWAF9">lomakkeen avulla</a>, saat sähköpostiisi seuraavien päivien aikana linkin:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/sahkoposti_linkki.png" class="responsive-big"></a></p>
+<div class="admonition note">
+<p class="admonition-title"><strong>💡 HUOM!</strong></p>
+<p>Tarkista roskapostikansiosi, jos vahvistussähköposti ei näy postilaatikossasi.</p>
+</div>
+<ol>
+<li>Klikkaa linkkiä ja rekisteröidy palveluun. Paina lopuksi <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sign_up.png" data-desc-position="bottom"><img src="img/sign_up.png" class="responsive-big" alt="Asetukset-kuvake"></a></li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/rekisteroityminen.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/rekisteroityminen.png" class="responsive-big"></a><br>
+2.  Liity työtilaan napauttamalla <strong><em>Join workspace</em></strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/tyotilaan_liittyminen.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/tyotilaan_liittyminen.png" class="responsive-big"></a><br>
+3.  Avaa tämän jälkeen MerginMaps -sovellus puhelimessasi ja napauta oikean yläkulman ikonia:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/aloitusnakyma.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/aloitusnakyma.png" class="responsive-big"></a><br>
+4.  Kirjaudu tämän jälkeen juuri luomillasi tunnuksillasi sisään:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/kirjautuminen.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/kirjautuminen.png" class="responsive-big"></a><br>
+5. Napauta tämän jälkeen alareunan <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/projektit.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake"></a> ja lataa eip-peltomappi- projekti</p>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/15Y8Q-OHDhgEhV4rY7L_RVG6gBxOKRb9g/preview" allowfullscreen></iframe>
+</div>
+</details>
+
+<h2 id="uusimman-projektitiedoston-lataaminen-mobiilisovellukseen-vanhat-kayttajat"><strong>Uusimman projektitiedoston lataaminen mobiilisovellukseen (vanhat käyttäjät)</strong></h2>
+<ol>
+<li>
+<p>Avaa Mergin Maps- mobiilisovellus</p>
+</li>
+<li>
+<p>Valitse alapaneelistaa <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/projektit.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/projektit.png" class="responsive-small" alt="Asetukset-kuvake"></a> 
+ja napauta <strong><em>peltomappi_test_version_3_oma_nimi</em></strong>- projektia</p>
+</li>
+<li>Napauta <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/lataa.png" data-desc-position="bottom"><img src="img/lataa.png" class="responsive-big"></a>, jonka jälkeen projekti ladataan laitteeseesi</li>
+<li>Kun lataus on valmis napauta projektia ja pääset aloittamaan projektin käyttämisen.</li>
+</ol>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1QnAaKbqdkA8rmEdjK6DCJKP0BYCil74b/preview" allowfullscreen></iframe>
+</div>
+</details>
+
+<h2 id="projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen"><strong>Projektin lataaminen tietokoneelle QGIS-työpöytäsovellukseen</strong></h2>
+<div class="admonition note">
+<p class="admonition-title">💡 <strong>Info</strong></p>
+<p><strong>Mergin Maps mobiilisovelluksen käyttö ei edellytä QGISin käyttöä</strong>. Sitä voi käyttää täysin itsenäisesti, mutta jos haluat laajemmat työkalut käyttöön ja haluat tarkastella projektia, lisätä georeferoituja karttoja ja muokkailla tallentamiasi tietoja tietokoneella ne onnistuvat parhaiten QGISin avulla.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">💡 <strong>Info</strong></p>
+<p>QGIS on avoimen lähdekoodin paikkatieto-ohjelmisto, jonka avulla voit tarkastella, muokata ja analysoida paikkatietoaineistoja. Kun lataat projektin QGISiin, näet peltolohkosi kartalla ja voit käsitellä niihin liittyviä ominaisuustietoja myös ilman verkkoyhteyttä. </p>
+</div>
+<h3 id="qgisin-lataaminen-ja-asentaminen"><strong>QGISin lataaminen ja asentaminen</strong></h3>
+<p>Mene QGISin viralliselle sivulle: <a href="https://qgis.org/">https://qgis.org/</a></p>
+<p>Valitse <strong><em>Download Now</em></strong> ja lataa versio käyttöjärjestelmällesi (Windows, Mac, Linux):</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/img1.png" data-desc-position="bottom"><img src="img/projektin_lataaminen_qgisiin/img1.png" width="79%"></a></p>
+<p>Asenna QGIS seuraamalla asennusohjeita.</p>
+<h3 id="merginmaps-lisaosan-asentaminen-qgisiin"><strong>MerginMaps-lisäosan asentaminen QGISiin</strong></h3>
+<ol>
+<li>
+<p>Avaa QGIS</p>
+</li>
+<li>
+<p>Valitse ylävalikosta <strong><em>Lisäosat → Hallinnoi ja asenna lisäosia</em></strong><strong>.</strong></p>
+</li>
+<li>
+<p>Kirjoita hakukenttään <strong><em>Mergin</em></strong><strong>.</strong></p>
+</li>
+<li>
+<p>Valitse <strong><em>Mergin Maps</em></strong> ja klikkaa <strong><em>Asenna lisäosa</em></strong><strong>.</strong></p>
+</li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/img2.png" data-desc-position="bottom"><img alt="" src="img/projektin_lataaminen_qgisiin/img2.png"></a></p>
+<p>Kun asennus on valmis, lisäosa löytyy QGISin selain ikkunasta, jonka otsikko on <em>Mergin Maps</em>.</p>
+<p><strong>Kirjautuminen MerginMaps-lisäosaan</strong></p>
+<p>Avaa lisäosa valikosta: <strong><em>Lisäosat → Mergin Maps → Configure MerginMaps plugin</em></strong> -ikonista.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/img3.png" data-desc-position="bottom"><img alt="" src="img/projektin_lataaminen_qgisiin/img3.png"></a></p>
+<p>Tämän jälkeen ohjelma pyytää asettamaan uuden päätodennussalasanan QGISiin. Anna siihen haluamasi salasana ja laita se talteen.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/img4.png" data-desc-position="bottom"><img alt="" src="img/projektin_lataaminen_qgisiin/img4.png"></a></p>
+<p>Kirjaudu sisään Mergin-tililläsi.</p>
+<p>Valitse <strong>Save credentials</strong><em>,</em> jos haluat että ohjelma muistaa tunnuksesi seuraavilla kerroilla.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/img5.png" data-desc-position="bottom"><img alt="" src="img/projektin_lataaminen_qgisiin/img5.png"></a></p>
+<p>Kun kirjaudut, lisäosa yhdistyy Mergin-tiliisi, ja voit nähdä projektisi listattuna.</p>
+<p><strong>Projektin lataaminen QGISiin MerginMaps-lisäosalla</strong></p>
+<ol>
+<li>
+<p>Avaa <strong><em>Mergin Maps</em></strong> -paneeli QGIS:ssä vasemman laidan selainosiosta.</p>
+</li>
+<li>
+<p>Paneelissa näet kaikki projektisi.</p>
+</li>
+<li>
+<p>Valitse projekti, jonka haluat ladata.</p>
+</li>
+<li>
+<p>Klikkaa <strong><em>Download</em></strong> <strong><em>project</em></strong> (Lataa projekti).</p>
+</li>
+<li>
+<p>Valitse kansio, johon projekti tallennetaan. Laita mieleen tämä sijainti. Tähän samaan sijaintiin tallennetaan myöhemmin <a href="https://gispocoding.github.io/eip-peltomappi/salaojakarttojen_georeferointi.html">georeferoidut kuvat</a>.</p>
+</li>
+<li>
+<p>QGIS avaa projektin ja siihen liittyvät aineistot automaattisesti.</p>
+</li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/projektin_lataaminen_qgisiin/mergin_maps_projektin_lataus.gif" data-desc-position="bottom"><img alt="" src="img/projektin_lataaminen_qgisiin/mergin_maps_projektin_lataus.gif"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Alatunniste">
+        
+          
+          <a href="esittely.html" class="md-footer__link md-footer__link--prev" aria-label="Edellinen: Esittely">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Edellinen
+              </span>
+              <div class="md-ellipsis">
+                Esittely
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="karttan%C3%A4kym%C3%A4.html" class="md-footer__link md-footer__link--next" aria-label="Seuraava: Karttanäkymä">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Seuraava
+              </span>
+              <div class="md-ellipsis">
+                Karttanäkymä
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <img style="float: right; width: 20%;" alt="Euroopan unionin osarahoittama" src="https://maaseutu.kuvat.fi/kuvat/Tuensaajalle/FI%20Euroopan%20unionin%20osarahoittama_.png?img=full">
+      Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>
+      <br>
+      Sivut luotu <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocsia</a> käyttäen.
+    </div>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "toc.integrate", "search.suggest", "search.highlight", "header.autohide", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopioitu leikep\u00f6yd\u00e4lle", "clipboard.copy": "Kopioi leikep\u00f6yd\u00e4lle", "search.result.more.one": "1 lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.more.other": "# lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.none": "Ei t\u00e4sm\u00e4\u00e4vi\u00e4 dokumentteja", "search.result.one": "1 t\u00e4sm\u00e4\u00e4v\u00e4 dokumentti", "search.result.other": "# t\u00e4sm\u00e4\u00e4v\u00e4\u00e4 dokumenttia", "search.result.placeholder": "Kirjoita aloittaaksesi haun", "search.result.term.missing": "Puuttuu", "select.version": "Valitse versio"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,3037 @@
+<!DOCTYPE html><html lang="fi" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gispocoding.github.io/eip-peltomappi/python.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="img/pysty_peltomappi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Python documentation - Peltomappi</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="peltomappi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-documentation" class="md-skip">
+          Hyppää sisältöön
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Ylätunniste">
+    <a href="index.html" title="Peltomappi" class="md-header__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Peltomappi
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hae" placeholder="Hae" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Haku">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Tyhjää" aria-label="Tyhjää" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Aloitetaan hakua
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigaatio" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Peltomappi" class="md-nav__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    Peltomappi
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    <img src="img/peltomappi-markkeri.png"> Koti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="esittely.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esittely
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projektin_lataaminen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projektin lataaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="karttan%C3%A4kym%C3%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Karttanäkymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="selainkayttoliittyma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selainkäyttöliittymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tietojen_tallentaminen_peltolohkolle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tietojen tallentaminen peltolohkolle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="salaojakarttojen_georeferointi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salaojakarttojen georeferointi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reitin_nauhoitus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reitin nauhoitus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muut_ominaisuudet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muut ominaisuudet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="palaute.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palaute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muutosloki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutosloki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-documentation">Python documentation</h1>
+<h2 id="background">Background</h2>
+<p>The purpose of the EIP Peltomappi project is to provide a mapping tool for
+farmers. Mergin Maps is used as the application for the mapping. However, this
+tool is meant to be specific to one user or a small group of users and any
+collected data is not meant to be centrally collected or shared. Therefore
+using Mergin projects the "traditional" way, i.e. having a shared Mergin
+project is not suitable for this use case. Additionally, local GeoPackage files
+are required to provide background data for the project, which would make a
+shared project impractically large in disk size.</p>
+<p>Mergin offers a partial solution with <a href="https://merginmaps.com/docs/dev/work-packages/">Work
+Packages</a>, but with the
+addition of a requirement to periodically update meteorological data and
+possibly other specialized data processing and update workflows there was a
+clear requirement for a tool to manage Peltomappi projects.</p>
+<h2 id="concepts">Concepts</h2>
+<h3 id="template-project">Template project</h3>
+<p>A template project is the basis of <a href="#subproject"><em>subprojects</em></a>. It is
+the project which is manually modified in QGIS.</p>
+<p>The template project can (and should) contain some data for ease of use, but
+not the <a href="#full-data">full data</a>.</p>
+<h3 id="subproject">Subproject</h3>
+<p>A subproject is the folder containing the Mergin Maps files and data of one
+user / group of users. A subproject is based on the template project and is
+automatically generated.</p>
+<p>Subprojects should <strong>not</strong> be modified manually, barring exceptional
+circumstances.</p>
+<p>When creating a subproject, a list of field parcel IDs is defined. They are
+used to spatially filter the full data, meaning that a subproject contains
+only data from around the given field parcels.</p>
+<p>A subproject exists in the Mergin Server, from which it can be used by its
+user(s).</p>
+<h3 id="full-data">Full data</h3>
+<p>This is a folder containing all of the initial background data, which is
+filtered into subprojects.</p>
+<h3 id="composition">Composition</h3>
+<p>A composition is a unit containing all of the above. In practice, it is a folder
+with the following structure:</p>
+<div class="language-text highlight"><pre><span></span><code>&lt;folder&gt;
+├── .composition
+│   ├── composition.json
+│   └── full_data
+│       └── &lt;data-gpkg&gt;
+├── &lt;subproject-name&gt; (0..N)
+│   ├── peltomappi_subproject.json
+│   └── etc ...
+└── &lt;template-name&gt;
+    ├── &lt;data-gpkg&gt;
+    └── etc ...
+</code></pre></div>
+<p>A composition therefore is a collection of a template project, subprojects, and
+the full data.</p>
+<p>A composition should also exist in the Mergin Server. In this case, the
+<code>.composition</code> folder and its contents are uploaded as the "project" i.e. the
+subprojects and the template projects are not included in the Mergin Server
+composition "project", since in order for them to be usable they must be
+individual projects.</p>
+<p>Compositions are designed to be shareable, such that multiple people can
+independently manage one composition. The <code>composition.json</code> file contains
+information about its structure, which enables multiple people to <em>clone</em> the
+same composition locally, and pushing their modifications back to the Mergin
+Server.</p>
+<h3 id="modifications">Modifications</h3>
+<p>Out of all of the units mentioned above, <strong>only</strong> template projects should be
+modified "by-hand", i.e. editing the project in QGIS. In order to modify
+subprojects and compositions a programmatic tool should be used.</p>
+<p>This is detailed in the next section.</p>
+<h2 id="command-line-interface">Command Line Interface</h2>
+<p>The functionality of the Python package is exposed through a
+<a href="https://typer.tiangolo.com/">Typer</a> based CLI.</p>
+<h3 id="installation">Installation</h3>
+<p>Create a Python virtual environment in a suitable folder:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>peltomappi_venv
+</span></code></pre></div>
+<p>Activate the virtual environment:</p>
+<p>Windows (PowerShell):
+</p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">.\</span><span class="n">peltomappi_venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+</span></code></pre></div><p></p>
+<p>Bash:
+</p><div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>peltomappi_venv/bin/activate
+</span></code></pre></div><p></p>
+<p>Download the packaged tool:</p>
+<p>Windows (PowerShell):
+</p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Invoke-WebRequest</span> <span class="s2">"https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-alpha-py3-none-any.whl"</span> <span class="n">-OutFile</span> <span class="p">.\</span><span class="n">peltomappi-alpha-py3-none-any</span><span class="p">.</span><span class="n">whl</span>
+</span></code></pre></div><p></p>
+<p>Bash (requires wget):
+</p><div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wget<span class="w"> </span>-q<span class="w"> </span>https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-alpha-py3-none-any.whl
+</span></code></pre></div><p></p>
+<p>If the download commands do not work you may also download the file manually
+<a href="https://github.com/GispoCoding/eip-peltomappi/releases/latest/download/peltomappi-alpha-py3-none-any.whl">here</a>.</p>
+<p>Then either move the file to the directory or navigate to the download
+directory in your shell.</p>
+<p>Install the tool:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>peltomappi-alpha-py3-none-any.whl
+</span></code></pre></div>
+<p>Confirm that the tool was correctly installed:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>peltomappi
+</span></code></pre></div>
+<p>You should see the following output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Usage: peltomappi [OPTIONS] COMMAND [ARGS]...
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Try 'peltomappi --help' for help.
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>╭─ Error ──────────╮
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│ Missing command. │
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>╰──────────────────╯
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The installation has to be done only once, after that it is available in
+the Python virtual environment. Remember to always activate the virtual
+environment, otherwise you will not have access to the tool.</p>
+</div>
+<h3 id="authentication">Authentication</h3>
+<p>To login run:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>peltomappi login
+</span></code></pre></div>
+<p>To logout run:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>peltomappi logout
+</span></code></pre></div>
+<h3 id="commands">Commands</h3>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>peltomappi<span class="w"> </span>--help
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a> Usage: peltomappi [OPTIONS] COMMAND [ARGS]...
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>│ --install-completion          Install completion for the current shell.                                        │
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>│ --show-completion             Show completion for the current shell, to copy it or customize the installation. │
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>│ --help                        Show this message and exit.                                                      │
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>╭─ Commands ─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>│ init                         Initializes a new empty composition                                               │
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>│ add                          Creates a subproject from parcel specification and adds it to composition         │
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>│ push                         Pushes the local composition with its changes to the Mergin Server                │
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>│ pull                         Pulls changes from the Mergin Server to the local composition                     │
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>│ clone                        Downloads an existing composition from a Mergin Maps Server                       │
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>│ subprojects-match-template   Updates the configuration files of each subproject to match the template          │
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>│ subprojects-export-csv       Exports user data of each subproject to csv files                                 │
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>│ subprojects-update-weather   Updates weather data of each subproject                                           │
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>│ info                         Prints information about composition                                              │
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>│ login                        Authenticates username and password to Mergin Server and stores token to keyring  │
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>│ logout                       Removes token                                                                     │
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span></code></pre></div>
+<h4 id="help">Help</h4>
+<p>To get information about any command add the --help flag after it:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>--help
+</span></code></pre></div>
+<p>Output:
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a> Usage: peltomappi init [OPTIONS] NAME
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a> Initializes a new empty composition
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>│ *    name      DIRECTORY  Path to new composition directory [required]                                      │
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>│ *  --template        TEXT  Name of project in Mergin Server to use as a template project [required]    │
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>│ *  --workspace            TEXT  Workspace in the Mergin Server to use [required]                            │
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>│    --server               TEXT  Address of Mergin Server to connect to [default: https://app.merginmaps.com]│
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>│    --help                       Show this message and exit.                                                 │
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span></code></pre></div><p></p>
+<p>There are <strong>arguments</strong> and <strong>options</strong>. Here <em>name</em> is an <strong>argument</strong> and is entered as is:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>my_composition_name
+</span></code></pre></div>
+<p>However, <em>template</em> and <em>workspace</em> are <strong>options</strong> and are entered like this:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>my_composition_name<span class="w"> </span>--template<span class="o">=</span>my_template_name<span class="w"> </span>--workspace<span class="o">=</span>my_workspace
+</span></code></pre></div>
+<p>You can also skip the <strong>=</strong> sign:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>my_composition_name<span class="w"> </span>--template<span class="w"> </span>my_template_name<span class="w"> </span>--workspace<span class="w"> </span>my_workspace
+</span></code></pre></div>
+<p>Some options have a default value and are mandatory to enter, however you may override the default argument.</p>
+<p>There are some <em>boolean options</em> (also called flags):</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>peltomappi<span class="w"> </span>info<span class="w"> </span>--help
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a> Usage: peltomappi info [OPTIONS] COMPOSITION
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a> Prints information about composition
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│ *    composition      EXISTING_COMPOSITION  Path to existing composition directory [required]     │
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────╮
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│ --subproj    --no-subproj      Print information about subprojects [default: subproj]             │
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>│ --help                         Show this message and exit.                                        │
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+</span></code></pre></div>
+<p>Flags do not require giving a value:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>peltomappi<span class="w"> </span>info<span class="w"> </span>--no-subproj<span class="w"> </span>my_composition
+</span></code></pre></div>
+<h3 id="examples">Examples</h3>
+<h4 id="initializing-a-composition">Initializing a composition</h4>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>my_composition<span class="w"> </span>--template<span class="o">=</span>my_template<span class="w"> </span>--workspace<span class="o">=</span>my_workspace
+</span></code></pre></div>
+<p>The template option corresponds to an existing project in the Mergin Maps
+server, meaning it should be created and uploaded prior to creating a
+composition using it. You can do this manually, with the QGIS plugin or with
+the Mergin client CLI:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>mergin<span class="w"> </span>create<span class="w"> </span>my_workspace/my_template<span class="w"> </span>--from-dir<span class="o">=</span>template_directory
+</span></code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently the full data files must be manually copied to the composition! Copy them to the
+<code>my_composition/.composition/full_data</code> folder!</p>
+</div>
+<h4 id="cloning-an-existing-composition">Cloning an existing composition</h4>
+<p>If a composition has already been created and is pushed to the Mergin Server, you can
+clone it to your local machine:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>peltomappi<span class="w"> </span>clone<span class="w"> </span>composition_name_in_server<span class="w"> </span>path_of_cloned_directory<span class="w"> </span>--workspace<span class="o">=</span>my_workspace
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step may take a while, since the full data folder is also downloaded,
+which can be quite large.</p>
+</div>
+<h4 id="examining-a-composition">Examining a composition</h4>
+<p>You can print out information about a locally existing composition:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>peltomappi<span class="w"> </span>info<span class="w"> </span>my_composition
+</span></code></pre></div>
+<p>If you don't want information about subprojects to be printed out you can add
+the <code>--no-subproj</code> flag.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>peltomappi<span class="w"> </span>info<span class="w"> </span>my_composition<span class="w"> </span>--no-subproj
+</span></code></pre></div>
+<h4 id="adding-subprojects-to-a-composition">Adding subprojects to a composition</h4>
+<p>Subprojects are created from a parcel specification. In practice this is a JSON
+file. Currently they must be created by hand. The parcel specification must
+adhere to a simple JSON schema.</p>
+<p>Create a parcel specification in a text editor and save it as a JSON file. You
+can use this as a template:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this_will_be_the_subproject_name"</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">"fieldParcelIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">        </span><span class="s2">"1111111111"</span><span class="p">,</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="s2">"2222222222"</span><span class="p">,</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">        </span><span class="s2">"3333333333"</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Once you have saved the parcel specification JSON, you can create a subproject
+and add it to a composition:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>peltomappi<span class="w"> </span>add<span class="w"> </span>parcelspec.json<span class="w"> </span>my_composition
+</span></code></pre></div>
+<p>Here <code>my_composition</code> being the folder which was created by the <code>init</code> or
+<code>clone</code> command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After adding a subproject, you likely should invite a user to the
+subproject. Currently this must be done manually, through the Mergin Server web
+interface.</p>
+</div>
+<h4 id="pulling-modifications">Pulling modifications</h4>
+<p>Compositions are designed to be shareable, i.e. others might have updated one
+without it automatically synchronizing to your local composition. Additionally
+users might make changes to their subprojects. Therefore, whenever planning to
+make changes to the template project you should ensure that you have the
+latest changes in your local composition.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>peltomappi<span class="w"> </span>pull<span class="w"> </span>my_composition
+</span></code></pre></div>
+<h4 id="making-modifications">Making modifications</h4>
+<p>Before making modifications remember to check that you have the latest changes
+and <a href="#pulling-modifications">pull</a> if necessary!</p>
+<p>The purpose of the peltomappi CLI tool is to centrally control all of the
+subprojects. Subprojects should generally <strong>never</strong> be individually modified.</p>
+<p>Instead you should make any changes to the <strong>template</strong> project, save them and
+update the changes to the subprojects using the CLI:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>peltomappi<span class="w"> </span>subprojects-match-template<span class="w"> </span>my_composition
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This only updates the local versions of the subprojects, for the changes to
+take effect for the users, the changes must be pushed to the Mergin Server.</p>
+</div>
+<h4 id="pushing-modifications">Pushing modifications</h4>
+<p>Push by running:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>peltomappi<span class="w"> </span>push<span class="w"> </span>my_composition
+</span></code></pre></div>
+<p>Pushing will update any modified files to the subprojects in the Mergin Server,
+but also create and upload the subproject if it does not already exist. The
+same happens to the composition itself. Changes to the template project are
+also pushed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are pushing the composition for the first time, the full data is
+also uploaded to the server, which may take a long time.</p>
+</div>
+<h4 id="export-user-data-to-csv">Export user data to csv</h4>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>peltomappi<span class="w"> </span>subprojects-export-csv<span class="w"> </span>my_composition
+</span></code></pre></div>
+<h4 id="non-default-server">Non-default server</h4>
+<p>When cloning or initializing a composition the CLI will by default use the official
+Mergin Server at <a href="https://app.merginmaps.com">https://app.merginmaps.com</a>. If you need to
+use another server, you may append the <code>--server</code> option to the commands:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>peltomappi<span class="w"> </span>login<span class="w"> </span>--server<span class="o">=</span>http://localhost:8080
+</span></code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>peltomappi<span class="w"> </span>init<span class="w"> </span>--server<span class="o">=</span>http://localhost:8080<span class="w"> </span>my_composition<span class="w"> </span>--template<span class="o">=</span>my_template<span class="w"> </span>--workspace<span class="o">=</span>my_workspace
+</span></code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>peltomappi<span class="w"> </span>clone<span class="w"> </span>--server<span class="o">=</span>http://localhost:8080<span class="w"> </span>composition_name_in_server<span class="w"> </span>path_of_cloned_directory<span class="w"> </span>--workspace<span class="o">=</span>my_workspace
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In other commands (i.e. when not creating a new composition) the server is
+read from the <code>composition.json</code> file and cannot be modified in the command.</p>
+</div>
+<h2 id="library">Library</h2>
+<p>Here is the auto-generated documentation of the <code>peltomappi</code> package/library:</p>
+<h3 id="module-composition">Module: composition</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.peltomappi.composition"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.composition.Composition" class="doc doc-heading">
+            <code>Composition</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>A composition is a collection of Subprojects which belong to the same
+group. It is stored on disk as a folder, with the following structure:</p>
+<div class="language-text highlight"><pre><span></span><code>&lt;folder&gt;
+├── .composition
+│   ├── composition.json
+│   └── full_data
+│       └── &lt;data-gpkg&gt;
+├── &lt;subproject-name&gt; (0..N)
+│   ├── peltomappi_subproject.json
+│   └── etc ...
+└── &lt;template-name&gt;
+    ├── &lt;data-gpkg&gt;
+    └── etc ...
+</code></pre></div>
+<p>The composition configuration is saved as a JSON file following a JSON
+schema.</p>
+<p>A composition is meant to be shareable, such that multiple users can
+download the composition and use it.</p>
+<p>The Composition class is used to initialize and manipulate compositions.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mergin_workspace</span><span class="p">,</span> <span class="n">mergin_server</span><span class="p">,</span> <span class="n">template_name</span><span class="p">,</span> <span class="n">subprojects</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes a composition. Not meant to be used directly, use one of
+the class methods instead.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.add_subproject_from_parcelspec" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_subproject_from_parcelspec</span><span class="p">(</span><span class="n">parcelspec_path</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds a subproject to this composition from a parcel specification JSON
+file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.clone" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clone</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clones i.e. downloads the composition from the backend with its
+template project and all subprojects.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.download_subproject" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">download_subproject</span><span class="p">(</span><span class="n">subproject_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Downloads subproject of the given name to its corresponding directory
+with the set backend.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.download_template_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">download_template_project</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Downloads template project to its corresponding directory with the set
+backend.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.from_json" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_json</span><span class="p">(</span><span class="n">json_config</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">download_subprojects</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a Composition from an existing JSON configuration file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.full_data_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">full_data_path</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the directory containing the full data.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.initialize" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">initialize</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">template_name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mergin_workspace</span><span class="p">,</span> <span class="n">mergin_server</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes an empty composition (with no subprojects). Creates the
+folder structure and saves the composition as a JSON configuration
+file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.json_config_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">json_config_path</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path of this composition's JSON configuration file.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.mergin_name" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mergin_name</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of this composition, stripped of anything but alphanumeric symbols and underscores.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.mergin_name_with_workspace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mergin_name_with_workspace</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cleaned name of the composition in the Mergin Maps format</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.projects_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">projects_path</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the directory where subprojects and template project exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.pull" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pull</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Pulls any changes from the backend to the local composition.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.push" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">push</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Pushes local changes from the local composition to the backend. If a
+subproject or the composition does not yet exist in the backend, it
+will be created as a project and uploaded there.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.save" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">save</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Saves this composition to a JSON file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subproject_mergin_name" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subproject_mergin_name</span><span class="p">(</span><span class="n">subproject_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cleaned name of the given subproject</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subproject_mergin_name_with_workspace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subproject_mergin_name_with_workspace</span><span class="p">(</span><span class="n">subproject_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cleaned name of the given subproject in the Mergin Maps format</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subproject_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subproject_path</span><span class="p">(</span><span class="n">subproject_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the subproject with the given name.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subprojects_export_csv" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subprojects_export_csv</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Exports user data in subprojects to CSV files.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subprojects_match_template" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subprojects_match_template</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Updates the project files of every subproject in this composition to
+match the template project.</p>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>This is meant for updates to the project files. If new data files
+are added, they will not be included.</p>
+</details>
+
+<details class="todo" open>
+  <summary>Todo</summary>
+  <p>Handle data and other files.</p>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.subprojects_update_weather" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">subprojects_update_weather</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Updates weather data of each subproject.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.template_mergin_name_with_workspace" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">template_mergin_name_with_workspace</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cleaned name of the template project</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.template_project_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">template_project_path</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the template project directory.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.Composition.to_json_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_json_dict</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dictionary which can be saved as a JSON file</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.composition.CompositionBackend" class="doc doc-heading">
+            <code>CompositionBackend</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+
+
+        <p>Backend for how Composition interacts with projects.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.CompositionBackend.download_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">download_project</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Downloads project to destination path.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.CompositionBackend.projects_list" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">projects_list</span><span class="p">(</span><span class="n">workspace</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Lists existing projects in the backend.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.CompositionBackend.pull_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pull_project</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Pulls any changes from the backend to a local directory.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.CompositionBackend.push_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">push_project</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Pushes any changes from the local directory to the backend.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.CompositionBackend.upload_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">upload_project</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Uploads project from given directory with the given name.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.composition.MerginBackend" class="doc doc-heading">
+            <code>MerginBackend</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="CompositionBackend (src.peltomappi.composition.CompositionBackend)" href="#src.peltomappi.composition.CompositionBackend">CompositionBackend</a></code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.MerginBackend.client" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">client</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Returns a MerginMaps Server client, initializing if it doesn't already
+exist, fetching the login details from environment variables.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="mergin.MerginClient">MerginClient</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>mergin client</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ClientError">ClientError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>indirectly, if client could not be initialized</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.MerginBackend.download_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">download_project</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Downloads project to destination path.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.MerginBackend.projects_list" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">projects_list</span><span class="p">(</span><span class="n">workspace</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Lists existing project names in the given workspace.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.MerginBackend.pull_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">pull_project</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Pulls any changes from the backend to a local directory.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.composition.MerginBackend.upload_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">upload_project</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Uploads project from given directory with the given name.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.composition.validate_template_project" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">validate_template_project</span><span class="p">(</span><span class="n">template_project_directory</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Performs a series of checks on whether the given template project is valid
+for use as a Peltomappi project.</p>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="src.peltomappi.composition.CompositionError">CompositionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if any check fails</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="module-subproject">Module: subproject</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.peltomappi.subproject"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.subproject.ModificationAction" class="doc doc-heading">
+            <code>ModificationAction</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="typing.NamedTuple">NamedTuple</span></code></p>
+
+
+
+        <p>Specifies when and what type of modification occured. Corresponds to the
+subproject JSON schema.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.ModificationAction.from_json_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_json_dict</span><span class="p">(</span><span class="n">json_dict</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates ModificationAction from a dictionary created from a JSON file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.ModificationAction.to_json_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_json_dict</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dictionary which can be saved as a JSON file</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.subproject.Subproject" class="doc doc-heading">
+            <code>Subproject</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>A subproject is a folder containing a MerginMaps / QGIS project and its
+data. A subproject belongs to a composition, and should be modified through
+its composition, NOT directly in order to ensure consistency across the
+composition.</p>
+<p>A subproject has its own configuration JSON schema which is stored in the
+subproject folder.</p>
+<p>A subproject is based on a template project, which is defined by the
+composition. Data in the subproject is reduced from the composition's full
+data and filtered according to the field parcel IDs of the subproject.</p>
+<p>A subproject can be created from a parcel specification.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">field_parcel_ids</span><span class="p">,</span> <span class="n">created</span><span class="p">,</span> <span class="n">modified</span><span class="p">,</span> <span class="n">composition_id</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes a subproject. Not meant to be used directly, use one of
+the class methods instead.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.add_modified" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_modified</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds a modified event to this subproject.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.describe" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">describe</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Logs information about this subproject.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.export_user_data_to_csv" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">export_user_data_to_csv</span><span class="p">(</span><span class="n">full_data_gpkgs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Exports user data in to CSV files.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.from_json" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_json</span><span class="p">(</span><span class="n">json_path</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a Subproject from an existing JSON configuration file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.json_config_path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">json_config_path</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path of this composition's JSON configuration file.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.representative_field_parcel_dataset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">representative_field_parcel_dataset</span><span class="p">(</span><span class="n">fulldata_path</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return path to representative (latest) field parcel dataset</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.save" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">save</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Saves this subproject to a JSON file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.subproject.Subproject.to_json_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_json_dict</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dictionary which can be saved as a JSON file</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="module-parcelspec">Module: parcelspec</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.peltomappi.parcelspec"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.peltomappi.parcelspec.ParcelSpecification" class="doc doc-heading">
+            <code>ParcelSpecification</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>A parcel specification is a simple JSON file which has a JSON schema. It
+contains a name of the specification and the field parcel IDs belonging to
+the it.</p>
+<p>The purpose of the specification is to be turned into a Subproject and
+added to a Composition.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.parcelspec.ParcelSpecification.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">field_parcel_ids</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initializes a subproject. Not meant to be used directly, use one of
+the class methods instead.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.parcelspec.ParcelSpecification.from_json" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_json</span><span class="p">(</span><span class="n">json_path</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a ParcelSpecification from an existing JSON configuration file.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.peltomappi.parcelspec.ParcelSpecification.to_subproject" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_subproject</span><span class="p">(</span><span class="n">template_project_directory</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">,</span> <span class="n">full_data_directory</span><span class="p">,</span> <span class="n">composition_id</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Turns this parcel specification into a subproject, creating the
+subproject folder and filtering the data from the given full data
+directory.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="module-filter">Module: filter</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.peltomappi.filter"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.filter.copy_gpkg_as_empty" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">copy_gpkg_as_empty</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reads an input dataset from the path and creates an empty version of it at the
+output path.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.filter.filter_gpkg_by_field_parcel_ids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">filter_gpkg_by_field_parcel_ids</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">field_parcel_ids</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reads an input field parcel dataset, filters it and saves to new location</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.filter.get_spatial_filter_from_field_parcel_ids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_spatial_filter_from_field_parcel_ids</span><span class="p">(</span><span class="n">field_parcel_dataset</span><span class="p">,</span> <span class="n">field_parcel_ids</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">buffer_distance</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="shapely.geometry.Polygon">Polygon</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a shapely (Multi)Polygon, buffered around the field parcels, identified by the given IDs</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.filter.spatial_filter" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">spatial_filter</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">spatial_filter</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reads an input dataset from the path, filters it according to the spatial
+filter and writes the filtered dataset to a GeoPackage file.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>input_path</code>
+            </td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to a geospatial dataset that can be opened with GeoPandas.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>output_path</code>
+            </td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the output GeoPackage</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>spatial_filter</code>
+            </td>
+            <td>
+                  <code><span title="shapely.geometry.Polygon">Polygon</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>shapely (Multi)Polygon, features intersecting this will be included in the output</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>overwrite</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>(optional) whether the output file can be overwritten</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="module-utils">Module: utils</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.peltomappi.utils"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.utils.clean_string_to_filename" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clean_string_to_filename</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Remove anything not alphanumeric or _ from a string.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Cleaned up string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.utils.latest_fulldata_field_parcel_dataset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">latest_fulldata_field_parcel_dataset</span><span class="p">(</span><span class="n">full_data_directory</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Determine representative (latest) field parcel dataset.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to dataset.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="peltomappi.exception.InvalidPeltomappiFileError">InvalidPeltomappiFileError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If incorrect type of file with field parcel
+prefix is found.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="src.peltomappi.utils.sha256_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">sha256_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate SHA256 of a file.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Hexdigest of SHA256 value of the given file.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <img style="float: right; width: 20%;" alt="Euroopan unionin osarahoittama" src="https://maaseutu.kuvat.fi/kuvat/Tuensaajalle/FI%20Euroopan%20unionin%20osarahoittama_.png?img=full">
+      Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>
+      <br>
+      Sivut luotu <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocsia</a> käyttäen.
+    </div>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "toc.integrate", "search.suggest", "search.highlight", "header.autohide", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopioitu leikep\u00f6yd\u00e4lle", "clipboard.copy": "Kopioi leikep\u00f6yd\u00e4lle", "search.result.more.one": "1 lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.more.other": "# lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.none": "Ei t\u00e4sm\u00e4\u00e4vi\u00e4 dokumentteja", "search.result.one": "1 t\u00e4sm\u00e4\u00e4v\u00e4 dokumentti", "search.result.other": "# t\u00e4sm\u00e4\u00e4v\u00e4\u00e4 dokumenttia", "search.result.placeholder": "Kirjoita aloittaaksesi haun", "search.result.term.missing": "Puuttuu", "select.version": "Valitse versio"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

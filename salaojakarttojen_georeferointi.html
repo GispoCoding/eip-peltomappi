@@ -1,0 +1,943 @@
+<!DOCTYPE html><html lang="fi" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gispocoding.github.io/eip-peltomappi/salaojakarttojen_georeferointi.html">
+      
+      
+        <link rel="prev" href="tietojen_tallentaminen_peltolohkolle.html">
+      
+      
+        <link rel="next" href="reitin_nauhoitus.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="img/pysty_peltomappi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Salaojakarttojen georeferointi - Peltomappi</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="peltomappi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aineistojen-valmistelu-georeferoija-lisaosan-aktivointi" class="md-skip">
+          Hyppää sisältöön
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Ylätunniste">
+    <a href="index.html" title="Peltomappi" class="md-header__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Peltomappi
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Salaojakarttojen georeferointi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hae" placeholder="Hae" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Haku">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Tyhjää" aria-label="Tyhjää" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Aloitetaan hakua
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigaatio" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Peltomappi" class="md-nav__button md-logo" aria-label="Peltomappi" data-md-component="logo">
+      
+  <img src="img/pysty_peltomappi.png" alt="logo">
+
+    </a>
+    Peltomappi
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    <img src="img/peltomappi-markkeri.png"> Koti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="esittely.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esittely
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projektin_lataaminen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projektin lataaminen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="karttan%C3%A4kym%C3%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Karttanäkymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="selainkayttoliittyma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selainkäyttöliittymä
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tietojen_tallentaminen_peltolohkolle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tietojen tallentaminen peltolohkolle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salaojakarttojen georeferointi
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="salaojakarttojen_georeferointi.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salaojakarttojen georeferointi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisällysluettelo">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisällysluettelo
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aineistojen-valmistelu-georeferoija-lisaosan-aktivointi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aineistojen valmistelu: Georeferoija lisäosan aktivointi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#georeferoija-lisaosan-toiminta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Georeferoija-lisäosan toiminta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panosta-vastinpisteisiin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panosta vastinpisteisiin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vastinpisteiden-tarkastelu-ja-varsinainen-georeferointi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vastinpisteiden tarkastelu ja varsinainen georeferointi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vaihda-valkoinen-vari-lapinakyvaksi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vaihda valkoinen väri läpinäkyväksi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lataa-qgis-lisaosa-mapswipe-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lataa QGIS-lisäosa MapSwipe Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reitin_nauhoitus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reitin nauhoitus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muut_ominaisuudet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muut ominaisuudet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="palaute.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palaute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="muutosloki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutosloki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Salaojakarttojen georeferointi</h1>
+
+<h2 id="aineistojen-valmistelu-georeferoija-lisaosan-aktivointi"><strong>Aineistojen valmistelu: Georeferoija lisäosan aktivointi</strong></h2>
+<div class="admonition example">
+<p class="admonition-title">💡 HUOM!</p>
+<p>Vaatii että projekti on ladattu QGIS-työpöytäohjelmistoon. Jos et ole tehnyt tätä vielä, noudata ohjeiden kohtaa: <a href="https://gispocoding.github.io/eip-peltomappi/projektin_lataaminen.html#projektin-lataaminen-tietokoneelle-qgis-tyopoytasovellukseen">Projektin lataaminen tietokoneelle</a></p>
+</div>
+<p>Georefereroija-lisäosa voi vaatia aktivoinnin. Uusimmissa
+QGIS-versioissa (alkaen versiosta 3.28.) lisäosa pitäisi olla
+aktivoituna valmiiksi, mutta jos käytät vanhempaa versiota (3.22), niin
+QGIS vaatii sisäänrakennetun Georeferencer-lisäosan aktivoinnin
+georeferointia varten. Lisäosa aktivoidaan <strong>Lisäosat-valikon</strong> takaa
+löytyvän <strong>Hallitse ja asenna lisäosia/Manage and Install Plugins</strong>
+-toiminnon avulla. Tässä ohjeistuksessa oletetaan, että lisäosa on
+aktivoitu onnistuneesti.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image26_uusi_versio.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image26_uusi_versio.png"></a></p>
+<p><em>Kuva 1. Uudemmissa QGIS-versioissa Georeferoija löytyy tasot-valikosta</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image26_vanha_versio.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image26_vanha_versio.png"></a></p>
+<p><em>Kuva 2. Vanhemmissa versioissa se löytyy Rasterit-valikosta.</em></p>
+<h2 id="georeferoija-lisaosan-toiminta"><strong>Georeferoija-lisäosan toiminta</strong></h2>
+<p>Huomaa, että jos sinulla on PDF-tiedosto, jonka haluat georeferoida, se
+tulee muuttaa ensin kuvaformaattiin (esim. .JPEG tai .PNG). Tämä
+onnistuu useimmilla PDF-lukuohjelmilla tai netissä saatavilla olevilla
+muuntimilla (Googleen "PDF to PNG converter").</p>
+<p>Kun avaat Georeferencer-lisäosan, se avaa erillisen ikkunan, jossa
+georeferointi toteutetaan. Georeferencer-ikkunaan voidaan avata
+georeferoitava rasterikuva <strong>Avaa rasteri</strong>... -painikkeesta (kuva 3).
+Painikkeesta avautuu ikkuna, jonka avulla georeferoitavan kuvan voi
+valita koneen tiedostojärjestelmästä. Tuettuina on useita kymmeniä eri
+rasteriformaatteja aina perinteisistä JPEG- ja PNG-formaateista
+tehokkaisiin JPEG2000- ja ECW-formaatteihin.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image27.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image27.png"></a></p>
+<p><em>Kuva 3. Georeferoitava rasteri avataan Georeferencer-ikkunaan Avaa
+rasteri -painikkeesta</em></p>
+<p>Valitse rasteriksi aikaisemmin kuvatiedostoksi muunnettu salaojakartta.
+Kun haluttu kuva on valittu tiedostojärjestelmästä ja valinta
+vahvistettu Open-painikkeesta, avautuu käyttäjälle valittu rasteri
+näkyviin pienen latauksen jälkeen.</p>
+<p>Vanhemmissa versioissa tässä kohtaa avautuu käyttäjälle Coordinate
+Reference System Selector -ikkuna. Tähän ikkunaan syötetään tieto siitä
+koordinaattijärjestelmästä, johon georeferoitava rasterikuva halutaan
+saattaa. Tässä esimerkissä käytettäväksi koordinaattijärjestelmäksi
+valitaan <strong>ETRS89-TM35FIN (EPSG:3067)</strong>, mutta yhtä hyvin
+koordinaattijärjestelmäksi voidaan valita mikä tahansa QGISin tukema
+koordinaattijärjestelmä.</p>
+<p>Tämän vaiheen jälkeen määritellään georeferoinnissa käytettävät
+asetukset. Tämä tapahtuu avaamalla <strong>Asetukset</strong>-valikosta <strong>Muunnoksen
+asetukset</strong> -ikkuna (kuva 4). Saman ikkunan saa avattua myös
+työkaluriviltä keltaisesta ratassymbolista.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image28.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image28.png"></a></p>
+<p><em>Kuva 4. Georeferoinnin asetukset määritellään Asetukset-valikosta
+löytyvän Muunnoksen asetukset -painikkeen takaa</em></p>
+<p><strong>Muunnoksen asetukset</strong> -ikkunassa määritellään muunnoksessa
+käytettävät asetukset (kuva 5). Toteutettavan muunnoksen osalta (Kohta
+<strong>Muunnosparametrit</strong>) valittavissa on muunnoksen tyyppi,
+interpoloinnissa käytettävä menetelmä ja koordinaattijärjestelmä.
+Muunnoksessa syntyvän tiedoston osalta ikkunassa voidaan määritellä
+syntyvän tiedoston nimi, tallennussijainti sekä pakkausmenetelmä.</p>
+<p>Tarkista, että muunnoksen tyyppi on <strong>Helmert</strong>, menetelmä <strong>Nearest
+Neighbour</strong> ja aseta koordinaattijärjestelmäksi <strong>EPSG:3067</strong>.</p>
+<p>Valitse tulostiedosto kohtaan MerginMapsin-projekti kansio ja sen
+sisältä kansio <code>_rasters</code> näin saat helpoiten synkronoitua
+rasteritiedoston suoraan mobiilisovellukseen.</p>
+<p>Muunnoksesta on mahdollista saada ulos myös kartta ja raportti
+(Raportit-kohta). Näiden tallennuspaikat määritellään tarvittaessa.
+Varmista myös, että ikkunan alareunasta löytyvä "Avaa tulosrasteri
+QGISissä kun valmis" -täppä on aktiivisena. Näin saat suoraan valmiin
+georeferoidun rasterin auki QGISin karttaikkunaan georeferoinnin
+jälkeen.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image29.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image29.png"></a></p>
+<p><em>Kuva 5. Muunnoksen asetukset -ikkuna halutuilla asetuksilla
+(Transformation Settings)</em></p>
+<p>Kun muunnoksen asetukset on onnistuneesti määritelty, paina
+asetusikkunasta "OK".</p>
+<h2 id="panosta-vastinpisteisiin"><strong>Panosta vastinpisteisiin</strong></h2>
+<p>Tässä vaiheessa kannattaa laittaa tarttuminen kohteisiin päälle, jotta
+vastinpisteiden kohdistaminen on helpompaa. Siirry ylävälilehdeltä --&gt;
+Projekti --&gt; Tarttumisen valinnat</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image1.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image1.png"></a></p>
+<p>Klikkaa tämän jälkeen avautuvasta ikkunasta magneetti-ikonia niin
+tarttuminen on päällä kaikille tasoille.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image2.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image2.png"></a></p>
+<p>Tämän jälkeen voit sulkea ikkunan ruksista.</p>
+<p>Nyt voidaan siirtyä määrittelemään vastinpisteitä. Homma lähtee
+liikkeelle valitsemalla työkaluriviltä löytyvä Add Point -työkalu (kuva
+6). Ko. painikkeen vierestä oikealta löytyvät tarvittaessa painikkeet jo
+määriteltyjen vastinpisteiden poistamiseen ja muokkaamiseen. Lisää piste
+-painikkeen painaminen aktivoi työkalun, jolla osoitetaan
+georeferoitavalta kuvalta piste.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image30.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image30.png"></a></p>
+<p><em>Kuva 6: Georeferointi aloitetaan lisäämällä rasterukuvalle
+oikaisupisteitä</em></p>
+<p>Kun Lisää piste -työkalulla on osoitettu piste georeferoitavalta
+kuvalta, avautuu Kirjoita karttakoordinaatit (Enter Map Coordinates)
+-ikkuna (kuva 7). Ikkunaan voi halutessaan syöttää koordinaattitiedot
+käsin, mutta huomattavasti kätevämpi tapa on poimia ne
+QGIS-paikkatietosovelluksen pääikkunasta painamalla
+"Karttaikkunasta"-painiketta.</p>
+<p>Jos sinulla on käytössäsi useampi näyttö on vastinpisteiden 
+merkkaaminen merkittävästi helpompaa. Mikäli tällaista järjestelyä ei ole
+käytettävissä (esim. operoitaessa pienellä kannettavan ruudulla),
+saat gereferoinnin ikkunan pienennettyä täppäämällä "Piilota goereferoinnin ikkuna
+automaattisesti" -kohta. Tällöin Georeferoija sukeltaa automaattisesti
+piiloon Karttaikkunasta -painiketta painettaessa.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image31.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image31.png"></a></p>
+<p><em>Kuva 7: Oikaisupisteen tiedot annetaan Kirjoita
+karttakoordinaatit-ikkunassa</em></p>
+<p>Kun pisteelle on koordinaatit (joko QGIS-pääikkunasta osoittaen tai
+käsin syöttämällä), nähdään kentissä X / Itä ja Y / Pohjoinen
+numeroarvoja (kuva 8). Tässä esimerkissä käytetään
+ETRS89-TM35FIN-koordinaattijärjestelmää (EPSG:3067), jonka koordinaatit
+ovat kuvassa. Vaihtoehtoisesti voit valita alasvetovalikosta toisen
+käytettävän koordinaattijärjestelmän (valittava siis samaksi kuin
+pääkanvaasi näkymässä)</p>
+<p>Onnistunut ja laadukas georeferointi vaatii useiden vastinpisteiden
+määrittelyn. Kuten aiemmin todettiin, vastinpisteiksi kannattaa valita
+esimerkiksi rakennusten kulmia, kiinteistörajoja ja muita helposti ja
+yksiselitteisesti tukiaineistosta tulkittavia kohteita. Vastinpisteet
+kannattaa lisäksi pyrkiä osoittamaan huolellisesti ja tarkasti sekä eri
+puolille georeferoitavaa kuvaa.</p>
+<p>Tarkkuus korostuu etenkin silloin, kun vastinpisteitä osoitetaan
+ainoastaan muutamia. Mitä enemmän vastinpisteitä voidaan osoittaa, sen
+pienempi on yksittäisestä pisteestä aiheutuva vaikutus muunnokseen.</p>
+<p>Kun vastinpisteen tiedot ovat Kirjoita karttakoordinaatit -ikkunassa ja
+oikea koordinaattijärjestelmä valittu, voidaan vastinpiste tallentaa
+painamalla OK-painiketta. Tällöin vastinpiste tallentuu ns.
+vastinpistetauluun (GCP-taulu) ja ikkuna sulkeutuu. Uuden pisteet saa
+lisättyä Lisää piste -painikkeesta.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image32.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image32.png"></a></p>
+<p><em>Kuva 8: Oikaisupisteen tiedot syötetty</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/georeferointi_vastinpisteet.gif" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/georeferointi_vastinpisteet.gif"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image33.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image33.png"></a></p>
+<p><em>Kuva 9: Jos haluat poistaa jonkun vastinpisteen, voit sen tehdä Poista
+piste -työkalulla. Aktivoi työkalu ja klikkaa sillä
+georeferointi-ikkunassa näkyvää pientä punaista pistettä (vastinpiste).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image34.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image34.png"></a></p>
+<p><em>Kuva 10: Poistaminen voidaan tehdä myös muunnospistetaulussa
+klikkaamalla haluttua riviä hiiren oikealla ja valitsemalla "Poista".</em></p>
+<h2 id="vastinpisteiden-tarkastelu-ja-varsinainen-georeferointi"><strong>Vastinpisteiden tarkastelu ja varsinainen georeferointi</strong></h2>
+<p>Kun tarvittava määrä vastinpisteitä on syötetty, voidaan niitä
+tarkastella vastinpistetaulun (GCP-taulu) avulla. Mikäli
+vastinpistetaulu ei näy automaattisesti Georeferencer-ikkunassa ns.
+paneelina, voidaan se avata Näytä-valikosta löytyvän Paneelit-valikon
+alta (kuva 11).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image35.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image35.png"></a></p>
+<p><em>Kuva 11: Syötettyjä oikaisupisteitä ja niiden vastinpisteitä voi
+tarkastella CGP-taulusta</em></p>
+<p>Vastinpistetaulussa on nähtävillä kaikki osoitetut vastinpisteet (kuva
+10). Tässä esimerkissä on määritelty kymmenen vastinpistettä. Jokaisella
+vastinpisteelle esitetään taulussa sijainti georeferoitavalla kuvalla
+(Lähtö X ja Lähtö Y) ja sijainti tukiaineistossa (Kohde. X ja Kohde. Y).</p>
+<p>Näiden tietojen lisäksi jokaiselle pisteelle lasketaan virhe X- ja
+Y-suunnassa. X- ja Y-suuntaisten virhelukujen lisäksi jokaiselle
+pisteelle on laskettu residuaali, joka kuvaa ko. pisteen
+kokonaisvirhettä. Ideaalitilanteessa residuaaliarvo olisi mahdollisimman
+lähellä nollaa.</p>
+<p>Huomaa, että virhearvot esitetään pikseleinä. Mikäli jokin vastinpiste
+eroaa virhearvojen (Residuals/Residuaalit) osalta muista, kannattaa se
+poistaa ja määritellä uudelleen. Tässä esimerkissä olevat pisteet
+näyttäisivät olevan hyvin linjassa toistensa kanssa eikä selkeitä
+poikkeamia esiinny. Voidaan siis edetä hyvillä mielin viimeiseen
+vaiheeseen, jossa itse georeferointi toteutetaan.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image36.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image36.png"></a></p>
+<p><em>Kuva 12: GCP-taulussa nähdään kaikki syötetyt vastinpisteet.</em></p>
+<p>Kun tarvittava määrä vastinpisteitä on määritelty ja ne on todettu
+hyviksi vastinpistetaulua tarkastelemalla, voidaan käynnistää
+varsinainen georeferointi. Tämä tapahtuu Georeferencer-ikkunan <strong>Start
+Georeferencing</strong> -painikkeesta (kuva 13).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image37.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image37.png"></a></p>
+<p><em>Kuva 13: Georeferointi käynnistetään Start
+Georeferencing-painikkeesta.</em></p>
+<p>Mikäli Muunnoksen asetukset (Transformation Settings) -ikkunassa on
+laitettu täppä kohtaan "Load in QGIS when done", avautuu georeferoitu
+kuva automaattisesti QGISiin georeferoinnin jälkeen. Mikäli täppää ei
+ole laitettu, voi kuvan lisätä myös manuaalisesti Open Data Source
+Manager -toiminnon kautta.</p>
+<h2 id="vaihda-valkoinen-vari-lapinakyvaksi"><strong>Vaihda valkoinen väri läpinäkyväksi</strong></h2>
+<p>Avaa juuri luodun georeferoidun tason ominaisuudet klikkaamalla tasoa
+hiiren oikealla --&gt; Ominaisuudet --&gt; Läpinäkyvyys</p>
+<p>Aseta valkoinen väri (RGB 255,255,255) läpinäkyväksi ja klikkaa lopuksi
+"OK"</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image3.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image3.png"></a></p>
+<h2 id="lataa-qgis-lisaosa-mapswipe-tool"><strong>Lataa QGIS-lisäosa MapSwipe Tool</strong></h2>
+<p>Kätevä työkalu kahden tason vertaamiseen on QGISin lisäosa MapSwipe
+Tool. Tällä lisäosalla voit verrata kahden tason näkymää olipa tason
+formaatti mikä tahansa.</p>
+<p>Asentamisen jälkeen ylätyökalu-palkkiin pitäisi ilmestyä seuraava ikoni
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image39.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image39.png"></a>.</p>
+<p>Klikkaa ikonia ja sen jälkeen voit joko vaakatasossa tai pystytasossa
+"swaippailla". Suunta määräytyy sen mukaan mikä on hiiren suunta.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/mapswipe_tool.gif" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/mapswipe_tool.gif"></a>Kun olet tyytyväinen
+lopputulokseen niin synkronoi nämä muutokset projektiisi painamalla
+MerginMaps-lisäosan "Synchronize Mergin Maps project"</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/harjoitus_3/image4.png" data-desc-position="bottom"><img alt="" src="img/harjoitus_3/image4.png"></a></p>
+<p>Tämän jälkeen salaojarkartta näkyy MerginMaps-mobiilisovelluksessa:</p>
+<details class="video-box">
+<summary>Avaa video</summary>
+<div class="video-container">
+<iframe src="https://drive.google.com/file/d/1UHyWmI-Mw776rHhh-eEaKhVrLwPajZBe/preview" allowfullscreen></iframe>
+</div>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Alatunniste">
+        
+          
+          <a href="tietojen_tallentaminen_peltolohkolle.html" class="md-footer__link md-footer__link--prev" aria-label="Edellinen: Tietojen tallentaminen peltolohkolle">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Edellinen
+              </span>
+              <div class="md-ellipsis">
+                Tietojen tallentaminen peltolohkolle
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="reitin_nauhoitus.html" class="md-footer__link md-footer__link--next" aria-label="Seuraava: Reitin nauhoitus">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Seuraava
+              </span>
+              <div class="md-ellipsis">
+                Reitin nauhoitus
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <img style="float: right; width: 20%;" alt="Euroopan unionin osarahoittama" src="https://maaseutu.kuvat.fi/kuvat/Tuensaajalle/FI%20Euroopan%20unionin%20osarahoittama_.png?img=full">
+      Tekijä: <a href="info@gispo.fi">Gispo Suomi Oy</a>
+      <br>
+      Sivut luotu <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocsia</a> käyttäen.
+    </div>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "toc.integrate", "search.suggest", "search.highlight", "header.autohide", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopioitu leikep\u00f6yd\u00e4lle", "clipboard.copy": "Kopioi leikep\u00f6yd\u00e4lle", "search.result.more.one": "1 lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.more.other": "# lis\u00e4\u00e4 t\u00e4ll\u00e4 sivulla", "search.result.none": "Ei t\u00e4sm\u00e4\u00e4vi\u00e4 dokumentteja", "search.result.one": "1 t\u00e4sm\u00e4\u00e4v\u00e4 dokumentti", "search.result.other": "# t\u00e4sm\u00e4\u00e4v\u00e4\u00e4 dokumenttia", "search.result.placeholder": "Kirjoita aloittaaksesi haun", "search.result.term.missing": "Puuttuu", "select.version": "Valitse versio"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

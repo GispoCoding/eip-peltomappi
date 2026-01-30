@@ -1,0 +1,197 @@
+[data-md-color-scheme="peltomappi"] {
+    /* Primary color shades */
+    --md-primary-fg-color: #73D19C;
+    --md-primary-fg-color--light: #004C45;
+    --md-primary-fg-color--dark: #12181F;
+    --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-text-link-color: hsla(231, 48%, 48%, 1);
+
+    /* Accent color shades */
+    --md-accent-fg-color: rgb(98, 18, 189);
+    --md-accent-fg-color--transparent: hsla(189, 100%, 37%, 0.1);
+    --md-accent-bg-color: hsla(0, 0%, 100%, 1);
+    --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+
+    /* Footer */
+    --md-footer-bg-color: #004C45;
+    --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
+    --md-footer-fg-color: hsla(0, 0%, 100%, 1);
+    --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+}
+
+/* Vanha video-container – pysyy ennallaan */
+.video-container {
+  width: 100%;
+  height: 576px;
+  aspect-ratio: 9 / 16;
+}
+
+.video-container iframe {
+  width: 322px;
+  height: 576px;
+}
+
+.video-desktop-container {
+  width: 100%;            /* täyttää koko leveyden */
+  max-width: 1920px;      /* halutessa max leveys */
+  height: auto;            /* korkeus skaalautuu sisällön mukaan */
+  position: relative;
+  margin: 0 auto;         /* keskitetty */
+}
+
+.video-desktop-container iframe {
+  width: 100%;
+  height: auto;           /* korkeus skaalautuu leveyden mukaan */
+  aspect-ratio: 16 / 9;   /* nyt leveys > korkeus, kuten videoilla yleensä */
+}
+
+/* Mobiili */
+@media (max-width: 768px) {
+  .video-desktop-container {
+    width: 100%;           
+  }
+}
+
+
+
+/* --- Admonition-tyylien ylikirjoitus --- */
+
+/* Otsikon tyyli samaksi kuin body-teksti */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 1em;          /* sama koko kuin tavallinen teksti */
+  font-weight: normal;     /* ei lihavointia */
+  font-family: inherit;    /* sama fontti kuin muussa tekstissä */
+}
+
+/* Admonitionin sisältö samalla fontilla ja koolla kuin perusteksti */
+.md-typeset .admonition,
+.md-typeset .admonition p,
+.md-typeset .admonition li {
+  font-size: 1em;
+  font-family: inherit;
+}
+
+/* Style for collapsible video box */
+
+:root {
+  --md-admonition-icon--video-box: url('../img/video.svg')
+}
+.md-typeset .admonition.video-box,
+.md-typeset details.video-box {
+  border-color: rgb(0, 76, 69);
+}
+.md-typeset .video-box > .admonition-title,
+.md-typeset .video-box > summary {
+  background-color: rgba(0, 76, 69, 0.1);
+}
+.md-typeset .video-box > .admonition-title::before,
+.md-typeset .video-box > summary::before {
+  background-color: rgb(0, 76, 69);
+  -webkit-mask-image: var(--md-admonition-icon--video-box);
+          mask-image: var(--md-admonition-icon--video-box);
+}
+
+/* Style for collapsible image box */
+
+:root {
+  --md-admonition-icon--image-box: url('../img/image_icon.svg')
+}
+.md-typeset .admonition.image-box,
+.md-typeset details.image-box {
+  border-color: rgb(115, 209, 156);
+}
+.md-typeset .image-box > .admonition-title,
+.md-typeset .image-box > summary {
+  background-color: rgba(115, 209, 156, 0.1);
+}
+.md-typeset .image-box > .admonition-title::before,
+.md-typeset .image-box > summary::before {
+  background-color: rgb(115, 209, 156);
+  -webkit-mask-image: var(--md-admonition-icon--image-box);
+          mask-image: var(--md-admonition-icon--image-box);
+}
+  .responsive-small {
+    width: 5%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-small {
+      width: 14%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-mid {
+    width: 13%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-mid {
+      width: 29%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-big {
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-big {
+      width: 65%;
+      vertical-align: middle;
+    }
+  }
+
+  .responsive-fullsize {
+    width: 40%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-fullsize {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  
+    .responsive-settings {
+    width: 120px;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-settings  {
+      width: 140px;
+      vertical-align: bottom;
+    }
+  }
+  .responsive-desktop {
+    width: 80%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-desktop {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  
+  .responsive-selite {
+    width: 30%;
+    vertical-align: bottom;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-selite {
+      width: 60%;
+      vertical-align: bottom;
+    }
+  }
