@@ -32,15 +32,13 @@ Seuraavassa kappaleessa lisätietoja eri tasoista
         -   [Nauhoitustila](https://gispocoding.github.io/eip-peltomappi/reitin_nauhoitus.html): Intervallin raja-arvon tyyppi (kuljettu matka tai kulunut aika), Raja-arvon intervalli
         -   Tallennusasetukset: Käytä uudelleen viimeksi syötettyä arvoa, Synkronoi muutokset automaattisesti, Lukitse automaattinen sijainti, kosketuspalaute
         -   Sekä yleiset viittaukset mobiilisovelluksen tietoihin, muutosloki, ohje, tietosuojakäytäntö, palveluehdot ja diagnostiikkaloki
-        <details class="image-box"><summary>Avaa kuva</summary><img src="img/lisa_asetuksen_asetukset.png" class="responsive-big"/></details>
+        <details class="image-box"><summary>Avaa kuva</summary><img src="img/lisa_asetuksen_asetukset.png" /></details>
 
 ## **Karttatasot**
 
 Sovelluksessa on tällä hetkellä käytössä lukuisia erilaisia karttatasoja. Voit sammuttaa tasoja näkymästä klikkaamalla tason vieressä olevaa palkkia.
 
-<div style="text-align: center;">
-  <img src="img/karttatasot_v2.jpg" class="responsive-big">
-</div>
+  <img src="img/karttatasot_v2.png" class="responsive-big" />
 
 
 1. **Tasot:** Täältä löytyvät kaikki karttatasot, jotka Peltomapissa käytössä

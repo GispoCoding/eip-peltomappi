@@ -216,7 +216,7 @@ Mergin Maps -sovellus näyttää reaaliaikaisen GPS-tarkkuuden, joka vaikuttaa s
 -   Tarkkuusnäyttö näkyy kartan vasemmassa alakulmassa.
 
 <div style="text-align: left;">
-  <img src="img/GPS_mergin_maps.png" class="responsive-img">
+  <img src="img/GPS_MM.gif" class="responsive-img">
 </div>
 
 <style>
