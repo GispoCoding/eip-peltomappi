@@ -11,7 +11,7 @@ readme = "README.md"
 maintainers = [ { name = "Gispo Finland Ltd.", email = "info@gispo.fi" } ]
 classifiers = ["Private :: Do Not Upload"] # mark private for now
 dependencies = [
-    "geopandas>=1.1.1",
+    "geopandas>=1.1.2",
     "jsonschema>=4.25.1",
     "keyring>=25.6.0",
     "mergin-client>=0.10.5",
